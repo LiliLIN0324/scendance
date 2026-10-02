@@ -1,0 +1,234 @@
+import { DisposableLruCache } from './texture-lru';
+import { getMaxAnisotropy } from './texture-settings';
+import type { WallPattern } from '../lib/types';
+import type * as ThreeNS from 'three';
+
+type ThreeModule = typeof import('three');
+
+export const WALL_PATTERN_LABELS: Record<WallPattern, string> = {
+  solid: 'Solid',
+  brick: 'Brick',
+  wallpaper: 'Wallpaper',
+  panel: 'Wood Panel',
+  plaster: 'Plaster',
+  siding: 'Siding',
+};
+
+interface PatternRenderer {
+  draw(ctx: CanvasRenderingContext2D, size: number, baseColor: string): void;
+  /** How many tiles per meter of wall length. */
+  repeatPerMeter: number;
+}
+
+const PATTERNS: Record<Exclude<WallPattern, 'solid'>, PatternRenderer> = {
+  brick: {
+    repeatPerMeter: 0.8,
+    draw(ctx, size, baseColor) {
+      ctx.fillStyle = baseColor;
+      ctx.fillRect(0, 0, size, size);
+      ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+      ctx.lineWidth = 2;
+      const rows = 6;
+      const rowHeight = size / rows;
+      const bricksPerRow = 4;
+      const brickWidth = size / bricksPerRow;
+      for (let r = 0; r < rows; r++) {
+        const offset = (r % 2) * (brickWidth / 2);
+        const y = r * rowHeight;
+        for (let c = -1; c < bricksPerRow + 1; c++) {
+          const x = c * brickWidth + offset;
+          ctx.strokeRect(x, y, brickWidth, rowHeight);
+        }
+      }
+    },
+  },
+  wallpaper: {
+    repeatPerMeter: 1.2,
+    draw(ctx, size, baseColor) {
+      ctx.fillStyle = baseColor;
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      const dots = 7;
+      const spacing = size / dots;
+      for (let i = 0; i < dots; i++) {
+        for (let j = 0; j < dots; j++) {
+          const x = i * spacing + spacing / 2;
+          const y = j * spacing + spacing / 2 + (i % 2 === 0 ? 0 : spacing / 2);
+          ctx.beginPath();
+          ctx.arc(x, y, 4, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    },
+  },
+  panel: {
+    repeatPerMeter: 0.5,
+    draw(ctx, size, baseColor) {
+      ctx.fillStyle = baseColor;
+      ctx.fillRect(0, 0, size, size);
+      const panels = 4;
+      const w = size / panels;
+      ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+      ctx.lineWidth = 2;
+      for (let i = 0; i < panels; i++) {
+        const x = i * w;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, size);
+        ctx.stroke();
+        // grain
+        ctx.strokeStyle = 'rgba(0,0,0,0.12)';
+        ctx.lineWidth = 1;
+        for (let g = 1; g < 4; g++) {
+          const gx = x + (g / 4) * w;
+          ctx.beginPath();
+          ctx.moveTo(gx, 0);
+          ctx.lineTo(gx, size);
+          ctx.stroke();
+        }
+        ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+        ctx.lineWidth = 2;
+      }
+    },
+  },
+  plaster: {
+    repeatPerMeter: 0.3,
+    draw(ctx, size, baseColor) {
+      ctx.fillStyle = baseColor;
+      ctx.fillRect(0, 0, size, size);
+      for (let i = 0; i < 250; i++) {
+        const x = Math.random() * size;
+        const y = Math.random() * size;
+        const r = 5 + Math.random() * 15;
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
+        gradient.addColorStop(0, `rgba(255,255,255,${0.04 + Math.random() * 0.05})`);
+        gradient.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    },
+  },
+  // Horizontal lap siding — the white-board look of classic
+  // suburban houses. Boards are wider than they are tall and have a
+  // subtle shadow line under each.
+  siding: {
+    repeatPerMeter: 0.5,
+    draw(ctx, size, baseColor) {
+      ctx.fillStyle = baseColor;
+      ctx.fillRect(0, 0, size, size);
+      const boardCount = 8;
+      const boardHeight = size / boardCount;
+      for (let i = 0; i < boardCount; i += 1) {
+        const y = i * boardHeight;
+        // Soft top highlight on each board.
+        const grad = ctx.createLinearGradient(0, y, 0, y + boardHeight);
+        grad.addColorStop(0, 'rgba(255,255,255,0.08)');
+        grad.addColorStop(0.5, 'rgba(255,255,255,0)');
+        grad.addColorStop(1, 'rgba(0,0,0,0.12)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, y, size, boardHeight);
+        // Hard shadow line at the bottom of each board (the lap shadow).
+        ctx.fillStyle = 'rgba(0,0,0,0.22)';
+        ctx.fillRect(0, y + boardHeight - 1, size, 1.5);
+      }
+    },
+  },
+};
+
+export interface BuildWallMaterialOptions {
+  pattern: WallPattern;
+  color: string;
+  width: number;
+  height: number;
+}
+
+/**
+ * Cache the painted CanvasTexture keyed on (pattern, color, size). Walls are
+ * built ×4 per shell rebuild; the canvas drawing depends only on those keys,
+ * while the per-wall `repeat` is applied to a clone. Each caller gets a
+ * `.clone()` sharing the cached canvas image (cheap) that is independently
+ * disposable. The cache is LRU-capped because `color` is user-pickable:
+ * evicted masters are disposed, which is safe for live clones (see
+ * texture-lru.ts), while cached masters keep the shared GPU image alive.
+ */
+const wallTextureCache = new DisposableLruCache<ThreeNS.CanvasTexture>();
+
+export function buildWallMaterial(
+  THREE: ThreeModule,
+  options: BuildWallMaterialOptions
+): ThreeNS.MeshStandardMaterial {
+  if (options.pattern === 'solid') {
+    // Walls are fully opaque — the cutaway view hides the front walls by
+    // setting .visible rather than by fading them, so the room reads as an
+    // actual building.
+    return new THREE.MeshStandardMaterial({
+      color: options.color,
+      side: THREE.DoubleSide,
+      roughness: 0.85,
+    });
+  }
+
+  const renderer = PATTERNS[options.pattern];
+  // Defence in depth: the schema rejects unknown patterns (#208), but data
+  // saved before that check may still be in the wild — render solid instead
+  // of throwing inside the scene build.
+  if (!renderer) {
+    return new THREE.MeshStandardMaterial({
+      color: options.color,
+      side: THREE.DoubleSide,
+      roughness: 0.85,
+    });
+  }
+  const size = 256;
+  const master = getWallTexture(THREE, options.pattern, options.color, size, renderer);
+  if (!master) {
+    return new THREE.MeshStandardMaterial({
+      color: options.color,
+      transparent: true,
+      side: THREE.DoubleSide,
+    });
+  }
+
+  // Clone per material so each wall owns a disposable copy sharing the cached
+  // canvas image; per-wall `repeat` is set on the clone, not the master.
+  // (`Texture.clone()` already flags needsUpdate, so no explicit re-upload.)
+  const texture = master.clone();
+  texture.repeat.set(options.width * renderer.repeatPerMeter, options.height * renderer.repeatPerMeter * 0.6);
+
+  return new THREE.MeshStandardMaterial({
+    map: texture,
+    side: THREE.DoubleSide,
+    roughness: 0.85,
+  });
+}
+
+function getWallTexture(
+  THREE: ThreeModule,
+  pattern: Exclude<WallPattern, 'solid'>,
+  color: string,
+  size: number,
+  renderer: PatternRenderer
+): ThreeNS.CanvasTexture | null {
+  const key = `${pattern}|${color}|${size}`;
+  const cached = wallTextureCache.get(key);
+  if (cached) return cached;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return null;
+
+  renderer.draw(ctx, size, color);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = getMaxAnisotropy();
+
+  wallTextureCache.set(key, texture);
+  return texture;
+}

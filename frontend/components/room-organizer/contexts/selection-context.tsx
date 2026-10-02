@@ -1,0 +1,50 @@
+'use client';
+
+import { createContext, useContext, useMemo, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import type { FurnitureItem } from '../lib/types';
+
+export interface SelectionContextValue {
+  readonly selectedItemId: string | null;
+  readonly setSelectedItemId: Dispatch<SetStateAction<string | null>>;
+  readonly selectedItem: FurnitureItem | null;
+  readonly extraSelectedIds: ReadonlySet<string>;
+  readonly setExtraSelectedIds: Dispatch<SetStateAction<ReadonlySet<string>>>;
+  readonly allSelectedIds: ReadonlySet<string>;
+  /**
+   * Make `id` the sole selection (null clears it). Panels must use this —
+   * not raw setSelectedItemId — when reacting to an add/load/click, or the
+   * previous multi-select's extras silently survive into the next group
+   * operation (#117). Raw setters remain for the orchestrator's own
+   * toggle/promote logic.
+   */
+  readonly selectOnly: (id: string | null) => void;
+}
+
+const SelectionContext = createContext<SelectionContextValue | null>(null);
+
+export function useSelection(): SelectionContextValue {
+  const ctx = useContext(SelectionContext);
+  if (!ctx) throw new Error('useSelection must be used within a SelectionProvider');
+  return ctx;
+}
+
+export interface SelectionProviderProps {
+  value: SelectionContextValue;
+  children: ReactNode;
+}
+
+export function SelectionProvider({ value, children }: SelectionProviderProps): JSX.Element {
+  // The parent rebuilds `value` every render, so depending on it would make
+  // this memo a no-op; the enumerated fields are the real invalidation keys.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const memoised = useMemo(() => value, [
+    value.selectedItemId,
+    value.setSelectedItemId,
+    value.selectedItem,
+    value.extraSelectedIds,
+    value.setExtraSelectedIds,
+    value.allSelectedIds,
+    value.selectOnly,
+  ]);
+  return <SelectionContext.Provider value={memoised}>{children}</SelectionContext.Provider>;
+}

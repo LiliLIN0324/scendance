@@ -10,3 +10,10 @@ node_modules/
 supabase/.temp/
 supabase/.branches/
 coverage/
+
+# Frontend build and local validation
+frontend/.next/
+frontend/out/
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+frontend/coverage/

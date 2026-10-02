@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest run tests/",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm test",
     "check:edge": "deno check --config supabase/functions/deno.json supabase/functions/scene-api/index.ts supabase/functions/generation-worker/index.ts",

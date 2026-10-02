@@ -1,0 +1,787 @@
+import { describe, expect, it, vi } from 'vitest';
+import { makeFloor, makeItem, makeLayout } from './__testfixtures__/fixtures';
+import { STORAGE_KEY } from './constants';
+import { saveLayout } from './persistence';
+import {
+  MAX_STORAGE_ENTRY_CHARS,
+  VERSION_HISTORY_LIMIT,
+  VERSION_HISTORY_MAX_CHARS,
+  VERSION_HISTORY_META_KEY,
+  VERSION_HISTORY_MIN_INTERVAL_MS,
+  VERSION_HISTORY_STORAGE_KEY,
+  clearSnapshots,
+  evictOldestSnapshot,
+  floorPlanFingerprint,
+  getSnapshot,
+  listSnapshots,
+  recordSnapshot,
+  setItemEvictingSnapshots,
+  snapshotBelongsTo,
+  subscribeSnapshots,
+} from './version-history';
+import type { RoomLayout } from './types';
+import type { VersionHistoryStore } from './version-history';
+
+/** In-memory Storage stand-in; `failWrites` simulates QuotaExceededError. */
+function makeStore(): VersionHistoryStore & { data: Map<string, string>; failWrites: boolean } {
+  const store = {
+    data: new Map<string, string>(),
+    failWrites: false,
+    getItem: (key: string) => store.data.get(key) ?? null,
+    setItem: (key: string, value: string) => {
+      if (store.failWrites) throw new DOMException('QuotaExceededError', 'QuotaExceededError');
+      store.data.set(key, value);
+    },
+    removeItem: (key: string) => {
+      store.data.delete(key);
+    },
+  };
+  return store;
+}
+
+/** Storage with a hard character quota across all keys, like localStorage. */
+function makeQuotaStore(capacity: number): VersionHistoryStore & { data: Map<string, string> } {
+  const data = new Map<string, string>();
+  return {
+    data,
+    getItem: (key: string) => data.get(key) ?? null,
+    setItem: (key: string, value: string) => {
+      let used = key.length + value.length;
+      for (const [otherKey, otherValue] of data) {
+        if (otherKey !== key) used += otherKey.length + otherValue.length;
+      }
+      if (used > capacity) throw new DOMException('QuotaExceededError', 'QuotaExceededError');
+      data.set(key, value);
+    },
+    removeItem: (key: string) => {
+      data.delete(key);
+    },
+  };
+}
+
+/** A layout with `count` items — distinct content per count. */
+function makeHouse(count: number, overrides: Partial<RoomLayout> = {}): RoomLayout {
+  return makeLayout({
+    floors: [
+      makeFloor({
+        items: Array.from({ length: count }, (_, i) => makeItem({ id: `item-${i}` })),
+      }),
+    ],
+    ...overrides,
+  });
+}
+
+/** Fixed, manually-advanced clock. */
+function makeClock(start = 1_000_000): { now: () => number; advance: (ms: number) => void } {
+  let time = start;
+  return { now: () => time, advance: (ms) => { time += ms; } };
+}
+
+describe('version-history — cadence gating (#231)', () => {
+  it('accepts the first snapshot and rejects one inside the interval', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    expect(recordSnapshot(makeLayout(), { storage, now: clock.now })).toBe(true);
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS - 1);
+    expect(recordSnapshot(makeLayout(), { storage, now: clock.now })).toBe(false);
+    expect(listSnapshots({ storage })).toHaveLength(1);
+  });
+
+  it('accepts a snapshot once the interval has elapsed', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeLayout(), { storage, now: clock.now });
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    expect(recordSnapshot(makeHouse(1), { storage, now: clock.now })).toBe(true);
+    expect(listSnapshots({ storage })).toHaveLength(2);
+  });
+
+  it('force bypasses the cadence gate (pagehide flush)', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeLayout(), { storage, now: clock.now });
+    clock.advance(10);
+    expect(recordSnapshot(makeHouse(1), { storage, now: clock.now, force: true })).toBe(true);
+    expect(listSnapshots({ storage })).toHaveLength(2);
+  });
+
+  it('keeps savedAt keys unique when forced within the same millisecond', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeLayout(), { storage, now: clock.now });
+    recordSnapshot(makeHouse(1), { storage, now: clock.now, force: true });
+    const [a, b] = listSnapshots({ storage });
+    expect(a!.savedAt).not.toBe(b!.savedAt);
+    expect(a!.id).not.toBe(b!.id);
+  });
+});
+
+describe('version-history — ring eviction', () => {
+  it('evicts the oldest entry beyond the limit', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    for (let i = 0; i < VERSION_HISTORY_LIMIT + 2; i++) {
+      recordSnapshot(makeLayout({ name: `Rev ${i}` }), { storage, now: clock.now });
+      clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    }
+    const summaries = listSnapshots({ storage });
+    expect(summaries).toHaveLength(VERSION_HISTORY_LIMIT);
+    // Newest first; the two oldest revisions are gone.
+    expect(getSnapshot(summaries[0]!.id, { storage })?.name).toBe(
+      `Rev ${VERSION_HISTORY_LIMIT + 1}`
+    );
+    expect(getSnapshot(summaries[summaries.length - 1]!.id, { storage })?.name).toBe('Rev 2');
+  });
+});
+
+describe('version-history — quota discipline', () => {
+  it('evicts the oldest and retries when the write fails, then succeeds', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    for (let i = 0; i < 4; i++) {
+      recordSnapshot(makeLayout({ name: `Rev ${i}` }), { storage, now: clock.now });
+      clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    }
+    // Fail every write until only two entries remain in the candidate ring.
+    let failures = 0;
+    const original = storage.setItem;
+    storage.setItem = (key: string, value: string) => {
+      const entries = JSON.parse(value) as unknown[];
+      if (entries.length > 2) {
+        failures++;
+        throw new DOMException('QuotaExceededError', 'QuotaExceededError');
+      }
+      original(key, value);
+    };
+    expect(recordSnapshot(makeLayout({ name: 'Rev 4' }), { storage, now: clock.now })).toBe(true);
+    expect(failures).toBeGreaterThan(0);
+    const summaries = listSnapshots({ storage });
+    expect(summaries).toHaveLength(2);
+    expect(getSnapshot(summaries[0]!.id, { storage })?.name).toBe('Rev 4');
+  });
+
+  it('gives up silently when storage rejects every write', () => {
+    const storage = makeStore();
+    storage.failWrites = true;
+    expect(recordSnapshot(makeLayout(), { storage })).toBe(false);
+    storage.failWrites = false;
+    expect(listSnapshots({ storage })).toHaveLength(0);
+  });
+});
+
+describe('version-history — corrupt-entry tolerance', () => {
+  it('returns an empty ring for a non-JSON blob', () => {
+    const storage = makeStore();
+    storage.data.set(VERSION_HISTORY_STORAGE_KEY, '{not json');
+    expect(listSnapshots({ storage })).toHaveLength(0);
+    expect(getSnapshot('123', { storage })).toBeNull();
+  });
+
+  it('returns an empty ring for a non-array blob', () => {
+    const storage = makeStore();
+    storage.data.set(VERSION_HISTORY_STORAGE_KEY, JSON.stringify({ savedAt: 1 }));
+    expect(listSnapshots({ storage })).toHaveLength(0);
+  });
+
+  it('drops entries whose layout fails schema validation, keeping the rest', () => {
+    const storage = makeStore();
+    storage.data.set(
+      VERSION_HISTORY_STORAGE_KEY,
+      JSON.stringify([
+        { savedAt: 1, layout: makeLayout({ name: 'Good' }) },
+        { savedAt: 2, layout: { totally: 'bogus' } },
+        { savedAt: 'not-a-number', layout: makeLayout() },
+        null,
+        { savedAt: 3, layout: makeLayout({ name: 'Also good' }) },
+      ])
+    );
+    const summaries = listSnapshots({ storage });
+    expect(summaries.map((summary) => summary.savedAt)).toEqual([3, 1]);
+    expect(getSnapshot('at-1', { storage })?.name).toBe('Good');
+    expect(getSnapshot('at-2', { storage })).toBeNull();
+  });
+
+  it('a corrupt ring does not block recording a fresh snapshot', () => {
+    const storage = makeStore();
+    storage.data.set(VERSION_HISTORY_STORAGE_KEY, '{not json');
+    expect(recordSnapshot(makeLayout(), { storage })).toBe(true);
+    expect(listSnapshots({ storage })).toHaveLength(1);
+  });
+});
+
+describe('version-history — floor-plan image stripping', () => {
+  it('never stores floorPlanImage; the rest of the layout round-trips', () => {
+    const storage = makeStore();
+    const layout = makeLayout({
+      name: 'With plan',
+      floorPlanImage: 'data:image/png;base64,AAAA',
+      floorPlanOpacity: 0.5,
+    });
+    recordSnapshot(layout, { storage });
+    const [summary] = listSnapshots({ storage });
+    const restored = getSnapshot(summary!.id, { storage });
+    expect(restored).not.toBeNull();
+    expect(restored?.floorPlanImage).toBeUndefined();
+    expect(restored?.floorPlanOpacity).toBe(0.5);
+    expect(restored?.name).toBe('With plan');
+    // The caller's layout is left untouched.
+    expect(layout.floorPlanImage).toBe('data:image/png;base64,AAAA');
+  });
+});
+
+describe('version-history — summaries', () => {
+  it('reports item and floor counts across floors, newest first', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(
+      makeLayout({
+        floors: [
+          makeFloor({ id: 'ground', items: [makeItem({ id: 'a' }), makeItem({ id: 'b' })] }),
+          makeFloor({ id: 'first', name: 'First Floor', items: [makeItem({ id: 'c' })] }),
+        ],
+      }),
+      { storage, now: clock.now }
+    );
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    recordSnapshot(makeLayout(), { storage, now: clock.now });
+    const summaries = listSnapshots({ storage });
+    expect(summaries).toHaveLength(2);
+    expect(summaries[0]).toMatchObject({ itemCount: 0, floorCount: 1 });
+    expect(summaries[1]).toMatchObject({ itemCount: 3, floorCount: 2 });
+    expect(summaries[0]!.savedAt).toBeGreaterThan(summaries[1]!.savedAt);
+  });
+});
+
+describe('version-history — lowest-priority tenant (#295)', () => {
+  it('saveLayout evicts restore points oldest-first until the save fits', () => {
+    const clock = makeClock();
+    const house = makeHouse(40, { id: 'big' });
+    const saveSize = STORAGE_KEY.length + JSON.stringify(house).length;
+    const filler = makeQuotaStore(Number.MAX_SAFE_INTEGER);
+    for (let i = 0; i < 4; i++) {
+      recordSnapshot(makeHouse(i + 41, { id: 'big' }), { storage: filler, now: clock.now });
+      clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    }
+    let ringSize = 0;
+    for (const [key, value] of filler.data) ringSize += key.length + value.length;
+
+    // Room for the ring plus half the save: the ring alone blocks the save.
+    const storage = makeQuotaStore(ringSize + Math.floor(saveSize / 2));
+    for (const [key, value] of filler.data) storage.setItem(key, value);
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(4);
+
+    expect(saveLayout(house, storage).ok).toBe(true);
+    expect(storage.getItem(STORAGE_KEY)).toBe(JSON.stringify(house));
+    const left = listSnapshots({ storage, now: clock.now });
+    // Only as much as needed is evicted, and the newest restore points survive.
+    expect(left.map((summary) => summary.itemCount)).toEqual([44, 43, 42]);
+  });
+
+  it('saveLayout still reports failure once the ring is empty', () => {
+    const storage = makeQuotaStore(600);
+    expect(recordSnapshot(makeLayout(), { storage })).toBe(true);
+    expect(saveLayout(makeHouse(40), storage).ok).toBe(false);
+    expect(storage.getItem(VERSION_HISTORY_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem(STORAGE_KEY)).toBeNull();
+  });
+
+  it('evictOldestSnapshot drops one entry at a time and reports when empty', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    for (let i = 0; i < 2; i++) {
+      recordSnapshot(makeHouse(i), { storage, now: clock.now });
+      clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    }
+    expect(evictOldestSnapshot({ storage })).toBe(true);
+    expect(listSnapshots({ storage }).map((summary) => summary.itemCount)).toEqual([1]);
+    expect(evictOldestSnapshot({ storage })).toBe(true);
+    expect(storage.getItem(VERSION_HISTORY_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem(VERSION_HISTORY_META_KEY)).toBeNull();
+    expect(evictOldestSnapshot({ storage })).toBe(false);
+  });
+
+  it('evicting the newest entry of a house reopens its cadence gate', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    evictOldestSnapshot({ storage });
+    clock.advance(10);
+    expect(recordSnapshot(makeHouse(1), { storage, now: clock.now })).toBe(true);
+  });
+
+  it('a corrupt ring is removed to free its space', () => {
+    const storage = makeStore();
+    storage.data.set(VERSION_HISTORY_STORAGE_KEY, '{not json');
+    expect(evictOldestSnapshot({ storage })).toBe(true);
+    expect(storage.getItem(VERSION_HISTORY_STORAGE_KEY)).toBeNull();
+    expect(evictOldestSnapshot({ storage })).toBe(false);
+  });
+
+  it('refuses a value no browser could hold without evicting a single restore point (#332)', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS + 1);
+    recordSnapshot(makeHouse(2), { storage, now: clock.now });
+    const ring = storage.getItem(VERSION_HISTORY_STORAGE_KEY);
+    const setItem = vi.spyOn(storage, 'setItem');
+    const oversized = 'x'.repeat(MAX_STORAGE_ENTRY_CHARS);
+    expect(() => setItemEvictingSnapshots(storage, STORAGE_KEY, oversized)).toThrow(
+      expect.objectContaining({ name: 'QuotaExceededError' })
+    );
+    expect(setItem).not.toHaveBeenCalled();
+    expect(storage.getItem(VERSION_HISTORY_STORAGE_KEY)).toBe(ring);
+    expect(listSnapshots({ storage })).toHaveLength(2);
+    // The same save through saveLayout reports failure and keeps them too.
+    expect(saveLayout(makeLayout({ name: oversized }), storage)).toEqual({ ok: false, reason: 'quota' });
+    expect(listSnapshots({ storage })).toHaveLength(2);
+  });
+
+  it('keeps every restore point when storage is blocked rather than full', () => {
+    const storage = makeStore();
+    recordSnapshot(makeHouse(1), { storage });
+    const blocked = new DOMException('The operation is insecure.', 'SecurityError');
+    vi.spyOn(storage, 'setItem').mockImplementation(() => {
+      throw blocked;
+    });
+    expect(() => setItemEvictingSnapshots(storage, STORAGE_KEY, 'x')).toThrow(blocked);
+    expect(listSnapshots({ storage })).toHaveLength(1);
+  });
+
+  it('terminates on a store without removeItem', () => {
+    const data = new Map<string, string>();
+    const storage: VersionHistoryStore = {
+      getItem: (key) => data.get(key) ?? null,
+      setItem: (key, value) => {
+        if (key === 'other') throw new DOMException('QuotaExceededError', 'QuotaExceededError');
+        data.set(key, value);
+      },
+    };
+    recordSnapshot(makeLayout(), { storage });
+    expect(() => setItemEvictingSnapshots(storage, 'other', 'x')).toThrow('QuotaExceededError');
+    expect(listSnapshots({ storage })).toHaveLength(0);
+  });
+
+  it('clearSnapshots removes the ring and its sidecar', () => {
+    const storage = makeStore();
+    recordSnapshot(makeLayout(), { storage });
+    clearSnapshots({ storage });
+    expect(storage.data.size).toBe(0);
+  });
+
+  it('keeps the serialised ring under the byte budget', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    // ~150 KB per snapshot: four would overshoot the budget.
+    const padding = 'x'.repeat(150 * 1024);
+    for (let i = 0; i < 5; i++) {
+      expect(
+        recordSnapshot(makeLayout({ id: 'padded', name: `${i}${padding}` }), {
+          storage,
+          now: clock.now,
+        })
+      ).toBe(true);
+      clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+      expect(storage.getItem(VERSION_HISTORY_STORAGE_KEY)!.length).toBeLessThanOrEqual(
+        VERSION_HISTORY_MAX_CHARS
+      );
+    }
+    const summaries = listSnapshots({ storage, now: clock.now });
+    expect(summaries.length).toBeLessThan(5);
+    expect(summaries[0]!.name?.startsWith('4')).toBe(true);
+  });
+
+  it('refuses a snapshot larger than the budget and keeps the older entries', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeLayout({ id: 'h' }), { storage, now: clock.now });
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    const huge = makeLayout({ id: 'h', name: 'x'.repeat(VERSION_HISTORY_MAX_CHARS) });
+    expect(recordSnapshot(huge, { storage, now: clock.now })).toBe(false);
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(1);
+  });
+});
+
+describe('version-history — per house (#296)', () => {
+  it('stores the identity of the house and whether it had a floor plan', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(
+      makeLayout({ id: 'villa', name: 'Villa', floorPlanImage: 'data:image/png;base64,AAAA' }),
+      { storage, now: clock.now }
+    );
+    recordSnapshot(makeLayout({ name: 'Cabin' }), { storage, now: clock.now });
+    const [cabin, villa] = listSnapshots({ storage, now: clock.now });
+    expect(villa).toMatchObject({ layoutId: 'villa', name: 'Villa', hadFloorPlan: true });
+    expect(cabin).toMatchObject({ layoutId: null, name: 'Cabin', hadFloorPlan: false });
+  });
+
+  it('gates the cadence per house', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    const a = { id: 'a', name: 'A' };
+    const b = { id: 'b', name: 'B' };
+    expect(recordSnapshot(makeHouse(1, a), { storage, now: clock.now })).toBe(true);
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS - 10);
+    // B's first snapshot is not held back by A's…
+    expect(recordSnapshot(makeHouse(1, b), { storage, now: clock.now })).toBe(true);
+    clock.advance(10);
+    // …and B's snapshot, now the newest entry, does not hold back A's.
+    expect(recordSnapshot(makeHouse(2, a), { storage, now: clock.now })).toBe(true);
+    expect(recordSnapshot(makeHouse(2, b), { storage, now: clock.now })).toBe(false);
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(3);
+  });
+
+  it('tells houses apart by name when they have no id', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    expect(recordSnapshot(makeHouse(1, { name: 'A' }), { storage, now: clock.now })).toBe(true);
+    expect(recordSnapshot(makeHouse(1, { name: 'B' }), { storage, now: clock.now })).toBe(true);
+    expect(recordSnapshot(makeHouse(2, { name: 'A' }), { storage, now: clock.now })).toBe(false);
+  });
+
+  it('matches a snapshot to a layout by id, and by name only when neither has one', () => {
+    const at = (overrides: Partial<RoomLayout>) => makeHouse(2, overrides);
+    expect(snapshotBelongsTo({ layoutId: 'a', name: 'X' }, at({ id: 'a', name: 'Renamed' }))).toBe(true);
+    expect(snapshotBelongsTo({ layoutId: 'a', name: 'X' }, at({ id: 'b', name: 'X' }))).toBe(false);
+    expect(snapshotBelongsTo({ layoutId: null, name: 'X' }, at({ name: 'X' }))).toBe(true);
+    expect(snapshotBelongsTo({ layoutId: null, name: 'X' }, at({ name: 'Y' }))).toBe(false);
+    // A point from before ids existed doesn't claim an id'd house by its name:
+    // every default-named house would share its cadence.
+    expect(snapshotBelongsTo({ layoutId: null, name: 'X' }, at({ id: 'x', name: 'X' }))).toBe(false);
+    expect(snapshotBelongsTo({ layoutId: 'x', name: 'X' }, at({ name: 'X' }))).toBe(false);
+    expect(snapshotBelongsTo({ layoutId: null, name: null }, at({ name: 'X' }))).toBe(false);
+  });
+
+  it('loads entries written before identities were stored', () => {
+    const storage = makeStore();
+    const clock = makeClock(10 * VERSION_HISTORY_MIN_INTERVAL_MS);
+    storage.data.set(
+      VERSION_HISTORY_STORAGE_KEY,
+      JSON.stringify([
+        { savedAt: 1, layout: makeHouse(2, { name: 'Old house' }) },
+        { savedAt: 2, layout: makeHouse(1, { name: 'Older house' }) },
+      ])
+    );
+    const [newer, older] = listSnapshots({ storage, now: clock.now });
+    expect(older).toMatchObject({ id: 'at-1', itemCount: 2, floorCount: 1, hadFloorPlan: false });
+    expect(newer).toMatchObject({ id: 'at-2', itemCount: 1, floorCount: 1, hadFloorPlan: false });
+    expect(getSnapshot('at-1', { storage })?.name).toBe('Old house');
+
+    // Recording next to them keeps them restorable.
+    expect(recordSnapshot(makeLayout({ id: 'new' }), { storage, now: clock.now })).toBe(true);
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(3);
+    expect(getSnapshot('at-1', { storage })?.name).toBe('Old house');
+  });
+});
+
+describe('version-history — gate hygiene (#297)', () => {
+  it('counts a clock corrected backwards as elapsed', () => {
+    const storage = makeStore();
+    const day = 24 * 60 * 60 * 1000;
+    const clock = makeClock(10 * day);
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    clock.advance(-day);
+    expect(recordSnapshot(makeHouse(2), { storage, now: clock.now })).toBe(true);
+    // The cadence then resumes against the corrected clock.
+    clock.advance(10);
+    expect(recordSnapshot(makeHouse(3), { storage, now: clock.now })).toBe(false);
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    expect(recordSnapshot(makeHouse(3), { storage, now: clock.now })).toBe(true);
+  });
+
+  it('clamps future timestamps so they do not sort as permanently newest', () => {
+    const storage = makeStore();
+    const day = 24 * 60 * 60 * 1000;
+    const clock = makeClock(10 * day);
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    const futureId = listSnapshots({ storage, now: clock.now })[0]!.id;
+    clock.advance(-day);
+
+    // Read-only: displayed at the present, still restorable by its id.
+    const [clamped] = listSnapshots({ storage, now: clock.now });
+    expect(clamped).toMatchObject({ id: futureId, savedAt: clock.now() });
+    expect(getSnapshot(clamped!.id, { storage })).not.toBeNull();
+
+    recordSnapshot(makeHouse(2), { storage, now: clock.now });
+    const summaries = listSnapshots({ storage, now: clock.now });
+    expect(summaries.map((summary) => summary.itemCount)).toEqual([2, 1]);
+    expect(summaries.every((summary) => summary.savedAt <= clock.now() + 1)).toBe(true);
+    expect(new Set(summaries.map((summary) => summary.id)).size).toBe(2);
+  });
+
+  it('keeps the id a History row holds restorable after its savedAt is clamped (#344)', () => {
+    const storage = makeStore();
+    const day = 24 * 60 * 60 * 1000;
+    const clock = makeClock(10 * day);
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    // The panel lists it while the clock is still ahead…
+    const [listed] = listSnapshots({ storage, now: clock.now });
+    clock.advance(-day);
+    // …then a forced snapshot rewrites the ring and clamps that entry.
+    expect(recordSnapshot(makeHouse(2), { storage, now: clock.now, force: true })).toBe(true);
+    expect(getSnapshot(listed!.id, { storage })?.floors[0]?.items).toHaveLength(1);
+    expect(listSnapshots({ storage, now: clock.now }).map((summary) => summary.id)).toContain(listed!.id);
+  });
+
+  it('skips a layout identical to the newest entry of its house', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    const withPlan = makeHouse(1, { floorPlanImage: 'data:image/png;base64,AAAA' });
+    expect(recordSnapshot(withPlan, { storage, now: clock.now })).toBe(true);
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    // Only the (stripped) image differs.
+    const otherPlan = makeHouse(1, { floorPlanImage: 'data:image/png;base64,BBBB' });
+    expect(recordSnapshot(otherPlan, { storage, now: clock.now })).toBe(false);
+    expect(recordSnapshot(otherPlan, { storage, now: clock.now, force: true })).toBe(false);
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(1);
+    expect(recordSnapshot(makeHouse(2), { storage, now: clock.now })).toBe(true);
+  });
+
+  it('compares against the same house only', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeHouse(1, { id: 'a' }), { storage, now: clock.now });
+    recordSnapshot(makeHouse(2, { id: 'b' }), { storage, now: clock.now });
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    expect(recordSnapshot(makeHouse(1, { id: 'a' }), { storage, now: clock.now })).toBe(false);
+  });
+
+  it('refuses inside the interval without reading the ring', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    const getItem = vi.spyOn(storage, 'getItem');
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS - 1);
+    expect(recordSnapshot(makeHouse(2), { storage, now: clock.now })).toBe(false);
+    expect(getItem).toHaveBeenCalledWith(VERSION_HISTORY_META_KEY);
+    expect(getItem).not.toHaveBeenCalledWith(VERSION_HISTORY_STORAGE_KEY);
+  });
+
+  it('falls back to the ring and rebuilds a missing sidecar', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    recordSnapshot(makeHouse(1), { storage, now: clock.now });
+    storage.data.delete(VERSION_HISTORY_META_KEY);
+    clock.advance(10);
+    expect(recordSnapshot(makeHouse(2), { storage, now: clock.now })).toBe(false);
+    expect(storage.getItem(VERSION_HISTORY_META_KEY)).not.toBeNull();
+  });
+
+  it('lists from stored summaries without validating layouts', () => {
+    const storage = makeStore();
+    storage.data.set(
+      VERSION_HISTORY_STORAGE_KEY,
+      JSON.stringify([
+        { savedAt: 5, name: 'Broken', itemCount: 7, floorCount: 2, layout: { totally: 'bogus' } },
+      ])
+    );
+    expect(listSnapshots({ storage })).toEqual([
+      {
+        id: 'at-5',
+        savedAt: 5,
+        itemCount: 7,
+        floorCount: 2,
+        name: 'Broken',
+        layoutId: null,
+        hadFloorPlan: false,
+        floorPlanFingerprint: null,
+      },
+    ]);
+    // Validation happens on restore.
+    expect(getSnapshot('at-5', { storage })).toBeNull();
+  });
+});
+
+describe('floor-plan fingerprint (#296)', () => {
+  const imageA = `data:image/png;base64,${'A'.repeat(20000)}`;
+  const imageB = `data:image/png;base64,${'A'.repeat(19999)}B`;
+
+  it('is stable for the same image and differs for a different one of equal length', () => {
+    expect(floorPlanFingerprint(imageA)).toBe(floorPlanFingerprint(imageA));
+    expect(imageB.length).toBe(imageA.length);
+    expect(floorPlanFingerprint(imageB)).not.toBe(floorPlanFingerprint(imageA));
+  });
+
+  it('is null without an image', () => {
+    expect(floorPlanFingerprint(undefined)).toBeNull();
+    expect(floorPlanFingerprint('')).toBeNull();
+  });
+
+  it('travels with the summary so two houses sharing the default name stay apart', () => {
+    const storage = makeStore();
+    // Both are called "My Home" and neither has an id — the common case.
+    recordSnapshot(makeLayout({ floorPlanImage: imageA }), { storage, now: () => 1_000 });
+    const [summary] = listSnapshots({ storage, now: () => 2_000 });
+    expect(summary!.floorPlanFingerprint).toBe(floorPlanFingerprint(imageA));
+    // The other house's image must not match, so a restore won't graft it.
+    expect(summary!.floorPlanFingerprint).not.toBe(floorPlanFingerprint(imageB));
+  });
+
+  it('is null for entries written before fingerprints existed', () => {
+    const storage = makeStore();
+    storage.setItem(
+      VERSION_HISTORY_STORAGE_KEY,
+      JSON.stringify([{ savedAt: 500, layout: makeLayout() }])
+    );
+    const [summary] = listSnapshots({ storage, now: () => 2_000 });
+    expect(summary!.floorPlanFingerprint).toBeNull();
+  });
+});
+
+describe('version-history — in-tab change signal (#367)', () => {
+  it('notifies subscribers when a restore point is stored, evicted or cleared', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    const listener = vi.fn();
+    const unsubscribe = subscribeSnapshots(listener);
+    try {
+      expect(recordSnapshot(makeHouse(1), { storage, now: clock.now, force: true })).toBe(true);
+      expect(listener).toHaveBeenCalledTimes(1);
+      clock.advance(1);
+      recordSnapshot(makeHouse(2), { storage, now: clock.now, force: true });
+      expect(listener).toHaveBeenCalledTimes(2);
+      evictOldestSnapshot({ storage });
+      expect(listener).toHaveBeenCalledTimes(3);
+      clearSnapshots({ storage });
+      expect(listener).toHaveBeenCalledTimes(4);
+    } finally {
+      unsubscribe();
+    }
+  });
+
+  it('stays silent when nothing was written, and after unsubscribing', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    const listener = vi.fn();
+    const unsubscribe = subscribeSnapshots(listener);
+    recordSnapshot(makeHouse(1), { storage, now: clock.now, force: true });
+    // Identical to the newest snapshot of the house: skipped (#297).
+    recordSnapshot(makeHouse(1), { storage, now: clock.now, force: true });
+    expect(listener).toHaveBeenCalledTimes(1);
+    unsubscribe();
+    clock.advance(1);
+    recordSnapshot(makeHouse(3), { storage, now: clock.now, force: true });
+    expect(listener).toHaveBeenCalledTimes(1);
+  });
+});
+
+/** A default-named house whose things carry editor-style random ids. */
+function myHome(ids: string[], houseId?: string): RoomLayout {
+  return makeLayout({
+    ...(houseId ? { id: houseId } : {}),
+    floors: [makeFloor({ items: ids.map((id) => makeItem({ id })) })],
+  });
+}
+
+describe('version-history — same-named houses (#342)', () => {
+  const a = ['sofa-1759300000000-k2x9', 'bed-1759300004000-p0qa', 'lamp-1759300009000-zz01'];
+  const b = ['table-1759310000000-m3c7', 'chair-1759310002000-a8b2'];
+
+  it('gives two different "My Home" houses their own restore points', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    expect(recordSnapshot(myHome(a, 'house-a'), { storage, now: clock.now })).toBe(true);
+    clock.advance(1_000);
+    expect(recordSnapshot(myHome(b, 'house-b'), { storage, now: clock.now })).toBe(true);
+    clock.advance(1_000);
+    // Each house keeps its own cadence.
+    expect(recordSnapshot(myHome([...a, 'rug-1'], 'house-a'), { storage, now: clock.now })).toBe(false);
+    expect(recordSnapshot(myHome(b.slice(1), 'house-b'), { storage, now: clock.now })).toBe(false);
+    clock.advance(VERSION_HISTORY_MIN_INTERVAL_MS);
+    expect(recordSnapshot(myHome([...a, 'rug-1'], 'house-a'), { storage, now: clock.now })).toBe(true);
+  });
+
+  it('tells houses apart even when both use fixed ids (porch door, template items)', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    const shared = ['entrance-door', 'bed-1', 'lamp-1'];
+    expect(recordSnapshot(myHome(shared, 'house-a'), { storage, now: clock.now })).toBe(true);
+    clock.advance(1_000);
+    expect(recordSnapshot(myHome(shared, 'house-b'), { storage, now: clock.now })).toBe(true);
+  });
+
+  it('never floods the ring when every item is replaced (Surprise) — other houses keep their points', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    expect(recordSnapshot(makeHouse(1, { id: 'mum', name: 'Mum' }), { storage, now: clock.now })).toBe(true);
+    for (let i = 0; i < 12; i++) {
+      clock.advance(2_000);
+      recordSnapshot(myHome([`surprise-${i}-a`, `surprise-${i}-b`], 'house-a'), { storage, now: clock.now });
+    }
+    const names = listSnapshots({ storage, now: clock.now }).map((summary) => summary.name);
+    expect(names).toContain('Mum');
+    expect(names.filter((name) => name === 'My Home')).toHaveLength(1);
+  });
+
+  it('falls back to the name for layouts without an id, so they can never flood either', () => {
+    const storage = makeStore();
+    const clock = makeClock();
+    for (let i = 0; i < 12; i++) {
+      clock.advance(2_000);
+      recordSnapshot(myHome([`surprise-${i}`]), { storage, now: clock.now });
+    }
+    expect(listSnapshots({ storage, now: clock.now })).toHaveLength(1);
+  });
+});
+
+describe('version-history — rings written by v1.14.0 (#342, #344)', () => {
+  const sofa = 'sofa-1759300000000-k2x9';
+
+  /** The on-disk shape before stable ids and house sketches: savedAt keys, a per-name sidecar. */
+  function seedV114(storage: ReturnType<typeof makeStore>): void {
+    storage.data.set(
+      VERSION_HISTORY_STORAGE_KEY,
+      JSON.stringify([
+        { savedAt: 1_000, name: 'My Home', hadFloorPlan: false, itemCount: 1, floorCount: 1, layout: myHome([sofa]) },
+        {
+          savedAt: 2_000,
+          layoutId: 'cabin',
+          name: 'Cabin',
+          hadFloorPlan: true,
+          floorPlan: '4:abc',
+          itemCount: 2,
+          floorCount: 1,
+          layout: makeHouse(2, { id: 'cabin', name: 'Cabin' }),
+        },
+      ])
+    );
+    storage.data.set(VERSION_HISTORY_META_KEY, JSON.stringify({ houses: { 'name:My Home': 1_000, 'id:cabin': 2_000 } }));
+  }
+
+  it('lists and restores every entry', () => {
+    const storage = makeStore();
+    seedV114(storage);
+    const [cabin, home] = listSnapshots({ storage, now: () => 10_000 });
+    expect(cabin).toMatchObject({ id: 'at-2000', name: 'Cabin', layoutId: 'cabin', itemCount: 2, hadFloorPlan: true });
+    expect(home).toMatchObject({ id: 'at-1000', name: 'My Home', layoutId: null, itemCount: 1 });
+    expect(getSnapshot(cabin!.id, { storage })?.name).toBe('Cabin');
+    expect(getSnapshot(home!.id, { storage })?.floors[0]?.items[0]?.id).toBe(sofa);
+  });
+
+  it('keeps the derived ids once the ring is rewritten, and gates by the old entries', () => {
+    const storage = makeStore();
+    seedV114(storage);
+    const ids = listSnapshots({ storage, now: () => 10_000 }).map((summary) => summary.id);
+    // The old sidecar is ignored; the ring still gates an id-less layout of
+    // the same name, while a house with an id has its own cadence.
+    expect(recordSnapshot(myHome([sofa, 'bed-1759300004000-p0qa']), { storage, now: () => 3_000 })).toBe(false);
+    expect(recordSnapshot(myHome(['desk-1759400000000-zz99'], 'house-new'), { storage, now: () => 3_000 })).toBe(true);
+    // A house with its own id is told apart from another house with an id.
+    expect(recordSnapshot(makeHouse(1, { id: 'elsewhere', name: 'Cabin' }), { storage, now: () => 3_000 })).toBe(true);
+    const rewritten = JSON.parse(storage.data.get(VERSION_HISTORY_STORAGE_KEY)!) as Array<{ id: string }>;
+    expect(rewritten.map((entry) => entry.id).slice(0, 2)).toEqual([...ids].reverse());
+    for (const id of ids) expect(getSnapshot(id, { storage })).not.toBeNull();
+    // The sidecar is now in the new shape.
+    expect(JSON.parse(storage.data.get(VERSION_HISTORY_META_KEY)!)).toHaveProperty('entries');
+  });
+
+  it('a derived id survives the clamp of a future-dated entry', () => {
+    const storage = makeStore();
+    storage.data.set(VERSION_HISTORY_STORAGE_KEY, JSON.stringify([{ savedAt: 9_000, layout: myHome([sofa]) }]));
+    const [listed] = listSnapshots({ storage, now: () => 1_000 });
+    expect(recordSnapshot(makeHouse(1, { id: 'other' }), { storage, now: () => 1_000 })).toBe(true);
+    expect(listSnapshots({ storage, now: () => 1_000 }).find((summary) => summary.id === listed!.id)?.savedAt).toBe(1_000);
+    expect(getSnapshot(listed!.id, { storage })).not.toBeNull();
+  });
+});

@@ -18,7 +18,7 @@ export function createSceneClient(baseUrl:string,getAccessToken:()=>Promise<stri
     const headers:Record<string,string>={};
     if(!isPublic) {const token=await getAccessToken();if(!token)throw new SceneApiError('UNAUTHENTICATED',401,null);headers.Authorization=`Bearer ${token}`;}
     if(body!==undefined) headers['Content-Type']='application/json';
-    const response=await fetch(`${baseUrl.replace(/\/$/,'')}${path}`,{method,headers,body:body===undefined?undefined:JSON.stringify(body),cache:'no-store'});
+    const response=await fetch(`${baseUrl.replace(/\/$/,'')}${path}`,{method,headers,...(body===undefined?{}:{body:JSON.stringify(body)}),cache:'no-store'});
     const data=await response.json();
     if(!response.ok) throw new SceneApiError(data.error?.code??'HTTP_ERROR',response.status,data.error?.details);
     return data as T;

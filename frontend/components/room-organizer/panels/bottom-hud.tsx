@@ -1,0 +1,198 @@
+'use client';
+
+import { useState } from 'react';
+import { useRoomEditor } from '../contexts';
+import { useSelection } from '../contexts';
+import { DEFAULT_BUDGET } from '../lib/constants';
+import { totalCost } from '../lib/geometry';
+import { catalogCategoryForTool, resolveToolForMode } from '../lib/modes';
+import { generateRoomShape } from '../lib/room-shapes';
+import { ENTRANCE_DOOR_ID } from '../lib/street';
+import { surpriseLayout } from '../lib/surprise';
+import { BuildToolsPanel, type BuildToolCategory } from './build-tools-panel';
+import { CameraPad } from './camera-pad';
+import { CatalogStrip } from './catalog-strip';
+import { ModePanel } from './mode-panel';
+import { RoomShapesPanel } from './room-shapes-panel';
+import { WallPaintPanel } from './wall-paint-panel';
+import type { CatalogItem } from '../lib/types';
+
+export interface BottomHudProps {
+  selectedWall: { id: string; kind: 'exterior' | 'interior' } | null;
+  onSelectedWallChange(wall: { id: string; kind: 'exterior' | 'interior' } | null): void;
+  onOrbit(direction: 'left' | 'right' | 'up' | 'down'): void;
+  onZoom(direction: '+' | '-'): void;
+  onFit(): void;
+  placeCatalogItem(catalogItem: CatalogItem, position?: { x: number; z: number }): string;
+}
+
+export function BottomHud({ selectedWall, onSelectedWallChange, onOrbit, onZoom, onFit, placeCatalogItem }: BottomHudProps): JSX.Element {
+  const { layout, activeFloor, actions, view, toggle, setView, isReady, error, gameMode, setGameMode, playCue } = useRoomEditor();
+  const { selectOnly, setSelectedItemId, setExtraSelectedIds } = useSelection();
+  const [buildToolCategory, setBuildToolCategory] = useState<BuildToolCategory>('seating');
+  // Each mode shows its own half of the tools (#151): a pick from the other
+  // half falls back to this mode's first tool. Derived, not synced, so the
+  // pick survives a round trip through the other mode.
+  const buildTool = resolveToolForMode(gameMode, buildToolCategory);
+
+  if (!isReady || error) return <></>;
+
+  return (
+    <div
+      className="pointer-events-none pc-bottom-hud"
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        padding: 16,
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+        gap: 12,
+        zIndex: 25,
+      }}
+    >
+      {gameMode !== 'live' ? (
+        <div
+          // max-height lives in globals.css: the room above this column
+          // differs per breakpoint (#299).
+          className="pc-hud-left"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
+            alignItems: 'flex-start',
+            overflowY: 'auto',
+            overflowX: 'visible',
+            paddingRight: 4,
+            scrollbarWidth: 'thin',
+          }}
+        >
+          {/* Paint panel opens with the wall tool OR when any wall is clicked in 3D. */}
+          {(view.drawWallMode || selectedWall !== null) && (
+            <WallPaintPanel
+              selectedWall={selectedWall}
+              onSelectedWallChange={onSelectedWallChange}
+            />
+          )}
+          {view.drawWallMode && (
+            <>
+              <RoomShapesPanel
+                maxWidth={layout.width}
+                maxDepth={layout.height}
+                onStamp={({ shape, width, depth, centerX, centerZ }) => {
+                  // Random suffix so two stamps in the same millisecond can't
+                  // produce colliding wall ids.
+                  const seed = `stamp-${shape}-${Date.now().toString(36)}-${Math.random()
+                    .toString(36)
+                    .slice(2, 6)}`;
+                  const walls = generateRoomShape(
+                    shape,
+                    centerX,
+                    centerZ,
+                    width,
+                    depth,
+                    seed,
+                    undefined,
+                    { width: layout.width, depth: layout.height }
+                  );
+                  // Batch all segments into one dispatch so the whole stamp is a
+                  // single undo entry rather than N steps.
+                  actions.addInteriorWalls(walls);
+                  playCue('place');
+                }}
+              />
+            </>
+          )}
+          <BuildToolsPanel
+            active={buildTool}
+            drawWallMode={view.drawWallMode}
+            onSelect={(tool) => {
+              setBuildToolCategory(tool);
+              if (tool === 'walls') {
+                if (!view.drawWallMode) toggle('drawWallMode');
+              } else if (view.drawWallMode) {
+                toggle('drawWallMode');
+              }
+            }}
+          />
+          {/* The pad drives the (hidden) 3D camera, so it's inert in the 2D
+              top-down view — hide it there, like CameraPresetsPanel disables
+              on view2D (#220). */}
+          {!view.view2D && (
+            <CameraPad
+              onOrbit={onOrbit}
+              onZoom={onZoom}
+              onFit={onFit}
+            />
+          )}
+        </div>
+      ) : (
+        <div />
+      )}
+
+      {gameMode !== 'live' ? (
+        <CatalogStrip
+          // The strip follows the mode's tool, so DESIGN browses structure
+          // and FURNISH furniture; the wall tool browses the openings that
+          // go on walls rather than the whole catalog (#151).
+          category={catalogCategoryForTool(buildTool)}
+          onAdd={(catalogItem) => {
+            const id = placeCatalogItem(catalogItem);
+            // '' = placement declined (budget confirm) or refused — nothing
+            // was added, so no chime and no selection wipe (#146).
+            if (!id) return;
+            selectOnly(id);
+            playCue('place');
+          }}
+        />
+      ) : (
+        <div />
+      )}
+
+      <ModePanel
+        onSetMode={(mode) => {
+          setGameMode(mode);
+          // The wall tool lives in DESIGN only; don't leave the draw mode
+          // (and its paint/stamp panels) armed with no tile to disarm it (#151).
+          if (mode !== 'build' && view.drawWallMode) toggle('drawWallMode');
+          if (mode === 'live') {
+            // EXPLORE is for looking around: drop the selection so its
+            // popover doesn't float over the walkthrough (#339).
+            selectOnly(null);
+            onSelectedWallChange(null);
+            // Walkthrough needs the 3D view — the hook requires `!view2D`, so
+            // entering Live from the 2D top-down view is otherwise a silent
+            // no-op (see #67). Drop view2D as we switch walkthrough on.
+            setView((v) => ({ ...v, view2D: false, walkthroughMode: true }));
+          } else if (view.walkthroughMode) {
+            toggle('walkthroughMode');
+          }
+        }}
+        onSurprise={() => {
+          // Surprise replaces the whole floor — never wipe placed furniture
+          // without asking (#105). An empty floor proceeds silently.
+          if (
+            activeFloor.items.length > 0 &&
+            !window.confirm('Replace everything on this floor with a surprise layout?')
+          ) {
+            return;
+          }
+          const otherFloorsCost =
+            totalCost(layout.floors.flatMap((f) => f.items)) - totalCost(activeFloor.items);
+          const items = surpriseLayout({
+            roomWidth: layout.width,
+            roomDepth: layout.height,
+            // Replaces the active floor: spend what the other floors leave (#136).
+            maxCost: Math.max(0, DEFAULT_BUDGET - otherFloorsCost),
+          });
+          // The entrance door is structure, not furniture — keep it (#273).
+          actions.replaceItems([...activeFloor.items.filter((item) => item.id === ENTRANCE_DOOR_ID), ...items]);
+          setSelectedItemId(null);
+          setExtraSelectedIds(new Set());
+        }}
+      />
+    </div>
+  );
+}

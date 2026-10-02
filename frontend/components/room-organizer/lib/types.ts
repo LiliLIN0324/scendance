@@ -1,0 +1,406 @@
+import type { Scene, SceneObject } from '../../../../supabase/functions/_shared/domain';
+
+export type Vec2 = Readonly<{ x: number; z: number }>;
+
+export type FurnitureType =
+  | 'backdrop'
+  | 'partition'
+  | 'glb-asset'
+  | 'chair'
+  | 'armchair'
+  | 'dining-chair'
+  | 'bench'
+  | 'sofa'
+  | 'table'
+  | 'dining-table'
+  | 'coffee-table'
+  | 'side-table'
+  | 'bed'
+  | 'desk'
+  | 'bookshelf'
+  | 'wardrobe'
+  | 'dresser'
+  | 'cabinet'
+  | 'wall-shelf'
+  | 'lamp'
+  | 'floor-lamp'
+  | 'lamppost'
+  | 'pendant-light'
+  | 'plant'
+  | 'tree'
+  | 'pine-tree'
+  | 'bush'
+  | 'hedge'
+  | 'rose-bush'
+  | 'flowerpot'
+  | 'flowerbed'
+  | 'tulips'
+  | 'sunflower'
+  | 'tv'
+  | 'computer'
+  | 'nightstand'
+  | 'wifi'
+  | 'router'
+  // Legacy electronics variant — see the note on `cctv` in the catalog.
+  | 'cctv'
+  | 'security-camera'
+  | 'fridge'
+  | 'stove'
+  | 'dishwasher'
+  | 'kitchen-sink'
+  | 'counter'
+  | 'bbq'
+  | 'toilet'
+  | 'bathtub'
+  | 'shower'
+  | 'bathroom-sink'
+  | 'rug'
+  | 'painting'
+  | 'vase'
+  | 'mirror'
+  | 'books'
+  | 'candles'
+  | 'curtains'
+  | 'wall-clock'
+  | 'fence'
+  | 'pool'
+  | 'pond'
+  | 'birdbath'
+  | 'garden-bench'
+  | 'picnic-table'
+  | 'stepping-stone'
+  | 'mailbox'
+  | 'person'
+  | 'pet'
+  | 'stairs'
+  | 'door'
+  | 'window'
+  // Keeps the escape hatch so unknown/legacy strings from old saved layouts
+  // still type-check, while the named members above document the full catalog.
+  | (string & {});
+
+export type SofaShape = 'standard' | 'L-shape' | 'U-shape';
+
+/** 'winder': a half-turn dog-leg with a fan of winders (#205). */
+export type StairsShape = 'straight' | 'winder';
+
+export type FloorPlanFitMode = 'stretch' | 'cover' | 'contain';
+
+export type FurnitureCategory =
+  | 'seating'
+  | 'tables'
+  | 'bedroom'
+  | 'storage'
+  | 'kitchen'
+  | 'bathroom'
+  | 'electronics'
+  | 'security'
+  | 'decor'
+  | 'outdoor'
+  | 'people'
+  | 'structure';
+
+export interface CategoryMeta {
+  key: FurnitureCategory;
+  label: string;
+  icon: string;
+}
+
+export interface FurnitureItem {
+  /** Backend identifiers survive the upstream save/load whitelist. */
+  materialId?: SceneObject['materialId'];
+  assetId?: string;
+  notes?: string;
+  source?: 'builtin' | 'public_library' | 'generated' | 'local_sample';
+  /** A frontend loading reference; the backend scene stores assetId only. */
+  glbUrl?: string;
+  /** Rendered structural marker; never exported as a material object. */
+  venueEntranceId?: string;
+  id: string;
+  type: FurnitureType | string;
+  name: string;
+  width: number;
+  depth: number;
+  height: number;
+  color: string;
+  icon: string;
+  /** Price in §, kept on the item so layouts persist their value even if the catalog changes. */
+  price?: number;
+  category?: FurnitureCategory;
+  position?: Vec2;
+  rotation?: number;
+  isWiFiAccessPoint?: boolean;
+  isCCTV?: boolean;
+  signalRange?: number;
+  /** When true, this item projects a Desperados-style directional vision cone. */
+  hasVisionCone?: boolean;
+  /** How far the vision cone reaches into the room, in metres. */
+  visionRange?: number;
+  /** Horizontal field of view of the vision cone, in degrees. */
+  visionFov?: number;
+  /** Id of the real-world CCTV model this camera mimics (see lib/cctv-models). */
+  cctvModelId?: string;
+  /**
+   * Yaw (radians) of the inward normal of the wall a camera is mounted on — its
+   * in/out axis. A flush camera's rotation is locked to this or this + π.
+   */
+  wallRotation?: number;
+  /**
+   * When true, a security camera sits on a stand-off bracket arm and can pan
+   * left/right freely; otherwise it is flush-mounted and locked to facing
+   * straight into the room or straight out.
+   */
+  cameraBracket?: boolean;
+  sofaShape?: SofaShape;
+  locked?: boolean;
+  mirrored?: boolean;
+  /** Straight flight (default) or half-turn winder (#205). */
+  stairsShape?: StairsShape;
+  /** Winder only: extra steps on the up flight, taken from the return flight. */
+  stairsLeadIn?: number;
+  /** Window sill above its floor, overriding the shared datum (#204). */
+  sillHeight?: number;
+  /**
+   * Persistent group (#154): items sharing a groupId on a floor select and
+   * move together. Absent on ungrouped items so saves and share links stay
+   * unchanged for layouts that never used groups.
+   */
+  groupId?: string;
+}
+
+export type CameraPreset = 'iso' | 'top' | 'front' | 'corner';
+
+export type CatalogItem = Omit<FurnitureItem, 'id' | 'position' | 'rotation' | 'price' | 'category'> & {
+  price: number;
+  category: FurnitureCategory;
+};
+
+export type WallId = 'north' | 'south' | 'east' | 'west';
+
+export type FloorPattern = 'solid' | 'wood' | 'tile' | 'carpet' | 'concrete';
+
+export type WallPattern = 'solid' | 'brick' | 'wallpaper' | 'panel' | 'plaster' | 'siding';
+
+export type RoofStyle = 'none' | 'flat' | 'gable' | 'hipped';
+
+export type DormerOpeningKind = 'casement' | 'french' | 'sidelight';
+
+/** An opening across part of a dormer face; `from`/`to` are fractions of its width. */
+export interface DormerOpening {
+  kind: DormerOpeningKind;
+  from: number;
+  to: number;
+}
+
+/** A dormer standing on one roof slope (#203); see lib/dormers.ts. */
+export interface DormerSpec {
+  id: string;
+  /** The slope it stands on, named by the way it faces. */
+  side: WallId;
+  width: number;
+  /** Centre along the ridge's world axis (x for north/south, z for east/west). */
+  offset?: number;
+  /** Face height; trimmed to clear the ridge. */
+  height?: number;
+  /** How far the face stands behind the wall line. */
+  setback?: number;
+  openings?: DormerOpening[];
+  /** Shorthand for a single ribbon casement; `openings` wins when both are set. */
+  window?: boolean;
+  /** A Juliet rail across the French doors (or the whole face). */
+  balcony?: boolean;
+  /** Render finish of the face and cheeks. */
+  color?: string;
+}
+
+export interface RoofSpec {
+  style: RoofStyle;
+  color?: string;
+  /** Dormers; built on gable and hipped roofs, ignored on flat or none. */
+  dormers?: DormerSpec[];
+}
+
+/**
+ * One level of a building. Shares the building's footprint (width × depth)
+ * but has its own items, finishes, and wall colors.
+ */
+export interface InteriorWall {
+  id: string;
+  x1: number;
+  z1: number;
+  x2: number;
+  z2: number;
+  color?: string;
+}
+
+/**
+ * A named, coloured rectangle of a floor — "Bedroom", "Kitchen" — that the
+ * plan, the blueprint and the statistics panel measure and cost per room
+ * (#155); see lib/zones.ts. `x`/`z` is the north-west corner in world metres
+ * (room-centred, like item positions); `w`/`d` extend along +x / +z.
+ */
+export interface RoomZone {
+  id: string;
+  name: string;
+  color: string;
+  x: number;
+  z: number;
+  w: number;
+  d: number;
+}
+
+export interface FloorLayout {
+  id: string;
+  name: string;
+  items: FurnitureItem[];
+  floorColor: string;
+  floorPattern?: FloorPattern;
+  wallPattern?: WallPattern;
+  wallColors?: Partial<Record<WallId, string>>;
+  hiddenWalls?: WallId[];
+  interiorWalls?: InteriorWall[];
+  /** Room zones drawn on this floor (#155). */
+  zones?: RoomZone[];
+  /**
+   * Floor-to-floor height in metres (#202) — a 2.5 m basement, a 1.1 m loft
+   * knee wall. Absent means the classic `FLOOR_HEIGHT_METERS` storey; each
+   * floor's elevation is the sum of the storeys below it (lib/storeys.ts).
+   */
+  height?: number;
+}
+
+/** Ground heights in metres relative to the ground floor (#202); see lib/site.ts. */
+export interface TerrainSpec {
+  /** At the street (north / front). */
+  frontY: number;
+  /** At the garden (south / back). */
+  backY: number;
+}
+
+export type NeighbourSide = 'west' | 'east';
+
+export type Frontage = 'garden' | 'pavement';
+
+/** A porch recessed into the front (north) wall, opening onto the storey at street level. */
+export interface EntranceSpec {
+  width: number;
+  /** How far the recess reaches back into the house. */
+  depth: number;
+  /** Centre along the front wall (world x). */
+  offset?: number;
+  /** Porch floor to soffit; may span more than one storey. */
+  height?: number;
+  /**
+   * `false` once the user has deleted the porch door: the reducer then
+   * stops re-creating it when it re-fits the recess (#273). Cleared with
+   * the entrance.
+   */
+  door?: false;
+}
+
+/** The boolean switches of a `NeighbourSpec`: the two party walls plus the street rows (#310). */
+export type NeighbourFlag = NeighbourSide | 'street' | 'across';
+
+/**
+ * Party-wall neighbour blocks either side, for terraces and semis (#202),
+ * and the rest of the street (#310): `street` continues the row along both
+ * sides for as far as the scenery goes, `across` adds a facing row over the
+ * road. Every house is drawn from `seed`, so the same design always shows
+ * the same street; all fields are optional and absent means the old pair.
+ */
+export interface NeighbourSpec {
+  west?: boolean;
+  east?: boolean;
+  street?: boolean;
+  across?: boolean;
+  /** Integer PRNG seed for the street's variation; see lib/street-row.ts. */
+  seed?: number;
+}
+
+/**
+ * A multi-floor building. `floors[0]` is the ground floor; subsequent
+ * entries stack upward. Footprint and floor-plan upload live on the
+ * building because they're shared across levels.
+ */
+export interface RoomLayout {
+  /** Preserves backend fields until explicitly edited through supported controls. */
+  backendVenue?: Scene['venue'];
+  backendCamera?: Scene['camera'];
+  backendLighting?: Scene['lighting'];
+  id?: string;
+  name: string;
+  width: number;
+  height: number;
+  floors: FloorLayout[];
+  roof?: RoofSpec;
+  floorPlanImage?: string;
+  floorPlanOpacity?: number;
+  floorPlanFitMode?: FloorPlanFitMode;
+  /** Sloped site; absent is flat ground at the ground-floor level. */
+  terrain?: TerrainSpec;
+  neighbours?: NeighbourSpec;
+  /** A recessed porch in the front wall (#204); see lib/street.ts. */
+  entrance?: EntranceSpec;
+  /** 'pavement': the pavement runs right up to the front wall, no front garden. */
+  frontage?: Frontage;
+}
+
+/** Default floor-to-floor height of a storey in metres; see `FloorLayout.height`. */
+export const FLOOR_HEIGHT_METERS = 3;
+
+/** Outdoor weather over the lot (#189). View-only: never part of a RoomLayout. */
+export type Weather = 'clear' | 'rain' | 'snow';
+
+export interface ViewSettings {
+  view2D: boolean;
+  showMeasurements: boolean;
+  showWiFiSignals: boolean;
+  snapToGrid: boolean;
+  snapToWall: boolean;
+  floorPlan3DEffect: boolean;
+  /** Hour of the day in [0, 24); drives the continuous sun-arc lighting. */
+  timeOfDay: number;
+  /** Rain or snow falling over the lot, with matching overcast lighting (#189). */
+  weather: Weather;
+  walkthroughMode: boolean;
+  showOutdoor: boolean;
+  snapToItems: boolean;
+  showMinimap: boolean;
+  /** When true, all floors are rendered together (lower floors translucent). */
+  showAllFloors: boolean;
+  /**
+   * Build-mode wall rendering mode.
+   *  - 'up'      → every wall and the roof fully visible (orbit around the outside)
+   *  - 'cutaway' → walls between the camera and the room hide automatically; roof off
+   *  - 'down'    → all exterior walls + interior walls + roof hidden (top-down planning)
+   */
+  wallDisplay: 'up' | 'cutaway' | 'down';
+  /** When true, clicking on the floor drops measurement points. */
+  measurementMode: boolean;
+  /** When true, the UI plays short Web Audio cues on key actions. */
+  soundsEnabled: boolean;
+  /** When true, clicking pairs of floor points draws an interior wall. */
+  drawWallMode: boolean;
+  /** When true, dragging a rectangle on the 2D plan creates a room zone (#155). */
+  drawZoneMode: boolean;
+  /** When true, the 2D view overlays a price-density heatmap. */
+  showHeatmap: boolean;
+  /** When true, every placed item has a name label hovering above it in 3D. */
+  showItemLabels: boolean;
+  /** When true, animated NPCs wander the active floor. */
+  showNpcs: boolean;
+  /** When true, security cameras project an animated vision cone on the floor. */
+  showCameraVision: boolean;
+}
+
+export type ThemeKey = 'modern' | 'rustic' | 'minimalist' | 'cozy' | 'tropical';
+
+export type GameMode = 'live' | 'build' | 'buy';
+
+export interface SavedLayoutEntry {
+  id: string;
+  name: string;
+  savedAt: number;
+  itemCount: number;
+  floorCount: number;
+}
