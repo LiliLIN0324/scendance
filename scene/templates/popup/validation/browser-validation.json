@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-02",
+  "url": "http://127.0.0.1:8772/popup/",
+  "modelSha256": "763140418e1ed2f9398920c2327e9060f0cd7c04142386245e55b0f4034d8a83",
+  "independentGlbLoad": true,
+  "desktopViewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "mobileViewport": {
+    "width": 390,
+    "height": 844,
+    "horizontalOverflow": false
+  },
+  "checks": {
+    "rotate": true,
+    "zoom": true,
+    "resetView": true,
+    "overview": true,
+    "top": true,
+    "inside": true,
+    "zoneDescription": true,
+    "peopleToggle": true,
+    "lightingRigToggle": true,
+    "screenshotExportVisibleSuccess": true
+  },
+  "attendance": {
+    "min": {
+      "visitors": 8,
+      "visiblePeople": 10
+    },
+    "max": {
+      "visitors": 30,
+      "visiblePeople": 32
+    },
+    "setupVisiblePeople": 2,
+    "launchVisiblePeopleAt30": 32,
+    "closedVisiblePeople": 2
+  },
+  "consoleErrors": [],
+  "limitations": [
+    "Count control changes people only, not furniture",
+    "Exported GLB always contains the default 24 visitors and 2 staff",
+    "Browser viewport emulation, not physical phone validation"
+  ]
+}

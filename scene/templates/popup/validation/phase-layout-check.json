@@ -1,0 +1,10 @@
+{
+  "cases": 92,
+  "issues": [],
+  "bodyRadiusAssumptionMeters": 0.22,
+  "scope": "8–30 visitors in all 4 stages; floor, major furniture footprints and standing-figure spacing; not certified occupancy or crowd simulation",
+  "limitations": [
+    "Plant foliage, service circulation and local codes not evaluated",
+    "Geometry follows concept dimensions; a real site needs measurement"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "provider": "3DAssets.dev",
+  "retrievedDate": "2026-10-02",
+  "totalBytes": 91824,
+  "totalTriangles": 2058,
+  "assets": [
+    {
+      "id": "chair",
+      "title": "Canteen stacking chair (Office Lobby and Building Facilities)",
+      "displayName": "可叠放座椅",
+      "role": "chair",
+      "providerAssetId": "26231",
+      "slug": "office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+      "localPath": "assets/models/chair.glb",
+      "sourceUrl": "https://3dassets.dev/assets/office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+      "metadataUrl": "https://3dassets.dev/api/v1/assets/office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/26231/v1/model.glb",
+      "license": {
+        "slug": "cc0-1.0",
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "bytes": 51616,
+      "triangles": 1022,
+      "sizeMeters": [
+        0.460018,
+        0.886755,
+        0.513697
+      ],
+      "boundingBox": {
+        "min": [
+          -0.230009,
+          0.0,
+          -0.293697
+        ],
+        "max": [
+          0.230009,
+          0.886755,
+          0.22
+        ]
+      },
+      "upAxis": "+Y",
+      "units": "meters",
+      "aiGenerated": true,
+      "notes": "现代浅灰可叠椅，座面约 0.45 m；椅背位于 -Z，乘坐朝向 +Z。",
+      "sha256": "0ef21a9011a00e92766aa88fb434927ccbf85b47d4746c6e39228ca27e2f9813",
+      "validation": {
+        "validGLB": true,
+        "gltfVersion": "2.0",
+        "sceneCount": 1,
+        "nodeCount": 4,
+        "meshes": 3,
+        "materials": 3,
+        "externalResources": false,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "animationNames": []
+      }
+    },
+    {
+      "id": "plant",
+      "title": "Studio Plant Pot (Tattoo and Piercing Studio)",
+      "displayName": "宽叶盆栽",
+      "role": "plant",
+      "providerAssetId": "34557",
+      "slug": "tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+      "localPath": "assets/models/plant.glb",
+      "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+      "metadataUrl": "https://3dassets.dev/api/v1/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/34557/v1/model.glb",
+      "license": {
+        "slug": "cc0-1.0",
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "bytes": 40208,
+      "triangles": 1036,
+      "sizeMeters": [
+        0.809956,
+        1.672433,
+        0.85409
+      ],
+      "boundingBox": {
+        "min": [
+          -0.385434,
+          0.0,
+          -0.458302
+        ],
+        "max": [
+          0.424522,
+          1.672433,
+          0.395788
+        ]
+      },
+      "upAxis": "+Y",
+      "units": "meters",
+      "aiGenerated": true,
+      "notes": "深色支架、白盆、绿色宽叶，含少量品红盆饰；叶片不需外部纹理。",
+      "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a",
+      "validation": {
+        "validGLB": true,
+        "gltfVersion": "2.0",
+        "sceneCount": 1,
+        "nodeCount": 5,
+        "meshes": 4,
+        "materials": 4,
+        "externalResources": false,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "animationNames": []
+      }
+    }
+  ]
+}

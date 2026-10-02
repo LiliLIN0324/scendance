@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "templateId": "popup-fragrance-24-v1",
+  "kind": "complete-scene-template",
+  "displayName": "快闪 02 · 青序自然香氛",
+  "status": "archived",
+  "model": {
+    "path": "popup.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 6522020,
+    "sha256": "763140418e1ed2f9398920c2327e9060f0cd7c04142386245e55b0f4034d8a83",
+    "embeddedImages": 19,
+    "externalResources": 0
+  },
+  "dimensions": {
+    "width": 12,
+    "depth": 8,
+    "floorArea": 96,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Concept dimensions; no surveyed site",
+    "surveyedSize": null
+  },
+  "assumptions": {
+    "visitors": 24,
+    "staff": 2,
+    "activity": "fragrance brand pop-up",
+    "brand": "青序 / FIELD NOTES — fictional example"
+  },
+  "layers": [
+    "Popup_Structure",
+    "Popup_Furniture",
+    "Popup_People",
+    "Popup_Staff",
+    "Popup_LightingRig"
+  ],
+  "capabilities": {
+    "independentGlbLoad": true,
+    "views": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "rotateAndZoom": true,
+    "lightingRigToggle": true,
+    "peopleToggle": true,
+    "zoneLabels": true,
+    "visitorCountControl": {
+      "min": 8,
+      "max": 30,
+      "scope": "Only changes schematic people; furniture remains fixed"
+    },
+    "phases": [
+      "setup",
+      "open",
+      "launch",
+      "closed"
+    ],
+    "screenshotExport": true,
+    "downloadGlbIsFixedDefaultSnapshot": true,
+    "automaticFurnitureRelayout": false,
+    "liveCrowdSimulation": false,
+    "websiteMaterialLibraryConnected": false,
+    "generationApiConnected": false
+  },
+  "provenance": {
+    "authored": "Architecture, counters, products, brand graphics, figures and textures",
+    "furniture": [
+      {
+        "role": "chair",
+        "sourceUrl": "https://3dassets.dev/assets/office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "sha256": "0ef21a9011a00e92766aa88fb434927ccbf85b47d4746c6e39228ca27e2f9813"
+      },
+      {
+        "role": "plant",
+        "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a"
+      }
+    ],
+    "notes": "ASSET-SOURCES.md"
+  },
+  "preview": {
+    "page": "index.html",
+    "images": [
+      "previews/popup-overview.jpg",
+      "previews/popup-top.jpg",
+      "previews/popup-interior.jpg"
+    ]
+  },
+  "validation": {
+    "gltf": "validation/gltf-validation.json",
+    "layout": "validation/layout-check.json",
+    "phases": "validation/phase-layout-check.json",
+    "browser": "validation/browser-validation.json",
+    "modelCounts": {
+      "date": "2026-10-02",
+      "bytes": 6522020,
+      "sha256": "763140418e1ed2f9398920c2327e9060f0cd7c04142386245e55b0f4034d8a83",
+      "validatorVersion": "2.0.0-dev.3.10",
+      "errors": 0,
+      "warnings": 0,
+      "infos": 534,
+      "visitors": 24,
+      "staff": 2,
+      "externalResources": 0,
+      "embeddedImages": 19,
+      "extensionsRequired": [],
+      "nodes": 868,
+      "meshInstances": 774,
+      "triangleInstances": 99322
+    }
+  },
+  "integration": {
+    "frontend": "Standalone scene preview, not integrated with production editor",
+    "backend": "Not registered",
+    "github": {
+      "repository": "https://github.com/LiliLIN0324/scendance",
+      "branch": "codex/gym-scene-template",
+      "path": "scene/templates/popup"
+    }
+  }
+}
