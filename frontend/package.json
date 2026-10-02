@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "next build && node ../scripts/package-pages.mjs",
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx app components lib",
     "typecheck": "tsc --noEmit",
