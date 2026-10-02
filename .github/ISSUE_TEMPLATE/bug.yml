@@ -1,0 +1,58 @@
+name: 缺陷与复验
+description: 记录实际复现的问题，由领域负责人修复、D 复验。
+title: "[缺陷] 简述触发条件与问题"
+body:
+  - type: input
+    id: related_task
+    attributes:
+      label: 关联任务 / Issue
+      placeholder: 例如 A03，Refs #12
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: 影响
+      options:
+        - 阻断核心流程或演示
+        - 功能错误，有可用替代路径
+        - 视觉或文案问题
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      description: 浏览器、设备、网络、页面和版本；网址不要包含有效访问令牌。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期与实际结果
+      value: |
+        预期：
+        实际：
+        截图 / 脱敏日志：
+    validations:
+      required: true
+  - type: textarea
+    id: retest
+    attributes:
+      label: 修复与复验记录
+      description: 修复者补 PR，D 补复验结果；未执行不可写成通过。
+      value: |
+        领域负责人：待认领
+        修复 PR：未提交
+        复验版本与步骤：未执行
+        复验结果：未执行
