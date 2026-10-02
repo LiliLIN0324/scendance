@@ -1,0 +1,62 @@
+name: 任务认领与交付
+description: 从 docs/team/TASKS.md 认领任务，并附验收证据。
+title: "[任务 ID] 任务名称"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        任务范围与依赖以 docs/team/TASKS.json 为准。每项任务只有一名负责人；请将本人设为 Assignee。
+        合并 PR 不等于任务验收完成，验收后由 B 更新任务表，再关闭 Issue。
+  - type: input
+    id: task_id
+    attributes:
+      label: 任务 ID
+      placeholder: 例如 A01；新增任务先在任务表登记
+    validations:
+      required: true
+  - type: dropdown
+    id: owner
+    attributes:
+      label: 领域负责人
+      options:
+        - A · 三维前端
+        - B · 后端、AI 与集成
+        - C · 产品、素材与场景
+        - D · 质量验证与路演
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 本次交付
+      description: 写明负责文件、具体产出，以及需要谁提供什么输入。
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖与交接
+      description: 分别列出开始依赖和完成依赖，关联已有 Issue；没有依赖则写“无”。
+      value: |
+        开始依赖：
+        完成依赖：
+        下一位接收人：
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 从任务卡复制可观察的完成标准，保留未完成项。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 实际证据与阻塞
+      description: 交付时补充 PR、运行命令、截图或测试报告；尚未执行就写“未执行”。不要粘贴密钥。
+      value: |
+        当前状态：todo
+        交付 PR：未提交
+        验证证据：未执行
+        阻塞：无
