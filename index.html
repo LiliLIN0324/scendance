@@ -53,7 +53,6 @@
   /* 运行时由 ui-motion 写入 */
   --p:0;        /* Hero 滚动进度 0→1 */
   --gx:.5;      /* 指针横向 0→1，smoothing 88 的 lerp 结果 */
-  --gy:.5;
 }
 
 *{box-sizing:border-box}
@@ -733,6 +732,7 @@ h2, h3 { line-height: var(--sc-lh-tight); }
 <div id="toast" class="toast" role="status" hidden></div>
 
 <script type="module">
+import { loadCatalogue } from './asset-catalogue.js';
 /* ============================================================
    滚动与指针动效（原 ui-motion 方案）
    目前内联在 index.html；后续可拆为 ui-motion.js 供多页共享
@@ -836,37 +836,28 @@ function glassIn() {
   }, { passive: true });
 }
 
-/* ---- 5. Glass Move：指针跟随，lerp smoothing 88 ----
-   状态放在函数外，避免中途重入时把插值进度归零；监听只注册一次。 ---- */
-const glassState = { tx: .5, ty: .5, cx: .5, cy: .5, running: false };
+/* ---- 5. 玻璃光效只使用横向指针位置 ---- */
 function pointerGlass() {
-  if (!finePointer.matches || reduced()) return;
-  if (pointerGlass.bound) return;
+  if (!finePointer.matches || reduced() || pointerGlass.bound) return;
   pointerGlass.bound = true;
-  const s = glassState;
-  addEventListener('pointermove', (e) => {
-    s.tx = clamp(e.clientX / innerWidth);
-    s.ty = clamp(e.clientY / innerHeight);
-    if (s.running) return;
-    s.running = true;
-    const loop = () => {
-      /* reduce 中途被打开时必须真的停机，而不是让循环空转 */
-      if (reduced()) { s.running = false; return; }
-      s.cx += (s.tx - s.cx) * (1 - 88 / 100);    // smoothing=88 → 每帧保留 88%
-      s.cy += (s.ty - s.cy) * (1 - 88 / 100);
-      root.style.setProperty('--gx', s.cx.toFixed(4));
-      root.style.setProperty('--gy', s.cy.toFixed(4));
-      if (Math.abs(s.tx - s.cx) > .0005 || Math.abs(s.ty - s.cy) > .0005) raf(loop);
-      else s.running = false;
-    };
-    loop();
+  let target = .5, current = .5, running = false;
+  const loop = () => {
+    if (reduced()) { running = false; return; }
+    current += (target - current) * .12;
+    root.style.setProperty('--gx', current.toFixed(4));
+    running = Math.abs(target - current) > .0005;
+    if (running) raf(loop);
+  };
+  addEventListener('pointermove', (event) => {
+    target = clamp(event.clientX / innerWidth);
+    if (!running) loop();
   }, { passive: true });
 }
 
 /* ---- 6. 功能页：与现有 index.html 的行为一致 ----
    分区图例 / 阶段侧栏 / 时间轴 / 里程碑 / 视角切换 / 开关 / 弹窗 / 导出 */
 const $id = (i) => document.getElementById(i);
-let hours = 3, playing = false, lastFrame = 0;
+let hours = 3, playing = false, lastFrame = 0, currentPhase;
 
 const phaseAt = (h) => PHASES.find(p => h >= p.start && h < p.end) || PHASES[PHASES.length - 1];
 const clock = (h) => {
@@ -904,12 +895,15 @@ function setTime(h) {
   $id('timeline').value = String(hours);
   $id('timeline').style.setProperty('--fill', (hours / 48 * 100).toFixed(1) + '%');
   $id('phase-time').textContent = clock(hours);
-  $id('phase-title').textContent = p.title;
-  $id('phase-description').textContent = p.description;
-  $id('phase-focus').textContent = p.focus;
-  $id('phase-actions').innerHTML = p.actions.map(a => `<li>${a}</li>`).join('');
-  const idx = PHASES.indexOf(p);
-  document.querySelectorAll('#milestones button').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.phase) === idx)));
+  if (p !== currentPhase) {
+    currentPhase = p;
+    $id('phase-title').textContent = p.title;
+    $id('phase-description').textContent = p.description;
+    $id('phase-focus').textContent = p.focus;
+    $id('phase-actions').innerHTML = p.actions.map(a => `<li>${a}</li>`).join('');
+    const idx = PHASES.indexOf(p);
+    document.querySelectorAll('#milestones button').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.phase) === idx)));
+  }
   renderers.forEach(r => r.setTime(hours));
 }
 
@@ -941,12 +935,12 @@ function tick(ts) {
 }
 
 function viewTabs() {
-  const views = { walk: 'walk', perspective: 'perspective', top: 'top' };
+  const views = ['walk', 'perspective', 'top'];
   const activate = (id) => {
-    Object.keys(views).forEach(k => $id(k).setAttribute('aria-pressed', String(k === id)));
-    renderers.forEach(r => r.setView(views[id]));
+    views.forEach(k => $id(k).setAttribute('aria-pressed', String(k === id)));
+    renderers.forEach(r => r.setView(id));
   };
-  Object.keys(views).forEach(id => $id(id).addEventListener('click', () => activate(id)));
+  views.forEach(id => $id(id).addEventListener('click', () => activate(id)));
   $id('reset').addEventListener('click', () => { activate('top'); selectZone('teams'); setTime(3); });
   $id('flows').addEventListener('change', (e) => renderers.forEach(r => r.setFlows(e.target.checked)));
   $id('roof').addEventListener('change', (e) => renderers.forEach(r => r.setRoof(e.target.checked)));
@@ -997,8 +991,7 @@ function dialogs() {
 async function showAssetSources() {
   const list = $id('asset-list');
   try {
-    const res = await fetch('./assets/catalogue.json');
-    const cat = await res.json();
+    const cat = await loadCatalogue();
     list.innerHTML = cat.assets.map(a => {
       const size = Array.isArray(a.sizeMeters) ? a.sizeMeters.map(v => v.toFixed(2) + ' m').join(' × ') : '';
       return `<div>
@@ -1108,7 +1101,6 @@ applyMode();
 sysReduce.addEventListener('change', applyMode);
 glassIn();
 functionalPage();
-if (!reduced()) { parallax(); pointerGlass(); }
 reveal();
 /* 三维挂载完成后，把初始阶段与分区同步进去 */
 scene().then(() => { setTime(hours); selectZone(selectedZone); });

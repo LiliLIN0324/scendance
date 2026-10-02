@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { loadCatalogue } from './asset-catalogue.js';
 
 const TAU = Math.PI * 2;
 const PHASES = new Set(['opening', 'build', 'mentoring', 'demo', 'closing']);
@@ -19,6 +20,7 @@ const ZONES = {
 };
 const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
 const v3 = (x, y, z) => new THREE.Vector3(x, y, z);
+const nightColor = new THREE.Color('#334b58'), dayColor = new THREE.Color('#e4e9e5');
 const mat = (color, extras = {}) => new THREE.MeshStandardMaterial({ color, roughness: .72, metalness: .03, ...extras });
 const makeCanvas = (w, h) => { const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h; return canvas; };
 
@@ -30,9 +32,9 @@ export class VenueRenderer {
     this.onStatus = typeof onStatus === 'function' ? onStatus : () => {};
     this.phase = 'opening'; this.hours = 0; this.playing = false; this.flows = true; this.roof = false;
     this.view = 'perspective'; this.selected = 'teams'; this.motionTime = 0; this.lastStamp = null;
-    this.destroyed = false; this.dirty = true; this.frame = null; this.loadedAssets = [];
+    this.destroyed = false; this.dirty = true; this.frame = null;
     this.propPlacements = new Map(); this.propBatches = new Map(); this.pickTargets = [];
-    this.disposables = new Set(); this.pointers = new Map(); this.handlers = {};
+    this.pointers = new Map(); this.handlers = {};
     this.original = { touchAction: canvas.style.touchAction, cursor: canvas.style.cursor, tabIndex: canvas.getAttribute('tabindex') };
     canvas.style.touchAction = 'none'; canvas.style.cursor = 'grab';
     if (!canvas.hasAttribute('tabindex')) canvas.tabIndex = 0;
@@ -311,11 +313,7 @@ export class VenueRenderer {
     this.assetState = { state: 'loading', loaded: 0, total: 5, message: '正在加载 3dassets.dev 的真实 GLB 素材…', assets: [] };
     this.reportStatus();
     try {
-      const response = await fetch(new URL('./assets/catalogue.json', import.meta.url));
-      if (!response.ok) throw new Error(`素材清单 HTTP ${response.status}`);
-      const catalogue = await response.json();
-      if (!Array.isArray(catalogue.assets) || !catalogue.assets.length) throw new Error('素材清单为空');
-      this.catalogue = catalogue;
+      const catalogue = await loadCatalogue();
       const neededRoles = [...this.propPlacements.keys()];
       const entries = neededRoles.map(role => ({ role, entry: catalogue.assets.find(a => a.role === role || a.id === role) }));
       this.assetState.total = entries.length;
@@ -327,7 +325,7 @@ export class VenueRenderer {
           if (this.destroyed) { this.disposeTree(gltf.scene); return { role, ok: false, message: 'renderer destroyed' }; }
           this.installAsset(role, gltf.scene);
           const result = { ...entry, role, ok: true };
-          this.loadedAssets.push(result); this.assetState.loaded++;
+          this.assetState.loaded++;
           this.assetState.assets.push(result); this.assetState.message = `已加载 ${this.assetState.loaded} / ${this.assetState.total} 个真实 GLB 素材`;
           this.reportStatus(); this.renderer.shadowMap.needsUpdate = true; this.invalidate();
           return result;
@@ -549,8 +547,8 @@ export class VenueRenderer {
     this.hemi.intensity = .55 + daylight * 1.45; this.sun.intensity = .12 + daylight * 2.7;
     this.fillLight.intensity = .45 + daylight * .55; this.interiorLight.intensity = (1 - daylight) * 1.4;
     this.stageAccent.intensity = 12 + (1 - daylight) * 12;
-    const color = new THREE.Color('#334b58').lerp(new THREE.Color('#e4e9e5'), daylight);
-    this.scene.background.copy(color); this.scene.fog.color.copy(color);
+    this.scene.background.copy(nightColor).lerp(dayColor, daylight);
+    this.scene.fog.color.copy(this.scene.background);
     this.scene.environmentIntensity = .26 + daylight * .20;
     this.renderer.toneMappingExposure = 1.00 + daylight * .10;
     const minute = Math.round(this.hours * 60);
