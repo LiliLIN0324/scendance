@@ -1079,8 +1079,7 @@ export function RoomOrganizer({ controller: providedController, onShowIntro: _on
     setAiPreview(candidate ? { base: liveLayout.current, candidate } : null);
     if (candidate) { setView(current => ({ ...current, view2D: false })); }
   }, []);
-  const validAiPreview = aiPreview?.base === layout ? aiPreview.candidate : null;
-  const previewCandidate = validAiPreview;
+  const previewCandidate = aiPreview?.base === layout ? aiPreview.candidate : null;
   useProposalPreview({ isReady, threeModuleRef, sceneRef, layout,
     candidate: isActive ? previewCandidate : null, activeFloorIndex, invalidate, requestShadowUpdate });
 
@@ -1177,7 +1176,7 @@ export function RoomOrganizer({ controller: providedController, onShowIntro: _on
             <StatusToastHost/>
           </div>
           {selectedItem && <ItemContextPopover
-            hasCollision={hasCollisions(selectedItem, activeFloor.items, layout.width, layout.height, { keepOut, interiorWalls: activeFloor.interiorWalls })}
+            hasCollision={collidingIds.has(selectedItem.id)}
             onRotate={id => { if (rotateItemHandler(id)) playCue('rotate'); }}
             onToggleCameraBracket={toggleCameraBracket}
             onDuplicate={duplicateSelected}
