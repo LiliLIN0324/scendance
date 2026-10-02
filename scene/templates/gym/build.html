@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>体育馆 · 完整场景模板</title>
+  <style>
+    :root{color-scheme:light;font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;color:#19382e;background:#edf1ec;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}button{font:inherit}header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 30px;border-bottom:1px solid #ccd7cd;background:#f6f8f2}
+    .eyebrow{font-size:11px;letter-spacing:.15em;color:#597367;margin:0 0 6px}h1{font-size:23px;letter-spacing:-.03em;margin:0}header p:last-child{margin:7px 0 0;color:#637a6c;font-size:13px}.badge{padding:8px 12px;border:1px solid #b7cbbd;border-radius:20px;font-size:12px;white-space:nowrap}
+    main{display:grid;grid-template-columns:minmax(0,1fr) 340px;min-height:calc(100vh - 113px)}.stage{position:relative;min-height:660px}canvas{display:block;width:100%;height:100%;min-height:660px;outline:none}.view-controls{position:absolute;left:20px;top:20px;display:flex;gap:8px;flex-wrap:wrap}.view-controls button{border:1px solid #c4d1c5;border-radius:7px;padding:8px 12px;background:#f7faf4e8;color:#234235;cursor:pointer}.canvas-note{position:absolute;left:22px;bottom:18px;margin:0;color:#4c6758;font-size:12px;background:#f8faf1da;padding:7px 10px;border-radius:5px;pointer-events:none}
+    aside{background:#f7f8f1;border-left:1px solid #ccd7cd;padding:26px 23px;display:flex;flex-direction:column;gap:19px}h2{font-size:17px;margin:0 0 8px}.intro{font-size:13px;line-height:1.8;color:#5e7566;margin:0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:13px 18px;margin:0}.stats div{border-top:1px solid #d9e1d5;padding-top:12px}.stats dt{font-size:11px;color:#6b8171;margin-bottom:5px}.stats dd{margin:0;font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}.stats small{font-size:12px;font-weight:400;color:#718374}
+    .status{font-size:13px;line-height:1.7;padding:12px 13px;border-radius:8px;background:#e7ede1;margin:0;overflow-wrap:anywhere}.status[data-kind=error]{background:#fae5dd;color:#953e2c}.status[data-kind=success]{background:#dcebdd;color:#285b35}#save-gym{width:100%;background:#244d3b;border:0;border-radius:8px;color:white;padding:14px 10px;font-weight:600;cursor:pointer}#save-gym:disabled{background:#c5d0c0;color:#71806c;cursor:not-allowed}.export-note{font-size:12px;line-height:1.8;color:#6c806e;margin:0}details{font-size:12px;color:#56705e}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:270px;overflow:auto;font-size:10px;line-height:1.5;background:#edf1e8;padding:12px}
+    @media(max-width:860px){header{padding:18px 20px}.badge{display:none}main{grid-template-columns:1fr}.stage,canvas{height:56vh;min-height:400px}aside{border-left:0;border-top:1px solid #ccd7cd}.stats{grid-template-columns:repeat(3,1fr)}}
+  </style>
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body data-build-state="loading">
+  <header>
+    <div><p class="eyebrow">SCENE TEMPLATE · 01</p><h1>体育馆完整场景</h1><p>25 支团队 · 100 位参与者 · 创作进行中</p></div>
+    <span class="badge">一个场景 · 一个 GLB 文件</span>
+  </header>
+  <main>
+    <section class="stage" aria-label="原体育馆完整场景预览">
+      <canvas id="build-viewport" aria-label="拖动查看体育馆场景"></canvas>
+      <div class="view-controls"><button id="view-overview" type="button">全馆视角</button><button id="view-top" type="button">俯视布局</button><button id="toggle-roof" type="button" aria-pressed="true">屋顶：显示</button></div>
+      <p class="canvas-note">拖动旋转 · 滚轮缩放</p>
+    </section>
+    <aside>
+      <div><h2>保存为完整场景模板</h2><p class="intro">包含场馆壳体、既有看台、篮架、舞台、家具和人物。地面、屏幕与标识贴图一起保存。</p></div>
+      <dl class="stats" id="build-stats">
+        <div><dt>参与者</dt><dd><span id="people-count">—</span> <small>人</small></dd></div>
+        <div><dt>团队</dt><dd><span id="team-count">—</span> <small>组</small></dd></div>
+        <div><dt>真实道具</dt><dd><span id="asset-count">0 / 5</span></dd></div>
+        <div><dt>实际网格</dt><dd><span id="mesh-count">—</span></dd></div>
+        <div><dt>三角形</dt><dd style="font-size:18px"><span id="triangle-count">—</span></dd></div>
+        <div><dt>文件大小</dt><dd style="font-size:18px"><span id="byte-count">尚未导出</span></dd></div>
+      </dl>
+      <p class="status" id="build-status" role="status" aria-live="polite">正在加载体育馆与 5 款真实道具…</p>
+      <button type="button" id="save-gym" disabled>保存完整体育馆场景</button>
+      <p class="status" id="export-status" role="status" aria-live="polite" hidden></p>
+      <p class="export-note">保存文件：gym.glb。屋顶会一同导出，并保留为可单独控制的 Gym_Roof 节点。</p>
+      <details><summary>查看场景数据与来源</summary><pre id="build-report">等待真实素材加载完成。</pre></details>
+    </aside>
+  </main>
+  <script type="module" src="./build-scene.js"></script>
+</body>
+</html>

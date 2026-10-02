@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "templateId": "gym-hackathon-100-v1",
+  "kind": "complete-scene-template",
+  "displayName": "体育馆 01 · 黑客松布置",
+  "status": "archived",
+  "scope": "First scene only, per user review sequence",
+  "model": {
+    "path": "gym.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 3889820,
+    "sha256": "7379b8e0a459f43e788a7163ae58b149ab1f989709e39eea929e187ab6719a93",
+    "embeddedImages": 39,
+    "externalResources": 0
+  },
+  "preview": {
+    "page": "index.html",
+    "images": [
+      "previews/gym-overview.jpg",
+      "previews/gym-top.jpg",
+      "previews/gym-interior.jpg"
+    ]
+  },
+  "assumptions": {
+    "participants": 100,
+    "teamSize": 4,
+    "teams": 25,
+    "activity": "hackathon",
+    "eventHours": 48,
+    "snapshotPhase": "build",
+    "snapshotHour": 3,
+    "basis": "Original user-confirmed conceptual event assumptions; not verified venue capacity"
+  },
+  "dimensions": {
+    "coordinateConvention": "meter-like source coordinates, +Y up",
+    "calibration": "photo-based concept; no surveyed site dimensions",
+    "surveyedSizeMeters": null,
+    "sceneBounds": {
+      "min": [
+        -32.799999952316284,
+        -0.8500000059604644,
+        -35.799999952316284
+      ],
+      "max": [
+        32.29999995231628,
+        15.350000002653486,
+        28.5
+      ]
+    },
+    "boundsMeaning": "Whole visual scene including peripheral decor; not usable floor area"
+  },
+  "components": {
+    "structure": "Gym_Structure_Stage_Signs",
+    "roof": "Gym_Roof",
+    "furniture": "Gym_Furniture",
+    "people": "Gym_People",
+    "participantNaming": "Participant_001 ... Participant_100",
+    "furnitureNaming": "Gym_table_001 etc."
+  },
+  "counts": {
+    "meshInstances": 2097,
+    "triangles": 304192,
+    "teamTables": 25,
+    "allFurniture": {
+      "table": 31,
+      "chair": 109,
+      "laptop": 54,
+      "plant": 11,
+      "speaker": 2
+    },
+    "participants": 100,
+    "extraFlowPeople": 0
+  },
+  "capabilities": {
+    "independentGlbLoad": true,
+    "rotateAndZoom": true,
+    "roofToggle": true,
+    "presetViews": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "editParticipantCountInPage": false,
+    "automaticFurnitureRelayout": false,
+    "reconstructionSourceIncluded": true,
+    "parameterSourceState": "Original construction code has fixed counts; changing them requires implementation"
+  },
+  "integration": {
+    "frontend": "Standalone viewer only; not wired into product",
+    "backend": "Not registered or uploaded",
+    "generationApiConnected": false,
+    "sceneWireSchema": "This manifest is an archive record, not a replacement backend Scene schema",
+    "singleMaterialAssetImportCompatible": false,
+    "reason": "Complete scene exceeds current single-material complexity limits"
+  },
+  "provenance": {
+    "structureAndPeople": "Existing procedural gym example authored in this workspace",
+    "referencePhoto": "assets/venue.jpg; user-supplied reference, no blanket CC0 claim",
+    "furniture": [
+      {
+        "role": "chair",
+        "title": "Canteen stacking chair (Office Lobby and Building Facilities)",
+        "sourceUrl": "https://3dassets.dev/assets/office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/26231/v1/model.glb",
+        "sha256": "0ef21a9011a00e92766aa88fb434927ccbf85b47d4746c6e39228ca27e2f9813",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "table",
+        "title": "Conference table module (Hotel and Resort Operations)",
+        "sourceUrl": "https://3dassets.dev/assets/hotel-and-resort-operations-conference-table-module-a6abb373",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/25917/v1/model.glb",
+        "sha256": "85a08d3f62713c7c78df5a6974b2025b240fae163b795dd61ff1b7011c23f854",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "laptop",
+        "title": "Convertible flip laptop (Computers and Desk Gadgets)",
+        "sourceUrl": "https://3dassets.dev/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/38825/v1/model.glb",
+        "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "plant",
+        "title": "Studio Plant Pot (Tattoo and Piercing Studio)",
+        "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/34557/v1/model.glb",
+        "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "speaker",
+        "title": "PA Speaker on a Stand (Village Hall and Community Events)",
+        "sourceUrl": "https://3dassets.dev/assets/village-hall-and-community-events-pa-speaker-on-stand-7ffa787e",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/35204/v1/model.glb",
+        "sha256": "46083c231cbd4d24dd60ef7306f35577aea7c8b8f6b3f74b8fc4ea160b28106a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      }
+    ],
+    "sourceNotes": "ASSET-SOURCES.md",
+    "generatedByExternalModelApi": false,
+    "exporter": "Existing local Three.js GLTFExporter 0.186.0; runtime 0.186.1; MIT license preserved"
+  },
+  "validation": {
+    "exportReport": "validation/export-report.json",
+    "gltfReport": "validation/gltf-validation.json",
+    "browserReport": "validation/browser-validation.json"
+  },
+  "nextScenePolicy": "User reviews this gym before any next scene is built"
+}

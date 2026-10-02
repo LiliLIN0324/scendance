@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-02",
+  "url": "http://127.0.0.1:8770/",
+  "model": "gym.glb",
+  "modelSha256": "7379b8e0a459f43e788a7163ae58b149ab1f989709e39eea929e187ab6719a93",
+  "independentGlbLoad": true,
+  "visibleStatus": "已归档 · GLB 就绪",
+  "uiCounts": {
+    "meshes": 2097,
+    "triangles": 304192,
+    "meshMaterials": 107
+  },
+  "checks": {
+    "mouseDragRotation": true,
+    "mouseWheelZoom": true,
+    "overviewView": true,
+    "orthographicTopView": true,
+    "interiorView": true,
+    "roofToggle": true,
+    "embeddedFloorScreenSignsVisible": true
+  },
+  "consoleErrors": [],
+  "participantCountChangingImplemented": false,
+  "screenshots": [
+    "previews/gym-overview.jpg",
+    "previews/gym-top.jpg",
+    "previews/gym-interior.jpg",
+    "validation/rotation-check.jpg",
+    "validation/zoom-check.jpg"
+  ],
+  "limitations": [
+    "Photo-concept coordinates, not surveyed venue dimensions",
+    "Static snapshot: editing attendee count does not re-layout furniture",
+    "Standalone local preview; no production integration or cloud registration"
+  ]
+}

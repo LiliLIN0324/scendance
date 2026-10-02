@@ -1,0 +1,165 @@
+{
+  "state": "saved",
+  "saved": true,
+  "bytes": 3889820,
+  "assets": {
+    "loaded": 5,
+    "total": 5,
+    "state": "ready"
+  },
+  "stats": {
+    "people": 100,
+    "teams": 25,
+    "loadedAssetTypes": 5,
+    "phase": "build",
+    "hours": 3,
+    "meshCount": 2097,
+    "lineCount": 8,
+    "triangles": 304192,
+    "uniqueGeometries": 630,
+    "materialCount": 115,
+    "textureCount": 39,
+    "canvasTextureCount": 39,
+    "instanceMeshesExpanded": 1502,
+    "remainingInstancedMeshes": 0,
+    "furniturePlacements": {
+      "table": 31,
+      "chair": 109,
+      "laptop": 54,
+      "plant": 11,
+      "speaker": 2
+    },
+    "roofNode": "Gym_Roof",
+    "roofMeshCount": 369,
+    "bounds": {
+      "min": [
+        -32.799999952316284,
+        -0.8500000059604644,
+        -35.799999952316284
+      ],
+      "max": [
+        32.29999995231628,
+        15.350000002653486,
+        28.5
+      ]
+    },
+    "excluded": {
+      "flowGroup": 1,
+      "backgroundGround": 1,
+      "invisibleHelpers": 1,
+      "lights": 5,
+      "cameras": 0
+    }
+  },
+  "provenance": {
+    "template": "Complete gym hackathon scene",
+    "people": 100,
+    "teams": 25,
+    "phase": "build",
+    "hours": 3,
+    "units": "meters",
+    "upAxis": "+Y",
+    "roofNode": "Gym_Roof",
+    "dimensionStatus": "Photo-based concept coordinates; no on-site measurements or capacity verification.",
+    "provenance": "Existing authored gym baseline with public 3DAssets.dev GLB props; this export does not call a model generation API.",
+    "assets": [
+      {
+        "role": "chair",
+        "title": "Canteen stacking chair (Office Lobby and Building Facilities)",
+        "sourceUrl": "https://3dassets.dev/assets/office-lobby-and-facilities-canteen-stacking-chair-3440c7d8",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/26231/v1/model.glb",
+        "sha256": "0ef21a9011a00e92766aa88fb434927ccbf85b47d4746c6e39228ca27e2f9813",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "table",
+        "title": "Conference table module (Hotel and Resort Operations)",
+        "sourceUrl": "https://3dassets.dev/assets/hotel-and-resort-operations-conference-table-module-a6abb373",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/25917/v1/model.glb",
+        "sha256": "85a08d3f62713c7c78df5a6974b2025b240fae163b795dd61ff1b7011c23f854",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "laptop",
+        "title": "Convertible flip laptop (Computers and Desk Gadgets)",
+        "sourceUrl": "https://3dassets.dev/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/38825/v1/model.glb",
+        "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "plant",
+        "title": "Studio Plant Pot (Tattoo and Piercing Studio)",
+        "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/34557/v1/model.glb",
+        "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      },
+      {
+        "role": "speaker",
+        "title": "PA Speaker on a Stand (Village Hall and Community Events)",
+        "sourceUrl": "https://3dassets.dev/assets/village-hall-and-community-events-pa-speaker-on-stand-7ffa787e",
+        "cdnUrl": "https://cdn.3dassets.dev/assets/35204/v1/model.glb",
+        "sha256": "46083c231cbd4d24dd60ef7306f35577aea7c8b8f6b3f74b8fc4ea160b28106a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "providerReportedAiGenerated": true
+      }
+    ],
+    "exportNotes": [
+      "Ordinary meshes expanded from existing instances; geometries shared.",
+      "100 original participants; the 8 flow-layer walkers are excluded.",
+      "Canvas floor/screen/sign textures embedded.",
+      "Lights, cameras, environment and the 300-unit background plane are excluded."
+    ]
+  },
+  "glb": {
+    "bytes": 3889820,
+    "gltfMeshDefinitions": 642,
+    "gltfNodeCount": 2417,
+    "embeddedImageCount": 39,
+    "embeddedTextureCount": 39,
+    "people": 100,
+    "roofNodes": 1,
+    "externalResources": 0,
+    "extensionsUsed": [
+      "KHR_materials_unlit"
+    ],
+    "extensionsRequired": []
+  },
+  "savedFile": "gym.glb",
+  "saveResponse": {
+    "saved": true,
+    "path": "gym.glb",
+    "bytes": 3889820,
+    "sha256": "7379b8e0a459f43e788a7163ae58b149ab1f989709e39eea929e187ab6719a93"
+  }
+}

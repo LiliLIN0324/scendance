@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#edf0e9">
+  <title>体育馆 01 · 已归档场景</title>
+  <link rel="stylesheet" href="./viewer.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body>
+  <main class="viewer-page">
+    <header class="page-header">
+      <div><p class="eyebrow">SCENE ARCHIVE / 01</p><h1>体育馆 01 <span>/ 已归档场景</span></h1></div>
+      <span id="load-status" class="status" data-state="loading" role="status">读取归档中</span>
+    </header>
+    <div class="workspace">
+      <section class="scene-panel" aria-label="完整体育馆三维场景">
+        <div class="scene-toolbar">
+          <div class="view-buttons" aria-label="观察视角">
+            <button type="button" data-view="overview" aria-pressed="true">总览</button>
+            <button type="button" data-view="top" aria-pressed="false">俯视</button>
+            <button type="button" data-view="inside" aria-pressed="false">场内</button>
+          </div>
+          <label class="roof-toggle"><input id="roof-toggle" type="checkbox"> 显示屋顶</label>
+        </div>
+        <div id="canvas-wrap" class="canvas-wrap">
+          <canvas id="scene" tabindex="0" aria-label="体育馆三维模型，可拖动旋转、滚轮缩放"></canvas>
+          <div id="load-overlay" class="load-overlay"><div><span id="loading-mark" class="loading-mark"></span><strong id="overlay-title">读取完整场景</strong><p id="overlay-message">正在加载 gym.glb…</p><button id="retry" type="button" hidden>重新读取</button></div></div>
+          <div class="canvas-caption"><span id="view-label">总览 · 屋顶隐藏</span><span>拖动旋转 · 滚轮缩放 · 双指操作</span></div>
+        </div>
+      </section>
+      <aside class="details" aria-label="场景归档信息">
+        <p class="eyebrow">HACKATHON VENUE</p><h2>25 团队 / 100 人</h2>
+        <p class="intro">原体育馆的完整空间快照：场馆壳体、看台、舞台，以及 25 组团队桌和参与者示意。</p>
+        <div class="assumption"><strong>照片概念建模 · 非实测</strong><p>人数、团队数量与空间尺度沿用原方案假设。画面用于复核布局，不代表场地实测结果或核定容量。</p></div>
+        <dl class="facts">
+          <div><dt>归档文件</dt><dd>gym.glb</dd></div>
+          <div><dt>加载状态</dt><dd id="load-detail">等待实际模型解析</dd></div>
+          <div><dt>网格 / 三角形</dt><dd id="mesh-stats">—</dd></div>
+          <div><dt>材质</dt><dd id="material-stats">—</dd></div>
+          <div><dt>模型包围尺寸</dt><dd id="bounds-stats">—</dd></div>
+          <div><dt>尺度说明</dt><dd>宽 X × 深 Z × 高 Y；概念米</dd></div>
+        </dl>
+        <div class="downloads"><a id="glb-download" href="./gym.glb" download aria-disabled="true">下载完整场景 GLB <span>↓</span></a><a href="./template.json" target="_blank" rel="noopener">查看场景说明 JSON <span>↗</span></a></div>
+        <p class="footnote">直接读取已归档的 GLB 文件。屋顶开关仅改变显示，不修改归档内容。</p>
+      </aside>
+    </div>
+  </main>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>
