@@ -1,0 +1,420 @@
+{
+  "snapshotPath": "/Users/lwc/Documents/ChatGPT/场景规划Agent产品开发/SNAPSHOTS/pre-deepseek-agent-20261003",
+  "sourceCommit": "188fd9cc5c68a364649998a9d0cf9701db6c739a",
+  "restoreVerification": {
+    "restoredCommit": "188fd9cc5c68a364649998a9d0cf9701db6c739a",
+    "gitFsckPassed": true,
+    "archiveFilesMatchedGitBlobs": 1730
+  },
+  "livePages": {
+    "capturedAt": "2026-10-03T12:55:31.387578+00:00",
+    "data": [
+      {
+        "Id": "5550386c-30dc-444e-a68d-47d4c5c6dd7d",
+        "Environment": "Production",
+        "Branch": "main",
+        "Source": "66344ba",
+        "Deployment": "https://5550386c.scendance-scene-planner.pages.dev",
+        "Status": "3 minutes ago",
+        "Build": "https://dash.cloudflare.com/fd8c05b7baa3126651103f11bb24fe32/pages/view/scendance-scene-planner/5550386c-30dc-444e-a68d-47d4c5c6dd7d"
+      }
+    ]
+  },
+  "liveFunctions": {
+    "capturedAt": "2026-10-03T12:55:26.697693+00:00",
+    "data": [
+      {
+        "created_at": 1790931111574,
+        "entrypoint_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_07ac59ea-2648-4fa1-9200-6a8f9a794c67_15/source/supabase/functions/scene-api/index.ts",
+        "ezbr_sha256": "30e56c4c57d8f53f7bb205ad6176d503363fe5ff5981be8cbca44b9fd1d43c9c",
+        "id": "07ac59ea-2648-4fa1-9200-6a8f9a794c67",
+        "import_map": true,
+        "import_map_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_07ac59ea-2648-4fa1-9200-6a8f9a794c67_15/source/supabase/functions/deno.json",
+        "name": "scene-api",
+        "slug": "scene-api",
+        "status": "ACTIVE",
+        "updated_at": 1791025064340,
+        "verify_jwt": false,
+        "version": 15
+      },
+      {
+        "created_at": 1790931111574,
+        "entrypoint_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_13f605fe-eb0d-4a88-b163-f7c4d7df2f5e_6/source/supabase/functions/generation-worker/index.ts",
+        "ezbr_sha256": "9a67ad36e46fa7b0501c21c1f78f3c161381689f4aa72dbe319940148c43068e",
+        "id": "13f605fe-eb0d-4a88-b163-f7c4d7df2f5e",
+        "import_map": true,
+        "import_map_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_13f605fe-eb0d-4a88-b163-f7c4d7df2f5e_6/source/supabase/functions/deno.json",
+        "name": "generation-worker",
+        "slug": "generation-worker",
+        "status": "ACTIVE",
+        "updated_at": 1791023349859,
+        "verify_jwt": false,
+        "version": 6
+      },
+      {
+        "created_at": 1790994856632,
+        "entrypoint_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_822f9de4-0022-4d37-bfe1-a173c874a556_1/source/supabase/functions/reconstruction-worker/index.ts",
+        "ezbr_sha256": "f18f40698f58817c45c9d203c595e1d4937acac6911b7c7e139b1c82e0c55d1e",
+        "id": "822f9de4-0022-4d37-bfe1-a173c874a556",
+        "import_map": true,
+        "import_map_path": "file:///tmp/user_fn_hrsrrduwbqxnqddkexoy_822f9de4-0022-4d37-bfe1-a173c874a556_1/source/supabase/functions/deno.json",
+        "name": "reconstruction-worker",
+        "slug": "reconstruction-worker",
+        "status": "ACTIVE",
+        "updated_at": 1790994856632,
+        "verify_jwt": false,
+        "version": 2
+      }
+    ]
+  },
+  "liveDatabase": {
+    "capturedAt": "2026-10-03T12:55:37.120989+00:00",
+    "data": {
+      "cron": [
+        {
+          "active": true,
+          "jobname": "scene-generation-poll",
+          "schedule": "* * * * *"
+        },
+        {
+          "active": true,
+          "jobname": "scene-reconstruction-poll",
+          "schedule": "* * * * *"
+        }
+      ],
+      "jobs": [
+        {
+          "count": 2,
+          "state": "rejected"
+        }
+      ],
+      "migrations": [
+        {
+          "name": "scene_core",
+          "version": "20261002060304"
+        },
+        {
+          "name": "scene_jobs",
+          "version": "20261002060307"
+        },
+        {
+          "name": "scene_storage",
+          "version": "20261002060309"
+        },
+        {
+          "name": "scene_demo_admin",
+          "version": "20261002061700"
+        },
+        {
+          "name": "deepseek_daily_budget",
+          "version": "20261002110000"
+        },
+        {
+          "name": "personal_studio",
+          "version": "20261002140000"
+        },
+        {
+          "name": "scene_studios",
+          "version": "20261002150000"
+        },
+        {
+          "name": "shared_model_library",
+          "version": "20261002180000"
+        },
+        {
+          "name": "scene_v2_reconstruction",
+          "version": "20261003090000"
+        },
+        {
+          "name": "studio_management",
+          "version": "20261003094500"
+        },
+        {
+          "name": "project_deletion",
+          "version": "20261003120000"
+        },
+        {
+          "name": "studio_project_visibility",
+          "version": "20261003133000"
+        },
+        {
+          "name": "empty_studio_deletion",
+          "version": "20261003140000"
+        },
+        {
+          "name": "material_variants",
+          "version": "20261003160000"
+        },
+        {
+          "name": "generation_inputs",
+          "version": "20261003161000"
+        },
+        {
+          "name": "unlimited_ai_usage",
+          "version": "20261003180000"
+        }
+      ]
+    }
+  },
+  "rawEdgeBundles": [
+    {
+      "function": "generation-worker",
+      "format": "ESZIP2.3",
+      "rawBytes": 17024942,
+      "rawSha256": "61f0ac5b8470ce79cde3c71161ee12b0a5f30ce16ab2b86b94e355c2fa748d91",
+      "allSectionsComplete": true,
+      "modules": 1510,
+      "recoveredOriginalFiles": [
+        {
+          "path": "supabase/functions/generation-worker/index.ts",
+          "sha256": "4c0494b2e50e5091112122bbe2a97385a4750f9eb58121105a87653918b278bd",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/backend.ts",
+          "sha256": "4926feb8c10b7e324980aa0a11990b7f152a7e3fff4299b65c5922b6a580cbd0",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/domain.ts",
+          "sha256": "3694acda9e73fdb9ab9225ed536d37465e3c69b12137ee17abcc8f06483e260e",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/structural-geometry.ts",
+          "sha256": "1ab3f57eb16ee50ab5aba295061d7b73175971d34121a3639c613faf1c96cbbf",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/http.ts",
+          "sha256": "b1fad49820521216cd37fb1182407b4598bb4027c81827130948d417d056768a",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/worker-handler.ts",
+          "sha256": "0f71895108f95d0d29538fdf80a01d091b103bea9e4836798b12178f8d9abb62",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/worker.ts",
+          "sha256": "45dc4ca6d641ff15d0d1d207516c426d121aa7d8d3eb7e9678d38d651b35fa63",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/generation-quality.ts",
+          "sha256": "283ac531ceafb817a2497a2e5ff5a0bee2dffda05a87daa2ae571dea915843dd",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/models.ts",
+          "sha256": "6590534e8b8d12df8136e28cdb18a06037100c4dd47cbf3426b5c224deb2ff8f",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/assets.ts",
+          "sha256": "94c9c725c2845783a1893256abd16fb3cb1dd428d37de334f9862bbc25bcb768",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/providers.ts",
+          "sha256": "a51697d919adce6c70a182d1e0455b64a28494c7c2c60d690e21801efe181366",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/ai.ts",
+          "sha256": "ab8afe34ea279ccc86f21a9a63b1bc43299613069cd39bd5e0d6875c1b7948cc",
+          "matchesBaseline": false
+        },
+        {
+          "path": "supabase/functions/_shared/agent-material-contract.ts",
+          "sha256": "c4c76a2fb1358f630cab72bea321598247f3dac42c6b9cef834df4de67fa0911",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/asset-customization-contract.ts",
+          "sha256": "5949aca578ecba07cedd07e79bf7b44db98c942b5525844eee3932558e2648b0",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/scene-resources.ts",
+          "sha256": "78c7b76108c711e27ce857508e2371a55cd2653e72b254d251ebdc416c3ca3e3",
+          "matchesBaseline": false
+        },
+        {
+          "path": "assets/library/online.json",
+          "sha256": "1df02ce8da01ddf04963f41038295797027c78524dec48f7b0d45add4999e961",
+          "matchesBaseline": true
+        }
+      ],
+      "supplementalFiles": [
+        "supabase/config.toml",
+        "supabase/functions/_shared/generation-contract.ts",
+        "supabase/functions/deno.json"
+      ]
+    },
+    {
+      "function": "reconstruction-worker",
+      "format": "ESZIP2.3",
+      "rawBytes": 14533152,
+      "rawSha256": "5109d7a4884838f6a0b4fb96157641d003babe68488b6337fb107ee3fd42eb33",
+      "allSectionsComplete": true,
+      "modules": 1425,
+      "recoveredOriginalFiles": [
+        {
+          "path": "supabase/functions/reconstruction-worker/index.ts",
+          "sha256": "b326a2abcbf2a9cfa06dadf64008bbd58f231dfa7a6bf6eeee93819980d4963f",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/backend.ts",
+          "sha256": "4926feb8c10b7e324980aa0a11990b7f152a7e3fff4299b65c5922b6a580cbd0",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/domain.ts",
+          "sha256": "3694acda9e73fdb9ab9225ed536d37465e3c69b12137ee17abcc8f06483e260e",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/structural-geometry.ts",
+          "sha256": "1ab3f57eb16ee50ab5aba295061d7b73175971d34121a3639c613faf1c96cbbf",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/http.ts",
+          "sha256": "b1fad49820521216cd37fb1182407b4598bb4027c81827130948d417d056768a",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/reconstruction-handler.ts",
+          "sha256": "fe3c8486971394c494480631ad479879378a1313f163490d144478134f2c1b15",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/reconstruction.ts",
+          "sha256": "26d911e53c6fd478f9b87e7ca8df2186606eedbb57366f3e5ac485348e5b0606",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/reconstruction-contract.ts",
+          "sha256": "f0ef8c64ee9b0a361b69576ca7204d8f41cfe51ff024784e73387479936508dd",
+          "matchesBaseline": true
+        }
+      ],
+      "supplementalFiles": [
+        "supabase/config.toml",
+        "supabase/functions/deno.json"
+      ]
+    },
+    {
+      "function": "scene-api",
+      "format": "ESZIP2.3",
+      "rawBytes": 17526412,
+      "rawSha256": "0a2595f867f81281a41f486b95879f0bfe1c4a1e6ea9b36ba64ed33155a26b0d",
+      "allSectionsComplete": true,
+      "modules": 1513,
+      "recoveredOriginalFiles": [
+        {
+          "path": "supabase/functions/scene-api/index.ts",
+          "sha256": "9110a05a49d9bb9444b687f85b32cf3ac586ee688b8f55c83a49f8cf3a1a6a23",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/backend.ts",
+          "sha256": "4926feb8c10b7e324980aa0a11990b7f152a7e3fff4299b65c5922b6a580cbd0",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/domain.ts",
+          "sha256": "3694acda9e73fdb9ab9225ed536d37465e3c69b12137ee17abcc8f06483e260e",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/structural-geometry.ts",
+          "sha256": "1ab3f57eb16ee50ab5aba295061d7b73175971d34121a3639c613faf1c96cbbf",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/http.ts",
+          "sha256": "b1fad49820521216cd37fb1182407b4598bb4027c81827130948d417d056768a",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/api.ts",
+          "sha256": "679c9a5793b92fbbb21b27e39932bf98abc0994edaa904e3f4c540baf95cc610",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/reconstruction-contract.ts",
+          "sha256": "f0ef8c64ee9b0a361b69576ca7204d8f41cfe51ff024784e73387479936508dd",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/assets.ts",
+          "sha256": "94c9c725c2845783a1893256abd16fb3cb1dd428d37de334f9862bbc25bcb768",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/models.ts",
+          "sha256": "6590534e8b8d12df8136e28cdb18a06037100c4dd47cbf3426b5c224deb2ff8f",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/providers.ts",
+          "sha256": "a51697d919adce6c70a182d1e0455b64a28494c7c2c60d690e21801efe181366",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/ai.ts",
+          "sha256": "b7001152e94a9301e73ac2bfaf3b5854ee75d83f224cc7ce511047fc0aa7071e",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/agent-material-contract.ts",
+          "sha256": "c4c76a2fb1358f630cab72bea321598247f3dac42c6b9cef834df4de67fa0911",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/asset-customization-contract.ts",
+          "sha256": "5949aca578ecba07cedd07e79bf7b44db98c942b5525844eee3932558e2648b0",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/scene-resources.ts",
+          "sha256": "7418e8b148324dfc583e20e924c6fb8772d3e24ee746c2d5f87cc7cd664810d4",
+          "matchesBaseline": true
+        },
+        {
+          "path": "assets/library/merged.json",
+          "sha256": "e87d3266a5abc3546b77ab19177b114450981ec75762a7997d64d1bd9a4a2a3b",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/generation-input.ts",
+          "sha256": "2efe09ce8ab52f535828bcf22a7baa4c88c7b78fb3054ca74ba976d70f7343a6",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/generation-contract.ts",
+          "sha256": "234cf732ea6209f62b56756bda73ff70055fe821385511f5acb537707e556015",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/generation-quality.ts",
+          "sha256": "283ac531ceafb817a2497a2e5ff5a0bee2dffda05a87daa2ae571dea915843dd",
+          "matchesBaseline": true
+        },
+        {
+          "path": "supabase/functions/_shared/material-variants.ts",
+          "sha256": "48b9b6a7efe878989fb3e67fc54bd501057c1a0c16c8a63432af2dd564081e58",
+          "matchesBaseline": true
+        }
+      ],
+      "supplementalFiles": [
+        "supabase/config.toml",
+        "supabase/functions/deno.json"
+      ]
+    }
+  ],
+  "productionMutationsPerformed": false
+}
