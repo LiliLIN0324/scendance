@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-02T15:06:11.792Z",
+  "modelSha256": "8c97348f9c621760d83cfe9062562500c1306a36f96607c186320c30ab5f94bc",
+  "cases": 164,
+  "range": [
+    20,
+    60
+  ],
+  "phases": [
+    "setup",
+    "open",
+    "launch",
+    "closed"
+  ],
+  "exportedChairs": 60,
+  "issues": [],
+  "scope": "Uses the production attendance function, exported chair world bounds, 0.22m schematic person radius, floor bounds, fixed major furniture footprints, person spacing and 1.8m centre walkway. Intentional seated chair contact and stage speaker support are allowed.",
+  "notChecked": [
+    "Detailed body-to-chair fit",
+    "Canopy posts and foliage",
+    "Continuous walking and queue simulation",
+    "Ground slope, weather, structural or regulatory capacity"
+  ],
+  "firstChairSize": [
+    0.43576259279129514,
+    0.8399999972962553,
+    0.4866112310136119
+  ]
+}

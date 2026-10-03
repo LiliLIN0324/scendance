@@ -1,0 +1,424 @@
+{
+  "provider": "3dassets.dev",
+  "providerApi": "https://3dassets.dev/api/v1",
+  "sourceRetrievedAt": "2026-10-02T09:43:36Z",
+  "copiedAndHashVerifiedDate": "2026-10-02",
+  "license": "CC0 1.0 Universal",
+  "attributionRequired": false,
+  "modelCount": 6,
+  "totalBytes": 395968,
+  "sizeConvention": "sizeMeters=[width,depth,height]; geometry.sizeXYZm=[width,height,depth]",
+  "assets": [
+    {
+      "slug": "medieval-monastery-and-scriptorium-trestle-table-2a0801e0",
+      "name": "Trestle Table (Medieval Monastery and Scriptorium)",
+      "zh": "桌子",
+      "bucket": "tables",
+      "category": "tables",
+      "subcategory": "桌子",
+      "query": "table",
+      "sizeMeters": [
+        1.9,
+        0.82,
+        0.862
+      ],
+      "triangles": 1692,
+      "bytes": 36696,
+      "thumb": "assets/library/thumb/medieval-monastery-and-scriptorium-trestle-table-2a0801e0.webp",
+      "glb": "assets/library/model/medieval-monastery-and-scriptorium-trestle-table-2a0801e0.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/37419/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/medieval-monastery-and-scriptorium-trestle-table-2a0801e0",
+      "sha256": "774b974756875549fd608e72f11cd24c6c1fdcb0d1c9f18381845591c2f446fc",
+      "id": "table",
+      "localPath": "assets/models/table.glb",
+      "localThumb": "assets/thumb/table.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/medieval-monastery-and-scriptorium-trestle-table-2a0801e0",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -0.95,
+          -2.6e-05,
+          -0.409984
+        ],
+        "max": [
+          0.95,
+          0.861924,
+          0.409984
+        ],
+        "sizeXYZm": [
+          1.9,
+          0.86195,
+          0.819968
+        ],
+        "triangles": 1692,
+        "externalResources": false,
+        "images": 0,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "KHR_mesh_quantization"
+        ],
+        "materials": 4,
+        "imageMimeTypes": [],
+        "materialNames": [
+          "pine",
+          "oak",
+          "ashlar",
+          "iron"
+        ]
+      }
+    },
+    {
+      "slug": "bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+      "name": "Dining Chair Timber (Bedroom and Living Room Furniture)",
+      "zh": "椅子",
+      "bucket": "seating",
+      "category": "seating",
+      "subcategory": "座椅",
+      "query": "chair",
+      "sizeMeters": [
+        0.49,
+        0.471,
+        1.003
+      ],
+      "triangles": 672,
+      "bytes": 29684,
+      "thumb": "assets/library/thumb/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7.webp",
+      "glb": "assets/library/model/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/38784/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+      "sha256": "41ceb2de779a5f237bc4b77101199362e36a9526b3d8a64003d4404746cb7380",
+      "id": "chair",
+      "localPath": "assets/models/chair.glb",
+      "localThumb": "assets/thumb/chair.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -0.244842,
+          0.0,
+          -0.235661
+        ],
+        "max": [
+          0.244842,
+          1.002779,
+          0.235661
+        ],
+        "sizeXYZm": [
+          0.489684,
+          1.002779,
+          0.471322
+        ],
+        "triangles": 672,
+        "externalResources": false,
+        "images": 0,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "KHR_mesh_quantization"
+        ],
+        "materials": 2,
+        "imageMimeTypes": [],
+        "materialNames": [
+          "oak",
+          "walnut"
+        ]
+      }
+    },
+    {
+      "slug": "street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+      "name": "Planter with Shrub (Street Food Market and Food Trucks)",
+      "zh": "盆栽",
+      "bucket": "plants",
+      "category": "plants",
+      "subcategory": "盆栽",
+      "query": "potted plant",
+      "sizeMeters": [
+        0.94,
+        0.93,
+        1.307
+      ],
+      "triangles": 276,
+      "bytes": 15832,
+      "thumb": "assets/library/thumb/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e.webp",
+      "glb": "assets/library/model/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/34303/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+      "sha256": "5ff09e626c231efe65a4c163caea4b5fd84d002da304749161e472c666454f20",
+      "id": "planter",
+      "localPath": "assets/models/planter.glb",
+      "localThumb": "assets/thumb/planter.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -0.47,
+          -2.6e-05,
+          -0.450008
+        ],
+        "max": [
+          0.47,
+          1.307004,
+          0.480008
+        ],
+        "sizeXYZm": [
+          0.94,
+          1.30703,
+          0.930017
+        ],
+        "triangles": 276,
+        "externalResources": false,
+        "images": 0,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "KHR_mesh_quantization"
+        ],
+        "materials": 3,
+        "imageMimeTypes": [],
+        "materialNames": [
+          "timber",
+          "charcoal",
+          "leaf"
+        ]
+      }
+    },
+    {
+      "slug": "bunker-shelter-construction-waste-bin-foot-pedal-f50124e7",
+      "name": "Waste Bin Foot Pedal (Underground Bunker and Survivor Hideout)",
+      "zh": "垃圾桶",
+      "bucket": "logistics",
+      "category": "logistics",
+      "subcategory": "清洁",
+      "query": "trash bin",
+      "sizeMeters": [
+        0.45,
+        0.518,
+        0.7
+      ],
+      "triangles": 120,
+      "bytes": 14168,
+      "thumb": "assets/library/thumb/bunker-shelter-construction-waste-bin-foot-pedal-f50124e7.webp",
+      "glb": "assets/library/model/bunker-shelter-construction-waste-bin-foot-pedal-f50124e7.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/23358/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/bunker-shelter-construction-waste-bin-foot-pedal-f50124e7",
+      "sha256": "3138813599ae643bae98c0d1c0765b5d9e2c47172a892df095e1fe41eddc74e6",
+      "id": "bin",
+      "localPath": "assets/models/bin.glb",
+      "localThumb": "assets/thumb/bin.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/bunker-shelter-construction-waste-bin-foot-pedal-f50124e7",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -0.225016,
+          0.0,
+          -0.258766
+        ],
+        "max": [
+          0.225016,
+          0.7,
+          0.258755
+        ],
+        "sizeXYZm": [
+          0.450032,
+          0.7,
+          0.517521
+        ],
+        "triangles": 120,
+        "externalResources": false,
+        "images": 1,
+        "extensionsUsed": [
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "materials": 2,
+        "imageMimeTypes": [
+          "image/webp"
+        ],
+        "materialNames": [
+          "wood",
+          "metal"
+        ]
+      }
+    },
+    {
+      "slug": "hero-shooter-harbour-payload-cafe-parasol-3af84c9f",
+      "name": "Cafe Parasol (Hero Shooter Harbour Payload)",
+      "zh": "遮阳伞",
+      "bucket": "structure",
+      "category": "structure",
+      "subcategory": "临时建筑",
+      "query": "cafe parasol",
+      "sizeMeters": [
+        2.52,
+        2.52,
+        2.72
+      ],
+      "triangles": 724,
+      "bytes": 248196,
+      "thumb": "assets/library/thumb/hero-shooter-harbour-payload-cafe-parasol-3af84c9f.webp",
+      "glb": "assets/library/model/hero-shooter-harbour-payload-cafe-parasol-3af84c9f.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/27712/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/hero-shooter-harbour-payload-cafe-parasol-3af84c9f",
+      "sha256": "5711e4a9ea8f34e54f9c945109c3964a8b7654aed97fcb396e056fc814522d43",
+      "id": "parasol",
+      "localPath": "assets/models/parasol.glb",
+      "localThumb": "assets/thumb/parasol.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/hero-shooter-harbour-payload-cafe-parasol-3af84c9f",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -1.26,
+          -1.2e-05,
+          -1.26
+        ],
+        "max": [
+          1.26,
+          2.72,
+          1.26
+        ],
+        "sizeXYZm": [
+          2.52,
+          2.720012,
+          2.52
+        ],
+        "triangles": 724,
+        "externalResources": false,
+        "images": 2,
+        "extensionsUsed": [
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "materials": 5,
+        "imageMimeTypes": [
+          "image/webp",
+          "image/webp"
+        ],
+        "materialNames": [
+          "stone",
+          "wood",
+          "plaster",
+          "coral",
+          "sun"
+        ]
+      }
+    },
+    {
+      "slug": "live-music-venue-and-festival-stage-microphone-on-boom-b553a46d",
+      "name": "Microphone on a Boom Stand (Live Music Venue and Festival Stage)",
+      "zh": "麦克风",
+      "bucket": "stage",
+      "category": "stage",
+      "subcategory": "音响",
+      "query": "microphone",
+      "sizeMeters": [
+        1.222,
+        0.576,
+        1.838
+      ],
+      "triangles": 1256,
+      "bytes": 51392,
+      "thumb": "assets/library/thumb/live-music-venue-and-festival-stage-microphone-on-boom-b553a46d.webp",
+      "glb": "assets/library/model/live-music-venue-and-festival-stage-microphone-on-boom-b553a46d.glb",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/33914/v1/model.glb",
+      "pageUrl": "https://3dassets.dev/assets/live-music-venue-and-festival-stage-microphone-on-boom-b553a46d",
+      "sha256": "ce4e75c881e8186395ec196ea4bbd6a747b4904f2c0811ba7e4beadf5b7dcfa0",
+      "id": "microphone",
+      "localPath": "assets/models/microphone.glb",
+      "localThumb": "assets/thumb/microphone.webp",
+      "sourceCatalogue": "assets/library/catalogue.json",
+      "sourceUrl": "https://3dassets.dev/assets/live-music-venue-and-festival-stage-microphone-on-boom-b553a46d",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "hashVerified": true,
+      "geometry": {
+        "validGLBHeader": true,
+        "gltfVersion": "2.0",
+        "min": [
+          -0.329745,
+          0.0,
+          -0.197977
+        ],
+        "max": [
+          0.89253,
+          1.838182,
+          0.377977
+        ],
+        "sizeXYZm": [
+          1.222275,
+          1.838182,
+          0.575954
+        ],
+        "triangles": 1256,
+        "externalResources": false,
+        "images": 0,
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ],
+        "extensionsRequired": [
+          "KHR_mesh_quantization"
+        ],
+        "materials": 2,
+        "imageMimeTypes": [],
+        "materialNames": [
+          "metal",
+          "black"
+        ]
+      }
+    }
+  ]
+}

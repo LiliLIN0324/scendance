@@ -1,0 +1,875 @@
+{
+  "file": "market.glb",
+  "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+  "bytes": 6650276,
+  "checkedAt": "2026-10-02T15:28:58.064Z",
+  "coordinateSystem": "glTF Y-up, metres",
+  "scope": "Static concept layout only. The model includes no visitors or vendors; dimensions are design assumptions. This is not site measurement, pedestrian simulation, fire approval, structural, weather, or event-operating verification.",
+  "site": {
+    "width": 30,
+    "depth": 22,
+    "area": 660
+  },
+  "currentPhase": "open",
+  "footprintCount": 62,
+  "aisleCount": 5,
+  "method": {
+    "people": "Not applicable: no people are included in this version.",
+    "furniture": "Declared ground occupancy only; overhead parasol canopies are excluded in favor of their base footprints. Not all small props have footprints.",
+    "geometry": "Actual binary POSITION accessors, normalized integers, sparse updates, node transforms and scene hierarchy are evaluated without executing model.js. No skin/morph pose interpretation.",
+    "limits": "Ground footprint checks do not model human motion, reachable clearance or legal capacity. Thin parts and overhead elements require visual review."
+  },
+  "footprintOutside": [],
+  "footprintOverlaps": [
+    {
+      "a": "stage",
+      "b": "stage-step",
+      "width": 1.5,
+      "depth": 0.02,
+      "area": 0.03,
+      "classification": "expected-stage-step-contact",
+      "explanation": "The stage step intentionally meets the platform; 2D rectangles overlap at that joint. This planned contact is recorded separately from unexplained overlaps."
+    }
+  ],
+  "furnitureInAisles": [],
+  "peopleChecks": {
+    "applicable": false,
+    "reason": "People have been removed at the user request. Visitor collision, phase-position and vendor clearance checks do not apply; absence of visitor/vendor nodes and empty position lists are asserted in countChecks."
+  },
+  "footprintGeometryChecks": [
+    {
+      "id": "Stall_01",
+      "category": "stall",
+      "declared": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": -7.6,
+        "maxZ": -4.4
+      },
+      "geometryXZ": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": -7.6,
+        "maxZ": -4.4
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_02",
+      "category": "stall",
+      "declared": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": -3.6,
+        "maxZ": -0.3999999999999999
+      },
+      "geometryXZ": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": -3.6,
+        "maxZ": -0.4
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_03",
+      "category": "stall",
+      "declared": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": 0.3999999999999999,
+        "maxZ": 3.6
+      },
+      "geometryXZ": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": 0.4,
+        "maxZ": 3.6
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_04",
+      "category": "stall",
+      "declared": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": 4.4,
+        "maxZ": 7.6
+      },
+      "geometryXZ": {
+        "minX": -12.2,
+        "maxX": -9.8,
+        "minZ": 4.4,
+        "maxZ": 7.6
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_05",
+      "category": "stall",
+      "declared": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": -7.6,
+        "maxZ": -4.4
+      },
+      "geometryXZ": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": -7.6,
+        "maxZ": -4.4
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_06",
+      "category": "stall",
+      "declared": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": -3.6,
+        "maxZ": -0.3999999999999999
+      },
+      "geometryXZ": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": -3.6,
+        "maxZ": -0.4
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_07",
+      "category": "stall",
+      "declared": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": 0.3999999999999999,
+        "maxZ": 3.6
+      },
+      "geometryXZ": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": 0.4,
+        "maxZ": 3.6
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_08",
+      "category": "stall",
+      "declared": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": 4.4,
+        "maxZ": 7.6
+      },
+      "geometryXZ": {
+        "minX": 9.8,
+        "maxX": 12.2,
+        "minZ": 4.4,
+        "maxZ": 7.6
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_09",
+      "category": "stall",
+      "declared": {
+        "minX": -7.6,
+        "maxX": -4.4,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "geometryXZ": {
+        "minX": -7.6,
+        "maxX": -4.4,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_10",
+      "category": "stall",
+      "declared": {
+        "minX": -3.6,
+        "maxX": -0.3999999999999999,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "geometryXZ": {
+        "minX": -3.6,
+        "maxX": -0.4,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_11",
+      "category": "stall",
+      "declared": {
+        "minX": 0.3999999999999999,
+        "maxX": 3.6,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "geometryXZ": {
+        "minX": 0.4,
+        "maxX": 3.6,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Stall_12",
+      "category": "stall",
+      "declared": {
+        "minX": 4.4,
+        "maxX": 7.6,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "geometryXZ": {
+        "minX": 4.4,
+        "maxX": 7.6,
+        "minZ": -9.2,
+        "maxZ": -6.8
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_table_841",
+      "category": "asset",
+      "declared": {
+        "minX": -4.14865700249913,
+        "maxX": -2.45134299750087,
+        "minZ": 1.7837516808880824,
+        "maxZ": 2.5162483191119174
+      },
+      "geometryXZ": {
+        "minX": -4.148657,
+        "maxX": -2.451343,
+        "minZ": 1.783752,
+        "maxZ": 2.516248
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_842",
+      "category": "asset",
+      "declared": {
+        "minX": -4.059980468153935,
+        "maxX": -3.6400195318460646,
+        "minZ": 1.2678933072908716,
+        "maxZ": 1.672106692709128
+      },
+      "geometryXZ": {
+        "minX": -4.05998,
+        "maxX": -3.64002,
+        "minZ": 1.267893,
+        "maxZ": 1.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_843",
+      "category": "asset",
+      "declared": {
+        "minX": -4.059980468153935,
+        "maxX": -3.6400195318460646,
+        "minZ": 2.627893307290872,
+        "maxZ": 3.032106692709128
+      },
+      "geometryXZ": {
+        "minX": -4.05998,
+        "maxX": -3.64002,
+        "minZ": 2.627893,
+        "maxZ": 3.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_844",
+      "category": "asset",
+      "declared": {
+        "minX": -2.9599804681539355,
+        "maxX": -2.5400195318460645,
+        "minZ": 1.2678933072908716,
+        "maxZ": 1.672106692709128
+      },
+      "geometryXZ": {
+        "minX": -2.95998,
+        "maxX": -2.54002,
+        "minZ": 1.267893,
+        "maxZ": 1.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_845",
+      "category": "asset",
+      "declared": {
+        "minX": -2.9599804681539355,
+        "maxX": -2.5400195318460645,
+        "minZ": 2.627893307290872,
+        "maxZ": 3.032106692709128
+      },
+      "geometryXZ": {
+        "minX": -2.95998,
+        "maxX": -2.54002,
+        "minZ": 2.627893,
+        "maxZ": 3.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_table_848",
+      "category": "asset",
+      "declared": {
+        "minX": -4.14865700249913,
+        "maxX": -2.45134299750087,
+        "minZ": 3.7837516808880833,
+        "maxZ": 4.516248319111917
+      },
+      "geometryXZ": {
+        "minX": -4.148657,
+        "maxX": -2.451343,
+        "minZ": 3.783752,
+        "maxZ": 4.516248
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_849",
+      "category": "asset",
+      "declared": {
+        "minX": -4.059980468153935,
+        "maxX": -3.6400195318460646,
+        "minZ": 3.2678933072908722,
+        "maxZ": 3.672106692709128
+      },
+      "geometryXZ": {
+        "minX": -4.05998,
+        "maxX": -3.64002,
+        "minZ": 3.267893,
+        "maxZ": 3.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_850",
+      "category": "asset",
+      "declared": {
+        "minX": -4.059980468153935,
+        "maxX": -3.6400195318460646,
+        "minZ": 4.627893307290872,
+        "maxZ": 5.032106692709128
+      },
+      "geometryXZ": {
+        "minX": -4.05998,
+        "maxX": -3.64002,
+        "minZ": 4.627893,
+        "maxZ": 5.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_851",
+      "category": "asset",
+      "declared": {
+        "minX": -2.9599804681539355,
+        "maxX": -2.5400195318460645,
+        "minZ": 3.2678933072908722,
+        "maxZ": 3.672106692709128
+      },
+      "geometryXZ": {
+        "minX": -2.95998,
+        "maxX": -2.54002,
+        "minZ": 3.267893,
+        "maxZ": 3.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_852",
+      "category": "asset",
+      "declared": {
+        "minX": -2.9599804681539355,
+        "maxX": -2.5400195318460645,
+        "minZ": 4.627893307290872,
+        "maxZ": 5.032106692709128
+      },
+      "geometryXZ": {
+        "minX": -2.95998,
+        "maxX": -2.54002,
+        "minZ": 4.627893,
+        "maxZ": 5.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_table_855",
+      "category": "asset",
+      "declared": {
+        "minX": 2.45134299750087,
+        "maxX": 4.14865700249913,
+        "minZ": 1.7837516808880824,
+        "maxZ": 2.5162483191119174
+      },
+      "geometryXZ": {
+        "minX": 2.451343,
+        "maxX": 4.148657,
+        "minZ": 1.783752,
+        "maxZ": 2.516248
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_856",
+      "category": "asset",
+      "declared": {
+        "minX": 2.5400195318460645,
+        "maxX": 2.9599804681539355,
+        "minZ": 1.2678933072908716,
+        "maxZ": 1.672106692709128
+      },
+      "geometryXZ": {
+        "minX": 2.54002,
+        "maxX": 2.95998,
+        "minZ": 1.267893,
+        "maxZ": 1.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_857",
+      "category": "asset",
+      "declared": {
+        "minX": 2.5400195318460645,
+        "maxX": 2.9599804681539355,
+        "minZ": 2.627893307290872,
+        "maxZ": 3.032106692709128
+      },
+      "geometryXZ": {
+        "minX": 2.54002,
+        "maxX": 2.95998,
+        "minZ": 2.627893,
+        "maxZ": 3.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_858",
+      "category": "asset",
+      "declared": {
+        "minX": 3.6400195318460646,
+        "maxX": 4.059980468153935,
+        "minZ": 1.2678933072908716,
+        "maxZ": 1.672106692709128
+      },
+      "geometryXZ": {
+        "minX": 3.64002,
+        "maxX": 4.05998,
+        "minZ": 1.267893,
+        "maxZ": 1.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_859",
+      "category": "asset",
+      "declared": {
+        "minX": 3.6400195318460646,
+        "maxX": 4.059980468153935,
+        "minZ": 2.627893307290872,
+        "maxZ": 3.032106692709128
+      },
+      "geometryXZ": {
+        "minX": 3.64002,
+        "maxX": 4.05998,
+        "minZ": 2.627893,
+        "maxZ": 3.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_table_862",
+      "category": "asset",
+      "declared": {
+        "minX": 2.45134299750087,
+        "maxX": 4.14865700249913,
+        "minZ": 3.7837516808880833,
+        "maxZ": 4.516248319111917
+      },
+      "geometryXZ": {
+        "minX": 2.451343,
+        "maxX": 4.148657,
+        "minZ": 3.783752,
+        "maxZ": 4.516248
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_863",
+      "category": "asset",
+      "declared": {
+        "minX": 2.5400195318460645,
+        "maxX": 2.9599804681539355,
+        "minZ": 3.2678933072908722,
+        "maxZ": 3.672106692709128
+      },
+      "geometryXZ": {
+        "minX": 2.54002,
+        "maxX": 2.95998,
+        "minZ": 3.267893,
+        "maxZ": 3.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_864",
+      "category": "asset",
+      "declared": {
+        "minX": 2.5400195318460645,
+        "maxX": 2.9599804681539355,
+        "minZ": 4.627893307290872,
+        "maxZ": 5.032106692709128
+      },
+      "geometryXZ": {
+        "minX": 2.54002,
+        "maxX": 2.95998,
+        "minZ": 4.627893,
+        "maxZ": 5.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_865",
+      "category": "asset",
+      "declared": {
+        "minX": 3.6400195318460646,
+        "maxX": 4.059980468153935,
+        "minZ": 3.2678933072908722,
+        "maxZ": 3.672106692709128
+      },
+      "geometryXZ": {
+        "minX": 3.64002,
+        "maxX": 4.05998,
+        "minZ": 3.267893,
+        "maxZ": 3.672107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_chair_866",
+      "category": "asset",
+      "declared": {
+        "minX": 3.6400195318460646,
+        "maxX": 4.059980468153935,
+        "minZ": 4.627893307290872,
+        "maxZ": 5.032106692709128
+      },
+      "geometryXZ": {
+        "minX": 3.64002,
+        "maxX": 4.05998,
+        "minZ": 4.627893,
+        "maxZ": 5.032107
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_872",
+      "category": "asset",
+      "declared": {
+        "minX": -14.021411174868389,
+        "maxX": -12.978588825131611,
+        "minZ": -9.51587355809376,
+        "maxZ": -8.48412644190624
+      },
+      "geometryXZ": {
+        "minX": -14.021411,
+        "maxX": -12.978589,
+        "minZ": -9.515874,
+        "maxZ": -8.484126
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_873",
+      "category": "asset",
+      "declared": {
+        "minX": 12.978588825131611,
+        "maxX": 14.021411174868389,
+        "minZ": -9.51587355809376,
+        "maxZ": -8.48412644190624
+      },
+      "geometryXZ": {
+        "minX": 12.978589,
+        "maxX": 14.021411,
+        "minZ": -9.515874,
+        "maxZ": -8.484126
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_874",
+      "category": "asset",
+      "declared": {
+        "minX": -14.021411174868389,
+        "maxX": -12.978588825131611,
+        "minZ": 8.48412644190624,
+        "maxZ": 9.51587355809376
+      },
+      "geometryXZ": {
+        "minX": -14.021411,
+        "maxX": -12.978589,
+        "minZ": 8.484126,
+        "maxZ": 9.515874
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_875",
+      "category": "asset",
+      "declared": {
+        "minX": 12.978588825131611,
+        "maxX": 14.021411174868389,
+        "minZ": 7.38412644190624,
+        "maxZ": 8.415873558093761
+      },
+      "geometryXZ": {
+        "minX": 12.978589,
+        "maxX": 14.021411,
+        "minZ": 7.384126,
+        "maxZ": 8.415874
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_876",
+      "category": "asset",
+      "declared": {
+        "minX": -9.021411174868389,
+        "maxX": -7.978588825131611,
+        "minZ": 8.78412644190624,
+        "maxZ": 9.815873558093761
+      },
+      "geometryXZ": {
+        "minX": -9.021411,
+        "maxX": -7.978589,
+        "minZ": 8.784126,
+        "maxZ": 9.815874
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_planter_877",
+      "category": "asset",
+      "declared": {
+        "minX": 7.978588825131611,
+        "maxX": 9.021411174868389,
+        "minZ": 8.78412644190624,
+        "maxZ": 9.815873558093761
+      },
+      "geometryXZ": {
+        "minX": 7.978589,
+        "maxX": 9.021411,
+        "minZ": 8.784126,
+        "maxZ": 9.815874
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_bin_878",
+      "category": "asset",
+      "declared": {
+        "minX": 9.817122714926603,
+        "maxX": 10.382877285073397,
+        "minZ": 8.874701194641862,
+        "maxZ": 9.525298805358137
+      },
+      "geometryXZ": {
+        "minX": 9.817123,
+        "maxX": 10.382877,
+        "minZ": 8.874701,
+        "maxZ": 9.525299
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_bin_880",
+      "category": "asset",
+      "declared": {
+        "minX": 10.617122714926603,
+        "maxX": 11.182877285073397,
+        "minZ": 8.874701194641862,
+        "maxZ": 9.525298805358137
+      },
+      "geometryXZ": {
+        "minX": 10.617123,
+        "maxX": 11.182877,
+        "minZ": 8.874701,
+        "maxZ": 9.525299
+      },
+      "maxDifferenceMeters": 0
+    },
+    {
+      "id": "Asset_bin_882",
+      "category": "asset",
+      "declared": {
+        "minX": 11.417122714926602,
+        "maxX": 11.982877285073396,
+        "minZ": 8.874701194641862,
+        "maxZ": 9.525298805358137
+      },
+      "geometryXZ": {
+        "minX": 11.417123,
+        "maxX": 11.982877,
+        "minZ": 8.874701,
+        "maxZ": 9.525299
+      },
+      "maxDifferenceMeters": 0
+    }
+  ],
+  "geometryOutside": [
+    {
+      "name": "Dimension30_1096",
+      "node": 38,
+      "bounds": {
+        "min": [
+          -15,
+          -0.002,
+          11.738
+        ],
+        "max": [
+          15,
+          0.022,
+          11.762
+        ],
+        "size": [
+          30,
+          0.024,
+          0.024
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    },
+    {
+      "name": "Cable_1097",
+      "node": 39,
+      "bounds": {
+        "min": [
+          -15.012,
+          -0.002,
+          11.55
+        ],
+        "max": [
+          -14.988,
+          0.022,
+          11.95
+        ],
+        "size": [
+          0.024,
+          0.024,
+          0.4
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    },
+    {
+      "name": "Cable_1098",
+      "node": 40,
+      "bounds": {
+        "min": [
+          14.988,
+          -0.002,
+          11.55
+        ],
+        "max": [
+          15.012,
+          0.022,
+          11.95
+        ],
+        "size": [
+          0.024,
+          0.024,
+          0.4
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    },
+    {
+      "name": "Sign_1099",
+      "node": 41,
+      "bounds": {
+        "min": [
+          -1.45,
+          0.02,
+          11.3
+        ],
+        "max": [
+          1.45,
+          0.02,
+          12.1
+        ],
+        "size": [
+          2.9,
+          0,
+          0.8
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    },
+    {
+      "name": "Dimension22_1100",
+      "node": 42,
+      "bounds": {
+        "min": [
+          15.738,
+          -0.002,
+          -11
+        ],
+        "max": [
+          15.762,
+          0.022,
+          11
+        ],
+        "size": [
+          0.024,
+          0.024,
+          22
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    },
+    {
+      "name": "Sign_1101",
+      "node": 43,
+      "bounds": {
+        "min": [
+          15.425,
+          0.02,
+          -1.2
+        ],
+        "max": [
+          16.075,
+          0.02,
+          1.2
+        ],
+        "size": [
+          0.65,
+          0,
+          2.4
+        ]
+      },
+      "classification": "ground-level-dimension-annotation"
+    }
+  ],
+  "manualReview": [],
+  "hardFailures": [],
+  "passed": true
+}

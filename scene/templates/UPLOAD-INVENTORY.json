@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "kind": "scene-archive-upload-inventory",
+  "date": "2026-10-03",
+  "repository": "LiliLIN0324/scendance",
+  "branch": "codex/gym-scene-template",
+  "scope": "GitHub file archive; no main merge or production deployment",
+  "scenes": [
+    {
+      "id": "gym",
+      "displayName": "体育馆 · 黑客松",
+      "model": {
+        "path": "gym/gym.glb",
+        "bytes": 3889820,
+        "sha256": "7379b8e0a459f43e788a7163ae58b149ab1f989709e39eea929e187ab6719a93"
+      },
+      "manifest": "gym/template.json",
+      "previewPage": "gym/index.html",
+      "package": {
+        "path": "gym/gym-scene-template-v1.zip",
+        "bytes": 2823930,
+        "sha256": "584ee5c64294fdbaa5cde5518c62321d14d075b4b6419ad445bf6f6bac650356"
+      },
+      "archiveFiles": 38
+    },
+    {
+      "id": "popup",
+      "displayName": "品牌快闪 · 青序",
+      "model": {
+        "path": "popup/popup.glb",
+        "bytes": 6522020,
+        "sha256": "763140418e1ed2f9398920c2327e9060f0cd7c04142386245e55b0f4034d8a83"
+      },
+      "manifest": "popup/template.json",
+      "previewPage": "popup/index.html",
+      "package": {
+        "path": "popup/popup-scene-template-v1.zip",
+        "bytes": 2559611,
+        "sha256": "774d1dfa77c67d1e176db28d3254ba53e930e32fc56419cc9835a24f36b5ed82"
+      },
+      "archiveFiles": 35
+    },
+    {
+      "id": "lawn",
+      "displayName": "室外草坪 · 旷野有约",
+      "model": {
+        "path": "lawn/lawn.glb",
+        "bytes": 2874652,
+        "sha256": "8c97348f9c621760d83cfe9062562500c1306a36f96607c186320c30ab5f94bc"
+      },
+      "manifest": "lawn/template.json",
+      "previewPage": "lawn/index.html",
+      "package": {
+        "path": "lawn/lawn-scene-template-v1.zip",
+        "bytes": 2108765,
+        "sha256": "8a919ba18e5f444d8aa1e10bf8e67c1ecbd3c28b299bdea7dcbbaf251a4589bb"
+      },
+      "archiveFiles": 35
+    },
+    {
+      "id": "market",
+      "displayName": "户外市集 · 风物市集",
+      "model": {
+        "path": "market/market.glb",
+        "bytes": 6650276,
+        "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f"
+      },
+      "manifest": "market/template.json",
+      "previewPage": "market/index.html",
+      "package": {
+        "path": "market/market-scene-template.zip",
+        "bytes": 6308260,
+        "sha256": "9c0d95365f118b570d63cfffea0834b44b5a2bb654f8e2942a10c0fa3e838b2b"
+      },
+      "archiveFiles": 68
+    },
+    {
+      "id": "museum",
+      "displayName": "美术馆 · 留白之间",
+      "model": {
+        "path": "museum/museum.glb",
+        "bytes": 2430960,
+        "sha256": "562501fb0d4cc087b6275a8b22b81b0702e4797796133fe260162fc448ba9480"
+      },
+      "manifest": "museum/template.json",
+      "previewPage": "museum/index.html",
+      "package": {
+        "path": "museum/museum-template.zip",
+        "bytes": 2427204,
+        "sha256": "9e5a6bd1b4881480f6d43677068e6724cab0e5a416dc885b740e25022f102a21"
+      },
+      "archiveFiles": 40
+    },
+    {
+      "id": "conference",
+      "displayName": "学术会议 · 共知",
+      "model": {
+        "path": "conference/conference.glb",
+        "bytes": 3761312,
+        "sha256": "57470596dbe8284f57b8510e5f93fde380e634db1eebbb30fdaa87ae141c7f0d"
+      },
+      "manifest": "conference/template.json",
+      "previewPage": "conference/index.html",
+      "package": {
+        "path": "conference/conference-template.zip",
+        "bytes": 5332224,
+        "sha256": "48815c1722f420a55fecbffb09fb41423266272b118a0a38816bf6147f133e82"
+      },
+      "archiveFiles": 44
+    },
+    {
+      "id": "office",
+      "displayName": "办公室 · 留白",
+      "model": {
+        "path": "office/office.glb",
+        "bytes": 3514764,
+        "sha256": "352ae168cf032e9342b18a40ab7cb89ec95f744a15282c8572e1c3eff1690914"
+      },
+      "manifest": "office/template.json",
+      "previewPage": "office/index.html",
+      "package": {
+        "path": "office/office-scene-template-v1.zip",
+        "bytes": 1851372,
+        "sha256": "73c31625214dcc51a6cb801ad93dcf5d3929b6a9bbf33f113d187e240ebb5069"
+      },
+      "archiveFiles": 37
+    },
+    {
+      "id": "studio",
+      "displayName": "摄影工作室",
+      "model": {
+        "path": "studio/studio.glb",
+        "bytes": 1837612,
+        "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc"
+      },
+      "manifest": "studio/template.json",
+      "previewPage": "studio/index.html",
+      "package": {
+        "path": "studio/studio-scene-template.zip",
+        "bytes": 3043942,
+        "sha256": "728b2c4cea2552e82dd0b20ba4382dbcef2bd2c52e7994ea887777b923f8e894"
+      },
+      "archiveFiles": 53
+    },
+    {
+      "id": "bar",
+      "displayName": "酒吧 · 琥珀间",
+      "model": {
+        "path": "bar/bar.glb",
+        "bytes": 4134000,
+        "sha256": "92968f66f1affb3b343a1f61fd0ab8ec1a9a7116e5e8a29e8f381a15224ca78a"
+      },
+      "manifest": "bar/template.json",
+      "previewPage": "bar/index.html",
+      "package": {
+        "path": "bar/bar-template.zip",
+        "bytes": 1850037,
+        "sha256": "6f81eb755b0a56e802dd8e7ae4894e5568361424b899067ea96c57ecaf9a084d"
+      },
+      "archiveFiles": 35
+    },
+    {
+      "id": "cafe",
+      "displayName": "咖啡店 · 慢调",
+      "model": {
+        "path": "cafe/cafe.glb",
+        "bytes": 3798732,
+        "sha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8"
+      },
+      "manifest": "cafe/template.json",
+      "previewPage": "cafe/index.html",
+      "package": {
+        "path": "cafe/cafe-template.zip",
+        "bytes": 1525224,
+        "sha256": "8989d660f43f2f3d42eaf48e63b9f3d635ea5803416994774569e859cfbfcc15"
+      },
+      "archiveFiles": 37
+    }
+  ],
+  "supplementaryModels": "../../assets/models/extra-models.json"
+}

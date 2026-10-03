@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-02T15:11:00.691Z",
+  "url": "http://127.0.0.1:8773/",
+  "mode": "Independent GLB viewer",
+  "checks": [
+    {
+      "test": "minimum attendance",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "launch",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "24",
+        "visibleSeats": "20",
+        "visitors": "20"
+      }
+    },
+    {
+      "test": "maximum attendance",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "launch",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "64",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "setup",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "setup",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "4",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "arrival",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "open",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "64",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "closed",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "closed",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "4",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "people hidden",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "launch",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "188898",
+        "view": "overview",
+        "visiblePeople": "0",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "top and canopy hidden",
+      "state": {
+        "meshes": "1664",
+        "modelSource": "lawn.glb",
+        "phase": "launch",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "188898",
+        "view": "top",
+        "visiblePeople": "64",
+        "visibleSeats": "60",
+        "visitors": "60"
+      }
+    },
+    {
+      "test": "zone detail",
+      "text": "观众与主通道"
+    },
+    {
+      "test": "image export",
+      "text": "已导出当前三维画面"
+    },
+    {
+      "test": "console errors",
+      "errors": []
+    },
+    {
+      "test": "mobile",
+      "state": {
+        "ready": "true",
+        "scrollWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "test": "rotate and zoom",
+      "evidence": [
+        "rotation.jpg",
+        "zoom.jpg"
+      ],
+      "result": "Rendered scene responds to drag and wheel; restored overview."
+    }
+  ]
+}

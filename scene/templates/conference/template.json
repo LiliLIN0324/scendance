@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "templateId": "conference-100-v1",
+  "kind": "complete-scene-template",
+  "displayName": "学术会议 · 共知",
+  "status": "archived",
+  "model": {
+    "path": "conference.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 3761312,
+    "sha256": "57470596dbe8284f57b8510e5f93fde380e634db1eebbb30fdaa87ae141c7f0d",
+    "embeddedImages": 22,
+    "externalResources": 0,
+    "meshesInScene": 2247,
+    "triangles": 234774,
+    "punctualLights": 6
+  },
+  "dimensions": {
+    "width": 24,
+    "depth": 18,
+    "floorArea": 432,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Concept dimensions; not surveyed or approved capacity"
+  },
+  "assumptions": {
+    "participants": 100,
+    "audience": 96,
+    "stageGuests": 4,
+    "staff": 4,
+    "totalPeople": 104,
+    "guestChairs": 4,
+    "audienceChairs": 96,
+    "event": "共知 / COMMON GROUND - original fictional academic meeting"
+  },
+  "layers": [
+    "Conference_Structure",
+    "Conference_Furniture",
+    "Conference_Seating",
+    "Conference_GuestSeating",
+    "Conference_Roof",
+    "Conference_Lights",
+    "Conference_People",
+    "Conference_Guests",
+    "Conference_Staff"
+  ],
+  "capabilities": {
+    "independentGlbLoad": true,
+    "views": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "rotateAndZoom": true,
+    "roofAndOccludingWallsToggle": true,
+    "peopleToggle": true,
+    "zoneLabels": true,
+    "participantCountControl": {
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "audienceChairs": "participants - 4",
+      "stageGuests": 4,
+      "staffAdditional": 4,
+      "scope": "Fixed seat positions, front rows first; no free-form seating transform or arbitrary venue reflow"
+    },
+    "phases": [
+      "setup",
+      "open",
+      "launch",
+      "closed"
+    ],
+    "phaseSemantics": {
+      "setup": "4 staff; participants have not arrived",
+      "open": "participants + 4 staff; preset arrival and conversation positions",
+      "launch": "participants + 4 staff; audience seated",
+      "closed": "4 staff; participants have left"
+    },
+    "stageModes": [
+      "lecture",
+      "panel"
+    ],
+    "stageModeScope": "Same fixed four guest chairs and panel discussion table; lecture: one guest at lectern, three seated; panel: all four seated.",
+    "pngExport": "Current 3D canvas, excluding HTML overlay labels and controls",
+    "glbDownload": "Default 100-participant lecture/launch snapshot with roof and enclosure; UI state is not exported",
+    "continuousCrowdSimulation": false
+  },
+  "entry": "index.html",
+  "localPreview": "http://127.0.0.1:8776/",
+  "localServer": "serve.py",
+  "buildPreview": "http://127.0.0.1:8776/?build=1",
+  "sources": "assets/manifest.json",
+  "previews": {
+    "overview": "previews/overview.jpg",
+    "top": "previews/top.jpg",
+    "inside": "previews/inside.jpg"
+  },
+  "validation": {
+    "model": "validation/model-validation.json",
+    "gltf": "validation/gltf-validation.json",
+    "layout": "validation/layout-check.json",
+    "browser": "validation/browser-validation.json",
+    "result": {
+      "formatErrors": 0,
+      "formatWarnings": 0,
+      "formatInfos": 217,
+      "layoutScenarioCases": 488,
+      "peopleHiddenCases": 488,
+      "layoutIssues": 0
+    }
+  },
+  "limitations": [
+    "Concept dimensions and population, not a surveyed or regulatory approved venue.",
+    "No fire, egress, accessibility, structural, acoustic or regulatory certification.",
+    "Discrete stage presets, not continuous walking or queue simulation.",
+    "Fictional artwork and posters; no real scientific claims.",
+    "Fixed seat grid; no arbitrary floorplan smart rearrangement."
+  ],
+  "archive": "conference-template.zip"
+}

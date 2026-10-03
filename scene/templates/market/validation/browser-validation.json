@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-02",
+  "model": "market.glb",
+  "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+  "browser": "Codex In-app Browser / Browser skill",
+  "url": "http://127.0.0.1:8774/",
+  "independentGlbLoad": {
+    "passed": true,
+    "modelSource": "market.glb",
+    "ready": true,
+    "meshInstances": 1156,
+    "triangles": 53770
+  },
+  "peopleIncluded": false,
+  "checks": [
+    {
+      "check": "Drag orbit",
+      "result": "passed",
+      "evidence": "rotation.jpg"
+    },
+    {
+      "check": "Wheel zoom and view reset",
+      "result": "passed",
+      "evidence": "zoom.jpg"
+    },
+    {
+      "check": "Overview / orthographic top / interior eye level",
+      "result": "passed",
+      "note": "Recreating OrbitControls on preset switch removed residual camera damping; full-scene PNG files in renders/"
+    },
+    {
+      "check": "Canopy toggle",
+      "result": "passed",
+      "evidence": "../previews/market-top.png"
+    },
+    {
+      "check": "Labels toggle",
+      "result": "passed"
+    },
+    {
+      "check": "Four lighting preset buttons",
+      "result": "passed",
+      "phases": [
+        "setup",
+        "open",
+        "evening",
+        "closed"
+      ],
+      "phaseMode": "lighting-only",
+      "stalls": 12,
+      "diningTables": 4
+    },
+    {
+      "check": "Desktop 1280x720 and 1440x900 layout",
+      "result": "passed",
+      "evidence": "../previews/market-preview.jpg"
+    },
+    {
+      "check": "390x844 mobile",
+      "result": "passed",
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "evidence": "mobile-390.jpg"
+    },
+    {
+      "check": "320x740 mobile",
+      "result": "passed",
+      "documentWidth": 320,
+      "viewportWidth": 320,
+      "evidence": "mobile-320.jpg"
+    },
+    {
+      "check": "Mobile evening / top / canopy toggle",
+      "result": "passed"
+    },
+    {
+      "check": "Canvas PNG archive through visible UI",
+      "result": "passed",
+      "files": [
+        "../renders/overview.png",
+        "../renders/top.png",
+        "../renders/inside.png"
+      ]
+    },
+    {
+      "check": "Browser download event tracking for client PNG download",
+      "result": "not-observed",
+      "note": "Browser tool event wait timed out. PNG generation and local archive are verified separately; no assertion about the system Downloads destination."
+    },
+    {
+      "check": "Final viewer console errors and warnings",
+      "result": "passed",
+      "messages": [],
+      "evidence": "browser-console.json"
+    }
+  ],
+  "scope": "Local concept scene functionality and layout only. No field, fire, weather, structural or crowd simulation verification."
+}

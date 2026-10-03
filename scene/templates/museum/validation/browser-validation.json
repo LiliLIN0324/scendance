@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-03",
+  "url": "http://127.0.0.1:8775/",
+  "checks": [
+    {
+      "test": "independent-glb-sparse-default",
+      "pass": true,
+      "observed": {
+        "data": {
+          "camera": "{\"position\":[18.7,19.549999999999994,24.65],\"target\":[0,0.75,0],\"zoom\":1}",
+          "meshes": "284",
+          "modelSource": "museum.glb",
+          "phase": "open",
+          "ready": "true",
+          "rig": "false",
+          "triangles": "27558",
+          "view": "overview",
+          "visiblePeople": "4",
+          "visitors": "3",
+          "walls": "true"
+        },
+        "report": {
+          "bounds": [
+            20,
+            4.319999951720238,
+            14
+          ],
+          "boundsMax": [
+            10,
+            4.099999952316284,
+            7
+          ],
+          "boundsMin": [
+            -10,
+            -0.2199999994039535,
+            -7
+          ],
+          "furnitureFootprints": [
+            {
+              "category": "furniture",
+              "depth": 0.91,
+              "id": "orientation-counter",
+              "width": 2.23,
+              "x": -8.25,
+              "z": 4.65
+            },
+            {
+              "category": "exhibition",
+              "depth": 0.22,
+              "id": "prologue-wall",
+              "width": 4.6,
+              "x": -6.65,
+              "z": 1
+            },
+            {
+              "category": "exhibition",
+              "depth": 0.55,
+              "id": "wall-studies-base",
+              "width": 6.3,
+              "x": -6.2,
+              "z": -6.4
+            },
+            {
+              "category": "exhibition",
+              "depth": 1.37,
+              "id": "case-01",
+              "width": 1.57,
+              "x": -1.9,
+              "z": 2.2
+            },
+            {
+              "category": "exhibition",
+              "depth": 1.37,
+              "id": "case-02",
+              "width": 1.57,
+              "x": 1.9,
+              "z": 2.2
+            },
+            {
+              "category": "exhibition",
+              "depth": 1.37,
+              "id": "case-03",
+              "width": 1.57,
+              "x": -1.9,
+              "z": -1.2
+            },
+            {
+              "category": "exhibition",
+              "depth": 1.37,
+              "id": "case-04",
+              "width": 1.57,
+              "x": 1.9,
+              "z": -1.2
+            },
+            {
+              "category": "exhibition",
+              "depth": 2.1,
+              "id": "ecology-island",
+              "width": 3.8,
+              "x": 0.4,
+              "z": -4.8
+            },
+            {
+              "category": "exhibition",
+              "depth": 0.11,
+              "id": "ecology-story-panel",
+              "width": 1.3,
+              "x": 4.5,
+              "z": -6.71
+            },
+            {
+              "category": "furniture",
+              "depth": 1.2,
+              "id": "experience-table",
+              "width": 4.4,
+              "x": 6.3,
+              "z": -1.4
+            },
+            {
+              "category": "exhibition",
+              "depth": 0.95,
+              "id": "touch-study-base",
+              "width": 2.9,
+              "x": 7.03,
+              "z": -6.3
+            },
+            {
+              "category": "furniture",
+              "depth": 0.5405175718981319,
+              "id": "Source_CC0_Chair_1",
+              "width": 0.5534892402454936,
+              "x": 6.15,
+              "z": 4.55
+            },
+            {
+              "category": "furniture",
+              "depth": 0.5405175718981319,
+              "id": "Source_CC0_Chair_2",
+              "width": 0.5534892402454936,
+              "x": 8.25,
+              "z": 4.55
+            },
+            {
+              "category": "furniture",
+              "depth": 0.68,
+              "id": "rest-table",
+              "width": 0.68,
+              "x": 7.2,
+              "z": 4.8
+            },
+            {
+              "category": "furniture",
+              "depth": 0.8680906770681229,
+              "id": "Source_CC0_Plant_1",
+              "width": 0.8774091494337029,
+              "x": -9.06,
+              "z": 6.13
+            },
+            {
+              "category": "furniture",
+              "depth": 1.197370416686077,
+              "id": "Source_CC0_Plant_2",
+              "width": 1.2025681581766214,
+              "x": 9.08,
+              "z": 5.98
+            }
+          ],
+          "materials": 62,
+          "meshes": 284,
+          "spatialChecks": [
+            {
+              "conceptOnly": true,
+              "conflicts": [],
+              "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+              "minimumFurnitureClearance": 0.28500000000000036,
+              "minimumPersonClearance": null,
+              "people": [
+                {
+                  "id": "Staff_01",
+                  "x": -8.25,
+                  "z": 3.65
+                }
+              ],
+              "phase": "setup"
+            },
+            {
+              "conceptOnly": true,
+              "conflicts": [],
+              "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+              "minimumFurnitureClearance": 0.28500000000000036,
+              "minimumPersonClearance": 7.72151078383084,
+              "people": [
+                {
+                  "id": "Visitor_01",
+                  "x": -8.3,
+                  "z": -4.9
+                },
+                {
+                  "id": "Visitor_02",
+                  "x": 0.55,
+                  "z": -3
+                },
+                {
+                  "id": "Visitor_03",
+                  "x": 4.9,
+                  "z": 4
+                },
+                {
+                  "id": "Staff_01",
+                  "x": -8.25,
+                  "z": 3.65
+                }
+              ],
+              "phase": "open"
+            },
+            {
+              "conceptOnly": true,
+              "conflicts": [],
+              "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+              "minimumFurnitureClearance": 0.23999999999999977,
+              "minimumPersonClearance": 0.6799999999999999,
+              "people": [
+                {
+                  "id": "Visitor_01",
+                  "x": -2.7,
+                  "z": -3.25
+                },
+                {
+                  "id": "Visitor_02",
+                  "x": -1.5,
+                  "z": -3.25
+                },
+                {
+                  "id": "Visitor_03",
+                  "x": -0.3,
+                  "z": -3.25
+                },
+                {
+                  "id": "Staff_01",
+                  "x": 3.2,
+                  "z": -4.1
+                }
+              ],
+              "phase": "tour"
+            },
+            {
+              "conceptOnly": true,
+              "conflicts": [],
+              "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+              "minimumFurnitureClearance": 0.28500000000000036,
+              "minimumPersonClearance": null,
+              "people": [
+                {
+                  "id": "Staff_01",
+                  "x": -8.25,
+                  "z": 3.65
+                }
+              ],
+              "phase": "closed"
+            }
+          ],
+          "staffNodes": 1,
+          "textures": 30,
+          "triangles": 27558,
+          "visibleVisitorNodes": 3,
+          "visitorNodes": 3
+        }
+      }
+    },
+    {
+      "test": "top-view",
+      "pass": true
+    },
+    {
+      "test": "interior-view",
+      "pass": true
+    },
+    {
+      "test": "optional-max-36-created-on-demand",
+      "pass": true,
+      "observed": {
+        "nodes": 36,
+        "visiblePeople": "37"
+      }
+    },
+    {
+      "test": "count-zero-removes-all-visitor-nodes",
+      "pass": true,
+      "observed": {
+        "nodes": 0,
+        "visiblePeople": "1"
+      }
+    },
+    {
+      "test": "return-to-three-removes-extra-visitor-nodes",
+      "pass": true
+    },
+    {
+      "test": "phase-setup",
+      "pass": true,
+      "visiblePeople": "1"
+    },
+    {
+      "test": "phase-tour",
+      "pass": true,
+      "visiblePeople": "4"
+    },
+    {
+      "test": "phase-closed",
+      "pass": true,
+      "visiblePeople": "1"
+    },
+    {
+      "test": "phase-open",
+      "pass": true,
+      "visiblePeople": "4"
+    },
+    {
+      "test": "hide-all-people",
+      "pass": true
+    },
+    {
+      "test": "console-no-errors-or-warnings",
+      "pass": true,
+      "logs": []
+    }
+  ],
+  "allChecksPass": true,
+  "scope": "Sparse population revision only; prior screenshot-download/mobile/rotation checks were not rerun."
+}

@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-03T03:18:34.579Z",
+  "url": "http://127.0.0.1:8777/",
+  "model": "office.glb",
+  "checks": [
+    {
+      "test": "independent GLB load",
+      "state": {
+        "editableObjects": "80",
+        "meshes": "543",
+        "modelSource": "office.glb",
+        "ready": "true",
+        "roof": "false",
+        "view": "overview"
+      }
+    },
+    {
+      "test": "top view",
+      "state": {
+        "editableObjects": "80",
+        "meshes": "543",
+        "modelSource": "office.glb",
+        "ready": "true",
+        "roof": "false",
+        "view": "top"
+      }
+    },
+    {
+      "test": "interior view",
+      "state": {
+        "editableObjects": "80",
+        "meshes": "543",
+        "modelSource": "office.glb",
+        "ready": "true",
+        "roof": "false",
+        "view": "inside"
+      }
+    },
+    {
+      "test": "roof visible",
+      "state": {
+        "editableObjects": "80",
+        "meshes": "543",
+        "modelSource": "office.glb",
+        "ready": "true",
+        "roof": "true",
+        "view": "inside"
+      }
+    },
+    {
+      "test": "rotate and zoom",
+      "result": "Rendered scene responds to drag and wheel",
+      "evidence": [
+        "rotation.jpg",
+        "zoom.jpg"
+      ]
+    },
+    {
+      "test": "console errors",
+      "errors": []
+    },
+    {
+      "test": "mobile 390px",
+      "state": {
+        "editableObjects": "80",
+        "meshes": "543",
+        "modelSource": "office.glb",
+        "ready": "true",
+        "roof": "false",
+        "scrollWidth": 390,
+        "view": "overview",
+        "width": 390
+      }
+    }
+  ]
+}

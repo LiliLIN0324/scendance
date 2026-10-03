@@ -1,0 +1,559 @@
+{
+  "assumedFloor": {
+    "depth": 14,
+    "width": 20
+  },
+  "footprints": [
+    {
+      "category": "furniture",
+      "depth": 0.91,
+      "id": "orientation-counter",
+      "width": 2.23,
+      "x": -8.25,
+      "z": 4.65
+    },
+    {
+      "category": "exhibition",
+      "depth": 0.22,
+      "id": "prologue-wall",
+      "width": 4.6,
+      "x": -6.65,
+      "z": 1
+    },
+    {
+      "category": "exhibition",
+      "depth": 0.55,
+      "id": "wall-studies-base",
+      "width": 6.3,
+      "x": -6.2,
+      "z": -6.4
+    },
+    {
+      "category": "exhibition",
+      "depth": 1.37,
+      "id": "case-01",
+      "width": 1.57,
+      "x": -1.9,
+      "z": 2.2
+    },
+    {
+      "category": "exhibition",
+      "depth": 1.37,
+      "id": "case-02",
+      "width": 1.57,
+      "x": 1.9,
+      "z": 2.2
+    },
+    {
+      "category": "exhibition",
+      "depth": 1.37,
+      "id": "case-03",
+      "width": 1.57,
+      "x": -1.9,
+      "z": -1.2
+    },
+    {
+      "category": "exhibition",
+      "depth": 1.37,
+      "id": "case-04",
+      "width": 1.57,
+      "x": 1.9,
+      "z": -1.2
+    },
+    {
+      "category": "exhibition",
+      "depth": 2.1,
+      "id": "ecology-island",
+      "width": 3.8,
+      "x": 0.4,
+      "z": -4.8
+    },
+    {
+      "category": "exhibition",
+      "depth": 0.11,
+      "id": "ecology-story-panel",
+      "width": 1.3,
+      "x": 4.5,
+      "z": -6.71
+    },
+    {
+      "category": "furniture",
+      "depth": 1.2,
+      "id": "experience-table",
+      "width": 4.4,
+      "x": 6.3,
+      "z": -1.4
+    },
+    {
+      "category": "exhibition",
+      "depth": 0.95,
+      "id": "touch-study-base",
+      "width": 2.9,
+      "x": 7.03,
+      "z": -6.3
+    },
+    {
+      "category": "furniture",
+      "depth": 0.5405175718981319,
+      "id": "Source_CC0_Chair_1",
+      "width": 0.5534892402454936,
+      "x": 6.15,
+      "z": 4.55
+    },
+    {
+      "category": "furniture",
+      "depth": 0.5405175718981319,
+      "id": "Source_CC0_Chair_2",
+      "width": 0.5534892402454936,
+      "x": 8.25,
+      "z": 4.55
+    },
+    {
+      "category": "furniture",
+      "depth": 0.68,
+      "id": "rest-table",
+      "width": 0.68,
+      "x": 7.2,
+      "z": 4.8
+    },
+    {
+      "category": "furniture",
+      "depth": 0.8680906770681229,
+      "id": "Source_CC0_Plant_1",
+      "width": 0.8774091494337029,
+      "x": -9.06,
+      "z": 6.13
+    },
+    {
+      "category": "furniture",
+      "depth": 1.197370416686077,
+      "id": "Source_CC0_Plant_2",
+      "width": 1.2025681581766214,
+      "x": 9.08,
+      "z": 5.98
+    }
+  ],
+  "phases": {
+    "closed": {
+      "conceptOnly": true,
+      "conflicts": [],
+      "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+      "minimumFurnitureClearance": 0.28500000000000036,
+      "minimumPersonClearance": null,
+      "people": [
+        {
+          "id": "Staff_01",
+          "x": -8.25,
+          "z": 3.65
+        }
+      ],
+      "phase": "closed"
+    },
+    "open": {
+      "conceptOnly": true,
+      "conflicts": [],
+      "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+      "minimumFurnitureClearance": 0.28500000000000036,
+      "minimumPersonClearance": 0.5901801655587253,
+      "people": [
+        {
+          "id": "Visitor_01",
+          "x": -8.3,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_02",
+          "x": 0.55,
+          "z": -3
+        },
+        {
+          "id": "Visitor_03",
+          "x": 4.9,
+          "z": 4
+        },
+        {
+          "id": "Visitor_04",
+          "x": -6.1,
+          "z": 5.65
+        },
+        {
+          "id": "Visitor_05",
+          "x": -1.9,
+          "z": 3.55
+        },
+        {
+          "id": "Visitor_06",
+          "x": 3.5,
+          "z": 2.15
+        },
+        {
+          "id": "Visitor_07",
+          "x": 5.35,
+          "z": 0.2
+        },
+        {
+          "id": "Visitor_08",
+          "x": -5.7,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_09",
+          "x": -4.65,
+          "z": 4.6
+        },
+        {
+          "id": "Visitor_10",
+          "x": -7.15,
+          "z": 3.5
+        },
+        {
+          "id": "Visitor_11",
+          "x": -5.7,
+          "z": 2.6
+        },
+        {
+          "id": "Visitor_12",
+          "x": -8.35,
+          "z": 2.5
+        },
+        {
+          "id": "Visitor_13",
+          "x": -4.55,
+          "z": 2.9
+        },
+        {
+          "id": "Visitor_14",
+          "x": -3.4,
+          "z": 1.45
+        },
+        {
+          "id": "Visitor_15",
+          "x": -0.3,
+          "z": 2.75
+        },
+        {
+          "id": "Visitor_16",
+          "x": 1.9,
+          "z": 3.55
+        },
+        {
+          "id": "Visitor_17",
+          "x": 0.2,
+          "z": 1.4
+        },
+        {
+          "id": "Visitor_18",
+          "x": -3.5,
+          "z": -0.9
+        },
+        {
+          "id": "Visitor_19",
+          "x": -3.1,
+          "z": -2.5
+        },
+        {
+          "id": "Visitor_20",
+          "x": -1.4,
+          "z": 0.15
+        },
+        {
+          "id": "Visitor_21",
+          "x": 1.55,
+          "z": 0.15
+        },
+        {
+          "id": "Visitor_22",
+          "x": 3.55,
+          "z": -1.2
+        },
+        {
+          "id": "Visitor_23",
+          "x": 0.1,
+          "z": -1.45
+        },
+        {
+          "id": "Visitor_24",
+          "x": -6.4,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_25",
+          "x": -4.45,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_26",
+          "x": -7.6,
+          "z": -1.45
+        },
+        {
+          "id": "Visitor_27",
+          "x": -0.8,
+          "z": -3.1
+        },
+        {
+          "id": "Visitor_28",
+          "x": 1.95,
+          "z": -3.1
+        },
+        {
+          "id": "Visitor_29",
+          "x": 4.8,
+          "z": -2.85
+        },
+        {
+          "id": "Visitor_30",
+          "x": 6.4,
+          "z": -2.85
+        },
+        {
+          "id": "Visitor_31",
+          "x": 8,
+          "z": -2.85
+        },
+        {
+          "id": "Visitor_32",
+          "x": 6.75,
+          "z": 0.2
+        },
+        {
+          "id": "Visitor_33",
+          "x": 8.2,
+          "z": 0.2
+        },
+        {
+          "id": "Visitor_34",
+          "x": 5.65,
+          "z": 5.55
+        },
+        {
+          "id": "Visitor_35",
+          "x": 8.8,
+          "z": 2.65
+        },
+        {
+          "id": "Visitor_36",
+          "x": 3.3,
+          "z": 5.8
+        },
+        {
+          "id": "Staff_01",
+          "x": -8.25,
+          "z": 3.65
+        }
+      ],
+      "phase": "open"
+    },
+    "setup": {
+      "conceptOnly": true,
+      "conflicts": [],
+      "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+      "minimumFurnitureClearance": 0.28500000000000036,
+      "minimumPersonClearance": null,
+      "people": [
+        {
+          "id": "Staff_01",
+          "x": -8.25,
+          "z": 3.65
+        }
+      ],
+      "phase": "setup"
+    },
+    "tour": {
+      "conceptOnly": true,
+      "conflicts": [],
+      "method": "Plan-view radius 0.26 m against axis-aligned furniture footprints; not a safety or capacity assessment",
+      "minimumFurnitureClearance": 0.23999999999999977,
+      "minimumPersonClearance": 0.33000000000000007,
+      "people": [
+        {
+          "id": "Visitor_01",
+          "x": -2.7,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_02",
+          "x": -1.5,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_03",
+          "x": -0.3,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_04",
+          "x": 0.9,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_05",
+          "x": 2.1,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_06",
+          "x": 3.3,
+          "z": -3.25
+        },
+        {
+          "id": "Visitor_07",
+          "x": -2.7,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_08",
+          "x": -1.5,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_09",
+          "x": -0.3,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_10",
+          "x": 0.9,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_11",
+          "x": 2.1,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_12",
+          "x": 3.3,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_13",
+          "x": -8.3,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_14",
+          "x": 4.9,
+          "z": 4
+        },
+        {
+          "id": "Visitor_15",
+          "x": -6.1,
+          "z": 5.65
+        },
+        {
+          "id": "Visitor_16",
+          "x": -1.9,
+          "z": 3.55
+        },
+        {
+          "id": "Visitor_17",
+          "x": 3.5,
+          "z": 2.15
+        },
+        {
+          "id": "Visitor_18",
+          "x": 5.35,
+          "z": 0.2
+        },
+        {
+          "id": "Visitor_19",
+          "x": -5.7,
+          "z": -2.4
+        },
+        {
+          "id": "Visitor_20",
+          "x": -4.65,
+          "z": 4.6
+        },
+        {
+          "id": "Visitor_21",
+          "x": -7.15,
+          "z": 3.5
+        },
+        {
+          "id": "Visitor_22",
+          "x": -5.7,
+          "z": 2.6
+        },
+        {
+          "id": "Visitor_23",
+          "x": -8.35,
+          "z": 2.5
+        },
+        {
+          "id": "Visitor_24",
+          "x": -4.55,
+          "z": 2.9
+        },
+        {
+          "id": "Visitor_25",
+          "x": -3.4,
+          "z": 1.45
+        },
+        {
+          "id": "Visitor_26",
+          "x": -0.3,
+          "z": 2.75
+        },
+        {
+          "id": "Visitor_27",
+          "x": 1.9,
+          "z": 3.55
+        },
+        {
+          "id": "Visitor_28",
+          "x": 0.2,
+          "z": 1.4
+        },
+        {
+          "id": "Visitor_29",
+          "x": -3.5,
+          "z": -0.9
+        },
+        {
+          "id": "Visitor_30",
+          "x": -1.4,
+          "z": 0.15
+        },
+        {
+          "id": "Visitor_31",
+          "x": 1.55,
+          "z": 0.15
+        },
+        {
+          "id": "Visitor_32",
+          "x": 3.55,
+          "z": -1.2
+        },
+        {
+          "id": "Visitor_33",
+          "x": 0.1,
+          "z": -1.45
+        },
+        {
+          "id": "Visitor_34",
+          "x": -6.4,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_35",
+          "x": -4.45,
+          "z": -4.9
+        },
+        {
+          "id": "Visitor_36",
+          "x": -7.6,
+          "z": -1.45
+        },
+        {
+          "id": "Staff_01",
+          "x": 3.2,
+          "z": -4.1
+        }
+      ],
+      "phase": "tour"
+    }
+  },
+  "allChecksPass": true
+}

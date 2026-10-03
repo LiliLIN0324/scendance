@@ -1,0 +1,913 @@
+{
+  "date": "2026-10-03",
+  "file": "museum.glb",
+  "bytes": 2430960,
+  "sha256": "562501fb0d4cc087b6275a8b22b81b0702e4797796133fe260162fc448ba9480",
+  "format": {
+    "magic": "glTF",
+    "version": 2,
+    "declaredLength": 2430960,
+    "gltfVersion": "2.0",
+    "generator": "THREE.GLTFExporter r186",
+    "chunks": [
+      {
+        "type": "JSON",
+        "bytes": 312028
+      },
+      {
+        "type": "BIN",
+        "bytes": 2118904
+      }
+    ]
+  },
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 279,
+    "hints": 0
+  },
+  "validatorIssueCodes": {
+    "UNUSED_OBJECT": 244,
+    "NODE_EMPTY": 6,
+    "IMAGE_NPOT_DIMENSIONS": 29
+  },
+  "sceneCount": 1,
+  "defaultScene": 0,
+  "nodeCount": 329,
+  "reachableNodes": 329,
+  "uniqueMeshes": 279,
+  "meshInstances": 284,
+  "primitiveInstances": 284,
+  "uniqueMeshTriangles": 26610,
+  "triangleInstances": 27558,
+  "materials": 62,
+  "textures": 30,
+  "images": 30,
+  "embeddedImages": 30,
+  "imageChecks": [
+    {
+      "index": 0,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1105,
+      "embedded": true
+    },
+    {
+      "index": 1,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1106,
+      "embedded": true
+    },
+    {
+      "index": 2,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1107,
+      "embedded": true
+    },
+    {
+      "index": 3,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1108,
+      "embedded": true
+    },
+    {
+      "index": 4,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1109,
+      "embedded": true
+    },
+    {
+      "index": 5,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1110,
+      "embedded": true
+    },
+    {
+      "index": 6,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1111,
+      "embedded": true
+    },
+    {
+      "index": 7,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1112,
+      "embedded": true
+    },
+    {
+      "index": 8,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1113,
+      "embedded": true
+    },
+    {
+      "index": 9,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1114,
+      "embedded": true
+    },
+    {
+      "index": 10,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1132,
+      "embedded": true
+    },
+    {
+      "index": 11,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1133,
+      "embedded": true
+    },
+    {
+      "index": 12,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1134,
+      "embedded": true
+    },
+    {
+      "index": 13,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1115,
+      "embedded": true
+    },
+    {
+      "index": 14,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1116,
+      "embedded": true
+    },
+    {
+      "index": 15,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1117,
+      "embedded": true
+    },
+    {
+      "index": 16,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1118,
+      "embedded": true
+    },
+    {
+      "index": 17,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1119,
+      "embedded": true
+    },
+    {
+      "index": 18,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1120,
+      "embedded": true
+    },
+    {
+      "index": 19,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1121,
+      "embedded": true
+    },
+    {
+      "index": 20,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1122,
+      "embedded": true
+    },
+    {
+      "index": 21,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1123,
+      "embedded": true
+    },
+    {
+      "index": 22,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1124,
+      "embedded": true
+    },
+    {
+      "index": 23,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1125,
+      "embedded": true
+    },
+    {
+      "index": 24,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1126,
+      "embedded": true
+    },
+    {
+      "index": 25,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1127,
+      "embedded": true
+    },
+    {
+      "index": 26,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1128,
+      "embedded": true
+    },
+    {
+      "index": 27,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1129,
+      "embedded": true
+    },
+    {
+      "index": 28,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1130,
+      "embedded": true
+    },
+    {
+      "index": 29,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1131,
+      "embedded": true
+    }
+  ],
+  "externalResources": [],
+  "extensionsUsed": [
+    "KHR_materials_emissive_strength",
+    "KHR_lights_punctual"
+  ],
+  "extensionsRequired": [],
+  "lighting": {
+    "punctualLights": 6,
+    "spotlights": 6,
+    "lightNodes": [
+      {
+        "name": "Museum_ExhibitSpot_1",
+        "light": 0,
+        "worldPosition": [
+          -1.9,
+          3.56,
+          2.2
+        ]
+      },
+      {
+        "name": "Museum_ExhibitSpot_2",
+        "light": 1,
+        "worldPosition": [
+          1.9,
+          3.56,
+          2.2
+        ]
+      },
+      {
+        "name": "Museum_ExhibitSpot_3",
+        "light": 2,
+        "worldPosition": [
+          -1.9,
+          3.56,
+          -1.2
+        ]
+      },
+      {
+        "name": "Museum_ExhibitSpot_4",
+        "light": 3,
+        "worldPosition": [
+          1.9,
+          3.56,
+          -1.2
+        ]
+      },
+      {
+        "name": "Museum_ExhibitSpot_5",
+        "light": 4,
+        "worldPosition": [
+          0.4,
+          3.56,
+          -4.8
+        ]
+      },
+      {
+        "name": "Museum_ExhibitSpot_6",
+        "light": 5,
+        "worldPosition": [
+          6.3,
+          3.56,
+          -1.4
+        ]
+      }
+    ],
+    "definitions": [
+      {
+        "name": "Museum_ExhibitSpot_1",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 16,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.12600000000000003,
+          "outerConeAngle": 0.45
+        }
+      },
+      {
+        "name": "Museum_ExhibitSpot_2",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 16,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.12600000000000003,
+          "outerConeAngle": 0.45
+        }
+      },
+      {
+        "name": "Museum_ExhibitSpot_3",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 16,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.12600000000000003,
+          "outerConeAngle": 0.45
+        }
+      },
+      {
+        "name": "Museum_ExhibitSpot_4",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 16,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.12600000000000003,
+          "outerConeAngle": 0.45
+        }
+      },
+      {
+        "name": "Museum_ExhibitSpot_5",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 23,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.196,
+          "outerConeAngle": 0.7
+        }
+      },
+      {
+        "name": "Museum_ExhibitSpot_6",
+        "color": [
+          1,
+          0.8796223968851662,
+          0.6653872982754769
+        ],
+        "intensity": 25,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.22120000000000004,
+          "outerConeAngle": 0.79
+        }
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "Museum_Architecture",
+      "present": true,
+      "bounds": {
+        "min": [
+          -10,
+          -0.22,
+          -7
+        ],
+        "max": [
+          10,
+          4.1,
+          7
+        ],
+        "size": [
+          20,
+          4.32,
+          14
+        ]
+      }
+    },
+    {
+      "name": "Museum_Exhibition",
+      "present": true,
+      "bounds": {
+        "min": [
+          -9.498705,
+          0,
+          -6.826
+        ],
+        "max": [
+          9.681284,
+          3.72,
+          6.829
+        ],
+        "size": [
+          19.179989,
+          3.72,
+          13.655
+        ]
+      }
+    },
+    {
+      "name": "Museum_Lighting",
+      "present": true,
+      "bounds": {
+        "min": [
+          -9.4,
+          3.589,
+          -6.7025
+        ],
+        "max": [
+          9.4,
+          3.9375,
+          5.1
+        ],
+        "size": [
+          18.799999,
+          0.3485,
+          11.8025
+        ]
+      }
+    },
+    {
+      "name": "Museum_Visitors",
+      "present": true,
+      "bounds": {
+        "min": [
+          -8.536137,
+          0.012062,
+          -5.097618
+        ],
+        "max": [
+          5.069902,
+          1.732692,
+          4.244063
+        ],
+        "size": [
+          13.606038,
+          1.72063,
+          9.341681
+        ]
+      }
+    },
+    {
+      "name": "Museum_Staff",
+      "present": true,
+      "bounds": {
+        "min": [
+          -8.483175,
+          0.012062,
+          3.507824
+        ],
+        "max": [
+          -8.016825,
+          1.667047,
+          3.78317
+        ],
+        "size": [
+          0.46635,
+          1.654984,
+          0.275346
+        ]
+      }
+    }
+  ],
+  "visitors": 3,
+  "staff": 1,
+  "visitorNodes": [
+    {
+      "name": "Visitor_01",
+      "worldPosition": [
+        -8.3,
+        0,
+        -4.9
+      ]
+    },
+    {
+      "name": "Visitor_02",
+      "worldPosition": [
+        0.55,
+        0,
+        -3
+      ]
+    },
+    {
+      "name": "Visitor_03",
+      "worldPosition": [
+        4.9,
+        0,
+        4
+      ]
+    }
+  ],
+  "staffNodes": [
+    {
+      "name": "Staff_01",
+      "worldPosition": [
+        -8.25,
+        0,
+        3.65
+      ]
+    }
+  ],
+  "worldBounds": {
+    "min": [
+      -10,
+      -0.22,
+      -7
+    ],
+    "max": [
+      10,
+      4.1,
+      7
+    ],
+    "size": [
+      20,
+      4.32,
+      14
+    ]
+  },
+  "missingPositionBounds": [],
+  "unsupportedBounds": [],
+  "conceptDimensions": {
+    "width": 20,
+    "depth": 14,
+    "area": 280,
+    "units": "meters",
+    "source": "Authored concept metadata; not a surveyed building or certified capacity"
+  },
+  "rootMetadata": {
+    "templateId": "art-gallery-space-between-sparse-v2",
+    "kind": "complete-scene-template",
+    "title": "留白之间 / The Space Between",
+    "units": "meters",
+    "width": 20,
+    "depth": 14,
+    "area": 280,
+    "height": 4.1,
+    "defaultVisitors": 3,
+    "staff": 1,
+    "visitorLimit": 36,
+    "dimensionsBasis": "Concept design assumption; not a surveyed site or approved capacity",
+    "furnitureFootprints": [
+      {
+        "id": "orientation-counter",
+        "x": -8.25,
+        "z": 4.65,
+        "width": 2.23,
+        "depth": 0.91,
+        "category": "furniture"
+      },
+      {
+        "id": "prologue-wall",
+        "x": -6.65,
+        "z": 1,
+        "width": 4.6,
+        "depth": 0.22,
+        "category": "exhibition"
+      },
+      {
+        "id": "wall-studies-base",
+        "x": -6.2,
+        "z": -6.4,
+        "width": 6.3,
+        "depth": 0.55,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-01",
+        "x": -1.9,
+        "z": 2.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-02",
+        "x": 1.9,
+        "z": 2.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-03",
+        "x": -1.9,
+        "z": -1.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-04",
+        "x": 1.9,
+        "z": -1.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "ecology-island",
+        "x": 0.4,
+        "z": -4.8,
+        "width": 3.8,
+        "depth": 2.1,
+        "category": "exhibition"
+      },
+      {
+        "id": "ecology-story-panel",
+        "x": 4.5,
+        "z": -6.71,
+        "width": 1.3,
+        "depth": 0.11,
+        "category": "exhibition"
+      },
+      {
+        "id": "experience-table",
+        "x": 6.3,
+        "z": -1.4,
+        "width": 4.4,
+        "depth": 1.2,
+        "category": "furniture"
+      },
+      {
+        "id": "touch-study-base",
+        "x": 7.03,
+        "z": -6.3,
+        "width": 2.9,
+        "depth": 0.95,
+        "category": "exhibition"
+      },
+      {
+        "id": "Source_CC0_Chair_1",
+        "x": 6.15,
+        "z": 4.55,
+        "width": 0.5534892402454936,
+        "depth": 0.5405175718981319,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Chair_2",
+        "x": 8.25,
+        "z": 4.55,
+        "width": 0.5534892402454936,
+        "depth": 0.5405175718981319,
+        "category": "furniture"
+      },
+      {
+        "id": "rest-table",
+        "x": 7.2,
+        "z": 4.8,
+        "width": 0.68,
+        "depth": 0.68,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Plant_1",
+        "x": -9.06,
+        "z": 6.13,
+        "width": 0.8774091494337029,
+        "depth": 0.8680906770681229,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Plant_2",
+        "x": 9.08,
+        "z": 5.98,
+        "width": 1.2025681581766214,
+        "depth": 1.197370416686077,
+        "category": "furniture"
+      }
+    ],
+    "footprints": [
+      {
+        "id": "orientation-counter",
+        "x": -8.25,
+        "z": 4.65,
+        "width": 2.23,
+        "depth": 0.91,
+        "category": "furniture"
+      },
+      {
+        "id": "prologue-wall",
+        "x": -6.65,
+        "z": 1,
+        "width": 4.6,
+        "depth": 0.22,
+        "category": "exhibition"
+      },
+      {
+        "id": "wall-studies-base",
+        "x": -6.2,
+        "z": -6.4,
+        "width": 6.3,
+        "depth": 0.55,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-01",
+        "x": -1.9,
+        "z": 2.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-02",
+        "x": 1.9,
+        "z": 2.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-03",
+        "x": -1.9,
+        "z": -1.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "case-04",
+        "x": 1.9,
+        "z": -1.2,
+        "width": 1.57,
+        "depth": 1.37,
+        "category": "exhibition"
+      },
+      {
+        "id": "ecology-island",
+        "x": 0.4,
+        "z": -4.8,
+        "width": 3.8,
+        "depth": 2.1,
+        "category": "exhibition"
+      },
+      {
+        "id": "ecology-story-panel",
+        "x": 4.5,
+        "z": -6.71,
+        "width": 1.3,
+        "depth": 0.11,
+        "category": "exhibition"
+      },
+      {
+        "id": "experience-table",
+        "x": 6.3,
+        "z": -1.4,
+        "width": 4.4,
+        "depth": 1.2,
+        "category": "furniture"
+      },
+      {
+        "id": "touch-study-base",
+        "x": 7.03,
+        "z": -6.3,
+        "width": 2.9,
+        "depth": 0.95,
+        "category": "exhibition"
+      },
+      {
+        "id": "Source_CC0_Chair_1",
+        "x": 6.15,
+        "z": 4.55,
+        "width": 0.5534892402454936,
+        "depth": 0.5405175718981319,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Chair_2",
+        "x": 8.25,
+        "z": 4.55,
+        "width": 0.5534892402454936,
+        "depth": 0.5405175718981319,
+        "category": "furniture"
+      },
+      {
+        "id": "rest-table",
+        "x": 7.2,
+        "z": 4.8,
+        "width": 0.68,
+        "depth": 0.68,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Plant_1",
+        "x": -9.06,
+        "z": 6.13,
+        "width": 0.8774091494337029,
+        "depth": 0.8680906770681229,
+        "category": "furniture"
+      },
+      {
+        "id": "Source_CC0_Plant_2",
+        "x": 9.08,
+        "z": 5.98,
+        "width": 1.2025681581766214,
+        "depth": 1.197370416686077,
+        "category": "furniture"
+      }
+    ],
+    "phaseSupport": [
+      "setup",
+      "open",
+      "tour",
+      "closed"
+    ],
+    "allExhibits": "Original fictional contemporary artworks; no real artist attribution, date or collection provenance is claimed",
+    "assetRoles": [
+      "chair",
+      "plant"
+    ],
+    "source": "Two CC0 decorative furniture/plant assets from the local 3DAssets archive; all sculptures, abstract paintings, architecture and human scale markers authored for this concept.",
+    "currentVisitors": 3,
+    "currentPhase": "open",
+    "visibleVisitors": 3
+  },
+  "staticOccupancy": {
+    "method": "XZ circles of radius 0.26 m against authored axis-aligned fixture footprints; pair distances; floor edge screen",
+    "radiusMeters": 0.26,
+    "declaredFixtures": 16,
+    "collisions": [],
+    "outside": [],
+    "personOverlaps": [],
+    "minPersonCenterDistance": 8.241511,
+    "limitations": "Conservative static proxy checks only. No dynamic flow, evacuation, accessibility, fire, structural load, lighting photometry or legal compliance verification."
+  },
+  "checks": {
+    "glbVersion2": true,
+    "headerLengthMatches": true,
+    "validatorNoErrors": true,
+    "validatorNoWarnings": true,
+    "noExternalResources": true,
+    "allImagesEmbedded": true,
+    "requiredGroups": true,
+    "currentArtGalleryTemplate": true,
+    "defaultVisitorCount3": true,
+    "defaultStaffCount1": true,
+    "actualSpotlights6": true,
+    "conceptDimensions20x14": true,
+    "completePositionBounds": true,
+    "finiteSceneBounds": true,
+    "humanProxiesInsideConceptFloor": true,
+    "humanProxiesClearOfDeclaredFixtures": true,
+    "humanProxiesDoNotOverlap": true
+  },
+  "allChecksPass": true,
+  "limitations": [
+    "World bounds use transformed accessor bounds and may be conservative for rotated geometry.",
+    "GLB is the fixed default open-stage snapshot; browser controls and later states are not encoded as animation.",
+    "Format and limited geometric checks are not an on-site safety or legal review."
+  ]
+}

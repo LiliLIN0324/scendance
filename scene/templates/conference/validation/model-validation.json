@@ -1,0 +1,1192 @@
+{
+  "checkedAt": "2026-10-02T15:25:03.769Z",
+  "file": "conference.glb",
+  "bytes": 3761312,
+  "sha256": "57470596dbe8284f57b8510e5f93fde380e634db1eebbb30fdaa87ae141c7f0d",
+  "gltfVersion": "2.0",
+  "generator": "THREE.GLTFExporter r186",
+  "chunks": [
+    {
+      "type": "JSON",
+      "bytes": 900176
+    },
+    {
+      "type": "BIN",
+      "bytes": 2861108
+    }
+  ],
+  "nodeCount": 2793,
+  "meshCount": 508,
+  "materials": 61,
+  "textures": 22,
+  "images": 22,
+  "embeddedImages": 22,
+  "imageChecks": [
+    {
+      "index": 0,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 281188
+    },
+    {
+      "index": 1,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 278908
+    },
+    {
+      "index": 2,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 9492
+    },
+    {
+      "index": 3,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 61608
+    },
+    {
+      "index": 4,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 51436
+    },
+    {
+      "index": 5,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 149708
+    },
+    {
+      "index": 6,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 51436
+    },
+    {
+      "index": 7,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 52396
+    },
+    {
+      "index": 8,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 51640
+    },
+    {
+      "index": 9,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 53496
+    },
+    {
+      "index": 10,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 51420
+    },
+    {
+      "index": 11,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 65976
+    },
+    {
+      "index": 12,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 71052
+    },
+    {
+      "index": 13,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 163180
+    },
+    {
+      "index": 14,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 164868
+    },
+    {
+      "index": 15,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 154860
+    },
+    {
+      "index": 16,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 71204
+    },
+    {
+      "index": 17,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 74892
+    },
+    {
+      "index": 18,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 56636
+    },
+    {
+      "index": 19,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 56636
+    },
+    {
+      "index": 20,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 63308
+    },
+    {
+      "index": 21,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 75856
+    }
+  ],
+  "externalResources": [],
+  "extensionsUsed": [
+    "KHR_texture_transform",
+    "KHR_materials_emissive_strength",
+    "KHR_materials_unlit",
+    "KHR_lights_punctual"
+  ],
+  "extensionsRequired": [],
+  "groups": [
+    {
+      "name": "Conference_24x18",
+      "present": true,
+      "childCount": 9
+    },
+    {
+      "name": "Conference_Seating",
+      "present": true,
+      "childCount": 96
+    },
+    {
+      "name": "GuestSeating",
+      "present": true,
+      "childCount": 4
+    },
+    {
+      "name": "People",
+      "present": true,
+      "childCount": 96
+    },
+    {
+      "name": "Guests",
+      "present": true,
+      "childCount": 4
+    },
+    {
+      "name": "Staff",
+      "present": true,
+      "childCount": 4
+    },
+    {
+      "name": "Roof",
+      "present": true,
+      "childCount": 82
+    },
+    {
+      "name": "Structure",
+      "present": true,
+      "childCount": 228
+    },
+    {
+      "name": "Furniture",
+      "present": true,
+      "childCount": 159
+    },
+    {
+      "name": "Lights",
+      "present": true,
+      "childCount": 6
+    }
+  ],
+  "rootMetadata": {
+    "templateId": "conference-100-v1",
+    "kind": "complete-scene-template",
+    "width": 24,
+    "depth": 18,
+    "area": 432,
+    "units": "meters",
+    "dimensionsBasis": "Concept assumption; not surveyed or certified capacity",
+    "defaultAttendees": 100,
+    "defaultVisitors": 100,
+    "staff": 4,
+    "guestCount": 4,
+    "maxAudience": 96,
+    "attendeeRange": [
+      40,
+      100
+    ],
+    "seatPositions": [
+      {
+        "x": -1.5,
+        "z": -3.6,
+        "row": 0,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": -3.6,
+        "row": 0,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": -3.6,
+        "row": 0,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": -3.6,
+        "row": 0,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": -3.6,
+        "row": 0,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": -3.6,
+        "row": 0,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": -3.6,
+        "row": 0,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": -3.6,
+        "row": 0,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": -3.6,
+        "row": 0,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": -3.6,
+        "row": 0,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": -3.6,
+        "row": 0,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": -3.6,
+        "row": 0,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": -2.4000000000000004,
+        "row": 1,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": -1.2000000000000002,
+        "row": 2,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": -4.440892098500626e-16,
+        "row": 3,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": 1.1999999999999997,
+        "row": 4,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": 2.4,
+        "row": 5,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": 2.4,
+        "row": 5,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": 2.4,
+        "row": 5,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": 2.4,
+        "row": 5,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": 2.4,
+        "row": 5,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": 2.4,
+        "row": 5,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": 2.4,
+        "row": 5,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": 2.4,
+        "row": 5,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": 2.4,
+        "row": 5,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": 2.4,
+        "row": 5,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": 2.4,
+        "row": 5,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": 2.4,
+        "row": 5,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": 3.599999999999999,
+        "row": 6,
+        "col": 5,
+        "side": 1
+      },
+      {
+        "x": -1.5,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 0,
+        "side": -1
+      },
+      {
+        "x": 1.5,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 0,
+        "side": 1
+      },
+      {
+        "x": -2.3,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 1,
+        "side": -1
+      },
+      {
+        "x": 2.3,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 1,
+        "side": 1
+      },
+      {
+        "x": -3.1,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 2,
+        "side": -1
+      },
+      {
+        "x": 3.1,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 2,
+        "side": 1
+      },
+      {
+        "x": -3.9000000000000004,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 3,
+        "side": -1
+      },
+      {
+        "x": 3.9000000000000004,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 3,
+        "side": 1
+      },
+      {
+        "x": -4.7,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 4,
+        "side": -1
+      },
+      {
+        "x": 4.7,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 4,
+        "side": 1
+      },
+      {
+        "x": -5.5,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 5,
+        "side": -1
+      },
+      {
+        "x": 5.5,
+        "z": 4.800000000000001,
+        "row": 7,
+        "col": 5,
+        "side": 1
+      }
+    ],
+    "guestSeatPositions": [
+      [
+        -3,
+        -6.95
+      ],
+      [
+        -1.7,
+        -6.95
+      ],
+      [
+        -0.4,
+        -6.95
+      ],
+      [
+        0.9,
+        -6.95
+      ]
+    ],
+    "furnitureFootprints": [
+      {
+        "id": "stage",
+        "x": 0,
+        "z": -6.8,
+        "width": 11,
+        "depth": 3.6,
+        "kind": "stage",
+        "allowAisle": false
+      },
+      {
+        "id": "stage-stair",
+        "x": -6.125,
+        "z": -5.65,
+        "width": 1.25,
+        "depth": 1.3,
+        "kind": "stage-stair",
+        "allowAisle": false
+      },
+      {
+        "id": "lectern",
+        "x": 3.65,
+        "z": -6.45,
+        "width": 0.86,
+        "depth": 0.67,
+        "kind": "stage-furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "guest-table",
+        "x": -1.05,
+        "z": -5.96,
+        "width": 5.1,
+        "depth": 0.6,
+        "kind": "stage-furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "registration",
+        "x": -9.65,
+        "z": 7.85,
+        "width": 3.7,
+        "depth": 0.72,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "poster-1",
+        "x": -10.87,
+        "z": -3.45,
+        "width": 0.65,
+        "depth": 1.27,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "poster-2",
+        "x": -10.87,
+        "z": -0.75,
+        "width": 0.65,
+        "depth": 1.27,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "poster-3",
+        "x": -10.87,
+        "z": 1.9500000000000002,
+        "width": 0.65,
+        "depth": 1.27,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "poster-table",
+        "x": -10.1,
+        "z": 4.5,
+        "width": 1.16,
+        "depth": 1.16,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "tea-counter",
+        "x": 10.4,
+        "z": -0.7,
+        "width": 0.84,
+        "depth": 3.52,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "waste-bin",
+        "x": 10.65,
+        "z": 1.72,
+        "width": 0.51,
+        "depth": 0.51,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "waste-bin",
+        "x": 10.65,
+        "z": 2.35,
+        "width": 0.51,
+        "depth": 0.51,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "control-desk",
+        "x": 9.6,
+        "z": 4.9,
+        "width": 3.4,
+        "depth": 0.76,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "stage-speaker",
+        "x": -6.65,
+        "z": -7.35,
+        "width": 0.68,
+        "depth": 0.67,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "stage-speaker",
+        "x": 6.65,
+        "z": -7.35,
+        "width": 0.68,
+        "depth": 0.67,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "planter-pot",
+        "x": -10.6,
+        "z": -7.5,
+        "width": 0.58,
+        "depth": 0.58,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "planter-pot",
+        "x": 10.6,
+        "z": -7.5,
+        "width": 0.58,
+        "depth": 0.58,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "planter-pot",
+        "x": -11.1,
+        "z": 6.25,
+        "width": 0.58,
+        "depth": 0.58,
+        "kind": "furniture",
+        "allowAisle": false
+      },
+      {
+        "id": "planter-pot",
+        "x": 11,
+        "z": 7.7,
+        "width": 0.58,
+        "depth": 0.58,
+        "kind": "furniture",
+        "allowAisle": false
+      }
+    ],
+    "aisles": [
+      {
+        "id": "central",
+        "minX": -1,
+        "maxX": 1,
+        "minZ": -4.6,
+        "maxZ": 5.5,
+        "width": 2
+      },
+      {
+        "id": "left",
+        "minX": -7.6,
+        "maxX": -6.2,
+        "minZ": -4.6,
+        "maxZ": 5.5,
+        "width": 1.4
+      },
+      {
+        "id": "right",
+        "minX": 6.2,
+        "maxX": 7.6,
+        "minZ": -4.6,
+        "maxZ": 5.5,
+        "width": 1.4
+      }
+    ],
+    "centralAisleWidth": 2,
+    "sideAisleWidth": 1.4,
+    "assetRoles": [
+      "chair",
+      "plant",
+      "speaker",
+      "laptop"
+    ],
+    "countDefinition": "attendees = audience + 4 guests; 4 staff additional",
+    "layoutBehavior": "fixed qualified positions, front rows first; no arbitrary space repacking",
+    "phaseBehavior": "four preset snapshots, not continuous crowd simulation",
+    "modeBehavior": "fixed panel seats: lecture = 1 guest at lectern + 3 seated; panel = 4 seated; guest chairs remain 4",
+    "currentAttendees": 100,
+    "currentVisitors": 100,
+    "currentAudience": 96,
+    "currentPhase": "launch",
+    "currentMode": "lecture",
+    "peopleVisible": true
+  },
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 217,
+    "hints": 0,
+    "truncated": false
+  },
+  "checks": {
+    "version2": true,
+    "singleDefaultScene": true,
+    "requiredGroups": true,
+    "noValidatorErrors": true,
+    "noValidatorWarnings": true,
+    "validatorNotTruncated": true,
+    "noExternalResources": true,
+    "allImagesEmbedded": true,
+    "hasEmbeddedArtwork": true,
+    "conceptDimensions": true
+  },
+  "passed": true,
+  "limitations": [
+    "Validates the standalone default GLB snapshot; UI changes are checked separately by check-layout.mjs and browser validation.",
+    "Format validation and authored concept dimensions do not certify a real venue or its capacity."
+  ]
+}

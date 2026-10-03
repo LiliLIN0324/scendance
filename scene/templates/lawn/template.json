@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "templateId": "lawn-gathering-60-v1",
+  "kind": "complete-scene-template",
+  "displayName": "室外草坪 03 · 旷野有约",
+  "status": "archived",
+  "model": {
+    "path": "lawn.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 2874652,
+    "sha256": "8c97348f9c621760d83cfe9062562500c1306a36f96607c186320c30ab5f94bc",
+    "embeddedImages": 13,
+    "externalResources": 0
+  },
+  "dimensions": {
+    "width": 28,
+    "depth": 20,
+    "floorArea": 560,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Concept dimensions; not surveyed"
+  },
+  "assumptions": {
+    "visitors": 60,
+    "staff": 4,
+    "activity": "Outdoor creative talks and networking",
+    "brand": "旷野有约 / MEADOW SESSIONS - fictional event"
+  },
+  "layers": [
+    "Lawn_Structure",
+    "Lawn_Furniture",
+    "Lawn_Seating",
+    "Lawn_Canopies",
+    "Lawn_Landscape",
+    "Lawn_People",
+    "Lawn_Staff"
+  ],
+  "capabilities": {
+    "independentGlbLoad": true,
+    "views": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "rotateAndZoom": true,
+    "canopyToggle": true,
+    "peopleToggle": true,
+    "zoneLabels": true,
+    "visitorCountControl": {
+      "min": 20,
+      "max": 60,
+      "audienceChairsTrackCount": true,
+      "scope": "Fixed seat positions, front rows first; other furniture unchanged"
+    },
+    "phases": [
+      "setup",
+      "open",
+      "launch",
+      "closed"
+    ],
+    "screenshotExport": true,
+    "downloadGlbIsFixedDefaultSnapshot": true,
+    "automaticFurnitureRelayout": false,
+    "liveCrowdSimulation": false,
+    "websiteMaterialLibraryConnected": false,
+    "generationApiConnected": false
+  },
+  "fixedLoungeFurniture": {
+    "chairs": 4,
+    "benches": 2
+  },
+  "preview": {
+    "page": "index.html",
+    "images": [
+      "previews/lawn-overview.jpg",
+      "previews/lawn-top.jpg",
+      "previews/lawn-interior.jpg"
+    ]
+  },
+  "provenance": {
+    "assets": "assets/catalogue.json",
+    "notes": "ASSET-SOURCES.md"
+  },
+  "validation": {
+    "gltf": "validation/gltf-validation.json",
+    "layout": "validation/layout-check.json",
+    "browser": "validation/browser-validation.json",
+    "gltfErrors": 0,
+    "gltfWarnings": 0,
+    "layoutCases": 164
+  },
+  "integration": {
+    "frontend": "Standalone viewer; not connected to product editor",
+    "backend": "Not registered",
+    "github": "Not uploaded"
+  }
+}

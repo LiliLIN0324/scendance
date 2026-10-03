@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "kind": "supplementary-asset-archive",
+  "assets": [
+    {
+      "id": "coffee-machine",
+      "displayName": "双头咖啡机",
+      "path": "coffee-machine.glb",
+      "format": "glTF 2.0 binary",
+      "bytes": 302408,
+      "sha256": "3040faa2679d1ba449644da4f7ae721e6427d58ef8e79f98e440b1342817f7b5",
+      "provider": "3DAssets.dev",
+      "sourceUrl": "https://3dassets.dev/assets/bakery-and-cafe-espresso-machine-2-group-60882cf3",
+      "license": {
+        "slug": "cc0-1.0",
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "variant": "original source GLB; unchanged",
+      "cloudRegistration": "not performed by this upload"
+    },
+    {
+      "id": "pendant-light",
+      "displayName": "黑色穹顶吊灯",
+      "path": "pendant-light.glb",
+      "format": "glTF 2.0 binary",
+      "bytes": 32820,
+      "sha256": "0101fbc22e6a09105c1d25e215e787964134027a7f7cf8861912d3db371e8815",
+      "provider": "3DAssets.dev",
+      "sourceUrl": "https://3dassets.dev/assets/bedroom-and-living-room-furniture-pendant-lamp-dome-af25ab66",
+      "license": {
+        "slug": "cc0-1.0",
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "variant": "original source GLB; unchanged",
+      "cloudRegistration": "not performed by this upload"
+    },
+    {
+      "id": "small-plant",
+      "displayName": "小型陶瓷盆栽",
+      "path": "small-plant.glb",
+      "format": "glTF 2.0 binary",
+      "bytes": 16384,
+      "sha256": "789fe8d37f89d75bc0a4569415c69d0e1c82f8fbd221a069f129681d2ab3a87c",
+      "provider": "3DAssets.dev",
+      "sourceUrl": "https://3dassets.dev/assets/cozy-home-interiors-plant-small-4b5aec77",
+      "license": {
+        "slug": "cc0-1.0",
+        "name": "CC0 1.0 Universal",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "variant": "original source GLB; unchanged",
+      "cloudRegistration": "not performed by this upload"
+    }
+  ]
+}

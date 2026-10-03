@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "templateId": "office-creative-workspace-v1",
+  "kind": "complete-scene-template",
+  "displayName": "办公室 · 留白",
+  "status": "archived",
+  "model": {
+    "path": "office.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 3514764,
+    "sha256": "352ae168cf032e9342b18a40ab7cb89ec95f744a15282c8572e1c3eff1690914",
+    "embeddedImages": 15,
+    "externalResources": 0
+  },
+  "preview": {
+    "page": "index.html",
+    "images": [
+      "previews/office-overview.jpg",
+      "previews/office-top.jpg",
+      "previews/office-interior.jpg"
+    ]
+  },
+  "assumptions": {
+    "type": "Original static office concept",
+    "hasPeople": false,
+    "basis": "Authored example, not measured from user photos or a surveyed venue"
+  },
+  "dimensions": {
+    "width": 14,
+    "depth": 10,
+    "floorArea": 140,
+    "height": 3.3,
+    "units": "meters",
+    "upAxis": "+Y",
+    "coordinateConvention": "Metres; +Y up; ground-centred origin; root unit scale",
+    "calibration": "Concept design, no surveyed dimensions",
+    "surveyedSizeMeters": null,
+    "sceneBounds": {
+      "min": [
+        -7.16,
+        -0.15,
+        -5.16
+      ],
+      "max": [
+        7.1,
+        3.42,
+        5.1
+      ]
+    },
+    "boundsMeaning": "Whole model including wall thickness and roof; floor area is defined separately"
+  },
+  "components": {
+    "root": "Office_CreativeWorkspace_14x10",
+    "structure": "Office_Structure",
+    "furniture": "Office_Furniture",
+    "equipment": "Office_Equipment",
+    "lighting": "Office_Lighting",
+    "roof": "Office_Roof",
+    "objectNaming": "Office_<Role>_<three-digit index>; userData.editableObject=true"
+  },
+  "counts": {
+    "meshInstances": 543,
+    "triangles": 55214,
+    "materials": 33,
+    "nodes": 649,
+    "independentObjects": 80,
+    "allFurnitureAndEquipment": {
+      "WorkDesk": 8,
+      "TaskChair": 8,
+      "MonitorSet": 8,
+      "DeskStationery": 8,
+      "DeskDivider": 2,
+      "StorageCabinet": 3,
+      "MeetingPartition": 1,
+      "MeetingFrontGlass": 2,
+      "MeetingTable": 1,
+      "DiningChair": 6,
+      "MeetingDisplay": 1,
+      "Whiteboard": 1,
+      "PantryCabinet": 1,
+      "CoffeeMachine": 1,
+      "ArchiveBook": 12,
+      "Printer": 1,
+      "LoungeRug": 1,
+      "Sofa": 1,
+      "LoungeChair": 1,
+      "CoffeeTable": 1,
+      "ReceptionDesk": 1,
+      "ReceptionLaptop": 1,
+      "MeetingLaptop": 1,
+      "Plant": 4,
+      "WallArt": 1,
+      "LinearTaskLight": 2,
+      "Pendant": 2
+    },
+    "people": 0
+  },
+  "capabilities": {
+    "independentGlbLoad": true,
+    "rotateAndZoom": true,
+    "roofToggle": true,
+    "presetViews": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "independentObjectNodes": true,
+    "editObjectsInPreview": false,
+    "reconstructionSourceIncluded": true,
+    "editParticipantCountInPage": false,
+    "automaticFurnitureRelayout": false,
+    "activityPhases": false,
+    "liveCrowdSimulation": false
+  },
+  "integration": {
+    "frontend": "Standalone local viewer; production scene editing not integrated or tested",
+    "backend": "Not registered or uploaded",
+    "github": "Not uploaded",
+    "plannedRepositoryPath": "scene/templates/office/",
+    "plannedModelUrl": "/scene/templates/office/office.glb",
+    "generationApiConnected": false,
+    "sceneWireSchema": "Archive manifest, not a replacement backend Scene schema",
+    "singleMaterialAssetImportCompatible": false,
+    "reason": "Complete scene includes multiple objects and architecture; needs a dedicated whole-scene import path"
+  },
+  "provenance": {
+    "authored": "Architecture, furnishings, equipment stand-ins, lighting fixtures, signs and original graphic artwork",
+    "furniture": [
+      {
+        "role": "laptop",
+        "sourceUrl": "https://3dassets.dev/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+        "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        }
+      },
+      {
+        "role": "plant",
+        "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+        "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        }
+      }
+    ],
+    "sourceNotes": "ASSET-SOURCES.md",
+    "generatedByExternalModelApi": false
+  },
+  "validation": {
+    "modelReport": "validation/model-validation.json",
+    "gltfReport": "validation/gltf-validation.json",
+    "browserReport": "validation/browser-validation.json",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 224
+  }
+}

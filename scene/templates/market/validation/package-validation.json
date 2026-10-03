@@ -1,0 +1,31 @@
+{
+  "file": "market-scene-template.zip",
+  "bytes": 6308260,
+  "sha256": "9c0d95365f118b570d63cfffea0834b44b5a2bb654f8e2942a10c0fa3e838b2b",
+  "entries": 66,
+  "crcErrors": 0,
+  "allEntriesByteMatch": true,
+  "modelSha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+  "modelHasNoPeople": true,
+  "standaloneFiles": [
+    "market/serve.py",
+    "market/index.html",
+    "market/market.glb",
+    "market/vendor/three/three.module.js"
+  ],
+  "embeddedTexturesOnly": true,
+  "httpDownloads": [
+    {
+      "file": "market.glb",
+      "status": 200,
+      "bytes": 6650276,
+      "byteMatch": true
+    },
+    {
+      "file": "market-scene-template.zip",
+      "status": 200,
+      "bytes": 6308260,
+      "byteMatch": true
+    }
+  ]
+}

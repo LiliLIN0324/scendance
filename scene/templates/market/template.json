@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "templateId": "outdoor-market-30x22-v1",
+  "displayName": "户外市集 04 · 风物市集",
+  "kind": "complete-scene-template",
+  "status": "local-validated",
+  "model": {
+    "path": "market.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 6650276,
+    "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+    "embeddedImages": 28,
+    "externalResources": 0,
+    "extensionsRequired": []
+  },
+  "dimensions": {
+    "width": 30,
+    "depth": 22,
+    "area": 660,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Concept dimensions; no surveyed venue",
+    "surveyedSize": null
+  },
+  "inventory": {
+    "stalls": 12,
+    "stallSizeMeters": [
+      3.2,
+      2.4
+    ],
+    "tables": 4,
+    "chairs": 16,
+    "parasols": 2,
+    "planters": 6,
+    "trees": 6,
+    "recyclingBins": 3,
+    "stages": 1,
+    "stageSizeMeters": [
+      4.8,
+      2.6
+    ],
+    "peopleIncluded": false,
+    "visitors": 0,
+    "vendors": 0
+  },
+  "layers": [
+    "Market_Ground",
+    "Market_Stalls",
+    "Market_Furniture",
+    "Market_LightingRig",
+    "Market_Decor",
+    "Market_Canopies"
+  ],
+  "capabilities": {
+    "independentGlbLoad": true,
+    "rotateAndZoom": true,
+    "views": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "zoneLabels": true,
+    "canopyToggle": true,
+    "peopleIncluded": false,
+    "phases": [
+      "setup",
+      "open",
+      "evening",
+      "closed"
+    ],
+    "phaseScope": "Lighting presets only; objects remain fixed; no setup/teardown or crowd simulation",
+    "screenshotExport": true,
+    "downloadGlbIsFixedSnapshot": true,
+    "automaticFurnitureRelayout": false,
+    "liveCrowdSimulation": false,
+    "websiteMaterialLibraryConnected": false,
+    "generationApiConnected": false
+  },
+  "provenance": {
+    "authored": "Site, stalls, counters, merchandise, entry graphics, stage, tree planters and light rig",
+    "assets": [
+      {
+        "role": "table",
+        "file": "assets/models/table.glb",
+        "sourceUrl": "https://3dassets.dev/assets/medieval-monastery-and-scriptorium-trestle-table-2a0801e0",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "774b974756875549fd608e72f11cd24c6c1fdcb0d1c9f18381845591c2f446fc"
+      },
+      {
+        "role": "chair",
+        "file": "assets/models/chair.glb",
+        "sourceUrl": "https://3dassets.dev/assets/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "41ceb2de779a5f237bc4b77101199362e36a9526b3d8a64003d4404746cb7380"
+      },
+      {
+        "role": "planter",
+        "file": "assets/models/planter.glb",
+        "sourceUrl": "https://3dassets.dev/assets/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "5ff09e626c231efe65a4c163caea4b5fd84d002da304749161e472c666454f20"
+      },
+      {
+        "role": "bin",
+        "file": "assets/models/bin.glb",
+        "sourceUrl": "https://3dassets.dev/assets/bunker-shelter-construction-waste-bin-foot-pedal-f50124e7",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "3138813599ae643bae98c0d1c0765b5d9e2c47172a892df095e1fe41eddc74e6"
+      },
+      {
+        "role": "parasol",
+        "file": "assets/models/parasol.glb",
+        "sourceUrl": "https://3dassets.dev/assets/hero-shooter-harbour-payload-cafe-parasol-3af84c9f",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "5711e4a9ea8f34e54f9c945109c3964a8b7654aed97fcb396e056fc814522d43"
+      },
+      {
+        "role": "microphone",
+        "file": "assets/models/microphone.glb",
+        "sourceUrl": "https://3dassets.dev/assets/live-music-venue-and-festival-stage-microphone-on-boom-b553a46d",
+        "license": "CC0 1.0 Universal (archived declaration)",
+        "sha256": "ce4e75c881e8186395ec196ea4bbd6a747b4904f2c0811ba7e4beadf5b7dcfa0"
+      }
+    ],
+    "notes": "ASSET-SOURCES.md",
+    "vendorLicense": "vendor/three/LICENSE"
+  },
+  "preview": {
+    "page": "index.html",
+    "localUrl": "http://127.0.0.1:8774/",
+    "images": [
+      "previews/market-overview.png",
+      "previews/market-top.png",
+      "previews/market-interior.png"
+    ]
+  },
+  "validation": {
+    "model": "validation/model-validation-summary.json",
+    "format": "validation/gltf-validator.json",
+    "geometry": "validation/geometry-report.json",
+    "layout": "validation/layout-validation.json",
+    "browser": "validation/browser-validation.json",
+    "summary": {
+      "file": "market.glb",
+      "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+      "bytes": 6650276,
+      "checkedAt": "2026-10-02T15:28:58.064Z",
+      "coordinateSystem": "glTF Y-up, metres",
+      "scope": "Static concept layout only. The model includes no visitors or vendors; dimensions are design assumptions. This is not site measurement, pedestrian simulation, fire approval, structural, weather, or event-operating verification.",
+      "validatorVersion": "2.0.0-dev.3.10",
+      "gltfValidator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 914,
+        "hints": 0,
+        "truncated": false
+      },
+      "geometry": {
+        "nodes": 1286,
+        "meshInstances": 1156,
+        "triangles": 53770,
+        "embeddedImages": 28,
+        "externalResources": 0
+      },
+      "counts": {
+        "visitors": 0,
+        "vendors": 0,
+        "stalls": 12
+      },
+      "layout": {
+        "people": "not-applicable",
+        "furnitureInAisles": 0,
+        "footprintsOutside": 0,
+        "footprintOverlaps": 1,
+        "manualReview": 0,
+        "geometryOutside": 6
+      },
+      "hardFailures": [],
+      "passed": true
+    }
+  },
+  "integration": {
+    "frontend": "Standalone preview, not registered in production editor",
+    "backend": "Not registered",
+    "github": "Not pushed"
+  },
+  "package": {
+    "file": "market-scene-template.zip",
+    "entrypoint": "market/serve.py"
+  }
+}

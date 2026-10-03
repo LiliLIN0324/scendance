@@ -1,0 +1,38 @@
+{
+  "file": "market.glb",
+  "sha256": "151d4e1516a60d323c2c67269f7635610c80aaa5c4efca29107e4a4d0000692f",
+  "bytes": 6650276,
+  "checkedAt": "2026-10-02T15:28:58.064Z",
+  "coordinateSystem": "glTF Y-up, metres",
+  "scope": "Static concept layout only. The model includes no visitors or vendors; dimensions are design assumptions. This is not site measurement, pedestrian simulation, fire approval, structural, weather, or event-operating verification.",
+  "validatorVersion": "2.0.0-dev.3.10",
+  "gltfValidator": {
+    "errors": 0,
+    "warnings": 0,
+    "infos": 914,
+    "hints": 0,
+    "truncated": false
+  },
+  "geometry": {
+    "nodes": 1286,
+    "meshInstances": 1156,
+    "triangles": 53770,
+    "embeddedImages": 28,
+    "externalResources": 0
+  },
+  "counts": {
+    "visitors": 0,
+    "vendors": 0,
+    "stalls": 12
+  },
+  "layout": {
+    "people": "not-applicable",
+    "furnitureInAisles": 0,
+    "footprintsOutside": 0,
+    "footprintOverlaps": 1,
+    "manualReview": 0,
+    "geometryOutside": 6
+  },
+  "hardFailures": [],
+  "passed": true
+}

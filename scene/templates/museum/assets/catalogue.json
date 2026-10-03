@@ -1,0 +1,102 @@
+{
+  "provider": "3dassets.dev",
+  "sourceCatalogueRetrievedAt": "2026-10-02T09:43:36Z",
+  "archivedDate": "2026-10-02",
+  "assets": [
+    {
+      "id": "chair",
+      "title": "Dining Chair Timber (Bedroom and Living Room Furniture)",
+      "displayName": "椅子",
+      "role": "chair",
+      "use": "离场休息区木椅",
+      "slug": "bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+      "localPath": "assets/models/chair.glb",
+      "sourceUrl": "https://3dassets.dev/assets/bedroom-and-living-room-furniture-dining-chair-timber-b8b614f7",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/38784/v1/model.glb",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "slug": "cc0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "licenseEvidence": "Inherited from workspace catalogue archive, retrieved 2026-10-02; not a new live license review",
+      "bytes": 29684,
+      "triangles": 672,
+      "sourceSizeMeters": [
+        0.49,
+        0.471,
+        1.003
+      ],
+      "sha256": "41ceb2de779a5f237bc4b77101199362e36a9526b3d8a64003d4404746cb7380",
+      "hashVerified": true,
+      "sourceCatalogue": "scendance-github-preview/assets/library/catalogue.json",
+      "inspection": {
+        "gltfVersion": "2.0",
+        "nodes": 3,
+        "meshes": 2,
+        "materials": 2,
+        "images": 0,
+        "externalResources": [],
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ]
+      },
+      "validation": {
+        "validatorVersion": "2.0.0-dev.3.10",
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "hints": 0
+      }
+    },
+    {
+      "id": "plant",
+      "title": "Planter with Shrub (Street Food Market and Food Trucks)",
+      "displayName": "盆栽",
+      "role": "plant",
+      "use": "入口及休息区装饰盆栽",
+      "slug": "street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+      "localPath": "assets/models/plant.glb",
+      "sourceUrl": "https://3dassets.dev/assets/street-food-market-and-food-trucks-planter-with-shrub-0eedba0e",
+      "cdnUrl": "https://cdn.3dassets.dev/assets/34303/v1/model.glb",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "slug": "cc0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false
+      },
+      "licenseEvidence": "Inherited from workspace catalogue archive, retrieved 2026-10-02; not a new live license review",
+      "bytes": 15832,
+      "triangles": 276,
+      "sourceSizeMeters": [
+        0.94,
+        0.93,
+        1.307
+      ],
+      "sha256": "5ff09e626c231efe65a4c163caea4b5fd84d002da304749161e472c666454f20",
+      "hashVerified": true,
+      "sourceCatalogue": "scendance-github-preview/assets/library/catalogue.json",
+      "inspection": {
+        "gltfVersion": "2.0",
+        "nodes": 4,
+        "meshes": 3,
+        "materials": 3,
+        "images": 0,
+        "externalResources": [],
+        "extensionsUsed": [
+          "KHR_mesh_quantization"
+        ]
+      },
+      "validation": {
+        "validatorVersion": "2.0.0-dev.3.10",
+        "errors": 0,
+        "warnings": 0,
+        "infos": 0,
+        "hints": 0
+      }
+    }
+  ],
+  "totalBytes": 45516,
+  "totalTriangles": 948,
+  "notes": "Only these two environmental props are third-party models. All gallery artworks are original fictional concept works; no real artist or museum collection provenance is implied."
+}

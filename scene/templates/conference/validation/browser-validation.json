@@ -1,0 +1,491 @@
+{
+  "checkedAt": "2026-10-02T15:36:14.417Z",
+  "url": "http://127.0.0.1:8776/",
+  "modelSha256": "57470596dbe8284f57b8510e5f93fde380e634db1eebbb30fdaa87ae141c7f0d",
+  "browser": "Codex In-app Browser",
+  "checks": [
+    {
+      "test": "PNG canvas export",
+      "bytes": 1127658,
+      "signature": "89504e470d0a1a0a",
+      "width": 1492,
+      "height": 940,
+      "evidence": "previews/inside-canvas.png"
+    },
+    {
+      "test": "default GLB download",
+      "sha256": "57470596dbe8284f57b8510e5f93fde380e634db1eebbb30fdaa87ae141c7f0d"
+    },
+    {
+      "test": "enclosure hidden",
+      "state": {
+        "camera": "0.080,1.680,5.750",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "inside",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "overview reset",
+      "state": {
+        "camera": "26.000,29.000,34.000",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "orbit drag",
+      "state": {
+        "camera": "10.220,34.817,36.963",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "wheel zoom",
+      "state": {
+        "camera": "-6.132,34.129,24.714",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "mobile 390",
+      "layout": {
+        "controls": {
+          "bottom": 402.3984375,
+          "height": 45,
+          "left": 46.734375,
+          "right": 343.265625,
+          "top": 357.3984375,
+          "width": 296.53125,
+          "x": 46.734375,
+          "y": 357.3984375
+        },
+        "footnote": {
+          "bottom": 684.6953125,
+          "height": 28.796875,
+          "left": 18,
+          "right": 372,
+          "top": 655.8984375,
+          "width": 354,
+          "x": 18,
+          "y": 655.8984375
+        },
+        "panel": {
+          "bottom": 701.6953125,
+          "height": 259.296875,
+          "left": 0,
+          "right": 390,
+          "top": 442.3984375,
+          "width": 390,
+          "x": 0,
+          "y": 442.3984375
+        },
+        "scrollWidth": 390,
+        "stage": {
+          "bottom": 442.3984375,
+          "height": 506.3984375,
+          "left": 0,
+          "right": 390,
+          "top": -64,
+          "width": 390,
+          "x": 0,
+          "y": -64
+        },
+        "width": 390
+      }
+    },
+    {
+      "test": "mobile minimum40",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "44",
+        "visibleSeats": "36",
+        "visitors": "40",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "mobile one-person increment41",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "45",
+        "visibleSeats": "37",
+        "visitors": "41",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "maximum100",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "setup",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "setup",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "4",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "arrival",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "open",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "closed",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "closed",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "4",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "report",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "panel",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "panel",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "lecture",
+      "state": {
+        "camera": "41.862,46.693,54.743",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "people toggle off",
+      "state": {
+        "camera": "-4.393,12.682,18.521",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "0",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "people toggle on",
+      "state": {
+        "camera": "-6.404,13.871,17.045",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1127658",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "labels off",
+      "visible": 0
+    },
+    {
+      "test": "labels on",
+      "visible": 2
+    },
+    {
+      "test": "poster zone detail",
+      "text": "×ZONE / 04学术海报交流三块原创示例海报，展示议题与交流版式。所有内容均为虚构，不包含真实论文或研究结论。"
+    },
+    {
+      "test": "small mobile320",
+      "layout": {
+        "controls": {
+          "bottom": 466,
+          "height": 45,
+          "left": 11.734375,
+          "right": 308.265625,
+          "top": 421,
+          "width": 296.53125,
+          "x": 11.734375,
+          "y": 421
+        },
+        "scrollWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "test": "final PNG actual download",
+      "file": "/Users/sandra/Downloads/current-view.png",
+      "bytes": 1038503,
+      "signature": "89504e470d0a1a0a",
+      "width": 1582,
+      "height": 806,
+      "evidence": "previews/inside-canvas.png"
+    },
+    {
+      "test": "inside with roof final",
+      "state": {
+        "camera": "0.605,0.235,88.183",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1038503",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "true",
+        "triangles": "234774",
+        "view": "inside",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "final top",
+      "state": {
+        "camera": "0.000,48.000,0.001",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "pngBytes": "1038503",
+        "pngType": "image/png",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "top",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    },
+    {
+      "test": "final console",
+      "entries": []
+    },
+    {
+      "test": "final default restore",
+      "state": {
+        "camera": "26.000,29.000,34.000",
+        "guestSeats": "4",
+        "meshes": "2247",
+        "mode": "lecture",
+        "modelSource": "conference.glb",
+        "phase": "launch",
+        "ready": "true",
+        "rig": "false",
+        "triangles": "234774",
+        "view": "overview",
+        "visiblePeople": "104",
+        "visibleSeats": "96",
+        "visitors": "100",
+        "zoom": "1"
+      }
+    }
+  ],
+  "passed": true,
+  "notes": [
+    "PNG download tested from same-origin server path and file signature/dimensions checked. Direct blob/data native download was unreliable in this browser, so server-backed saving was added with static-host fallback.",
+    "Viewport overrides reset after responsive checks.",
+    "Stage layouts are discrete presets; no continuous pedestrian simulation."
+  ]
+}

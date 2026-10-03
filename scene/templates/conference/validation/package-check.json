@@ -1,0 +1,9 @@
+{
+  "archive": "conference-template.zip",
+  "bytes": 5332224,
+  "sha256": "48815c1722f420a55fecbffb09fb41423266272b118a0a38816bf6147f133e82",
+  "entries": 42,
+  "crcCheck": "passed",
+  "glbMatchesSource": true,
+  "note": "Package check is kept alongside the ZIP to avoid recursive hashing."
+}

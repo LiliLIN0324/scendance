@@ -1,39 +1,38 @@
 # 完整场景库
 
-体育馆、品牌快闪、摄影工作室、酒吧与咖啡店放在同一个分支 `codex/gym-scene-template`，每个目录都包含完整 GLB、独立预览页面、生成源码、素材来源及验证记录。
+十类完整场景统一归档在 `codex/gym-scene-template` 分支的 `scene/templates/`。每类包含独立 GLB、template.json、预览页面、生成源码、素材来源、效果图、验证记录和 ZIP。
 
-| 场景 | 模型与说明 | 已实现的交互 |
-| --- | --- | --- |
-| 体育馆 · 黑客松 | [gym/](gym/) · 100 位参与者、25 支团队的概念方案 | 旋转、缩放、三个视角、屋顶开关 |
-| 品牌快闪 · 青序 | [popup/](popup/) · 12 × 8 米概念方案 | 旋转、缩放、三个视角、四个阶段、8–30 位来访者与 2 位店员 |
-| 摄影工作室 · STUDIO / 01 | [studio/](studio/) · 12 × 10 米概念方案 | 旋转、缩放、三个视角、屋顶与分区说明开关 |
-| 酒吧 · 琥珀间 | [bar/](bar/) · 12 × 9 米概念方案 | 旋转、缩放、三个视角、外墙与顶盖开关 |
-| 咖啡店 · 慢调 | [cafe/](cafe/) · 12 × 9 米概念方案 | 旋转、缩放、三个视角、屋顶与外墙开关 |
+## 模型与完整包
 
-## 新增模型与完整包
+| 场景 | 模型与说明 | 完整 GLB | 可解压运行的 ZIP |
+| --- | --- | --- | --- |
+| 体育馆 · 黑客松 | [gym/](gym/) | [gym.glb](gym/gym.glb) | [gym-scene-template-v1.zip](gym/gym-scene-template-v1.zip) |
+| 品牌快闪 · 青序 | [popup/](popup/) | [popup.glb](popup/popup.glb) | [popup-scene-template-v1.zip](popup/popup-scene-template-v1.zip) |
+| 室外草坪 · 旷野有约 | [lawn/](lawn/) | [lawn.glb](lawn/lawn.glb) | [lawn-scene-template-v1.zip](lawn/lawn-scene-template-v1.zip) |
+| 户外市集 · 风物市集 | [market/](market/) | [market.glb](market/market.glb) | [market-scene-template.zip](market/market-scene-template.zip) |
+| 美术馆 · 留白之间 | [museum/](museum/) | [museum.glb](museum/museum.glb) | [museum-template.zip](museum/museum-template.zip) |
+| 学术会议 · 共知 | [conference/](conference/) | [conference.glb](conference/conference.glb) | [conference-template.zip](conference/conference-template.zip) |
+| 办公室 · 留白 | [office/](office/) | [office.glb](office/office.glb) | [office-scene-template-v1.zip](office/office-scene-template-v1.zip) |
+| 摄影工作室 | [studio/](studio/) | [studio.glb](studio/studio.glb) | [studio-scene-template.zip](studio/studio-scene-template.zip) |
+| 酒吧 · 琥珀间 | [bar/](bar/) | [bar.glb](bar/bar.glb) | [bar-template.zip](bar/bar-template.zip) |
+| 咖啡店 · 慢调 | [cafe/](cafe/) | [cafe.glb](cafe/cafe.glb) | [cafe-template.zip](cafe/cafe-template.zip) |
 
-三个新场景与 `gym/`、`popup/` 并列，归档日期为 2026-10-03。ZIP 保留经验证的原始内容，与各目录内模型、清单及预览图一致。
+## 本次补传
 
-| 场景 | 完整模型 | 可解压运行的 ZIP |
-| --- | --- | --- |
-| 摄影工作室 | [studio/studio.glb](studio/studio.glb) | [studio/studio-scene-template.zip](studio/studio-scene-template.zip) |
-| 酒吧 | [bar/bar.glb](bar/bar.glb) | [bar/bar-template.zip](bar/bar-template.zip) |
-| 咖啡店 | [cafe/cafe.glb](cafe/cafe.glb) | [cafe/cafe-template.zip](cafe/cafe-template.zip) |
+2026-10-03 补传草坪、市集、美术馆、学术会议、办公室的完整目录；补齐体育馆、快闪的 ZIP，草坪原来位于库上层的 ZIP 一并放回对应目录。美术馆使用本地最新的留白稀疏 v2。摄影工作室、酒吧、咖啡店沿用分支内已有归档。独立物料的咖啡机、吊灯、小盆栽见 [补充物料说明](../../assets/models/EXTRA-MODELS.md)。
 
-各包内 `local archive only`、`Not pushed` 等描述是首次打包时的状态记录。当前三个目录已纳入上述 GitHub 分支；正式网站的场景登记、编辑器与后端接入状态仍以各包说明为准。
+本次保留各场景和原 ZIP 的字节内容。各模板或包内的 `Not pushed`、`Not uploaded`、`local archive only` 等是制作时记录；GitHub 当前归档位置以本页和 [上传清单](UPLOAD-INVENTORY.json) 为准。清单包含十个模型及 ZIP 的大小和 SHA-256。
 
 ## 一起预览
 
-在仓库根目录运行：
+在仓库根目录运行 `python3 serve.py 8771`，打开 <http://127.0.0.1:8771/scene/templates/>，选择场景。GitHub 文件页面用于阅读说明、查看截图和下载文件，不会直接运行三维预览。
 
-```sh
-python3 serve.py 8771
-```
+也可以解压单个 ZIP，按包内 README 在对应目录运行 `python3 serve.py`。各场景原有的本地端口与重建步骤保持原样。
 
-打开 <http://127.0.0.1:8771/scene/templates/>，选择任一场景。保持终端里的服务器运行；查看无需 npm、账号或 API Key。GitHub 文件页面可以阅读说明和效果图，但不会直接运行三维预览。
+## 使用范围与对接
 
-## 使用范围
+这是场景素材归档与独立预览入口。本次上传不合并 main、不部署网站、不登记后端资产，也不改变生成接口。正式产品接入状态应以 main 和部署记录为准，不能由本分支文件存在推断已上线。
 
-五个场景都是独立模板，尚未接入正式网站的编辑器、物料登记或生成接口。体育馆人数固定；快闪调人数只更新人物，家具布局固定。摄影工作室、酒吧与咖啡店为无人静态空间，物件保留独立命名分组。各自下载的 GLB 均为已归档的默认快照。
+完整场景采用 glTF 2.0 binary、米制约定和 Y 轴向上，模型贴图内嵌。各场景的尺寸依据、分组、人数/交互、前后端接入边界和来源见各自 README、template.json 与 ASSET-SOURCES.md。完整场景不等于单件家具，不能直接当作已通过单件物料上传限制的文件。
 
-场馆均未经过现场尺寸测量，概念人数不代表现场核定容量。详细假设、来源和验证范围见各目录的 README 与 template.json。重建模型使用对应目录内的 serve.py，操作方法见各自说明。
+人数和尺寸为各示例的设计假设；本次只核验归档完整性、文件一致性与入口引用，没有重新进行场景交互或现场尺度验收。

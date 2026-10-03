@@ -41,3 +41,7 @@ Total download size: **262,516 bytes** (256.4 KiB); **5,638 triangles** across t
   - SHA-256: `a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a`
 - **speaker**: [official metadata](https://3dassets.dev/api/v1/assets/village-hall-and-community-events-pa-speaker-on-stand-7ffa787e) · [original GLB](https://cdn.3dassets.dev/assets/35204/v1/model.glb) · [license](https://creativecommons.org/publicdomain/zero/1.0/)
   - SHA-256: `46083c231cbd4d24dd60ef7306f35577aea7c8b8f6b3f74b8fc4ea160b28106a`
+
+## 2026-10-03 supplementary original models
+
+The coffee machine, pendant light and small plant are now archived in `assets/models/`. Original bytes are unchanged. [Source links and per-file hashes](assets/models/extra-models.json) and [usage notes](assets/models/EXTRA-MODELS.md) accompany them. This addition does not register assets in the production catalogue or cloud storage.
