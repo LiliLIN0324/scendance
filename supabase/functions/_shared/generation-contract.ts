@@ -15,7 +15,7 @@ export type GenerationRequest=z.infer<typeof generationRequestSchema>;
 export type GenerationProvider={providerMode:'tokenhub'|'legacy';providerModel:'hy-3d-3.0'|'hy-3d-3.1'|'hy-3d-texture'};
 export function generationCapabilities(env:Env) {
   const mode=env('HUNYUAN_API_MODE')??'tokenhub',model=env('HUNYUAN_MODEL')??'hy-3d-3.0';
-  const configured=Boolean(env('HUNYUAN_API_KEY')&&env('HUNYUAN_TERMS_URL')&&env('HUNYUAN_TERMS_REVIEWED_AT'));
+  const configured=env('HY3_RETIRED')!=='true'&&Boolean(env('HUNYUAN_API_KEY')&&env('HUNYUAN_TERMS_URL')&&env('HUNYUAN_TERMS_REVIEWED_AT'));
   const supported=(mode==='tokenhub'||mode==='legacy')&&(model==='hy-3d-3.0'||(mode==='tokenhub'&&model==='hy-3d-3.1'));
   return {model,textToModel:configured&&supported,imageToModel:configured&&supported&&mode==='tokenhub',texture:configured&&mode==='tokenhub'&&env('HUNYUAN_TEXTURE_ENABLED')==='true',textureRequiresImage:true as const};
 }

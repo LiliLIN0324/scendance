@@ -1,0 +1,15 @@
+{
+  "method": "Management API single transaction; direct db connection unavailable",
+  "migrations": [
+    {
+      "version": "20261003190000",
+      "sha256": "ed38aacaebfef68625d70eca1c6060e743b6a54548c72975133b3aba475d470e"
+    },
+    {
+      "version": "20261003200000",
+      "sha256": "170188a4393c5610a4ac261a714f992b08339c443ff7aadba27e5d233e485a56"
+    }
+  ],
+  "historyCount": 18,
+  "verifiedRemoteSQL": true
+}

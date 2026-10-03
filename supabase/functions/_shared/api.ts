@@ -1,4 +1,8 @@
 import { z } from 'zod';
+import { agentRunRequestSchema } from './agent-contract.ts';
+import { agentExecutionMode, executeAgentRun } from './agent-runner.ts';
+import { parametricAssetRequestSchema } from './parametric-contract.ts';
+import { createParametricAsset } from './parametric.ts';
 import { canApplyStructuralChange, structuralViolations, dimensionConflicts } from './structural-geometry.ts';
 import { reconstructionRequestSchema } from './reconstruction-contract.ts';
 import { ImageUtils } from '@gltf-transform/core';
@@ -16,7 +20,7 @@ const name=z.string().trim().min(1).max(120);
 const displayName=z.string().trim().min(1).max(80);
 const projectBody=(body:unknown,id:string)=>({...z.record(z.string(),z.unknown()).parse(body),projectId:uuid.parse(id)});
 const savedScene=z.strictObject({...leaseSchema.shape,scene:sceneSchema});
-export function createApi(backend:Backend,env:Env,fetcher:Fetcher=fetch) {
+export function createApi(backend:Backend,env:Env,fetcher:Fetcher=fetch,waitUntil?:(task:Promise<unknown>)=>void) {
   return async(request:Request):Promise<Response>=>{
     const origin=request.headers.get('origin');
     const allowed=(env('ALLOWED_ORIGINS')??'http://localhost:3000').split(',').map(s=>s.trim());
@@ -93,6 +97,23 @@ export function createApi(backend:Backend,env:Env,fetcher:Fetcher=fetch) {
       const project=path.match(/^\/projects\/([^/]+)(.*)$/);
       if(project) {
         const projectId=uuid.parse(project[1]), tail=project[2];
+        if(tail==='/agent-runs'&&method==='POST') {
+          if(!backend.agent)throw new ApiError('SERVICE_NOT_CONFIGURED',503);
+          const input=agentRunRequestSchema.parse(await json());
+          if(input.selectedIds.some(id=>!input.scene.objects.some(object=>object.id===id)))throw new ApiError('INVALID_SELECTION',422);
+          required(env,'DEEPSEEK_API_KEY');
+          const stored=await backend.agent(actor,'create',{projectId,input,fingerprint:await sha256(canonical(input)),baseHash:await sceneHash(input.scene),executionMode:env('DEEPSEEK_AGENT_MODE')==='legacy'?'preview':agentExecutionMode(input)});
+          if(!stored.reused){
+            const task=executeAgentRun(backend,actor,projectId,stored.id,env,fetcher).catch(()=>{});
+            if(waitUntil)waitUntil(task);else await task;
+          }
+          return respond(waitUntil?stored:await backend.agent(actor,'get',{projectId,id:stored.id}),stored.reused?200:202);
+        }
+        const agentRun=tail.match(/^\/agent-runs\/(by-request\/)?([^/]+)(\/cancel)?$/);
+        if(agentRun&&backend.agent) {
+          if(agentRun[1]&&method==='GET'&&!agentRun[3])return respond(await backend.agent(actor,'by_request',{projectId,requestId:uuid.parse(agentRun[2])}));
+          if(!agentRun[1]&&((method==='GET'&&!agentRun[3])||(method==='POST'&&agentRun[3])))return respond(await backend.agent(actor,agentRun[3]?'cancel':'get',{projectId,id:uuid.parse(agentRun[2])}));
+        }
         if(tail==='/material-variants' && method==='POST') {
           const {reused,...proposal}=await prepareMaterialVariant(backend,actor,projectId,await json());
           return respond(proposal,reused?200:201);
@@ -189,6 +210,11 @@ export function createApi(backend:Backend,env:Env,fetcher:Fetcher=fetch) {
         if(tail==='/shares' && method==='GET') return respond(await backend.scene(actor,'shares.list',{projectId}));
         const share=tail.match(/^\/shares\/([^/]+)$/);
         if(share && method==='DELETE') return respond(await backend.scene(actor,'shares.revoke',{projectId,shareId:uuid.parse(share[1])}));
+      }
+      if(path==='/assets/parametric'&&method==='POST') {
+        const input=parametricAssetRequestSchema.parse(await json());
+        const result=await createParametricAsset(backend,actor,input.studioId,input.requestId,input.parameters);
+        return respond(result,result.reused?200:201);
       }
       if(path==='/assets' && method==='GET') return respond(await backend.scene(actor,'assets.list'));
       const materialAsset=path.match(/^\/assets\/([^/]+)\/(materials|customize)$/);

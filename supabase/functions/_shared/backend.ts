@@ -10,6 +10,7 @@ export interface Backend {
   scene: Rpc;
   jobs: Rpc;
   reconstruction: Rpc;
+  agent?: Rpc;
   upload(path:string,bytes:Uint8Array,mime:string):Promise<void>;
   sign(path:string):Promise<string>;
   readSourceBytes?(path:string):Promise<Uint8Array>;
@@ -33,7 +34,7 @@ export function createBackend(env:Env):Backend {
   const scene=rpc(client,'scene_rpc'),studios=rpc(client,'studio_rpc');
   return {
     async user(token) { const {data,error}=await client.auth.getUser(token); if(error||!data.user||data.user.is_anonymous) throw new ApiError('UNAUTHENTICATED',401); return data.user.id; },
-    scene:(actor,action,data)=>(action.startsWith('studios.')?studios:scene)(actor,action,data),jobs:rpc(client,'job_rpc'),reconstruction:rpc(client,'reconstruction_rpc'),
+    scene:(actor,action,data)=>(action.startsWith('studios.')?studios:scene)(actor,action,data),jobs:rpc(client,'job_rpc'),reconstruction:rpc(client,'reconstruction_rpc'),agent:rpc(client,'agent_rpc'),
     async upload(path,bytes,mime) {
       const {error}=await client.storage.from('scene-assets').upload(path,new Uint8Array(bytes),{contentType:mime,upsert:false});
       // Retry after a worker crash reuses a content-addressed immutable path.
