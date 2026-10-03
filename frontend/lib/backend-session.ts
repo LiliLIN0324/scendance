@@ -3,12 +3,15 @@
 import { useSyncExternalStore } from "react";
 import { z } from "zod";
 import { assertFreshProposal, createSceneClient, SceneApiError, type EditorState, type Proposal } from "../../client/scene-client";
+import { agentRunRequestSchema, agentRunSchema, type AgentRun, type AgentRunRequest } from "../../supabase/functions/_shared/agent-contract";
 import { resolvedMaterialSuggestionSchema, type MaterialSuggestion } from "../../supabase/functions/_shared/agent-material-contract";
 import { materialVariantProposalRequestSchema } from "../../supabase/functions/_shared/asset-customization-contract";
 import { canonical, proposalRequestSchema, sceneSchema, uuid, type Scene } from "../../supabase/functions/_shared/domain";
 import { generationRequestSchema, type GenerationRequest } from "../../supabase/functions/_shared/generation-contract";
 import { reconstructionRequestSchema, reconstructionJobSchema, sourceImageSchema, type ReconstructionRequest, type SourceImage } from "../../supabase/functions/_shared/reconstruction-contract";
 export { SceneApiError };
+export type { AgentRun };
+export type AgentRunInput = Pick<AgentRunRequest, "requestId" | "scene" | "selectedIds" | "instruction" | "context" | "jevEnabled" | "executionMode">;
 export type { SourceImage, DimensionConstraint, SceneV2 } from "../../supabase/functions/_shared/reconstruction-contract";
 export type ReconstructionJob = Pick<z.infer<typeof reconstructionJobSchema>, 'id' | 'state' | 'candidate' | 'issues' | 'error_code'> & { proposal?: SceneProposal | null | undefined };
 export type ReconstructionInput = Pick<ReconstructionRequest, 'scene' | 'sources' | 'dimensions' | 'mode' | 'instruction' | 'selectedIds' | 'reviewedScene' | 'reviewedJobId'> & { requestId: string };
@@ -735,6 +738,36 @@ export class BackendSession {
       } finally { this.proposalPending = false; }
     })();
     return record.promise;
+  }
+  /** Start once; uncertain dispatches are recovered by request ID through GET. */
+  async startAgentRun(input: AgentRunInput): Promise<AgentRun> {
+    if (this.operationPending) throw new SceneApiError("CLOUD_OPERATION_BUSY", 409, null);
+    const state = this.proposalState(input.scene);
+    const body = agentRunRequestSchema.parse({ ...input, sessionId: state.sessionId, generation: state.generation, expectedRevision: state.expectedRevision, localRevision: state.localRevision });
+    const run = agentRunSchema.parse(await this.request(`/projects/${state.projectId}/agent-runs`, 'POST', body, { projectId: state.projectId, lease: state }, false));
+    if (run.projectId !== state.projectId || run.requestId !== input.requestId) throw new SceneApiError('INVALID_RESPONSE', 502, null);
+    return run;
+  }
+  async getAgentRun(runId: string): Promise<AgentRun> {
+    const projectId = this.snapshot.project?.id;
+    if (!projectId) throw new SceneApiError('PROJECT_REQUIRED', 409, null);
+    const run = agentRunSchema.parse(await this.businessRequest(`/projects/${projectId}/agent-runs/${uuid.parse(runId)}`));
+    if (run.projectId !== projectId || run.id !== runId) throw new SceneApiError('INVALID_RESPONSE', 502, null);
+    return run;
+  }
+  async getAgentRunByRequest(requestId: string): Promise<AgentRun> {
+    const projectId = this.snapshot.project?.id;
+    if (!projectId) throw new SceneApiError('PROJECT_REQUIRED', 409, null);
+    const run = agentRunSchema.parse(await this.businessRequest(`/projects/${projectId}/agent-runs/by-request/${uuid.parse(requestId)}`));
+    if (run.projectId !== projectId || run.requestId !== requestId) throw new SceneApiError('INVALID_RESPONSE', 502, null);
+    return run;
+  }
+  async cancelAgentRun(runId: string): Promise<AgentRun> {
+    const projectId = this.snapshot.project?.id;
+    if (!projectId) throw new SceneApiError('PROJECT_REQUIRED', 409, null);
+    const run = agentRunSchema.parse(await this.businessRequest(`/projects/${projectId}/agent-runs/${uuid.parse(runId)}/cancel`, 'POST'));
+    if (run.projectId !== projectId || run.id !== runId) throw new SceneApiError('INVALID_RESPONSE', 502, null);
+    return run;
   }
   /** Deterministic asset replacement prepares a preview; only applySceneProposal saves it. */
   async prepareMaterialVariantProposal(input: { requestId: string; scene: Scene; objectIds: string[]; sourceAssetId: string; variantAssetId: string }): Promise<SceneProposal> {

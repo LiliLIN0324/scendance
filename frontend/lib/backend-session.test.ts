@@ -385,3 +385,31 @@ describe("workspace business requests", () => {
     expect(controller.getSnapshot()).toMatchObject({ user: null, writeBlocked: true, dirty: true, draft: { lighting: 'warm' } });
   });
 });
+
+describe('Agent run client contract',()=>{
+  const requestId='70000000-0000-4000-8000-000000000001',runId='70000000-0000-4000-8000-000000000002';
+  const run={id:runId,projectId,requestId,state:'running',progress:'查找物料',callCount:1,candidates:[],evaluation:null,executionMode:'preview',jevEnabled:false,expiresAt:'2026-10-02T08:10:00Z'};
+  it('sends current unsaved scene with real lease context and recovers solely through GET',async()=>{
+    const controller=await editing();
+    queue(run,202);
+    await controller.startAgentRun({requestId,scene:assetScene,selectedIds:[assetScene.objects[0]!.id],instruction:'移动选中物料',context:{brief:'完整需求',acceptedDecisions:[],recentMessages:[]},jevEnabled:false,executionMode:'preview'});
+    expect(request(3)).toMatchObject({url:`${base}/functions/v1/scene-api/projects/${projectId}/agent-runs`,options:{method:'POST'},body:{requestId,scene:assetScene,sessionId:controller.getSnapshot().sessionId,generation:3,expectedRevision:4,localRevision:controller.getSnapshot().localRevision}});
+    queue(run);await controller.getAgentRunByRequest(requestId);
+    queue(run);await controller.getAgentRun(runId);
+    queue({...run,state:'cancelled'});await controller.cancelAgentRun(runId);
+    expect(request(4)).toMatchObject({options:{method:'GET'},url:`${base}/functions/v1/scene-api/projects/${projectId}/agent-runs/by-request/${requestId}`});
+    expect(request(5).options.method).toBe('GET');
+    expect(request(6)).toMatchObject({options:{method:'POST'},url:`${base}/functions/v1/scene-api/projects/${projectId}/agent-runs/${runId}/cancel`});
+    expect(controller.getSnapshot().draft).toEqual(assetScene);
+  });
+  it('rejects a run belonging to another request and never automatically retries a failed dispatch',async()=>{
+    const controller=await editing();
+    const input={requestId,scene,selectedIds:[],instruction:'摆放桌子',context:{brief:'',acceptedDecisions:[],recentMessages:[]},jevEnabled:false,executionMode:'preview' as const};
+    queue({...run,requestId:runId},202);
+    await expect(controller.startAgentRun(input)).rejects.toMatchObject({code:'INVALID_RESPONSE'});
+    expect(mockFetch).toHaveBeenCalledTimes(4);
+    queue({...run,projectId:studioId});
+    await expect(controller.getAgentRun(runId)).rejects.toMatchObject({code:'INVALID_RESPONSE'});
+    expect(mockFetch).toHaveBeenCalledTimes(5);
+  });
+});

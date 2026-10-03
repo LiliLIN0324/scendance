@@ -154,3 +154,11 @@
 .cr-model-tools { display:flex; gap:6px; margin-bottom:16px; }
 .cr-model-tools button { flex:1; padding:9px 4px; border:1px solid #dce2d2; border-radius:7px; background:#f8faf3; color:#68785d; cursor:pointer; font:inherit; font-size:11px; }
 .cr-model-tools button[aria-pressed="true"] { background:#eaf0df; border-color:#b8c9a8; color:#354f38; }
+.cr-candidates { margin:12px 0; padding:12px; border:1px solid #c7d3b7; border-radius:10px; background:#f5f8ee; }
+.cr-candidates p { font-size:11px; line-height:1.7; color:#617254; }
+.cr-candidates>div { display:grid; gap:7px; }
+.cr-candidates button { display:grid; gap:4px; text-align:left; border:1px solid #d0d9c4; border-radius:7px; padding:9px; color:#526348; background:white; font-size:11px; }
+.cr-candidates button[aria-pressed="true"] { border-color:#526d45; background:#eaf0df; }
+.cr-candidates button:disabled { opacity:.55; }
+.cr-parametric-families { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; margin:12px 0 18px; }
+.cr-parametric-families button,.cr-chat-working button { border:1px solid #c7d3b7; border-radius:7px; padding:7px; color:#526348; background:white; font:inherit; font-size:11px; cursor:pointer; }

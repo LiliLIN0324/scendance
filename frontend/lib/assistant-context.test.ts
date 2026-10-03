@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ASSISTANT_INSTRUCTION_LIMIT, AssistantContextError, buildAssistantInstruction } from "./assistant-context";
+import { ASSISTANT_INSTRUCTION_LIMIT, AssistantContextError, buildAssistantInstruction, buildAgentContext } from "./assistant-context";
 
 describe("assistant context composition", () => {
   it("preserves the full brief, explicit decisions, latest proposal and current request", () => {
@@ -91,5 +91,21 @@ describe("assistant context composition", () => {
     expect(history).toHaveLength(1);
     expect(history[0]?.text).toHaveLength(4000);
     expect(decisions).toEqual(["不自动替代缺少物料。"]);
+  });
+});
+
+describe('structured Agent context',()=>{
+  it('keeps a long brief and the latest request in independent fields',()=>{
+    const brief='完整需求'.repeat(1000);
+    const result=buildAgentContext({briefInstruction:brief,message:'把选中桌子移动一米',confirmedMaterialDecisions:['保留入口通道'],recentMessages:[{role:'assistant',text:'背景'}]});
+    expect(result.context.brief).toBe(brief);
+    expect(result.instruction).toBe('把选中桌子移动一米');
+    expect(result.context.acceptedDecisions).toEqual(['保留入口通道']);
+    expect(result.context.recentMessages).toEqual([{role:'assistant',text:'背景'}]);
+  });
+  it('bounds background history while rejecting oversized essential context',()=>{
+    const result=buildAgentContext({briefInstruction:'需求',message:'当前操作',recentMessages:Array.from({length:20},(_,index)=>({role:'user' as const,text:`背景 ${index}`}))});
+    expect(result.context.recentMessages).toHaveLength(12);expect(result.omittedHistory).toBe(8);
+    expect(()=>buildAgentContext({briefInstruction:'x'.repeat(12001),message:'当前操作'})).toThrow('不会自动截断');
   });
 });

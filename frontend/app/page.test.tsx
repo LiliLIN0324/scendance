@@ -82,6 +82,7 @@ function restore(object: object, key: string, descriptor: PropertyDescriptor | u
 }
 
 beforeEach(() => {
+  localStorage.clear(); sessionStorage.clear();
   window.history.replaceState(null, '', '/auth');
   const navigate = (url: string) => {
     window.history.replaceState(null, '', url);
@@ -149,16 +150,16 @@ describe('introduction round trips', () => {
   });
 
   it('keeps a pending real proposal available for confirmation without regenerating it', async () => {
-    const snapshot = { ...activeController.getSnapshot(), configured: true, user: { id: 'user-test', email: 'editor@example.com' }, writeBlocked: false, status: 'editing' as const, revision: 1, project: { id: projectId, studio_id: 'studio-test', name: '客户方案', revision: 1, scene } };
+    const snapshot = { ...activeController.getSnapshot(), configured: true, sessionId:proposal.session_id,lease:{projectId,sessionId:proposal.session_id,generation:1,revision:1,expiresAt:'2099-01-01T00:00:00Z'}, user: { id: 'user-test', email: 'editor@example.com' }, writeBlocked: false, status: 'editing' as const, revision: 1, project: { id: projectId, studio_id: 'studio-test', name: '客户方案', revision: 1, scene } };
     vi.spyOn(activeController, 'getSnapshot').mockReturnValue(snapshot);
-    const generate = vi.spyOn(activeController, 'requestProposal').mockResolvedValue(proposal);
+    const generate = vi.spyOn(activeController, 'startAgentRun').mockImplementation(async input=>({id:'60000000-0000-4000-8000-000000000001',projectId,requestId:input.requestId,state:'complete',progress:'完成',callCount:1,candidates:[{label:'A',title:'方案',proposal}],evaluation:null,executionMode:'preview',jevEnabled:false,expiresAt:proposal.expires_at}));
     vi.spyOn(activeController, 'authorizeAssets').mockResolvedValue({ assetUrls: {}, assetNames: {} });
     const apply = vi.spyOn(activeController, 'applySceneProposal').mockResolvedValue({ id: projectId, revision: 2, scene: candidate, previousScene: scene, updatedAt: '2026-10-02T10:00:00Z', undoGroup: 'undo-test', acceptedLocally: true });
     render(<App />);
     fireEvent.click(screen.getByRole('button', { name: '进入工作台' }));
     await openAgent();
     fireEvent.change(await screen.findByRole('textbox', { name: '客户需求' }), { target: { value: '保留一处交流座位。' } });
-    fireEvent.click(screen.getByRole('checkbox', { name:'发送后直接应用' }));
+    fireEvent.click(screen.getByRole('checkbox', { name:'明确指令直接应用' }));
     fireEvent.click(screen.getByRole('button', { name: '生成布置预览' }));
     await screen.findByText('方案提案 · 尚未应用');
     fireEvent.click(screen.getByRole('button', { name: '返回登录页' }));

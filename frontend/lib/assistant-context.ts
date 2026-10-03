@@ -64,3 +64,24 @@ export function buildAssistantInstruction(input: AssistantContextInput): Assista
   // The required block already fits, so dropping all history always succeeds.
   return { instruction: required, omittedHistory: history.length };
 }
+
+/** Agent fields have independent limits, so the current brief is never squeezed into chat history. */
+export function buildAgentContext(input: AssistantContextInput) {
+  if (!input.message.trim()) throw new AssistantContextError('ASSISTANT_MESSAGE_REQUIRED', 0);
+  const decisions = typeof input.confirmedMaterialDecisions === 'string' ? [input.confirmedMaterialDecisions] : [...(input.confirmedMaterialDecisions ?? [])];
+  if (input.message.length > 6000 || input.briefInstruction.length > 12000 || decisions.some(value => value.length > 1000)) {
+    throw new Error('本次请求、完整需求或已确认决定过长，请精简后重试；必需条件不会自动截断。');
+  }
+  const history = input.recentMessages ?? [];
+  const recentMessages = history.filter(message => message.text.length <= 3000).slice(-12).map(({role,text}) => ({role,text}));
+  return {
+    instruction: input.message.trim(),
+    context: {
+      brief: input.briefInstruction,
+      acceptedDecisions: decisions.slice(-20),
+      recentMessages,
+      ...(input.lastProposalExplanation?.trim() ? { lastProposalExplanation: input.lastProposalExplanation.slice(0, 1200) } : {}),
+    },
+    omittedHistory: history.length - recentMessages.length,
+  };
+}

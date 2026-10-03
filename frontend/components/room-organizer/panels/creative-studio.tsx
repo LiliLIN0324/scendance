@@ -2,8 +2,8 @@
 
 import { ArrowUp, Box, Check, LayoutTemplate, Loader2, RefreshCw, Sparkles, Trash2, X } from 'lucide-react';
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { buildAssistantInstruction } from '@/lib/assistant-context';
-import { useBackendSession, type BackendSession, type SceneProposal } from '@/lib/backend-session';
+import { buildAgentContext } from '@/lib/assistant-context';
+import { useBackendSession, SceneApiError, type BackendSession, type SceneProposal, type AgentRun } from '@/lib/backend-session';
 import { listStoredSources, storeSource, deleteSource, suggestSourceKind, readSourceForm, storeSourceForm, registerSourceFlush } from '@/lib/source-storage';
 import { canonical } from '../../../../supabase/functions/_shared/domain';
 import { useSelection } from '../contexts';
@@ -18,12 +18,14 @@ import { SceneDeliveryPanel } from './scene-delivery-panel';
 import { ScenePresetsPanel } from './scene-presets-panel';
 import { VenuePhotosPanel, type VenuePhoto } from './venue-photos-panel';
 import { VenueShapePresets } from './venue-shape-presets';
-import type { ModelGenerationSeed } from './generated-model-library';
 import type { RoomLayout } from '../lib/types';
 import './creative-studio.css';
 
 type ReferenceImage = VenuePhoto;
 type Message = { id: string; role: 'user' | 'assistant'; text: string; modelSuggestions?: SceneProposal['modelSuggestions']; materialSuggestions?: SceneProposal['materialSuggestions'] };
+type RunMarker = { requestId: string; runId?: string; baseKey: string; briefKey: string };
+const runStorageKey = (scope: string) => `scendance:agent-run:${scope}`;
+type CandidatePreview = { label: 'A' | 'B' | 'C'; title: string; preview: Preview };
 type Preview = { assets: { assetUrls: Record<string,string>; assetNames: Record<string,string> }; proposal: SceneProposal; layout: RoomLayout; base: RoomLayout; briefKey: string; scope: string };
 interface Props { controller: BackendSession; layout: RoomLayout; onApply(layout: RoomLayout): void; onPreview?: ((layout: RoomLayout | null) => void) | undefined; children: ReactNode }
 interface StudioValue {
@@ -32,13 +34,14 @@ interface StudioValue {
   images: ReferenceImage[]; addImages(files: FileList | null): Promise<void>; removeImage(id: string): void;
   busy: boolean; notice: string; connection: string; generate(message?: string): Promise<void>;
   messages: Message[]; expanded: boolean; setExpanded(value: boolean): void; preview: Preview | null; stale: boolean; expired: boolean;
+  jevEnabled: boolean; setJevEnabled(value:boolean):void; run: AgentRun | null; candidates: CandidatePreview[]; selectCandidate(label: 'A'|'B'|'C'):void; cancelRun():Promise<void>; recoverRun():Promise<void>; recoverable:boolean;
   directApply: boolean; setDirectApply(value: boolean): void; applyPreview(): Promise<void>; discardPreview(): void;
 }
 const StudioContext = createContext<StudioValue | null>(null);
 function useStudio(): StudioValue { const value=useContext(StudioContext); if(!value) throw new Error('Creative studio unavailable'); return value; }
 /** Library consumers can render independently of the creative workspace. */
 export function useCreativeBrief(): CreativeBrief | null { return useContext(StudioContext)?.brief ?? null; }
-const initialMessages: Message[] = [{ id:'welcome', role:'assistant', text:'我是 Binggo，你的场景策划 Agent，由 DeepSeek 根据当前场景安排物料。告诉我需要增加、移动、旋转、换色、替换或移除哪些物件；选中物件后可针对它们调整。需要新造型时，切换到「3D 生成」。' }];
+const initialMessages: Message[] = [{ id:'welcome', role:'assistant', text:'我是 Binggo，你的场景策划 Agent，由 DeepSeek 根据当前场景安排物料。告诉我需要增加、移动、旋转、换色、替换或移除哪些物件；选中物件后可针对它们调整。需要新物料时，可从资源库选择，或描述桌、椅、柜台、地台、背景板和柜体的尺寸来建模。' }];
 
 export function CreativeStudioProvider({ controller, layout, onApply, onPreview, children }: Props): JSX.Element {
   const cloud=useBackendSession(controller);
@@ -57,11 +60,19 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
   const agentScope=`${controller.config.apiUrl}:${cloud.user?.id??'anonymous'}:${scope}`;
   const agentScopeRef=useRef(agentScope);agentScopeRef.current=agentScope;
   useEffect(()=>{setBrief(INITIAL_BRIEF);},[scope]);
-  useEffect(()=>{setMessages(initialMessages);setLastExplanation('');setPreview(null);setNotice('');},[agentScope]);
+  useEffect(()=>{runEpoch.current++;markerRef.current=null;requestPending.current=false;setBusy(false);setMessages(initialMessages);setAcceptedDecisions([]);setLastExplanation('');setPreview(null);setCandidates([]);setRun(null);setRecoverable(false);setNotice('');},[agentScope]);
   useEffect(()=>{let cancelled=false;setBriefReady(false);briefHydration.current=readSourceForm<CreativeBrief>(`${scope}:brief`).then(saved=>{if(!cancelled&&saved){briefValueRef.current={...INITIAL_BRIEF,...saved};setBrief(briefValueRef.current);}}).catch(()=>{}).finally(()=>{if(!cancelled)setBriefReady(true);});return()=>{cancelled=true;};},[scope]);
   useEffect(()=>{if(!briefReady)return;const timer=setTimeout(()=>{void storeSourceForm(`${scope}:brief`,brief).catch(()=>{});},250);return()=>clearTimeout(timer);},[brief,briefReady,scope]);
   const [expanded,setExpanded]=useState(false);
   const [directApply,setDirectApply]=useState(true);
+  const [jevEnabled,setJevEnabled]=useState(false);
+  const [run,setRun]=useState<AgentRun|null>(null);
+  const [candidates,setCandidates]=useState<CandidatePreview[]>([]);
+  const [recoverable,setRecoverable]=useState(false);
+  const [acceptedDecisions,setAcceptedDecisions]=useState<string[]>([]);
+  const runEpoch=useRef(0), recoveredScope=useRef('');
+  const markerRef=useRef<RunMarker|null>(null);
+  const cancelledRequest=useRef<string|null>(null);
   const [preview,setPreview]=useState<Preview|null>(null);
   const [expired,setExpired]=useState(false);
   const layoutRef=useRef(layout); layoutRef.current=layout;
@@ -105,7 +116,7 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
   const briefKey=JSON.stringify({brief,images:images.map(i=>({id:i.id,kind:i.kind}))});
   const briefRef=useRef(briefKey); briefRef.current=briefKey;
   const connection=!cloud.configured?'离线引导':!cloud.user?'等待登录':cloud.writeBlocked?'等待项目编辑权':'项目已连接';
-  const stale=!!preview && (expired || Date.parse(preview.proposal.expires_at)<=Date.now() || preview.scope!==agentScope || preview.base!==layout || preview.briefKey!==briefKey || cloud.writeBlocked || preview.proposal.project_id!==cloud.project?.id || preview.proposal.base_revision!==cloud.revision);
+  const stale=!!preview && (expired || Date.parse(preview.proposal.expires_at)<=Date.now() || preview.scope!==agentScope || preview.base!==layout || preview.briefKey!==briefKey || cloud.writeBlocked || preview.proposal.project_id!==cloud.project?.id || preview.proposal.base_revision!==cloud.revision || preview.proposal.local_revision!==cloud.localRevision || preview.proposal.session_id!==cloud.sessionId || preview.proposal.generation!==cloud.lease?.generation);
   useEffect(()=>{ alive.current=true; const lifecycleEpoch=imageEpoch; return ()=>{ alive.current=false; lifecycleEpoch.current++; for(const img of imageRef.current) URL.revokeObjectURL(img.url); }; },[]);
   useEffect(()=>{
     setExpired(false);
@@ -174,53 +185,128 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
     const updated=imageRef.current.find(image=>image.id===id);
     if(updated){const {url,...stored}=updated;void storeSource({...stored,scope,kind:stored.kind??'photo',width:stored.width!,height:stored.height!}).catch(error=>setNotice(error instanceof Error?error.message:'资料保存失败。'));}
   }
-  async function generate(message?:string):Promise<void> {
-    if(requestPending.current) return;
-    setExpanded(true); setNotice('');
-    if(message?.trim()) setMessages(items=>[...items.slice(-38),{id:crypto.randomUUID(),role:'user',text:message.trim()}]);
-    if(!cloud.configured || !cloud.user || cloud.writeBlocked || cloud.project?.id!==layout.id) {
-      const text=!cloud.configured ? '需求入口已经准备好。当前尚未连接 AI 服务，暂时不能生成真实方案。你可以完善需求、添加现场照片，并使用物料库手动布置。'
-        : !cloud.user ? '请先登录工作室，再为当前方案创建云项目并获取编辑权。'
-        : '请在“账户与项目”中打开或创建当前方案，并获取编辑权；你的本地草稿会保留。';
-      setNotice(text); say(text); return;
+  function forgetRun():void {
+    markerRef.current=null;setRecoverable(false);
+    try { localStorage.removeItem(runStorageKey(agentScopeRef.current)); } catch { /* A leftover marker can only trigger a status read. */ }
+  }
+  function rememberRun(marker:RunMarker,scope:string):void {
+    // Saving the identity before POST prevents accidental duplicate paid runs after disconnects.
+    localStorage.setItem(runStorageKey(scope),JSON.stringify(marker));
+    markerRef.current=marker;
+  }
+  async function consumeRun(result:AgentRun,base:RoomLayout,submittedBrief:string,submittedScope:string,allowDirect:boolean,epoch:number):Promise<void> {
+    if(result.state==='cancelled'){setCandidates([]);setPreview(null);forgetRun();say('任务已取消，当前方案保持不变。');return;}
+    if(!result.candidates.length){forgetRun();say(result.message || (result.state==='failed'?`任务未完成（${result.errorCode??'UNKNOWN'}），原方案已保留。`:'已读取当前场景，本次没有修改物件。'));return;}
+    if(layoutRef.current!==base || briefRef.current!==submittedBrief) throw new Error('生成期间方案或需求已变化，旧提案未应用。请根据最新内容重新生成。');
+    const scene=layoutToBackendScene(base), first=result.candidates[0]!.proposal;
+    if(result.candidates.some(({proposal})=>canonical(proposal.base_scene)!==canonical(scene)||proposal.project_id!==first.project_id||proposal.base_revision!==first.base_revision||proposal.local_revision!==first.local_revision||proposal.session_id!==first.session_id||proposal.generation!==first.generation))throw new Error('返回的候选方案基线不一致，原方案已保留。');
+    if(result.candidates.some(({proposal})=>!Number.isFinite(Date.parse(proposal.expires_at))||Date.parse(proposal.expires_at)<=Date.now()))throw new Error('提案已过期，请重新生成。');
+    setLastExplanation(first.explanation);
+    if(result.candidates.length===1&&canonical(first.candidate)===canonical(scene)){
+      forgetRun();say(first.explanation||result.message||'已读取当前场景，本次没有修改物件。',first.modelSuggestions,first.materialSuggestions);return;
     }
-    const base=layoutRef.current, submittedBrief=briefRef.current, submittedScope=agentScopeRef.current, applyDirectly=directApply;
+    const prepared=await Promise.all(result.candidates.map(async item=>{
+      const assets=await controller.authorizeAssets(item.proposal.candidate);
+      await Promise.all(Object.entries(assets.assetUrls).map(([id,url])=>ensureGlbAsset(id,url)));
+      const next=mergeProposalPresentation(base,backendSceneToLayout(item.proposal.candidate,{projectId:base.id!,name:base.name,...assets}));
+      return {label:item.label,title:item.title,preview:{proposal:item.proposal,assets,layout:next,base,briefKey:submittedBrief,scope:submittedScope}};
+    }));
+    if(!alive.current||agentScopeRef.current!==submittedScope||epoch!==runEpoch.current)return;
+    if(layoutRef.current!==base||briefRef.current!==submittedBrief)throw new Error('生成期间方案或需求已变化，旧提案未应用。请根据最新内容重新生成。');
+    const preferred=prepared.find(item=>item.label===result.evaluation?.choice)??prepared[0]!;
+    if(allowDirect&&result.executionMode==='direct'&&!result.jevEnabled&&prepared.length===1){await applyCandidate(preferred.preview);}
+    else {setCandidates(prepared);setPreview(preferred.preview);say(result.jevEnabled?'候选方案已准备好。可以分别预览比较，最终由你选择并确认应用。':first.explanation||'方案提案已返回，请核对修改范围后确认应用。',first.modelSuggestions,first.materialSuggestions);}
+  }
+  async function followRun(initial:AgentRun,base:RoomLayout,submittedBrief:string,submittedScope:string,epoch:number,allowDirect:boolean):Promise<void> {
+    let result=initial;
+    const pollingDeadline=Date.now()+120_000;
+    const active=()=>alive.current&&agentScopeRef.current===submittedScope&&epoch===runEpoch.current;
+    while(active()){
+      setRun(result);
+      const marker=markerRef.current;
+      if(marker){try{rememberRun({...marker,runId:result.id},submittedScope);}catch{setNotice('任务已提交，但本机记录更新失败；请保持页面打开。');}}
+      if(!['queued','running'].includes(result.state))break;
+      if(Date.now()>=pollingDeadline)throw new Error('任务仍在处理，已暂停自动查询。请稍后查询原任务，不要重复提交。');
+      await new Promise(resolve=>setTimeout(resolve,2000));
+      if(!active())return;
+      result=await controller.getAgentRun(result.id);
+    }
+    if(active())await consumeRun(result,base,submittedBrief,submittedScope,allowDirect,epoch);
+  }
+  async function recoverRun():Promise<void> {
+    if(requestPending.current)return;
+    const scope=agentScopeRef.current,base=layoutRef.current,submittedBrief=briefRef.current;
+    const marker=markerRef.current;
+    if(!marker)return;
+    const epoch=++runEpoch.current;requestPending.current=true;setBusy(true);setRecoverable(false);setNotice('');
     try {
-      const scene=layoutToBackendScene(base);
-      const context=buildAssistantInstruction({
-        briefInstruction:message&&!brief.description.trim()?'':briefInstruction(brief,base.width,base.height),
-        message:message?.trim() || '请按上述需求生成布置方案。',
-        recentMessages:message?messages.filter(item=>item.id!=='welcome'):[],
-        lastProposalExplanation:message?lastExplanation:'',
-      });
-      const instruction=context.instruction;
-      if(context.omittedHistory) say(`为遵守接口长度限制，已省略 ${context.omittedHistory} 条较早对话；当前需求和确认条件完整保留。`);
-      if(!message) setMessages(items=>[...items.slice(-38),{id:crypto.randomUUID(),role:'user',text:`生成${brief.event}方案：${brief.description.trim()}`}]);
-      requestPending.current=true;setBusy(true);setPreview(null);
-      const proposal=await controller.requestProposal({mode:'modify',prompt:instruction,scene,selectedIds:[...allSelectedIds].filter(id=>scene.objects.some(object=>object.id===id))});
-      if(!alive.current || agentScopeRef.current!==submittedScope) return;
-      if(layoutRef.current!==base || briefRef.current!==submittedBrief) throw new Error('生成期间方案或需求已变化，旧提案未应用。请根据最新内容重新生成。');
-      if(!Number.isFinite(Date.parse(proposal.expires_at)) || Date.parse(proposal.expires_at)<=Date.now()) throw new Error('提案已过期，请重新生成。');
-      setLastExplanation(proposal.explanation);
-      if(canonical(proposal.candidate)===canonical(scene)) {
-        say(proposal.explanation || '已读取当前场景，本次没有修改物件。',proposal.modelSuggestions,proposal.materialSuggestions);
+      const result=marker.runId?await controller.getAgentRun(marker.runId):await controller.getAgentRunByRequest(marker.requestId);
+      if(marker.baseKey!==canonical(layoutToBackendScene(base))||marker.briefKey!==submittedBrief){
+        if(epoch!==runEpoch.current||scope!==agentScopeRef.current)return;
+        setRun(result);setNotice('已查询原任务；场景或需求已变化，旧候选不会应用。');
+        if(!['queued','running'].includes(result.state))forgetRun();else setRecoverable(true);
         return;
       }
-      const assets=await controller.authorizeAssets(proposal.candidate);
-      await Promise.all(Object.entries(assets.assetUrls).map(([id,url])=>ensureGlbAsset(id,url)));
-      if(!alive.current || agentScopeRef.current!==submittedScope) return;
-      if(layoutRef.current!==base || briefRef.current!==submittedBrief) throw new Error('生成期间方案或需求已变化，旧提案未应用。请根据最新内容重新生成。');
-      if(Date.parse(proposal.expires_at)<=Date.now()) throw new Error('提案已过期，请重新生成。');
-      const next=mergeProposalPresentation(base,backendSceneToLayout(proposal.candidate,{projectId:base.id!,name:base.name,...assets}));
-      const result={proposal,assets,layout:next,base,briefKey:submittedBrief,scope:submittedScope};
-      if(applyDirectly) {
-        await applyCandidate(result);
-      } else {
-        setPreview(result);
-        say(proposal.explanation || '方案提案已返回，请核对修改范围后确认应用。',proposal.modelSuggestions,proposal.materialSuggestions);
+      await followRun(result,base,submittedBrief,scope,epoch,false);
+    } catch(error){if(epoch===runEpoch.current&&scope===agentScopeRef.current){setRecoverable(true);setNotice(error instanceof Error?error.message:'原任务状态暂不可读取，请稍后查询。');}}
+    finally{if(epoch===runEpoch.current){requestPending.current=false;setBusy(false);}}
+  }
+  useEffect(()=>{
+    if(!cloud.user||cloud.project?.id!==scope||recoveredScope.current===agentScope)return;
+    recoveredScope.current=agentScope;
+    try{
+      const raw=localStorage.getItem(runStorageKey(agentScope));
+      if(!raw)return;
+      const marker=JSON.parse(raw) as RunMarker;
+      if(typeof marker.requestId!=='string'||typeof marker.baseKey!=='string'||typeof marker.briefKey!=='string'||(marker.runId!==undefined&&typeof marker.runId!=='string'))throw new Error('任务记录无法读取，请保留此页面记录并联系管理员核对。');
+      markerRef.current=marker;setRecoverable(true);if(briefReady)void recoverRun();else recoveredScope.current='';
+    }catch(error){setRecoverable(true);setNotice(error instanceof Error?error.message:'任务记录无法读取。');}
+    // Recovery runs once after this project's brief has loaded. Changes do not launch another paid run.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[agentScope,briefReady,cloud.user,cloud.project?.id,scope]);
+  async function cancelRun():Promise<void> {
+    const scope=agentScopeRef.current,marker=markerRef.current;
+    if(!marker)return;
+    cancelledRequest.current=marker.requestId;
+    const epoch=++runEpoch.current;requestPending.current=true;setBusy(true);setPreview(null);setCandidates([]);
+    try{
+      const original=marker.runId?{id:marker.runId}:await controller.getAgentRunByRequest(marker.requestId);
+      const result=await controller.cancelAgentRun(original.id);
+      if(scope!==agentScopeRef.current||epoch!==runEpoch.current)return;
+      setRun(result);forgetRun();say('任务已取消，当前方案保持不变。');
+    }catch(error){if(scope===agentScopeRef.current&&epoch===runEpoch.current){setRecoverable(true);setNotice(error instanceof Error?error.message:'取消结果待核对，请查询原任务。');}}
+    finally{if(epoch===runEpoch.current){requestPending.current=false;setBusy(false);}}
+  }
+  async function generate(message?:string):Promise<void> {
+    if(requestPending.current||recoverable)return;
+    setExpanded(true);setNotice('');
+    if(message?.trim())setMessages(items=>[...items.slice(-38),{id:crypto.randomUUID(),role:'user',text:message.trim()}]);
+    if(!cloud.configured||!cloud.user||cloud.writeBlocked||cloud.project?.id!==layout.id){
+      const text=!cloud.configured?'需求入口已经准备好。当前尚未连接 AI 服务，暂时不能生成真实方案。你可以完善需求、添加现场照片，并使用物料库手动布置。':!cloud.user?'请先登录工作室，再为当前方案创建云项目并获取编辑权。':'请在“账户与项目”中打开或创建当前方案，并获取编辑权；你的本地草稿会保留。';
+      setNotice(text);say(text);return;
+    }
+    const base=layoutRef.current,submittedBrief=briefRef.current,submittedScope=agentScopeRef.current,epoch=++runEpoch.current;
+    let dispatched=false;
+    try{
+      const scene=layoutToBackendScene(base),context=buildAgentContext({briefInstruction:message&&!brief.description.trim()?'':briefInstruction(brief,base.width,base.height),message:message?.trim()||'请按上述需求生成布置方案。',confirmedMaterialDecisions:acceptedDecisions,recentMessages:message?messages.filter(item=>item.id!=='welcome'):[],lastProposalExplanation:message?lastExplanation:''});
+      if(context.omittedHistory)say(`已省略 ${context.omittedHistory} 条较早或过长的背景对话；当前需求完整保留。`);
+      if(!message)setMessages(items=>[...items.slice(-38),{id:crypto.randomUUID(),role:'user',text:`生成${brief.event}方案：${brief.description.trim()}`}]);
+      const marker:RunMarker={requestId:crypto.randomUUID(),baseKey:canonical(scene),briefKey:submittedBrief};
+      try{rememberRun(marker,submittedScope);}catch{throw new Error('无法保存任务编号，尚未提交。请恢复浏览器本机存储后重试。');}
+      requestPending.current=true;setBusy(true);setPreview(null);setCandidates([]);setRun(null);dispatched=true;
+      const result=await controller.startAgentRun({requestId:marker.requestId,instruction:context.instruction,context:context.context,scene,selectedIds:[...allSelectedIds].filter(id=>scene.objects.some(object=>object.id===id)),jevEnabled,executionMode:directApply?'direct':'preview'});
+      if(cancelledRequest.current===marker.requestId){
+        if(agentScopeRef.current===submittedScope){const cancelled=await controller.cancelAgentRun(result.id);setRun(cancelled);forgetRun();setBusy(false);requestPending.current=false;say('任务已取消，当前方案保持不变。');}
+        return;
       }
-    } catch(error) { if(alive.current && agentScopeRef.current===submittedScope){ const text=controller.getSnapshot().error?.message ?? (error instanceof Error?error.message:'生成失败，原方案已保留。');setNotice(text);say(text);} }
-    finally { requestPending.current=false;if(alive.current)setBusy(false); }
+      await followRun(result,base,submittedBrief,submittedScope,epoch,directApply);
+    }catch(error){if(alive.current&&agentScopeRef.current===submittedScope&&epoch===runEpoch.current){
+      const text=controller.getSnapshot().error?.message??(error instanceof Error?error.message:'生成失败，原方案已保留。');setNotice(text);say(text);
+      if(dispatched){
+        if(error instanceof SceneApiError&&([400,401,403,404,409,422].includes(error.status)||['SERVICE_NOT_CONFIGURED','BILLING_NOT_CONFIGURED','AI_INPUT_TOO_LARGE'].includes(error.code)))forgetRun();
+        else setRecoverable(true);
+      }
+    }}finally{if(epoch===runEpoch.current){requestPending.current=false;if(alive.current)setBusy(false);}}
   }
   async function applyCandidate(selected:Preview):Promise<void> {
     if(agentScopeRef.current!==selected.scope)return;
@@ -229,7 +315,8 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
     if(!alive.current || agentScopeRef.current!==selected.scope)return;
     if(!result.acceptedLocally || layoutRef.current!==selected.base) throw new Error('应用期间本地有新修改，已保留本地草稿。云端已有新版本，请核对后重新打开。');
     const next=mergeProposalPresentation(selected.base,backendSceneToLayout(result.scene,{projectId:selected.base.id!,name:selected.base.name,...selected.assets}));
-    onApply(addDesign(selected.base,next));setPreview(null);
+    onApply(addDesign(selected.base,next));setPreview(null);setCandidates([]);forgetRun();
+    setAcceptedDecisions(items=>[...items,`已应用方案：${selected.proposal.explanation}`.slice(0,1000)].slice(-20));
     if(selected.proposal.warnings.length) setNotice(selected.proposal.warnings.map(warning=>{
       const names=warning.ids.map(id=>next.floors.flatMap(floor=>floor.items).find(item=>item.id===id)?.name??'物件');
       return `${warning.code==='OVERLAP'?'物件重叠':warning.code==='OUT_OF_BOUNDS'?'超出场地边界':'待检查事项'}：${names.join('、')}`;
@@ -239,13 +326,13 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
   async function applyPreview():Promise<void> {
     if(!preview || requestPending.current || busy || stale) return;
     if(Date.parse(preview.proposal.expires_at)<=Date.now()) { setExpired(true); return; }
-    const selected=preview;
+    const selected=preview,epoch=++runEpoch.current;
     requestPending.current=true;setBusy(true);setNotice('');
     try { await applyCandidate(selected); }
     catch(error) { if(alive.current && agentScopeRef.current===selected.scope)setNotice(error instanceof Error?error.message:'应用失败，原方案已保留。'); }
-    finally { requestPending.current=false;if(alive.current)setBusy(false); }
+    finally { if(epoch===runEpoch.current){requestPending.current=false;if(alive.current)setBusy(false);} }
   }
-  const value:StudioValue={scope:agentScope,controller,layout,onApply,onPreview,updateImage,brief,setBrief,images,addImages,removeImage,busy,notice,connection,generate,messages,expanded,setExpanded,preview,stale,expired,directApply,setDirectApply,applyPreview,discardPreview:()=>setPreview(null)};
+  const value:StudioValue={scope:agentScope,controller,layout,onApply,onPreview,updateImage,brief,setBrief,images,addImages,removeImage,busy,notice,connection,generate,messages,expanded,setExpanded,preview,stale,expired,directApply,setDirectApply,jevEnabled,setJevEnabled,run,candidates,recoverable,recoverRun,cancelRun,selectCandidate:label=>{const item=candidates.find(value=>value.label===label);if(item&&!stale)setPreview(item.preview);},applyPreview,discardPreview:()=>{setPreview(null);setCandidates([]);forgetRun();}};
   return <StudioContext.Provider value={value}>{children}</StudioContext.Provider>;
 }
 
@@ -276,8 +363,8 @@ export function CreativeBriefPanel({ showNotice=true }: { showNotice?: boolean }
     <label className="cr-label">一定要有 <span>选填</span><input maxLength={350} placeholder="帐篷、签到区、无障碍通道……" value={studio.brief.mustHave} onChange={e=>update({mustHave:e.target.value})}/></label>
     <ReconstructionPanel controller={studio.controller} layout={studio.layout} onApply={studio.onApply} onPreview={studio.onPreview} images={studio.images} updateImage={studio.updateImage} brief={studio.brief}/>
     <label className="cr-check"><input type="checkbox" checked={studio.brief.allowIdeas} onChange={e=>update({allowIdeas:e.target.checked})}/><span><strong>也给我一些意料之外的灵感</strong><small>可以提出建议，由你确认是否采用</small></span></label>
-    <button className="cr-generate" type="button" disabled={studio.busy||!studio.brief.description.trim()} onClick={()=>void studio.generate()}>{studio.busy?<Loader2 className="cr-spin" size={18}/>:<Sparkles size={18}/>}<span>{studio.busy?'正在整理方案…':studio.directApply?'生成并应用布置':'生成布置预览'}</span></button>
-    <p className="cr-hint">DeepSeek 读取当前场景与可用资源库来布置物料，不读取照片。资源库缺少所需造型时，会提供前往 HY3 的生成建议。</p>
+    <button className="cr-generate" type="button" disabled={studio.busy||studio.recoverable||!studio.brief.description.trim()} onClick={()=>void studio.generate()}>{studio.busy?<Loader2 className="cr-spin" size={18}/>:<Sparkles size={18}/>}<span>{studio.busy?'正在整理方案…':studio.jevEnabled?'生成三个方案':studio.directApply?'生成布置方案':'生成布置预览'}</span></button>
+    <p className="cr-hint">DeepSeek 读取当前场景和资源库，可按尺寸创建桌、椅、柜台、地台、背景板和柜体。本轮策划不读取照片；图纸重建仍在上方单独确认。</p>
 
     {showNotice&&studio.notice&&<p className="cr-notice" role="status">{studio.notice}</p>}
     <div className="cr-ideas"><div><h3>布置思路</h3><button type="button" aria-label="换一条布置思路" onClick={()=>setIdeaIndex(current=>(current+1)%IDEA_CARDS.length)}><RefreshCw size={13}/></button></div><article><strong>{idea.title}</strong><p>{idea.text}</p></article></div>
@@ -292,31 +379,25 @@ function AssistantMascot({ busy }: { busy: boolean }): JSX.Element {
 
 export type GeneratedVariant = { sourceAssetId: string; variantAssetId: string; objectIds?: string[] };
 export type GenerationContext = { sourceAssetId?: string; sourceObjectIds: string[]; onVariantReady(variant: GeneratedVariant): void };
-export function CreativeAssistant({ generationPanel }: { generationPanel?: ReactNode | ((seed: ModelGenerationSeed | undefined, context: GenerationContext) => ReactNode) }):JSX.Element {
+export function CreativeAssistant({ generationPanel }: { generationPanel?: ReactNode | ((context: GenerationContext) => ReactNode) }):JSX.Element {
   const studio=useStudio(); const {selectedItem,allSelectedIds}=useSelection();
   const [draft,setDraft]=useState(''); const feed=useRef<HTMLDivElement>(null);
   const [tab,setTab]=useState<'plan'|'model'|'templates'>('plan');
   const [opened,setOpened]=useState(false);
   const [modelOpened,setModelOpened]=useState(false);
-  const [generationSeed,setGenerationSeed]=useState<ModelGenerationSeed>();
   const [modelTool,setModelTool]=useState<'generate'|'customize'|'delivery'>('generate');
   const [materialSeed,setMaterialSeed]=useState<MaterialCustomizationSeed>();
   useEffect(()=>{if(studio.expanded)setOpened(true);},[studio.expanded]);
   const messageInput=useRef<HTMLTextAreaElement>(null);
   const launcher=useRef<HTMLButtonElement>(null);
   const wasExpanded=useRef(false);
-  useEffect(()=>{setDraft('');setGenerationSeed(undefined);setMaterialSeed(undefined);setModelTool('generate');setTab('plan');},[studio.scope]);
+  useEffect(()=>{setDraft('');setMaterialSeed(undefined);setModelTool('generate');setTab('plan');},[studio.scope]);
   useEffect(()=>{
     if(studio.expanded && tab==='plan') messageInput.current?.focus();
     else if(!studio.expanded&&wasExpanded.current) launcher.current?.focus();
     wasExpanded.current=studio.expanded;
   },[studio.expanded,tab]);
   useEffect(()=>{feed.current?.scrollTo({top:feed.current.scrollHeight,behavior:'smooth'});},[studio.messages,studio.busy,studio.expanded]);
-  function suggestModel(suggestion: NonNullable<SceneProposal['modelSuggestions']>[number]):void {
-    const cloud=studio.controller.getSnapshot();
-    if(!cloud.user || !cloud.project || cloud.project.id!==studio.layout.id)return;
-    setGenerationSeed({id:crypto.randomUUID(),scope:studio.scope,userId:cloud.user.id,projectId:cloud.project.id,apiUrl:studio.controller.config.apiUrl,...suggestion});setModelTool('generate');setModelOpened(true);setTab('model');
-  }
   const sceneItems=studio.layout.floors.flatMap(floor=>floor.items);
   const selectedItems=sceneItems.filter(item=>allSelectedIds.has(item.id));
   const selectedCount=selectedItems.length;
@@ -334,32 +415,40 @@ export function CreativeAssistant({ generationPanel }: { generationPanel?: React
     if(changed.length&&changed.every(item=>item.assetId===changed[0]!.assetId))previewMaterial({sourceAssetId:changed[0]!.assetId!,objectIds:changed.map(item=>item.id),name:'已更新的物料',reason:'可继续调整或预览恢复父版本。',materialScope:'all_materials'});
     else setMaterialSeed(undefined);
   }
-  const submit=()=>{if(!draft.trim()||studio.busy)return;const text=draft;setDraft('');void studio.generate(text);};
+  const submit=()=>{if(!draft.trim()||studio.busy||studio.recoverable)return;const text=draft;setDraft('');void studio.generate(text);};
   const summary=studio.preview?proposalSummary(studio.preview.base,studio.preview.layout):null;
   const differences=studio.preview?proposalDifferences(studio.preview.base,studio.preview.layout):[];
   return <div className={`cr-assistant ${studio.expanded?'is-open':''} ${selectedItem?'has-properties':''}`}>
     {(opened||studio.expanded)&&<section hidden={!studio.expanded} id="creative-assistant" className="cr-chat" aria-label="Agent" onKeyDown={event=>{if(event.key==='Escape'){event.stopPropagation();studio.setExpanded(false);}}}>
       <header><span className="cr-avatar"><AssistantMascot busy={studio.busy}/></span><div><strong>Binggo · Agent</strong><small><i/>{studio.connection}</small></div><button type="button" aria-label="收起 Agent" onClick={()=>studio.setExpanded(false)}><X size={18}/></button></header>
       <div className="cr-agent-tabs" role="tablist" aria-label="Agent 能力">
-        {([['plan','场景策划','DeepSeek'],['model','3D 生成','腾讯 HY-3D'],['templates','场景模板','完整场景']] as const).map(([key,label,provider])=><button type="button" role="tab" id={`agent-tab-${key}`} aria-controls={`agent-panel-${key}`} aria-selected={tab===key} key={key} onClick={()=>{setTab(key);if(key==='model')setModelOpened(true);}}>{key==='plan'?<Sparkles size={17}/>:key==='model'?<Box size={17}/>:<LayoutTemplate size={17}/>}<span>{label}<small>{provider}</small></span></button>)}
+        {([['plan','场景策划','DeepSeek'],['model','模型与交付','DeepSeek'],['templates','场景模板','完整场景']] as const).map(([key,label,provider])=><button type="button" role="tab" id={`agent-tab-${key}`} aria-controls={`agent-panel-${key}`} aria-selected={tab===key} key={key} onClick={()=>{setTab(key);if(key==='model')setModelOpened(true);}}>{key==='plan'?<Sparkles size={17}/>:key==='model'?<Box size={17}/>:<LayoutTemplate size={17}/>}<span>{label}<small>{provider}</small></span></button>)}
       </div>
       <div className="cr-plan-panel" role="tabpanel" id="agent-panel-plan" aria-labelledby="agent-tab-plan" hidden={tab!=='plan'}>
-      <div className="cr-agent-mode"><label><input type="checkbox" checked={studio.directApply} disabled={studio.busy} onChange={event=>studio.setDirectApply(event.target.checked)}/>发送后直接应用</label><span>{studio.directApply?'可用画布撤销恢复':'先预览，再确认应用'}</span></div>
+      <div className="cr-agent-mode"><label><input type="checkbox" checked={studio.directApply} disabled={studio.busy||studio.jevEnabled} onChange={event=>studio.setDirectApply(event.target.checked)}/>明确指令直接应用</label><span>{studio.directApply?'明确调整通过校验后应用，可撤销':'先预览，再确认应用'}</span></div>
+      <div className="cr-agent-mode"><label><input type="checkbox" checked={studio.jevEnabled} disabled={studio.busy} onChange={event=>studio.setJevEnabled(event.target.checked)}/>JEV 决策模式</label><span>生成 3 个方案，由你最终选择</span></div>
       <div className="cr-chat-feed" ref={feed}>
         <details className="cr-agent-brief"><summary>活动需求与场地资料</summary><CreativeBriefPanel showNotice={false}/></details>
         <p className="cr-selection-context">当前场景：{sceneItems.length} 件物料 · 已选中 {selectedCount} 件{selectedItem?` · ${selectedItem.name}`:''}</p>
-        <div aria-live="polite">{studio.messages.map(m=><div key={m.id} className={`cr-message is-${m.role}`}><span>{m.role==='assistant'?'Binggo':'你'}</span><p>{m.text}</p>{m.modelSuggestions?.map((suggestion,index)=><article className="cr-model-suggestion" key={`${m.id}-${index}`}><strong>{suggestion.name}</strong><p>{suggestion.reason}</p><p>{suggestion.prompt}</p><button type="button" onClick={()=>suggestModel(suggestion)}>前往 HY3 生成</button><small>先填写生成描述，由你确认后提交。</small></article>)}{m.materialSuggestions?.map((suggestion,index)=><article className="cr-model-suggestion" key={`${m.id}-material-${index}`}><strong>{suggestion.name}</strong><p>{suggestion.reason}</p><button type="button" onClick={()=>{const {scope:materialScope,...input}=suggestion;previewMaterial({...input,materialScope});}}>预览材质调整</button><small>仅调整指定的 {suggestion.objectIds.length} 件物料；原版本保留，确认后应用。</small></article>)}</div>)}
-        {studio.busy&&<div className="cr-chat-working"><Loader2 className="cr-spin" size={15}/> 正在处理，请稍候…</div>}
+        <div aria-live="polite">{studio.messages.map(m=><div key={m.id} className={`cr-message is-${m.role}`}><span>{m.role==='assistant'?'Binggo':'你'}</span><p>{m.text}</p>{m.modelSuggestions?.map((suggestion,index)=><article className="cr-model-suggestion" key={`${m.id}-${index}`}><strong>{suggestion.name}</strong><p>{suggestion.reason}</p><p>{suggestion.prompt}</p><small>可继续描述尺寸，让 DeepSeek 查找资源或使用参数化建模；不支持的造型会明确说明。</small></article>)}{m.materialSuggestions?.map((suggestion,index)=><article className="cr-model-suggestion" key={`${m.id}-material-${index}`}><strong>{suggestion.name}</strong><p>{suggestion.reason}</p><button type="button" onClick={()=>{const {scope:materialScope,...input}=suggestion;previewMaterial({...input,materialScope});}}>预览材质调整</button><small>仅调整指定的 {suggestion.objectIds.length} 件物料；原版本保留，确认后应用。</small></article>)}</div>)}
+        {studio.busy&&<div className="cr-chat-working"><Loader2 className="cr-spin" size={15}/><span>{studio.run?.progress||'正在提交任务…'}</span>{(!studio.run||['queued','running'].includes(studio.run.state))&&<button type="button" onClick={()=>void studio.cancelRun()}>取消任务</button>}</div>}
+        {studio.recoverable&&<div className="cr-proposal"><p>原任务结果待核对。查询会继续读取原任务，不会再次提交生成。</p><button type="button" disabled={studio.busy} onClick={()=>void studio.recoverRun()}>查询原任务</button><button type="button" disabled={studio.busy} onClick={()=>void studio.cancelRun()}>取消原任务</button></div>}
+        {studio.candidates.length>0&&studio.run?.jevEnabled&&<div className="cr-candidates" aria-label="JEV 方案比较">
+          <p>{studio.run.evaluation?.message||'可分别预览候选方案。'}</p>
+          {studio.run.evaluation?.status==='complete'&&<p>模型推荐概率表示本轮方案间的相对偏好，不是真实成功率。{studio.run.evaluation.confidence!==undefined?`评价信心 ${(studio.run.evaluation.confidence*100).toFixed(0)}%。`:''}</p>}
+          <div>{studio.candidates.map(item=><button type="button" key={item.label} aria-pressed={studio.preview===item.preview} disabled={studio.busy||studio.stale} onClick={()=>studio.selectCandidate(item.label)}><strong>方案 {item.label} · {item.title}</strong>{studio.run?.evaluation?.status==='complete'&&studio.run.evaluation.probabilities&&<span>模型推荐概率 {(studio.run.evaluation.probabilities[item.label]*100).toFixed(1)}%</span>}</button>)}</div>
+          {studio.run.evaluation?.status==='complete'&&studio.run.evaluation.probabilities&&<p>均不推荐：{(studio.run.evaluation.probabilities.NONE*100).toFixed(1)}%{studio.run.evaluation.choice==='NONE'?' · 建议调整需求后重试。':''}</p>}
+        </div>}
         {studio.preview&&summary&&<div className="cr-proposal"><span>方案提案 · 尚未应用</span><strong>新增 {summary.added} · 移除 {summary.removed} · 共 {summary.total} 件</strong><p>{studio.preview.proposal.explanation}</p>{studio.preview.proposal.warnings.length>0&&<div role="status"><p>提案包含 {studio.preview.proposal.warnings.length} 项场地检查提示：</p><ul>{studio.preview.proposal.warnings.map((warning,index)=>{const names=warning.ids.map(id=>studio.preview!.layout.floors.flatMap(floor=>floor.items).find(item=>item.id===id)?.name??'物件');return <li key={`${warning.code}-${index}`}>{warning.code==='OVERLAP'?'物件重叠':warning.code==='OUT_OF_BOUNDS'?'超出场地边界':'待检查事项'}：{names.join('、')}</li>;})}</ul></div>}<ul>{differences.map(change=><li key={change.id}>{({added:'新增',removed:'移除',changed:'调整'} as const)[change.kind]} · {change.after?.item.name ?? change.before?.item.name}<small>{change.after ? ` · ${change.after.item.width} × ${change.after.item.depth} m` : ''}</small></li>)}</ul><p>画布中的半透明模型是候选方案。绿色框为新增，蓝色框为改动，橙色框为原位置，红色框为移除；确认前不会保存。</p>{studio.stale?<p role="status">{studio.expired?'提案已过期，请重新生成。':'场景、需求或编辑权已变化，请重新生成。'}</p>:<div><button type="button" onClick={()=>void studio.applyPreview()} disabled={studio.busy}><Check size={14}/>确认应用</button><button type="button" onClick={studio.discardPreview} disabled={studio.busy}><Trash2 size={14}/>放弃</button></div>}</div>}
         </div>
       </div>
       {studio.notice&&<p className="cr-agent-notice" role="status">{studio.notice}</p>}
-      <form className="cr-chat-composer" onSubmit={e=>{e.preventDefault();submit();}}><label className="sr-only" htmlFor="creative-message">告诉助手你的想法</label><textarea ref={messageInput} id="creative-message" value={draft} maxLength={1800} onChange={e=>setDraft(e.target.value)} placeholder="告诉我想怎么调整……" rows={2} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();submit();}}}/><button aria-label="发送消息" type="submit" disabled={!draft.trim()||studio.busy}><ArrowUp size={19}/></button></form>
-      <footer><span>{studio.directApply?'通过校验后应用到当前场景，可撤销':'确认提案后修改当前场景'} · 登录请使用顶部账户与项目</span></footer>
+      <form className="cr-chat-composer" onSubmit={e=>{e.preventDefault();submit();}}><label className="sr-only" htmlFor="creative-message">告诉助手你的想法</label><textarea ref={messageInput} id="creative-message" value={draft} maxLength={1800} onChange={e=>setDraft(e.target.value)} placeholder="告诉我想怎么调整……" rows={2} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();submit();}}}/><button aria-label="发送消息" type="submit" disabled={!draft.trim()||studio.busy||studio.recoverable}><ArrowUp size={19}/></button></form>
+      <footer><span>{studio.jevEnabled?'比较方案后由你确认应用':studio.directApply?'明确调整通过校验后应用，模糊需求先预览':'确认提案后修改当前场景'} · 登录请使用顶部账户与项目</span></footer>
       </div>
       <div className="cr-model-panel" role="tabpanel" id="agent-panel-model" aria-labelledby="agent-tab-model" hidden={tab!=='model'}>
-        <nav className="cr-model-tools" aria-label="3D 内容工具">{([['generate','新模型'],['customize','材质调整'],['delivery','场景交付']] as const).map(([key,label])=><button type="button" key={key} aria-pressed={modelTool===key} onClick={()=>setModelTool(key)}>{label}</button>)}</nav>
-        <div hidden={modelTool!=='generate'}>{modelOpened&&((typeof generationPanel==='function'?generationPanel(generationSeed?.scope===studio.scope?generationSeed:undefined,generationContext):generationPanel)??<p className="sc-note">登录并打开云项目后，可生成单件 3D 物料。</p>)}</div>
+        <nav className="cr-model-tools" aria-label="3D 内容工具">{([['generate','物料建模'],['customize','材质调整'],['delivery','场景交付']] as const).map(([key,label])=><button type="button" key={key} aria-pressed={modelTool===key} onClick={()=>setModelTool(key)}>{label}</button>)}</nav>
+        <div hidden={modelTool!=='generate'}><p className="sc-note">选择物料类型，在场景策划中填写尺寸与样式。DeepSeek 会创建独立模型，原资产保持不变。</p><div className="cr-parametric-families">{[['桌','生成一张长 1.6 米、宽 0.8 米、高 0.75 米的矩形桌，先给预览'],['椅','生成一把有靠背的椅子，座面宽 0.5 米，先给预览'],['柜台','生成一个长 2 米、深 0.6 米、高 1 米的直柜台，先给预览'],['地台','生成一个长 3 米、宽 2 米、高 0.3 米的矩形地台，先给预览'],['背景板','生成一块宽 3 米、高 2.4 米并带底座的背景板，先给预览'],['柜体','生成一个宽 1.2 米、深 0.4 米、高 1.8 米的开放柜体，分 4 层，先给预览']].map(([label,prompt])=><button type="button" key={label} onClick={()=>{setDraft(prompt!);setTab('plan');}}>{label}</button>)}</div>{modelOpened&&((typeof generationPanel==='function'?generationPanel(generationContext):generationPanel)??<p className="sc-note">登录并打开云项目后可查看历史模型。</p>)}</div>
         {modelOpened&&<div hidden={modelTool!=='customize'}>{materialSeed?.scope===studio.scope&&<button type="button" className="sc-button" onClick={()=>setMaterialSeed(undefined)}>使用当前选中物件</button>}<MaterialCustomization controller={studio.controller} layout={studio.layout} onApply={applyMaterial} seed={materialSeed?.scope===studio.scope?materialSeed:undefined} active={studio.expanded&&tab==='model'&&modelTool==='customize'}/></div>}
         {modelTool==='delivery'&&<SceneDeliveryPanel layout={studio.layout} controller={studio.controller}/>}
       </div>
