@@ -1,1 +1,951 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>幕景 · 场景库</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f2ea;color:#304937;font-family:-apple-system,"PingFang SC",sans-serif}main{max-width:1100px;margin:auto;padding:60px 30px}small{letter-spacing:3px;color:#9aa18d}h1{font-family:Georgia,"Songti SC",serif;font-weight:400;font-size:40px}p{color:#89907e;font-size:14px;line-height:1.8}.cards{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}a{color:inherit;text-decoration:none;display:block;border:1px solid #d7dec9;background:#fafaf3;border-radius:14px;overflow:hidden}img{width:100%;aspect-ratio:1.6;object-fit:cover;display:block;background:#e0e6d6}.card-copy{padding:22px}h2{font-size:20px;font-weight:500;margin:0 0 10px}.card-copy p{margin:0;font-size:12px}.foot{margin-top:40px;font-size:12px}@media(max-width:650px){.cards{grid-template-columns:1fr}main{padding:30px 20px}}</style></head><body><main><small>SCENDANCE / SCENE COLLECTION</small><h1>一个空间，一种可能。</h1><p>完整场景模板。旋转查看、比较布局，再把合适的方案带走。</p><div class="cards"><a href="./gym/"><img src="./gym/previews/gym-overview.jpg" alt="体育馆黑客松场景"><div class="card-copy"><h2>01 / 体育馆 · 黑客松</h2><p>100 位参与者 · 25 支团队 · 完整 GLB 归档</p></div></a><a href="./popup/"><img src="./popup/previews/popup-overview.jpg" alt="自然香氛快闪场景"><div class="card-copy"><h2>02 / 品牌快闪 · 青序</h2><p>12 × 8 米 · 24 位来访者 · 四个活动阶段</p></div></a><a href="./studio/"><img src="./studio/previews/studio-overview.png" alt="暖灰摄影工作室场景"><div class="card-copy"><h2>03 / 摄影工作室 · STUDIO / 01</h2><p>12 × 10 米 · 无影墙与摄影设备 · 完整 GLB 与 ZIP</p></div></a><a href="./bar/"><img src="./bar/previews/bar-overview.jpg" alt="琥珀间酒吧场景"><div class="card-copy"><h2>04 / 酒吧 · 琥珀间</h2><p>12 × 9 米 · L 形吧台与卡座 · 完整 GLB 与 ZIP</p></div></a><a href="./cafe/"><img src="./cafe/previews/overview.jpg" alt="慢调咖啡店场景"><div class="card-copy"><h2>05 / 咖啡店 · 慢调</h2><p>12 × 9 米 · 咖啡操作与小桌卡座 · 完整 GLB 与 ZIP</p></div></a><a href="./lawn/"><img src="./lawn/previews/lawn-overview.jpg" alt="室外草坪 · 旷野有约场景"><div class="card-copy"><h2>06 / 室外草坪 · 旷野有约</h2><p>完整 GLB、独立预览与 ZIP 归档</p></div></a><a href="./market/"><img src="./market/previews/market-overview.png" alt="户外市集 · 风物市集场景"><div class="card-copy"><h2>07 / 户外市集 · 风物市集</h2><p>完整 GLB、独立预览与 ZIP 归档</p></div></a><a href="./museum/"><img src="./museum/previews/museum-overview.jpg" alt="美术馆 · 留白之间场景"><div class="card-copy"><h2>08 / 美术馆 · 留白之间</h2><p>完整 GLB、独立预览与 ZIP 归档</p></div></a><a href="./conference/"><img src="./conference/previews/overview.jpg" alt="学术会议 · 共知场景"><div class="card-copy"><h2>09 / 学术会议 · 共知</h2><p>完整 GLB、独立预览与 ZIP 归档</p></div></a><a href="./office/"><img src="./office/previews/office-overview.jpg" alt="办公室 · 留白场景"><div class="card-copy"><h2>10 / 办公室 · 留白</h2><p>完整 GLB、独立预览与 ZIP 归档</p></div></a></div><p class="foot">共十个独立场景。尺寸与使用范围以各模板说明为准。</p></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>幕景 · 场景库</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#f3f2ea}
+html{scroll-snap-type:y mandatory}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+/* One viewport per scene, never taller. */
+.scene-block{scroll-snap-align:start;scroll-snap-stop:always;height:100vh;height:100svh;display:grid;grid-template-rows:minmax(0,1fr)}
+.scene-native{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:0;overflow:hidden;background:#fafaf3}
+.scene-block+.scene-block .scene-native{border-top:1px solid #d7dec9}
+/* Panel type is copied from the archived scene pages so the five read as one set. */
+.nv-panel{overflow:auto;min-height:0;padding:22px 19px 24px;border-right:1px solid #d7dec9;background:#f8f7f1;color:#293e35;font-size:12px}
+.nv-eyebrow{margin:0 0 7px;font-size:8.5px;font-weight:400;letter-spacing:1.19px;color:#808d7b}
+.nv-title{margin:0 0 6px;font-family:Georgia,"Songti SC",STSong,serif;font-size:22px;font-weight:500;line-height:1.22;letter-spacing:-1px;color:#293e34;white-space:pre-line}
+.nv-sub{margin:0 0 10px;font-size:10.5px;letter-spacing:2px;color:#426151}
+.nv-intro{margin:0 0 11px;font-size:11.5px;line-height:1.6;color:#82877b}
+.nv-stats{display:flex;gap:12px;margin:0 0 11px;padding:9px 0}
+.nv-stats>div{display:flex;flex-direction:column;gap:2px}
+.nv-stats strong{font-size:17px;font-weight:600;line-height:1.15}
+.nv-stats strong small{font-size:10px;font-weight:400}
+.nv-stats span{font-size:9.5px;color:#8b9584}
+.nv-zones{margin:0}
+.nv-zones h2{margin:0 0 6px;font-size:11px;font-weight:550;color:#293e34}
+.nv-zones button{display:flex;align-items:center;gap:8px;width:100%;padding:4px 0;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.nv-zones button .zone-no{width:16px;font-size:9.5px;color:#9aa18d}
+.nv-zones button b{flex:1;font-size:11.5px;font-weight:500}
+.nv-zones button em{font-size:10px;font-style:normal;color:#a9b0a1}
+.nv-zones button[aria-pressed=true]{color:#2f5a3d}
+.nv-zones button[aria-pressed=true] em{color:#4c7a58}
+.nv-stage{position:relative;min-width:0;overflow:hidden;background:#e4e9e5}
+.nv-stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+/* Overlays sit on both light and dark stages, so they carry their own surface. */
+.nv-switches{position:absolute;right:23px;top:24px;display:flex;gap:14px;padding:7px 11px;border:1px solid #d7ded2;border-radius:9px;background:#fbfcf5e8;font-size:10px;color:#5b6c56}
+.nv-switches label{display:flex;gap:5px;align-items:center;cursor:pointer}
+.nv-switches input{accent-color:#365949}
+.nv-labels{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.nv-label{position:absolute;top:0;left:0;display:flex;gap:5px;align-items:center;padding:3px 8px;border-radius:20px;background:#fbfcf5e6;border:1px solid #d9e0d0;color:#40543f;font-size:9.5px;white-space:nowrap;transition:opacity .2s}
+.nv-label b{font-weight:600;color:#7f8b78}
+.nv-selection{position:absolute;left:20px;bottom:74px;max-width:260px;padding:11px 13px;border:1px solid #d7ded2;border-radius:9px;background:#fbfcf5ec;box-shadow:0 9px 25px #4c4a3120}
+.nv-selection[hidden]{display:none}
+.nv-selection small{display:block;font-size:8.5px;letter-spacing:1.2px;color:#9aa18d}
+.nv-selection h3{margin:4px 0 5px;font-size:13px;font-weight:600}
+.nv-selection p{margin:0;font-size:10.5px;line-height:1.7;color:#6f7c6c}
+.nv-selection button{position:absolute;right:6px;top:6px;border:0;background:none;font:inherit;color:#9aa18d;cursor:pointer}
+.nv-views{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;padding:5px;border:1px solid #d7ded2;border-radius:9px;background:#fbfcf5ec;box-shadow:0 9px 25px #4c4a3120;white-space:nowrap}
+.nv-views button{border:0;padding:9px 13px;background:none;border-radius:5px;color:#6f7e69;font:inherit;font-size:12px;cursor:pointer}
+.nv-views button[aria-pressed=true]{background:#e1e9da;color:#305a40}
+.nv-views i{width:1px;height:17px;background:#d7ddcb;margin:0 5px}
+.nv-status{position:absolute;left:20px;bottom:18px;margin:0;padding:4px 10px;border:1px solid #d7ded2;border-radius:20px;background:#fbfcf5e8;font-size:10px;color:#557160}
+/* 时段 + 人物 sit in the sidebar as one collapsible block. */
+.nv-time{margin-top:14px;padding-top:12px;border-top:1px solid #e0e4d7}
+.nv-time-head{display:flex;align-items:center;gap:8px;width:100%;padding:2px 0;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.nv-time-current{flex:1;font-size:10px;color:#7d887a}
+.nv-time-caret{font-size:10px;font-style:normal;color:#a9b0a1;transition:transform .18s}
+.nv-time.collapsed .nv-time-caret{transform:rotate(180deg)}
+.nv-time.collapsed .nv-time-body{display:none}
+.nv-time-body{display:flex;flex-direction:column;gap:10px;margin-top:9px}
+.tl-kicker{flex:none;font-size:8.5px;letter-spacing:1.2px;color:#9aa18d}
+.tl-steps{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.tl-steps button{display:flex;align-items:center;gap:6px;border:1px solid transparent;background:none;border-radius:7px;padding:5px 9px;font:inherit;color:inherit;cursor:pointer;white-space:nowrap}
+.tl-steps button b{font-size:10.5px;font-weight:600;color:#8b9584}
+.tl-steps button:hover{border-color:#dbe2d3}
+.tl-steps button[aria-pressed=true]{background:#e1e9da;border-color:#cfdcc6;color:#305a40}
+.tl-steps button[aria-pressed=true] b{color:#305a40}
+.tl-people{display:flex;align-items:center;gap:8px}
+.tl-people input{flex:1;min-width:0;accent-color:#365949}
+.tl-people output{min-width:16px;font-size:11px;font-weight:600;color:#3d5b48;text-align:right}
+.tl-note{font-size:9.5px;color:#98a08f}
+@media(max-width:700px){
+  .scene-native{grid-template-columns:1fr;grid-template-rows:58% minmax(0,1fr)}
+  .nv-stage{grid-row:1}
+  .nv-panel{grid-row:2;border-right:0;border-top:1px solid #d7dec9}
+}
+</style>
+<script type="importmap">{"imports":{"three":"./gym/vendor/three/three.module.js","three/addons/":"./gym/vendor/three/addons/"}}</script>
+</head>
+<body>
+<main id="gallery"></main>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+// Every scene is rendered here so the five read as one set. The zone lists are
+// the archived pages' own functional 分区 (they carry a 3D anchor and a copy),
+// plus gym, whose areas come from its own source-renderer ZONES table.
+// Enclosure group names are the models' real node names, not guesses.
+const SCENES = [
+  {
+    id: 'gym',
+    eyebrow: 'HACKATHON VENUE',
+    title: '48 小时，\n一座体育馆。',
+    sub: '体育馆 01 · 黑客松布置',
+    intro: '场馆壳体、看台与舞台的概念快照，配 25 组团队桌与参与者示意。',
+    stats: [['25', ' 团队', '共 100 位参与者'], ['概念', '', '照片建模 · 非实测']],
+    glb: './gym/gym.glb',
+    mood: 'light',
+    enclosure: 'Gym_Roof',
+    guests: { group: 'Gym_People', min: 0, max: 100, value: 100, note: '参与者示意' },
+    zones: [
+      { n: '01', title: '团队创作', point: [-1.3, 1.3, 1.3], copy: '25 组团队桌与座椅，围绕中央主通道成组摆放。' },
+      { n: '02', title: '主舞台', point: [0, 3, -20.5], copy: '舞台、大屏与两侧音箱，面向团队区。' },
+      { n: '03', title: '导师交流', point: [-17.1, 1.4, 1.2], copy: '左侧导师席，供轮转交流和答疑。' },
+      { n: '04', title: '安静缓冲', point: [17.1, 1.4, 1.2], copy: '右侧留白区，给轮休和电话留出距离。' },
+      { n: '05', title: '签到服务', point: [-9.2, 1.4, 20.3], copy: '入口左侧完成签到与物资领取。' },
+      { n: '06', title: '茶歇交流', point: [9.2, 1.4, 20.3], copy: '入口右侧的饮水与轻食，避开团队区。' },
+      { n: '07', title: '主通道', point: [0.65, 1.4, 0.3], copy: '贯穿全场的主通道，串起签到、团队区与舞台。' },
+      { n: '08', title: '既有看台', point: [-23.3, 3.2, 0], copy: '场馆原有看台，路演时作为观演席位。' },
+    ],
+    phases: [
+      { t: '08:00', label: '布场', view: 'overview' },
+      { t: '10:00', label: '开放', view: 'overview' },
+      { t: '17:00', label: '路演', view: 'inside' },
+      { t: '20:00', label: '收尾', view: 'top' },
+    ],
+  },
+  {
+    id: 'popup',
+    eyebrow: 'A MOMENT IN NATURE',
+    title: '把自然，\n留在这一刻。',
+    sub: '青序 · 自然香氛快闪',
+    intro: '从被看见，到愿意停留。围绕一座香氛岛，让展示、体验与交流自然发生。',
+    stats: [['96', ' m²', '12 × 8 米'], ['24', ' 人', '来访者 · 另有 2 位店员']],
+    glb: './popup/popup.glb',
+    mood: 'popup',
+    defaultPhase: 1,
+    lights: 'Popup_LightingRig',
+    guests: { group: 'Popup_People', min: 0, max: 30, value: 24, note: '另有 2 位店员' },
+    zones: [
+      { n: '01', title: '迎宾与领取', point: [-4.65, 1.1, 2.6], copy: '1.8 米迎宾台放在入口左侧。领取探索卡后向内浏览。' },
+      { n: '02', title: '产品展示', point: [-2.5, 1.35, -0.55], copy: '中央圆形香氛岛与后侧陈列墙组成展示区。' },
+      { n: '03', title: '试香体验', point: [2.9, 1.18, -0.45], copy: '2.4 米试香台配置试香纸、产品和小托盘。' },
+      { n: '04', title: '品牌拍照', point: [3.95, 2.5, -3.5], copy: '圆拱、品牌字与自然绿植组成可被记住的画面。' },
+      { n: '05', title: '停留交流', point: [-5.1, 0.95, 0.1], copy: '侧边两把座椅与小圆几，供短暂休息和一对一交流。' },
+      { n: '06', title: '选购与离场', point: [4.65, 1.1, 2.6], copy: '结账与礼品包装在入口右侧，买完就近离场。' },
+    ],
+    phases: [
+      { t: '08:00', label: '布展准备', view: 'overview', guests: 0, lights: true },
+      { t: '10:00', label: '自由体验', view: 'overview', guests: 24, lights: true },
+      { t: '17:00', label: '新品介绍', view: 'inside', guests: 24, lights: true },
+      { t: '20:00', label: '闭店整理', view: 'overview', guests: 0, lights: false, mood: 'closed' },
+    ],
+  },
+  {
+    id: 'studio',
+    eyebrow: 'A SPACE FOR THE FRAME',
+    title: '留白，\n摄影工作室。',
+    sub: '拍摄 · 准备 · 后期',
+    intro: '弧形无影墙留出干净画面，灯具围绕拍摄区展开。化妆、修图与器材各有位置。',
+    stats: [['120', ' m²', '12 × 10 米'], ['4.3', ' m', '概念层高']],
+    glb: './studio/studio.glb',
+    mood: 'studio',
+    enclosure: 'Studio_Roof',
+    people: { min: 0, max: 6, value: 6, note: '共用访客角色', spots: [
+      [-1.9, -1.4, 0.3, 0], [0.3, 2.4, 0.9, 1], [4.6, -1.3, -1.4, 2], [4.7, 1.5, 1.6, 3], [-0.9, 0.9, -0.6, 4], [1.9, -0.4, 0.4, 1],
+    ] },
+    zones: [
+      { n: '01', title: '无缝背景', point: [-1.4, 0.8, -3.25], copy: '6.9 米宽的连续弧形背景，配合低台与静物陈设。' },
+      { n: '02', title: '拍摄区', point: [-2.1, 1.05, 0.45], copy: '相机机位、八角柔光箱、条形柔光箱与反光板。' },
+      { n: '03', title: '联机工作台', point: [0.35, 0.95, 2.55], copy: '带笔记本的移动联机车，靠近相机位置。' },
+      { n: '04', title: '修图区', point: [4.65, 1.15, -1.6], copy: '沿右侧布置修图显示器、数位板与工作椅。' },
+      { n: '05', title: '化妆区', point: [4.8, 1.3, 1], copy: '带独立灯泡的化妆镜、台面与座椅。' },
+      { n: '06', title: '器材储存', point: [4.65, 1.35, 3.75], copy: '背景纸、镜头箱、灯具和周转箱各有收纳位置。' },
+    ],
+    phases: [
+      { t: '09:00', label: '布光', view: 'overview', guests: 3 },
+      { t: '11:00', label: '拍摄', view: 'overview', enclosure: false, guests: 6 },
+      { t: '15:00', label: '修图', view: 'inside', enclosure: false, guests: 2 },
+      { t: '19:00', label: '收工', view: 'top', enclosure: true, guests: 0, mood: 'closed' },
+    ],
+  },
+  {
+    id: 'bar',
+    eyebrow: 'AMBER ROOM',
+    title: '琥珀间，\n酒吧。',
+    sub: 'L 形吧台 · 卡座与圆桌',
+    intro: '胡桃木的深色，黄铜的微光。在吧台与卡座之间，留一段适合慢慢坐下的距离。',
+    stats: [['108', ' m²', '12 × 9 米'], ['3.4', ' m', '概念层高']],
+    glb: './bar/bar.glb',
+    // 酒吧的夜间琥珀是它自己的样子，保留下来，只在打烊时压暗。
+    mood: 'amber',
+    defaultPhase: 1,
+    enclosure: 'Bar_Roof',
+    people: { min: 0, max: 6, value: 6, note: '共用访客角色', spots: [
+      [-1.9, -0.2, 0.4, 0], [0.6, -1.7, 1.2, 1], [4.3, -2.9, 1.6, 2], [4.3, 0.15, 1.6, 3], [4.3, 3.1, 1.6, 4], [2.6, 1.6, -0.6, 2],
+    ] },
+    zones: [
+      { n: '01', title: '背吧与酒架', point: [-1.75, 2, -4.05], copy: '瓶杯陈列与暖光层板，沿后墙一字排开。' },
+      { n: '02', title: 'L 形服务吧台', point: [-1.9, 1.1, -0.8], copy: '独立高脚凳与操作设备，围出 L 形服务面。' },
+      { n: '03', title: '卡座与圆桌', point: [4.6, 1.3, 0.15], copy: '酒红软包卡座与胡桃木圆桌沿右侧排布。' },
+      { n: '04', title: '灯光与细节', point: [0, 2.7, -0.84], copy: '琥珀吊灯与黄铜收边，是这间店的底色。' },
+    ],
+    phases: [
+      { t: '17:00', label: '备场', view: 'overview', enclosure: false, guests: 3 },
+      { t: '19:00', label: '营业', view: 'overview', enclosure: false, guests: 6 },
+      { t: '23:00', label: '打烊', view: 'top', enclosure: true, guests: 0, mood: 'dusk' },
+    ],
+  },
+  {
+    id: 'cafe',
+    eyebrow: 'SLOW NOTES / COFFEE & EVERYDAY',
+    title: '把时间，\n留给一杯咖啡。',
+    sub: '慢调咖啡 · 概念空间',
+    intro: '浅木、暖白和窗边绿意。咖啡操作、等候取餐与坐下来喝一杯，都各有位置。',
+    stats: [['108', ' m²', '12 × 9 米'], ['3.25', ' m', '概念层高']],
+    glb: './cafe/cafe.glb',
+    mood: 'cafe',
+    enclosure: 'Cafe_Roof',
+    people: { min: 0, max: 8, value: 8, note: '共用访客角色', spots: [
+      [-2, -1, 0.1, 0], [-0.6, -0.9, 0, 1], [-4.4, 0.3, 1.7, 2], [-4.4, 2, 1.7, 3], [-0.2, 2.3, -0.2, 4], [1.4, 2.3, -0.2, 0], [5, 0.2, -1.6, 1], [5, 2.4, -1.6, 2],
+    ] },
+    zones: [
+      { n: '01', title: '点单与咖啡吧台', point: [-2, 1.8, -2.2], copy: '独立柜体、双冲煮头咖啡机、磨豆机、糕点陈列与点单取餐。' },
+      { n: '02', title: '靠墙卡座', point: [-4.9, 1.4, 1.1], copy: '橄榄绿软包与浅木框架，配两张小圆桌和独立木餐椅。' },
+      { n: '03', title: '中央散座', point: [-0.2, 1.2, 1.3], copy: '两组圆桌与八把木餐椅，保留与前右入口相连的通路。' },
+      { n: '04', title: '临窗长吧台', point: [5.3, 1.6, 1.3], copy: '四张带靠背高脚凳，面向整面玻璃窗。' },
+    ],
+    phases: [
+      { t: '08:00', label: '开店', view: 'overview', enclosure: false, guests: 4 },
+      { t: '11:00', label: '营业', view: 'overview', enclosure: false, guests: 8 },
+      { t: '18:00', label: '打烊', view: 'top', enclosure: true, guests: 0, mood: 'closed' },
+    ],
+  },
+  {
+    id: 'conference',
+    eyebrow: 'COMMON GROUND / 2026',
+    title: '让知识，\n在此交汇。',
+    sub: '共知 · 学术交流会',
+    intro: '一场报告，一次提问，一段茶歇间的对话。以清晰的动线，为学术交流留出空间。',
+    stats: [['432', ' m²', '24 × 18 米'], ['100', ' 人', '含 4 位嘉宾 · 另 4 位工作人员']],
+    glb: './conference/conference.glb',
+    mood: 'conference',
+    defaultPhase: 2,
+    enclosure: 'Conference_Roof',
+    lights: 'Conference_Lights',
+    guests: { group: 'Conference_People', min: 0, max: 96, value: 96, note: '96 位观众 · 工作人员另计' },
+    zones: [
+      { n: '01', title: '报告与圆桌讨论', point: [0, 3.8, -6.8], copy: '11 × 3.6 米舞台；主屏、讲台与四把嘉宾椅。报告模式 1 人主讲、3 人就座。' },
+      { n: '02', title: '双侧观众席', point: [0, 1.1, 0.5], copy: '8 排、每排 12 个固定排位，中央通道 2 米。人数与座椅数量同步变化，优先使用前排。' },
+      { n: '03', title: '入口签到', point: [-9.65, 2, 7.85], copy: '入口左侧领取胸牌与议程。4 名工作人员另外计数。' },
+      { n: '04', title: '学术海报交流', point: [-10.7, 2.1, -0.7], copy: '三块原创示例海报，展示议题与交流版式，内容均为虚构。' },
+      { n: '05', title: '茶歇服务', point: [10.4, 1.8, -0.7], copy: '沿右侧墙面布置饮水、咖啡与轻食，停留点位位于观众侧通道以外。' },
+      { n: '06', title: '会务控制', point: [9.6, 1.6, 4.9], copy: '后侧配置双屏控制台、调音设备与电脑。' },
+    ],
+    phases: [
+      { t: '08:00', label: '布场', view: 'overview', guests: 0 },
+      { t: '09:00', label: '签到', view: 'overview', guests: 96 },
+      { t: '09:30', label: '报告', view: 'overview', guests: 96 },
+      { t: '11:30', label: '散场', view: 'top', guests: 0, mood: 'conferenceClosed' },
+    ],
+  },
+  {
+    id: 'lawn',
+    eyebrow: 'IDEAS UNDER THE SKY',
+    title: '把想法，\n带到旷野。',
+    sub: '旷野有约 · 草坪分享会',
+    intro: '树荫下的交流，草坪上的分享。一条木步道连接舞台、作品和人与人之间的相遇。',
+    stats: [['560', ' m²', '28 × 20 米'], ['60', ' 人', '来访者 · 另有 4 位工作人员']],
+    glb: './lawn/lawn.glb',
+    mood: 'lawn',
+    defaultPhase: 2,
+    enclosure: 'Lawn_Canopies',
+    enclosureLabel: '遮阳顶',
+    enclosureDefault: true,
+    guests: { group: 'Lawn_People', min: 0, max: 60, value: 60, note: '另 4 位工作人员' },
+    zones: [
+      { n: '01', title: '草坪分享台', point: [0, 3.6, -6.8], copy: '8 × 3.2 米木平台，搭配主题背板、讲台和两侧音箱。' },
+      { n: '02', title: '观众与主通道', point: [0, 1.1, 0.6], copy: '两侧各 5 排、每排 6 席，上限 60 席，中央 1.8 米宽步道。' },
+      { n: '03', title: '签到与指引', point: [-10, 2.1, 6.6], copy: '入口左侧完成签到和领取资料，中央步道直达观众区。' },
+      { n: '04', title: '作品交流', point: [-10, 2, -1], copy: '三块独立展板与小型交流桌，开场前浏览、分享后继续讨论。' },
+      { n: '05', title: '遮阳休憩', point: [10, 3.2, -1], copy: '织物遮阳棚覆盖边侧休息区，四把座椅、两张小桌与两组长凳。' },
+      { n: '06', title: '茶歇与补给', point: [10, 2.1, 6.2], copy: '入口右侧的饮水、轻食与分类回收，独立服务台避开中央观众区。' },
+    ],
+    phases: [
+      { t: '12:00', label: '布置', view: 'overview', guests: 0 },
+      { t: '14:00', label: '签到', view: 'overview', guests: 60 },
+      { t: '14:30', label: '分享', view: 'overview', guests: 60 },
+      { t: '16:00', label: '散场', view: 'top', guests: 0, enclosure: true, mood: 'closed' },
+    ],
+  },
+  {
+    id: 'market',
+    eyebrow: 'A WEEKEND OUTSIDE',
+    title: '周末，\n来逛一圈。',
+    sub: '好物 · 好吃 · 刚好遇见',
+    intro: '沿着小摊慢慢走，在树下坐一会儿。把一个寻常周末，过成邻里相遇的节日。',
+    stats: [['660', ' m²', '30 × 22 米概念场地'], ['12', ' 摊', '手作、花植与轻食']],
+    glb: './market/market.glb',
+    mood: 'marketOpen',
+    defaultPhase: 1,
+    enclosure: 'Market_Canopies',
+    enclosureLabel: '棚顶',
+    enclosureDefault: true,
+    lights: 'Market_LightingRig',
+    lightsLabel: '灯串',
+    lightsDefault: true,
+    people: { min: 0, max: 12, value: 12, note: '共用访客角色', spots: [
+      [0, 8.2, 3.14, 0], [-8.6, 3, 1.57, 1], [-8.6, -2, 1.57, 2], [-8.6, -6, 1.57, 3], [8.6, 3, -1.57, 4], [8.6, -2, -1.57, 0], [8.6, -6, -1.57, 1],
+      [-6.4, 1.5, 1.2, 2], [6.4, 1.5, -1.2, 3], [-3.4, 3.2, 0.2, 4], [-2.2, 1.6, -0.2, 0], [1.2, 2.4, 1, 1],
+    ] },
+    zones: [
+      { n: '01', title: '入口与导览', point: [0, 3.6, 9.4], copy: '5.4 米入口框架与两侧导览牌，中间保留 3 米宽进入通道。' },
+      { n: '02', title: '十二间小店', point: [-11, 3.4, 0], copy: '两侧各 4 个摊位、北侧 4 个，每摊 3.2 × 2.4 米，向广场内侧营业。' },
+      { n: '03', title: '慢逛环线', point: [-6.3, 0.05, 5.8], copy: '2 米宽矩形主环线连接三侧摊位，环线内不摆放家具和摊位。' },
+      { n: '04', title: '歇脚与餐饮', point: [-3.1, 2.9, 2.6], copy: '四张餐桌、十六把座椅与两把遮阳伞组成中央休憩区。' },
+      { n: '05', title: '小小现场', point: [0, 2.3, -2], copy: '4.8 × 2.6 米小舞台，设麦克风、音箱与拍照背景，不放置人物。' },
+      { n: '06', title: '回收与后勤', point: [11, 1.5, 9.4], copy: '东南角分类桶与物资柜，西南角保留补货箱。' },
+    ],
+    phases: [
+      { t: '08:00', label: '布展准备', view: 'overview', guests: 0, mood: 'marketSetup' },
+      { t: '10:00', label: '开市慢逛', view: 'overview', guests: 12, mood: 'marketOpen' },
+      { t: '17:00', label: '傍晚小聚', view: 'overview', guests: 12, mood: 'marketEvening' },
+      { t: '19:00', label: '收摊整理', view: 'top', guests: 0, mood: 'marketClosed' },
+    ],
+  },
+  {
+    id: 'museum',
+    eyebrow: 'THE SPACE BETWEEN — 2026',
+    title: '留白\n之间',
+    sub: '一座当代艺术展厅',
+    intro: '在色彩、体量与光之间，给观看留出一点时间。让想象，自由停留。',
+    stats: [['280', ' m²', '20 × 14 米 · 概念展区'], ['3', ' 人', '参观者 · 另有 1 位工作人员']],
+    glb: './museum/museum.glb',
+    mood: 'museum',
+    defaultPhase: 1,
+    enclosure: 'Museum_Architecture',
+    enclosureLabel: '外墙',
+    enclosureDefault: true,
+    lights: 'Museum_LightRig',
+    lightsLabel: '顶部灯架',
+    guests: { group: 'Museum_Visitors', min: 0, max: 12, value: 3, note: '另 1 位工作人员' },
+    zones: [
+      { n: '01', title: '入口导览', point: [-8.25, 1.25, 4.65], copy: '从南侧入口进入，领取展览手册；入口与右侧离场位置分开。' },
+      { n: '02', title: '留白之间 · 序厅', point: [-6.65, 2.65, 1], copy: '序厅呈现“留白之间”主题，墙后三幅原创抽象画均为虚构示例。' },
+      { n: '03', title: '雕塑之间', point: [0, 1.7, 2.15], copy: '四座高低不同的开放展台，沿通道环绕观看材质、轮廓与负空间。' },
+      { n: '04', title: '风的形状', point: [0.4, 2.8, -4.8], copy: '铜制曲线与悬浮椭圆片构成中央装置，讲解阶段用预设站位展示停留方式。' },
+      { n: '05', title: '色彩与构图', point: [6.3, 1.25, -1.4], copy: '4.4 米艺术体验桌设置色板组合、触感材料与数字构图三处体验位。' },
+      { n: '06', title: '停留与离场', point: [7.2, 1.05, 4.8], copy: '右前方两把木椅与小桌供短暂停留、翻阅展览册，之后从右侧离场。' },
+    ],
+    phases: [
+      { t: '08:00', label: '布展检查', view: 'overview', guests: 0 },
+      { t: '09:30', label: '自由参观', view: 'overview', guests: 3 },
+      { t: '16:00', label: '导览讲解', view: 'overview', guests: 12 },
+      { t: '17:00', label: '闭馆清点', view: 'top', guests: 0, mood: 'museumClosed' },
+    ],
+  },
+  {
+    id: 'office',
+    eyebrow: 'A PLACE TO THINK',
+    title: '给想法，\n留一点空白。',
+    sub: '办公室 · 留白',
+    intro: '把专注与讨论放在合适的位置。以浅木、织物和自然光，连接日常工作里的不同节奏。',
+    stats: [['140', ' m²', '14 × 10 米 · 概念场地'], ['4', ' 区', '工位 · 会议 · 交流 · 收纳']],
+    glb: './office/office.glb',
+    mood: 'office',
+    enclosure: 'Office_Roof',
+    enclosureLabel: '顶部结构',
+    people: { min: 0, max: 8, value: 8, note: '共用访客角色', spots: [
+      [-4.2, -0.6, 3, 0], [-2.5, -0.6, 3, 1], [-4.2, 0.5, 0, 2], [-2.5, 0.5, 0, 3], [3.3, -2.4, 3, 4], [4.6, -4, 0.8, 0], [3.2, 1.6, -0.4, 1], [-4.6, -3.7, 1.2, 2],
+    ] },
+    zones: [
+      { n: '01', title: '专注工位', point: [-3.5, 1.3, -0.05], copy: '两组双面工位、八张桌与独立任务椅，中部留出通路。' },
+      { n: '02', title: '玻璃会议室', point: [4.3, 1.5, -3.1], copy: '完整会议桌、六把座椅、显示屏与白板。' },
+      { n: '03', title: '轻交流', point: [3.9, 1.1, 2.2], copy: '入口边的沙发、单椅与茶几形成短暂停留区。' },
+      { n: '04', title: '服务与收纳', point: [-5.2, 1.2, -3.6], copy: '茶水柜、打印设备与归档收纳沿边界布置。' },
+    ],
+    phases: [
+      { t: '09:00', label: '专注时段', view: 'overview', guests: 6 },
+      { t: '13:00', label: '会议时段', view: 'inside', guests: 8 },
+      { t: '18:00', label: '收工', view: 'top', enclosure: true, guests: 0, mood: 'closed' },
+    ],
+  },
+];
+
+const VIEWS = [['overview', '◈ 整体'], ['top', '▦ 俯视'], ['inside', '⌂ 场内']];
+
+const tint = (hex, amount) => `#${new THREE.Color(hex).lerp(new THREE.Color(amount > 0 ? '#ffffff' : '#000000'), Math.abs(amount)).getHexString()}`;
+// A soft radial backdrop reads as studio light instead of a flat fill.
+const backdrop = (hex) => `radial-gradient(125% 115% at 50% 6%, ${tint(hex, 0.2)} 0%, ${tint(hex, 0.06)} 44%, ${tint(hex, -0.14)} 100%)`;
+
+// The five archive models ship no people, so the gallery shares one character
+// between them: the 草坪分享会 visitor is downloaded once and cloned onto each
+// scene's own spots, so every scene answers the same 人物 control. The donor is
+// 1.40 m as authored, scaled to real-scale 1.67 m so it fits the other scenes.
+const DONOR = { src: './lawn/lawn.glb', group: 'Lawn_People', scale: 1.19 };
+let donorCast = null;
+const loadDonorCast = () => {
+  donorCast ??= new GLTFLoader().loadAsync(new URL(DONOR.src, import.meta.url).href).then((gltf) => {
+    const group = gltf.scene.getObjectByName(DONOR.group);
+    if (!group || !group.children.length) throw new Error(`角色来源 ${DONOR.group} 不可用`);
+    return group.children;
+  });
+  return donorCast;
+};
+
+// Each scene keeps the atmosphere its own archive page was lit for — the bar
+// stays an amber night room instead of being flattened into the gallery light.
+const MOODS = {
+  light: { background: '#e4e9e5', hemi: ['#e5f0ff', '#7b8b6e', 2], sun: ['#fff1d8', 2.6], fill: ['#dbe7ff', 1], env: 0.46, exposure: 1.1 },
+  office: { background: '#e5e8e3', hemi: ['#fff9e7', '#9eaa94', 0.85], sun: ['#fff0d6', 2.4], fill: ['#f0f2ea', 0.7], env: 0.62, exposure: 1 },
+  cafe: { background: '#e8e9e2', hemi: ['#fff8e9', '#aaac95', 0.9], sun: ['#fff3d8', 2.4], fill: ['#fff1d4', 0.8], env: 0.52, exposure: 1 },
+  studio: { background: '#aaa69b', hemi: ['#fffaf0', '#66675f', 0.75], sun: ['#fff2dc', 1.85], fill: ['#e6e0ff', 0.8], env: 0.42, exposure: 1 },
+  popup: { background: '#e5e6dc', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 2.5], fill: ['#fff3dc', 0.9], env: 0.7, exposure: 0.91 },
+  conference: { background: '#dfe5e9', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 2.2], fill: ['#eef3f7', 0.7], env: 0.7, exposure: 1.06 },
+  lawn: { background: '#e5e9dc', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 2.5], fill: ['#f2f7e8', 0.7], env: 0.7, exposure: 1 },
+  museum: { background: '#e7e7de', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 2.5], fill: ['#f4f2e6', 0.7], env: 0.7, exposure: 1 },
+  // 散场/闭馆：三座室内场景的归档页共用同一档暗光
+  closed: { background: '#e5e9dc', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 1.1], fill: ['#fff3dc', 0.4], env: 0.24, exposure: 0.73 },
+  conferenceClosed: { background: '#dfe5e9', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 1.4], fill: ['#eef3f7', 0.5], env: 0.5, exposure: 0.9 },
+  museumClosed: { background: '#e7e7de', hemi: ['#fff9e7', '#9eaa94', 0.8], sun: ['#fff0d6', 1.1], fill: ['#f4f2e6', 0.4], env: 0.24, exposure: 0.73, spot: 0.2 },
+  marketSetup: { background: '#e9e0cf', hemi: ['#fff5dd', '#8e9c7d', 0.95], sun: ['#ffe6c0', 1.85], fill: ['#edf3e9', 0.6], env: 0.6, exposure: 0.97, lantern: 0.04 },
+  marketOpen: { background: '#e8e0cf', hemi: ['#fff5dd', '#8e9c7d', 1.05], sun: ['#fff0d5', 2.5], fill: ['#edf3e9', 0.65], env: 0.65, exposure: 1.03, lantern: 0.08 },
+  marketEvening: { background: '#c6b5aa', hemi: ['#fff5dd', '#8e9c7d', 0.7], sun: ['#ffb56f', 1.1], fill: ['#edf3e9', 0.35], env: 0.4, exposure: 0.9, lantern: 2.3 },
+  marketClosed: { background: '#969da2', hemi: ['#fff5dd', '#8e9c7d', 0.5], sun: ['#dce5ff', 0.42], fill: ['#edf3e9', 0.3], env: 0.35, exposure: 0.82, lantern: 0.65 },
+  amber: { background: '#302821', hemi: ['#ffe5bc', '#242125', 0.55], sun: ['#ffdab0', 1.8], fill: ['#ffd9a8', 0.35], env: 0.26, exposure: 1 },
+  dusk: { background: '#241d18', hemi: ['#ffdcae', '#1d1a18', 0.4], sun: ['#ffd0a0', 1.2], fill: ['#ffcf9a', 0.2], env: 0.18, exposure: 0.86 },
+};
+
+const element = (tag, className, text) => {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text != null) node.textContent = text;
+  return node;
+};
+
+const gallery = document.getElementById('gallery');
+for (const scene of SCENES) {
+  const block = element('section', 'scene-block');
+  const native = element('div', 'scene-native');
+
+  const panel = element('aside', 'nv-panel');
+  panel.append(
+    element('p', 'nv-eyebrow', scene.eyebrow),
+    element('h2', 'nv-title', scene.title),
+    element('p', 'nv-sub', scene.sub),
+    element('p', 'nv-intro', scene.intro),
+  );
+  const stats = element('div', 'nv-stats');
+  for (const [value, unit, label] of scene.stats) {
+    const strong = element('strong', null, value);
+    if (unit) strong.appendChild(element('small', null, unit));
+    const cell = element('div');
+    cell.append(strong, element('span', null, label));
+    stats.appendChild(cell);
+  }
+  panel.appendChild(stats);
+  const zones = element('div', 'nv-zones');
+  zones.append(element('h2', null, '分区'), element('div', 'nv-zones-list'));
+  panel.appendChild(zones);
+
+  // 时段 + 人物 live in the sidebar as one collapsible block, not as a band
+  // under the stage.
+  const time = element('section', 'nv-time');
+  const timeHead = element('button', 'nv-time-head');
+  timeHead.type = 'button';
+  timeHead.setAttribute('aria-expanded', 'true');
+  const timeCurrent = element('span', 'nv-time-current');
+  const timeCaret = element('em', 'nv-time-caret', '⌃');
+  timeHead.append(element('span', 'tl-kicker', '时段'), timeCurrent, timeCaret);
+  const timeBody = element('div', 'nv-time-body');
+  const steps = element('div', 'tl-steps');
+  const peopleGroup = element('div', 'tl-people');
+  peopleGroup.appendChild(element('span', 'tl-kicker', '人物'));
+  const range = element('input');
+  const output = element('output');
+  // Every scene carries the same live 人物 control: a real headcount when the
+  // GLB ships people, otherwise the shared visitor character this viewer borrows.
+  const live = scene.guests || scene.people;
+  range.type = 'range';
+  range.id = `people-${scene.id}`;
+  range.min = String(live.min);
+  range.max = String(live.max);
+  range.step = '1';
+  range.value = String(live.value);
+  range.setAttribute('aria-label', '人物数量');
+  output.value = String(live.value);
+  output.setAttribute('for', range.id);
+  peopleGroup.append(output, range);
+  if (live.note) peopleGroup.appendChild(element('span', 'tl-note', live.note));
+  timeBody.append(steps, peopleGroup);
+  time.append(timeHead, timeBody);
+  panel.appendChild(time);
+  scene.guestRange = range;
+  scene.guestOutput = output;
+  scene.time = time;
+  scene.timeCurrent = timeCurrent;
+  timeHead.addEventListener('click', () => {
+    const collapsed = time.classList.toggle('collapsed');
+    timeHead.setAttribute('aria-expanded', String(!collapsed));
+  });
+
+  const stage = element('div', 'nv-stage');
+  const canvas = element('canvas');
+  canvas.setAttribute('aria-label', `${scene.title} 三维场景，可拖动旋转、滚轮缩放`);
+  const labels = element('div', 'nv-labels');
+  labels.setAttribute('aria-hidden', 'true');
+  const switches = element('div', 'nv-switches');
+  const addSwitch = (role, text, checked) => {
+    const wrap = element('label');
+    const input = element('input');
+    input.type = 'checkbox';
+    input.checked = checked;
+    input.dataset.role = role;
+    wrap.append(input, document.createTextNode(` ${text}`));
+    switches.appendChild(wrap);
+    return input;
+  };
+  const labelToggle = addSwitch('labels', '分区', true);
+  const roofToggle = scene.enclosure ? addSwitch('enclosure', scene.enclosureLabel || '屋顶', scene.enclosureDefault === true) : null;
+  const lightToggle = scene.lights ? addSwitch('lights', scene.lightsLabel || '灯光', scene.lightsDefault === true) : null;
+  const selection = element('div', 'nv-selection');
+  selection.hidden = true;
+  const close = element('button', 'nv-selection-close', '×');
+  close.type = 'button';
+  close.setAttribute('aria-label', '关闭分区说明');
+  const selectionNo = element('small');
+  const selectionTitle = element('h3');
+  const selectionCopy = element('p');
+  selection.append(close, selectionNo, selectionTitle, selectionCopy);
+  const views = element('div', 'nv-views');
+  for (const [key, text] of VIEWS) {
+    const button = element('button', null, text);
+    button.type = 'button';
+    button.dataset.view = key;
+    button.setAttribute('aria-pressed', String(key === 'overview'));
+    views.appendChild(button);
+  }
+  views.appendChild(element('i'));
+  const reset = element('button', null, '↺');
+  reset.type = 'button';
+  reset.dataset.reset = 'true';
+  reset.setAttribute('aria-label', '复位视角');
+  views.appendChild(reset);
+  stage.append(canvas, labels, switches, selection, views, element('p', 'nv-status', '读取模型…'));
+
+  native.append(panel, stage);
+  block.append(native);
+  gallery.appendChild(block);
+
+  Object.assign(scene, {
+    block, panel, stage, canvas, labelLayer: labels, selection,
+    selectionNo, selectionTitle, selectionCopy,
+    listEl: panel.querySelector('.nv-zones-list'),
+    statusEl: stage.querySelector('.nv-status'),
+    labelToggle, roofToggle, lightToggle,
+    viewButtons: Array.from(views.querySelectorAll('[data-view]')),
+    steps: Array.from(steps.querySelectorAll(':scope > *')),
+    stepList: steps,
+  });
+}
+
+const createViewer = async (scene) => {
+  const { canvas, stage } = scene;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance', alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
+  renderer.shadowMap.autoUpdate = false;
+
+  const world = new THREE.Scene();
+  // The backdrop is a CSS gradient behind a transparent canvas, so each scene
+  // gets a soft sky instead of one flat colour.
+  renderer.setClearAlpha(0);
+  const hemi = new THREE.HemisphereLight('#e5f0ff', '#7b8b6e', 2);
+  world.add(hemi);
+  const perspective = new THREE.PerspectiveCamera(43, 1, 0.12, 900);
+  const orthographic = new THREE.OrthographicCamera(-35, 35, 35, -35, 0.1, 900);
+  let camera = perspective;
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.09;
+  controls.screenSpacePanning = false;
+  controls.minPolarAngle = 0.001;
+  controls.maxPolarAngle = Math.PI / 2 - 0.025;
+  controls.minDistance = 0.6;
+  controls.maxDistance = 600;
+
+  const sun = new THREE.DirectionalLight('#fff1d8', 2.6);
+  sun.position.set(-24, 40, 18);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left: -40, right: 40, top: 40, bottom: -40, near: 0.5, far: 160 });
+  sun.shadow.normalBias = 0.035;
+  sun.shadow.bias = -0.0002;
+  world.add(sun, sun.target);
+  const fill = new THREE.DirectionalLight('#dbe7ff', 1);
+  fill.position.set(18, 22, -26);
+  world.add(fill);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const room = new RoomEnvironment();
+  const environment = pmrem.fromScene(room, 0.08);
+  world.environment = environment.texture;
+  world.environmentIntensity = 0.46;
+  room.dispose();
+  pmrem.dispose();
+
+  const box = new THREE.Box3();
+  const marker = new THREE.Vector3();
+  let raf = null;
+  let view = 'overview';
+  let labelsOn = true;
+  let active = null;
+  let tween = null;
+  let peopleGroup = null;
+  let figureGroup = null;
+  let enclosure = null;
+  const size = new THREE.Vector2(1, 1);
+  const placed = [];
+
+  const updateLabels = () => {
+    for (const item of placed) {
+      const point = marker.copy(item.point).project(camera);
+      const x = (point.x * 0.5 + 0.5) * size.x;
+      const y = (-point.y * 0.5 + 0.5) * size.y;
+      const inside = point.z < 1 && Math.abs(point.x) < 1.15 && Math.abs(point.y) < 1.15;
+      item.el.style.opacity = labelsOn && view !== 'inside' && inside ? '1' : '0';
+      item.el.style.transform = `translate(-50%,-50%) translate(${x}px,${y}px)`;
+    }
+  };
+  const render = () => {
+    raf = null;
+    const animating = stepTween();
+    const moving = controls.update();
+    renderer.render(world, camera);
+    updateLabels();
+    if (moving || animating) invalidate();
+  };
+  const invalidate = () => {
+    if (raf === null) raf = requestAnimationFrame(render);
+  };
+  controls.addEventListener('change', invalidate);
+
+  const topFrustum = () => {
+    const extent = box.isEmpty() ? new THREE.Vector3(20, 5, 20) : box.getSize(new THREE.Vector3());
+    const aspect = perspective.aspect;
+    const half = Math.max(extent.z / 2, extent.x / (2 * aspect)) * 1.04;
+    orthographic.left = -half * aspect;
+    orthographic.right = half * aspect;
+    orthographic.top = half;
+    orthographic.bottom = -half;
+    orthographic.updateProjectionMatrix();
+  };
+  const resize = () => {
+    const rect = stage.getBoundingClientRect();
+    size.set(Math.max(1, rect.width), Math.max(1, rect.height));
+    renderer.setSize(size.x, size.y, false);
+    perspective.aspect = size.x / size.y;
+    perspective.updateProjectionMatrix();
+    topFrustum();
+    invalidate();
+  };
+
+  const setView = (next) => {
+    if (!VIEWS.some(([key]) => key === next)) return;
+    const center = box.isEmpty() ? new THREE.Vector3() : box.getCenter(new THREE.Vector3());
+    const extent = box.isEmpty() ? new THREE.Vector3(20, 5, 20) : box.getSize(new THREE.Vector3());
+    const damping = controls.enableDamping;
+    controls.enableDamping = false;
+    controls.update();
+    view = next;
+    camera = next === 'top' ? orthographic : perspective;
+    controls.object = camera;
+    controls.enableRotate = next !== 'top';
+    if (next === 'top') {
+      topFrustum();
+      orthographic.zoom = 1;
+      orthographic.updateProjectionMatrix();
+      camera.position.set(center.x, Math.max(extent.y, 8) + 40, center.z + 0.01);
+      controls.target.set(center.x, 0, center.z);
+    } else if (next === 'inside') {
+      camera.fov = 64;
+      camera.updateProjectionMatrix();
+      camera.position.set(center.x, 1.65, center.z + Math.max(1.5, extent.z / 2 - 0.6));
+      controls.target.set(center.x, 1.5, center.z - 2);
+    } else {
+      camera.fov = 43;
+      camera.updateProjectionMatrix();
+      const radius = Math.max(2, extent.length() / 2);
+      const distance = (radius / Math.sin(((perspective.fov / 2) * Math.PI) / 180)) * 0.86;
+      controls.target.set(center.x, Math.max(0.8, extent.y * 0.3), center.z);
+      camera.position.copy(controls.target).addScaledVector(new THREE.Vector3(0.72, 0.6, 1).normalize(), distance);
+    }
+    controls.update();
+    controls.enableDamping = damping;
+    for (const button of scene.viewButtons) button.setAttribute('aria-pressed', String(button.dataset.view === view));
+    invalidate();
+  };
+
+  // Clicking a zone flies the camera onto that area: the label pill lands on the
+  // zone anchor and the view stays there until 复位 / another view is picked.
+  const stepTween = () => {
+    if (!tween) return false;
+    const progress = Math.min(1, (performance.now() - tween.start) / tween.duration);
+    const eased = progress < 0.5 ? 2 * progress * progress : 1 - 2 * (1 - progress) * (1 - progress);
+    controls.target.lerpVectors(tween.fromTarget, tween.toTarget, eased);
+    camera.position.lerpVectors(tween.fromPosition, tween.toPosition, eased);
+    if (camera === orthographic) {
+      orthographic.zoom = tween.fromZoom + (tween.toZoom - tween.fromZoom) * eased;
+      orthographic.updateProjectionMatrix();
+    }
+    if (progress >= 1) tween = null;
+    return true;
+  };
+
+  const focusZone = (index) => {
+    const zone = scene.zones[index];
+    if (!zone) return;
+    const extent = box.isEmpty() ? new THREE.Vector3(20, 5, 20) : box.getSize(new THREE.Vector3());
+    const span = extent.length();
+    const target = new THREE.Vector3(...zone.point);
+    target.y = Math.max(0.6, target.y * 0.5);
+    const distance = THREE.MathUtils.clamp(span * 0.34, 4.5, 15);
+    const onwards = camera.position.clone().sub(controls.target);
+    const direction = onwards.lengthSq() > 1e-6 ? onwards.normalize() : new THREE.Vector3(0.72, 0.6, 1).normalize();
+    if (direction.y < 0.22) direction.setY(0.22).normalize();
+    tween = {
+      fromTarget: controls.target.clone(),
+      toTarget: target,
+      fromPosition: camera.position.clone(),
+      toPosition: target.clone().addScaledVector(direction, distance),
+      fromZoom: orthographic.zoom,
+      toZoom: THREE.MathUtils.clamp(span / (distance * 3.2), 1, 6),
+      start: performance.now(),
+      duration: 640,
+    };
+    invalidate();
+  };
+
+  const selectZone = (index) => {
+    active = index;
+    scene.zoneButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    if (index == null) {
+      scene.selection.hidden = true;
+      return;
+    }
+    const zone = scene.zones[index];
+    scene.selectionNo.textContent = `ZONE / ${zone.n}`;
+    scene.selectionTitle.textContent = zone.title;
+    scene.selectionCopy.textContent = zone.copy;
+    scene.selection.hidden = false;
+    focusZone(index);
+  };
+
+  const lanternMaterials = [];
+  const spotLights = [];
+  // A scene keeps the atmosphere its own archive page was lit for; a phase may
+  // hand it a dimmer variant (散场 / 闭馆 / 傍晚).
+  const setMood = (name) => {
+    const preset = MOODS[name] || MOODS.light;
+    stage.style.background = backdrop(preset.background);
+    hemi.color.set(preset.hemi[0]);
+    hemi.groundColor.set(preset.hemi[1]);
+    hemi.intensity = preset.hemi[2];
+    sun.color.set(preset.sun[0]);
+    sun.intensity = preset.sun[1];
+    fill.color.set(preset.fill[0]);
+    fill.intensity = preset.fill[1];
+    world.environmentIntensity = preset.env;
+    renderer.toneMappingExposure = preset.exposure;
+    for (const material of lanternMaterials) material.emissiveIntensity = material.userData.baseEmissive * (preset.lantern ?? 1);
+    for (const item of spotLights) item.light.intensity = item.base * (preset.spot ?? 1);
+    renderer.shadowMap.needsUpdate = true;
+    invalidate();
+  };
+
+  const setEnclosure = (on) => {
+    if (enclosure) enclosure.visible = on;
+    if (scene.roofToggle) scene.roofToggle.checked = on;
+    renderer.shadowMap.needsUpdate = true;
+    invalidate();
+  };
+  const setLights = (on) => {
+    if (scene.lights) {
+      const group = world.getObjectByName(scene.lights);
+      if (group) group.visible = on;
+    }
+    if (scene.lightToggle) scene.lightToggle.checked = on;
+    renderer.shadowMap.needsUpdate = true;
+    invalidate();
+  };
+  const setGuests = (count) => {
+    const group = peopleGroup || figureGroup;
+    if (group) {
+      const total = group.children.length;
+      const shown = Math.max(0, Math.min(total, Math.round(count)));
+      group.children.forEach((child, index) => { child.visible = index < shown; });
+    }
+    if (scene.guestOutput) scene.guestOutput.textContent = String(count);
+    if (scene.guestRange) scene.guestRange.value = String(count);
+    renderer.shadowMap.needsUpdate = true;
+    invalidate();
+  };
+
+  resize();
+  setMood(scene.mood);
+  new ResizeObserver(resize).observe(stage);
+  scene.statusEl.textContent = '读取模型…';
+  const gltf = await new GLTFLoader().loadAsync(new URL(scene.glb, import.meta.url).href, (event) => {
+    if (!event.lengthComputable) return;
+    scene.statusEl.textContent = `读取中 ${Math.round((event.loaded / event.total) * 100)}%`;
+  });
+  const root = gltf.scene;
+  root.updateMatrixWorld(true);
+  box.setFromObject(root);
+  sun.target.position.copy(box.getCenter(new THREE.Vector3()));
+  root.traverse((node) => {
+    if (node.isSpotLight) spotLights.push({ light: node, base: node.intensity });
+    if (!node.isMesh) return;
+    node.castShadow = !(Array.isArray(node.material) ? node.material : [node.material]).some((m) => m && m.transparent);
+    node.receiveShadow = true;
+    for (const material of Array.isArray(node.material) ? node.material : [node.material]) {
+      if (!material || material.name !== 'Lantern warm light') continue;
+      material.userData.baseEmissive = material.emissiveIntensity || 1;
+      lanternMaterials.push(material);
+    }
+  });
+  world.add(root);
+
+  if (scene.enclosure) {
+    enclosure = root.getObjectByName(scene.enclosure);
+    if (enclosure) enclosure.visible = scene.roofToggle ? scene.roofToggle.checked : false;
+  }
+  if (scene.lights) {
+    const group = root.getObjectByName(scene.lights);
+    if (group) group.visible = scene.lightToggle ? scene.lightToggle.checked : false;
+  }
+  if (scene.guests) peopleGroup = root.getObjectByName(scene.guests.group);
+  if (scene.people) {
+    // Borrowed characters: cloned from the shared donor cast onto this scene's spots.
+    const cast = await loadDonorCast();
+    figureGroup = new THREE.Group();
+    figureGroup.name = 'SharedPeople';
+    scene.people.spots.forEach(([x, z, rotation = 0, variant = 0], index) => {
+      const person = cast[variant % cast.length].clone(true);
+      person.name = `Person_${String(index + 1).padStart(2, '0')}`;
+      person.position.set(x, 0, z);
+      person.rotation.set(0, rotation, 0);
+      person.scale.setScalar(DONOR.scale);
+      person.traverse((node) => {
+        if (!node.isMesh) return;
+        node.castShadow = true;
+        node.receiveShadow = true;
+      });
+      figureGroup.add(person);
+    });
+    world.add(figureGroup);
+  }
+
+  scene.zoneButtons = [];
+  for (const [index, zone] of scene.zones.entries()) {
+    const button = element('button');
+    button.type = 'button';
+    button.append(element('span', 'zone-no', zone.n), element('b', null, zone.title), element('em', null, '↗'));
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', () => selectZone(active === index ? null : index));
+    scene.listEl.appendChild(button);
+    scene.zoneButtons.push(button);
+    const el = element('span', 'nv-label');
+    el.append(element('b', null, zone.n), document.createTextNode(zone.title));
+    scene.labelLayer.appendChild(el);
+    placed.push({ el, point: new THREE.Vector3(zone.point[0], zone.point[1] + 0.2, zone.point[2]) });
+  }
+
+  for (const button of scene.viewButtons) button.addEventListener('click', () => setView(button.dataset.view));
+  const reset = stage.querySelector('[data-reset]');
+  if (reset) reset.addEventListener('click', () => { tween = null; setView('overview'); selectZone(null); });
+  scene.selection.querySelector('.nv-selection-close').addEventListener('click', () => selectZone(null));
+  scene.labelToggle.addEventListener('change', () => {
+    labelsOn = scene.labelToggle.checked;
+    invalidate();
+  });
+  if (scene.roofToggle) scene.roofToggle.addEventListener('change', () => setEnclosure(scene.roofToggle.checked));
+  if (scene.lightToggle) scene.lightToggle.addEventListener('change', () => setLights(scene.lightToggle.checked));
+  if (scene.guestRange) scene.guestRange.addEventListener('input', () => setGuests(Number(scene.guestRange.value)));
+
+  resize();
+  setMood(scene.mood);
+  setView('overview');
+  renderer.shadowMap.needsUpdate = true;
+  invalidate();
+  scene.statusEl.textContent = '已载入';
+
+  return { setView, setEnclosure, setLights, setGuests, selectZone, setMood };
+};
+
+const viewers = new Map();
+
+const applyPhase = (scene, phase) => {
+  const viewer = viewers.get(scene.id);
+  if (!viewer) return;
+  if (phase.enclosure !== undefined && scene.enclosure) viewer.setEnclosure(phase.enclosure);
+  if (phase.lights !== undefined && scene.lights) viewer.setLights(phase.lights);
+  if (phase.guests !== undefined && (scene.guests || scene.people)) viewer.setGuests(phase.guests);
+  if (phase.mood) viewer.setMood(phase.mood);
+  if (phase.view) viewer.setView(phase.view);
+};
+
+for (const scene of SCENES) {
+  scene.phase = scene.defaultPhase || 0;
+  scene.phases.forEach((phase, index) => {
+    const button = element('button');
+    button.type = 'button';
+    button.append(element('b', null, phase.t), element('span', null, phase.label));
+    button.setAttribute('aria-pressed', String(index === scene.phase));
+    if (index === scene.phase) scene.timeCurrent.textContent = `${phase.t} ${phase.label}`;
+    button.addEventListener('click', () => {
+      for (const node of scene.stepList.children) node.setAttribute('aria-pressed', String(node === button));
+      scene.phase = index;
+      scene.timeCurrent.textContent = `${phase.t} ${phase.label}`;
+      applyPhase(scene, phase);
+    });
+    scene.stepList.appendChild(button);
+  });
+}
+
+const activate = (scene) => {
+  if (scene.loading) return;
+  scene.loading = true;
+  createViewer(scene)
+    .then((viewer) => {
+      viewers.set(scene.id, viewer);
+      applyPhase(scene, scene.phases[scene.phase]);
+    })
+    .catch((error) => {
+      scene.statusEl.textContent = `模型读取失败：${error.message}`;
+      console.error(`${scene.id} viewer failed:`, error);
+    });
+};
+
+const observer = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (!entry.isIntersecting) continue;
+    observer.unobserve(entry.target);
+    const scene = SCENES.find((item) => item.block === entry.target);
+    if (scene) activate(scene);
+  }
+}, { rootMargin: '600px 0px' });
+for (const scene of SCENES) observer.observe(scene.block);
+</script>
+</body>
+</html>

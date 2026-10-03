@@ -1,9 +1,0 @@
-{
-  "imports": {
-    "@supabase/supabase-js": "npm:@supabase/supabase-js@2.117.2",
-    "zod": "npm:zod@4.6.5",
-    "@gltf-transform/core": "npm:@gltf-transform/core@4.5.1",
-    "gltf-validator": "npm:gltf-validator@2.0.0-dev.3.10"
-  },
-  "compilerOptions": { "strict": true }
-}
