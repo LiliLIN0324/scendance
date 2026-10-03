@@ -1,0 +1,24 @@
+name: Team document checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  team-check:
+    name: Collaboration files only (not product tests)
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out repository
+        # actions/checkout v7.0.1; verified against its official release.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Validate task structure, dependencies, source and task cards
+        run: python3 scripts/validate_team.py
