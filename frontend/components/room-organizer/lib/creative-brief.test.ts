@@ -49,3 +49,11 @@ describe('creative brief boundaries', () => {
     expect(layoutToBackendScene(base)).toEqual(scene);
   });
 });
+
+
+it('routes missing materials to supported parametric families and keeps the full structured brief',()=>{
+  const instruction=briefInstruction({...INITIAL_BRIEF,description:'完整活动需求'.repeat(600)},12,10);
+  expect(instruction.length).toBeGreaterThan(3000);
+  expect(instruction).toContain('参数化工具建模');
+  expect(instruction).not.toContain('HY3');
+});

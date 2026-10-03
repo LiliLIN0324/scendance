@@ -35,10 +35,10 @@ export function briefInstruction(brief: CreativeBrief, width: number, depth: num
     brief.palette?.trim() ? `配色要求：${brief.palette.trim()}` : '',
     brief.atmosphere?.trim() ? `氛围要求：${brief.atmosphere.trim()}；超出现有三种灯光预设的能力仅作为建议说明。` : '',
     brief.allowIdeas ? '在满足客户需求的基础上，主动布置适合主题的亮点、分区、装饰和氛围，形成完整候选后由客户整体确认。明确说明每个亮点的用途与对应物件。' : '只围绕客户明确提出的要求规划，不自行扩展需求。',
-    '保留锁定对象。先返回可预览提案，不要声称已经应用。依据当前资源库选用真实物料；资源库缺少所需物件时，说明缺项并建议前往 HY3 生成，不得用桌椅冒充，也不得未经确认替换原要求。',
+    '保留锁定对象。提出候选修改，不声称已经应用或保存；应用方式依据本轮用户指令和服务端规则。依据当前资源库优先选用真实物料；缺少所需物件时，可通过桌、椅、柜台、地台、背景板和柜体的参数化工具建模。工具不支持的造型须说明缺项，不得用桌椅冒充，也不得未经确认替换原要求。',
     '现场照片尚未提交给模型；不能声称已经识别、测量或参考了图片内容。',
   ].filter(Boolean).join('\n');
-  if (result.length > 3000) throw new Error('需求内容过长，请精简后再生成。');
+  if (result.length > 12000) throw new Error('需求内容过长，请精简后再生成。');
   return result;
 }
 
