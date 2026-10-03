@@ -646,3 +646,23 @@ it('cancels a dispatch that is acknowledged only after the cancellation was requ
   expect(controller.cancelAgentRun).toHaveBeenCalledWith(runFrom(proposal).id);
   expect(controller.applySceneProposal).not.toHaveBeenCalled();expect(onApply).not.toHaveBeenCalled();
 });
+
+it('keeps a newer task recoverable when a cancelled dispatch is acknowledged late',async()=>{
+  connected();let acknowledge!:(run:AgentRun)=>void;
+  vi.mocked(controller.startAgentRun).mockImplementationOnce(()=>new Promise(resolve=>{acknowledge=resolve;})).mockImplementationOnce(()=>new Promise(()=>{}));
+  const cancelled={...runFrom(proposal),state:'cancelled' as const,candidates:[]};
+  vi.mocked(controller.getAgentRunByRequest).mockResolvedValueOnce(runFrom(proposal));
+  vi.mocked(controller.cancelAgentRun).mockResolvedValue(cancelled);
+  render(ui());
+  const send=(text:string)=>{fireEvent.change(screen.getByRole('textbox',{name:'告诉助手你的想法'}),{target:{value:text}});fireEvent.click(screen.getByRole('button',{name:'发送消息'}));};
+  send('摆放桌子');fireEvent.click(await screen.findByRole('button',{name:'取消任务'}));
+  await screen.findByText('任务已取消，当前方案保持不变。');
+  send('改为摆放椅子');
+  const second=vi.mocked(controller.startAgentRun).mock.calls[1]![0];
+  const key=Object.keys(localStorage).find(value=>value.startsWith('scendance:agent-run:'))!;
+  expect(JSON.parse(localStorage.getItem(key)!).requestId).toBe(second.requestId);
+  await act(async()=>acknowledge(runFrom(proposal)));
+  expect(JSON.parse(localStorage.getItem(key)!).requestId).toBe(second.requestId);
+  expect(screen.getByRole('button',{name:'取消任务'})).toBeTruthy();
+  expect(controller.applySceneProposal).not.toHaveBeenCalled();
+});

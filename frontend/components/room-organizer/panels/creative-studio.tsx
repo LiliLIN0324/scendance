@@ -296,7 +296,10 @@ export function CreativeStudioProvider({ controller, layout, onApply, onPreview,
       requestPending.current=true;setBusy(true);setPreview(null);setCandidates([]);setRun(null);dispatched=true;
       const result=await controller.startAgentRun({requestId:marker.requestId,instruction:context.instruction,context:context.context,scene,selectedIds:[...allSelectedIds].filter(id=>scene.objects.some(object=>object.id===id)),jevEnabled,executionMode:directApply?'direct':'preview'});
       if(cancelledRequest.current===marker.requestId){
-        if(agentScopeRef.current===submittedScope){const cancelled=await controller.cancelAgentRun(result.id);setRun(cancelled);forgetRun();setBusy(false);requestPending.current=false;say('任务已取消，当前方案保持不变。');}
+        if(agentScopeRef.current===submittedScope){
+          const cancelled=await controller.cancelAgentRun(result.id);
+          if(alive.current&&agentScopeRef.current===submittedScope&&markerRef.current?.requestId===marker.requestId){setRun(cancelled);forgetRun();setBusy(false);requestPending.current=false;say('任务已取消，当前方案保持不变。');}
+        }
         return;
       }
       await followRun(result,base,submittedBrief,submittedScope,epoch,directApply);
