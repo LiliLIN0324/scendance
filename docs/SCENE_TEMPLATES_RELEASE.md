@@ -43,3 +43,7 @@ Published on 2026-10-03:
 - Retains the existing planning and 3D-generation tabs, including material customization and delivery. Tab switches preserve unsent planning text.
 - Full regression after integration: 1,717 tests passed; the sole failing assertion expected the previous two tabs. That assertion was updated to the requested three tabs, and the complete 32-test assistant suite passes on rerun. Typecheck, lint (same pre-existing warning), and production build pass.
 - Real browser: all 10 cards appear inside Binggo; loading office creates 76 editable items; Undo restores the original five-item workshop.
+
+Final option-A deployment: `8153b386-93b5-45b8-9904-b6caf94472df`, source `b554910`, https://8153b386.scendance-scene-planner.pages.dev . The formal domain shows all three Binggo tabs and all ten complete-scene cards. The prior template-only deployment `405e3fc2-91fb-4400-9c01-91c91ea1ab89` is the immediate rollback target; `360e5c49-fcab-47ae-8aa4-0284626737ff` restores the pre-template baseline.
+
+Final HTTP verification: 38 resources checked. New entry scripts, CSS, covers and catalogue match the build byte-for-byte. The 10 unchanged GLBs match the previously byte-verified preview locally and return successful production HEAD responses with the GLB content type (length also checked wherever supplied). `/`, `/introduction` and `/reset-password` return 200; their documents match the build after removing only the identified Cloudflare-injected challenge script.
