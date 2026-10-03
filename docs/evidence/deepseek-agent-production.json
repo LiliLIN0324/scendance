@@ -1,0 +1,73 @@
+{
+  "verifiedAt": "2026-10-03T13:25:12.378671+00:00",
+  "functions": [
+    {
+      "slug": "scene-api",
+      "status": "ACTIVE",
+      "version": 19,
+      "updated_at": 1791033767225,
+      "ezbr_sha256": "d5b74f6d996f112a8bd42e6274791f4237d20acb8c96b1bebf77be6e4ba4b654"
+    },
+    {
+      "slug": "generation-worker",
+      "status": "ACTIVE",
+      "version": 8,
+      "updated_at": 1791023349859,
+      "ezbr_sha256": "9a67ad36e46fa7b0501c21c1f78f3c161381689f4aa72dbe319940148c43068e"
+    },
+    {
+      "slug": "reconstruction-worker",
+      "status": "ACTIVE",
+      "version": 4,
+      "updated_at": 1790994856632,
+      "ezbr_sha256": "f18f40698f58817c45c9d203c595e1d4937acac6911b7c7e139b1c82e0c55d1e"
+    }
+  ],
+  "state": {
+    "cron": [
+      {
+        "active": false,
+        "jobname": "scene-generation-poll",
+        "schedule": "* * * * *"
+      },
+      {
+        "active": true,
+        "jobname": "scene-reconstruction-poll",
+        "schedule": "* * * * *"
+      }
+    ],
+    "jobs": [
+      {
+        "count": 3,
+        "state": "rejected"
+      }
+    ],
+    "pending": 0,
+    "migrations": [
+      "20261002060304",
+      "20261002060307",
+      "20261002060309",
+      "20261002061700",
+      "20261002110000",
+      "20261002140000",
+      "20261002150000",
+      "20261002180000",
+      "20261003090000",
+      "20261003094500",
+      "20261003120000",
+      "20261003133000",
+      "20261003140000",
+      "20261003160000",
+      "20261003161000",
+      "20261003180000",
+      "20261003190000",
+      "20261003200000"
+    ]
+  },
+  "retirement": {
+    "hunyuanKeyRemoved": true,
+    "jevConfigured": true,
+    "generationStopped": true,
+    "reconstructionActive": true
+  }
+}

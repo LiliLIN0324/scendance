@@ -1,0 +1,677 @@
+{
+  "checks": [
+    "HY3 capabilities disabled",
+    "old client POST jobs rejected 410",
+    "original request replay/recovery 12486270-eab1-4940-8f0a-4525011a88cb",
+    "real parametric GLB applied and reopened",
+    "original request replay/recovery d4a50406-230b-4b6d-8fe7-95f52f91107b",
+    "real GLB material variant applied with instance preserved",
+    "original request replay/recovery 3ec19b64-16a0-4313-a79d-294142beafd7",
+    "3 real DeepSeek candidates evaluated by real JEV",
+    "user-selected B applied and reopened",
+    "lease released; evidence project retained"
+  ],
+  "runs": [
+    {
+      "id": "12486270-eab1-4940-8f0a-4525011a88cb",
+      "state": "complete",
+      "progress": "方案已准备好",
+      "callCount": 3,
+      "expiresAt": "2026-10-03T13:20:54.573421+00:00",
+      "projectId": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+      "requestId": "ab8190b8-28ef-4fda-a90a-342994b7c369",
+      "candidates": [
+        {
+          "label": "A",
+          "title": "参数化圆桌 D1.2 高0.75",
+          "proposal": {
+            "id": "726f7566-b94b-4465-b519-8f1c8973939d",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "84e8ca303f5ef4e3e7e84062ecb7597c4e508229d74803464158126ca55a859a",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "26f29aeb-e424-4437-8cb5-9f156b4c4973",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:29:37.568918+00:00",
+            "generation": 1,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "使用 create_parametric_model 生成独立参数化圆桌资源（table 族、round 变体）：直径1.2m、高0.75m、桌面厚0.04m、四条腿、腿厚0.05m、颜色#b89b70。落地布置在 x=3,z=3，占地1.2×1.2m，位于12×10m场地内，与边界及入口保持距离，不与任何物件重叠。未使用目录模型，未修改其他对象或墙体。",
+            "restored_at": null,
+            "base_revision": 0,
+            "local_revision": 0,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        }
+      ],
+      "evaluation": null,
+      "jevEnabled": false,
+      "executionMode": "preview"
+    },
+    {
+      "id": "ed3042d6-776f-4c30-b4d9-4f23722aa161",
+      "state": "complete",
+      "progress": "方案已准备好",
+      "callCount": 4,
+      "expiresAt": "2026-10-03T13:21:23.740125+00:00",
+      "projectId": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+      "requestId": "69b05229-7b41-43e3-af4c-573adab7cfa0",
+      "candidates": [
+        {
+          "label": "A",
+          "title": "无法执行：选中资源不可读（需补充信息）",
+          "proposal": {
+            "id": "0c7330b2-077c-4f59-b329-18d172a272ed",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "21f64f3489049456c24ca65b9e87887a51d924987ee2be2e4ac1d20db871e1b1",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "26f29aeb-e424-4437-8cb5-9f156b4c4973",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "26f29aeb-e424-4437-8cb5-9f156b4c4973",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:30:09.314763+00:00",
+            "generation": 1,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "你要求把选中的圆桌（对象 69edb843-…-d3f15a8a66，引用 asset:26f29aeb-e424-4437-8cb5-9f156b4c4973）整件改为 #3355aa，并先读取真实材质槽、再创建材质副本。但当前草稿里这个资源引用无法解析：inspect_materials 返回 RESOURCE_NOT_FOUND，按该 ID 检索资源库也为空，因此我拿不到任何真实的材质槽索引，无法生成材质副本，也不能用 replace_resource 换色——否则就是凭空猜测槽位或把颜色冒充成新资源，两者都不允许。\n\n同时说明限制：这不属于 HY3 工具可完成的路径；自由雕塑/照片任意物体建模与纹理生成不支持，我也不会声称仍可调用 HY3。\n\n请三选一以便我继续：\n1) 提供可解析的圆桌资源 ID（或从资源目录里指定一款，例如尺寸接近 1.2×1.2×0.75 的圆桌类目）；\n2) 确认允许用六类参数化建模重建一张圆桌（table / variant=round，width=depth=1.2、height=0.75，颜色 #3355aa），在位置 (3, 3)、旋转 0 落地摆放，然后替换原实例，尺寸与位置旋转保持不变、几何为新的参数化几何；\n3) 若只要“内置对象”换色，则需把该对象换成内置 table 材质再用 recolor（会丢失原几何，故我不主动这么做）。\n\n本轮不提交任何场景改动，未修改草稿，也未应用到场景。",
+            "restored_at": null,
+            "base_revision": 1,
+            "local_revision": 1,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        }
+      ],
+      "evaluation": null,
+      "jevEnabled": false,
+      "executionMode": "direct"
+    },
+    {
+      "id": "d4a50406-230b-4b6d-8fe7-95f52f91107b",
+      "state": "complete",
+      "progress": "方案已准备好",
+      "callCount": 4,
+      "expiresAt": "2026-10-03T13:24:59.318904+00:00",
+      "projectId": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+      "requestId": "d3ad4c0d-cca9-4762-b558-f532281ad77e",
+      "candidates": [
+        {
+          "label": "A",
+          "title": "整件换蓝：圆桌换成 #3355aa 材质副本",
+          "proposal": {
+            "id": "63ea3fed-0a4b-4103-8c5d-26d4aa87ec1f",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "21f64f3489049456c24ca65b9e87887a51d924987ee2be2e4ac1d20db871e1b1",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "26f29aeb-e424-4437-8cb5-9f156b4c4973",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:33:48.010902+00:00",
+            "generation": 2,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "读取该圆桌真实材质槽：只有 1 个有效槽（index 0「surface」，原色 #b89b70，roughness 0.7，metallic 0，无贴图）。因你明确要求整件换色，已对该槽生成材质副本 asset:c198d501-a991-4592-8150-5869c6863f9e（baseColor #3355aa），并仅替换这一个选中实例；尺寸1.2×1.2×0.75、位置(3,3)、旋转0、几何与UV均不变，未改动其他对象与墙体。此为候选方案，需你确认应用后才会生效。",
+            "restored_at": null,
+            "base_revision": 1,
+            "local_revision": 1,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        }
+      ],
+      "evaluation": null,
+      "jevEnabled": false,
+      "executionMode": "direct"
+    },
+    {
+      "id": "3ec19b64-16a0-4313-a79d-294142beafd7",
+      "state": "complete",
+      "progress": "方案已准备好",
+      "callCount": 3,
+      "expiresAt": "2026-10-03T13:25:34.489619+00:00",
+      "projectId": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+      "requestId": "6df5af56-8bb7-4f32-b716-f8d15dc0b686",
+      "candidates": [
+        {
+          "label": "A",
+          "title": "方案A · 靠前一行双桌",
+          "proposal": {
+            "id": "e31db594-ea18-40be-99c6-168b3c5cd3b3",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "b709d6e5c480bcf341d64605426f78f2571d4b7f80f30cb451a2eb9c67f51c86",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                },
+                {
+                  "id": "6cf5df75-2f46-44da-9e2d-f586a556a512",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 6,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                },
+                {
+                  "id": "df45dc85-03a0-4b22-8349-a3f9a4848c97",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 9,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:34:21.21927+00:00",
+            "generation": 2,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "保留已有圆桌(3,3,尺寸1.2×1.2)。新增两张内置table白桌，尺寸1.2×0.6，占地分别位于(6,3)与(9,3)，旋转0°。桌子落地不叠放，与圆桌之间保持约2.4m净距，左右两侧到边界(0与12)各有≥2.4m通行余地，前方z=3与后场之间留出大片空区。与方案B/C的唯一实际差异是新增两桌所在的前后行位不同。仅预览，未应用到场景。",
+            "restored_at": null,
+            "base_revision": 2,
+            "local_revision": 2,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        },
+        {
+          "label": "B",
+          "title": "方案B · 居中一行双桌",
+          "proposal": {
+            "id": "e0bf123a-d6f2-4cb0-b500-db003e79b0f6",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "b709d6e5c480bcf341d64605426f78f2571d4b7f80f30cb451a2eb9c67f51c86",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                },
+                {
+                  "id": "d0c80af6-e079-4728-9a2e-3c9e9a06e763",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 6,
+                    "z": 5
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                },
+                {
+                  "id": "ec1743c8-5496-411f-b0e1-1a0c4f55f6e1",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 9,
+                    "z": 5
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:34:21.21927+00:00",
+            "generation": 2,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "保留已有圆桌(3,3,尺寸1.2×1.2)。新增两张内置table白桌，尺寸1.2×0.6，占地分别位于(6,5)与(9,5)，旋转0°。两桌居中于场地进深，与圆桌之间的通道更宽（z向净距约1.4m以上），前后各留约4m活动带，两侧边界通道≥2.4m。与方案A/C的唯一实际差异是新增两桌所在的进深位置不同。仅预览，未应用到场景。",
+            "restored_at": null,
+            "base_revision": 2,
+            "local_revision": 2,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        },
+        {
+          "label": "C",
+          "title": "方案C · 靠后一行双桌",
+          "proposal": {
+            "id": "32fe4540-f882-48b3-b4f2-dd44c15171b2",
+            "user_id": "ff95e0e8-38e2-4576-9b1c-6a7aeb696357",
+            "warnings": [],
+            "base_hash": "b709d6e5c480bcf341d64605426f78f2571d4b7f80f30cb451a2eb9c67f51c86",
+            "candidate": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                },
+                {
+                  "id": "11f52a74-af87-4770-a54f-c2d288672298",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 6,
+                    "z": 7
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                },
+                {
+                  "id": "81080b4d-acbb-40a1-ac81-6c079b9fccc1",
+                  "size": {
+                    "depth": 0.6,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "position": {
+                    "x": 9,
+                    "z": 7
+                  },
+                  "rotation": 0,
+                  "materialId": "table"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "applied_at": null,
+            "base_scene": {
+              "venue": {
+                "depth": 10,
+                "shape": "rectangle",
+                "width": 12,
+                "height": 3,
+                "entrances": []
+              },
+              "camera": "overview",
+              "objects": [
+                {
+                  "id": "69edb843-ace1-4af0-9c71-ffd3f15a8a66",
+                  "size": {
+                    "depth": 1.2,
+                    "width": 1.2,
+                    "height": 0.75
+                  },
+                  "color": "#ffffff",
+                  "notes": "",
+                  "locked": false,
+                  "assetId": "c198d501-a991-4592-8150-5869c6863f9e",
+                  "position": {
+                    "x": 3,
+                    "z": 3
+                  },
+                  "rotation": 0,
+                  "materialId": "asset"
+                }
+              ],
+              "lighting": "neutral",
+              "schemaVersion": 1
+            },
+            "expires_at": "2026-10-03T13:34:21.21927+00:00",
+            "generation": 2,
+            "project_id": "cc395f4c-d7d8-4987-8739-25e92a3027c0",
+            "session_id": "a85f3ee0-2da7-406b-bc77-2711deeb031b",
+            "explanation": "保留已有圆桌(3,3,尺寸1.2×1.2)。新增两张内置table白桌，尺寸1.2×0.6，占地分别位于(6,7)与(9,7)，旋转0°。两桌靠后布置，前场与圆桌之间形成约3.4m以上的完整开敞区，后侧到边界(z=10)仍留约2.7m通道，两侧≥2.4m。与方案A/B的唯一实际差异是新增两桌所在的前后行位不同。仅预览，未应用到场景。",
+            "restored_at": null,
+            "base_revision": 2,
+            "local_revision": 2,
+            "modelSuggestions": [],
+            "materialSuggestions": []
+          }
+        }
+      ],
+      "evaluation": {
+        "choice": "B",
+        "status": "complete",
+        "message": "百分比为模型推荐概率，用于方案间比较，不代表真实成功率；最终由你选择。",
+        "confidence": 0.7005228400230408,
+        "probabilities": {
+          "A": 0.0045034498907625675,
+          "B": 0.7005228400230408,
+          "C": 0.287865549325943,
+          "NONE": 0.007108205929398537
+        }
+      },
+      "jevEnabled": true,
+      "executionMode": "preview"
+    }
+  ],
+  "projectId": "cc395f4c-d7d8-4987-8739-25e92a3027c0"
+}
