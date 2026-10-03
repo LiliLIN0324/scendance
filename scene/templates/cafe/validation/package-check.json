@@ -1,0 +1,223 @@
+{
+  "checkedAt": "2026-10-03T03:30:24.526404+00:00",
+  "package": "cafe-template.zip",
+  "modelSha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+  "passed": true,
+  "requiredFilesPresent": [
+    "cafe.glb",
+    "template.json",
+    "index.html",
+    "app.js",
+    "style.css",
+    "serve.py",
+    "model.js",
+    "scene-kit.js",
+    "README.md",
+    "ASSET-SOURCES.md",
+    "previews/overview.jpg",
+    "previews/top.jpg",
+    "previews/interior.jpg",
+    "assets/catalogue.json",
+    "assets/manifest.json",
+    "assets/models/plant.glb",
+    "vendor/three/LICENSE",
+    "validation/model-validation.json",
+    "validation/gltf-validation.json",
+    "validation/layout-check.json",
+    "validation/browser-validation.json",
+    "validation/validate-glb.mjs",
+    "validation/check-layout.mjs"
+  ],
+  "fileCountWithoutThisReport": 35,
+  "files": [
+    {
+      "path": "ASSET-SOURCES.md",
+      "bytes": 3490,
+      "sha256": "782f96a92c003f17b5c0229f8eaac322ff1cbb5376e05dcb27915de37144a872"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7377,
+      "sha256": "f91b86880cbed62a0112c367372a066e3e2caf25e1f21db7795a198dd503515e"
+    },
+    {
+      "path": "app.js",
+      "bytes": 7159,
+      "sha256": "6cec7a7f198abd4df81ee32a8914e52103d391d4df1163f21b4827948fb4f49a"
+    },
+    {
+      "path": "assets/catalogue.json",
+      "bytes": 4097,
+      "sha256": "acb15e592ba552d93ec0a1dfdef775b89eeb9569e71b8a38a3733c07b385f91a"
+    },
+    {
+      "path": "assets/manifest.json",
+      "bytes": 5604,
+      "sha256": "45792cfe1ac925a4325d0b24a3283ffd14fe14643976e5ebc70f8991c0a95232"
+    },
+    {
+      "path": "assets/models/plant.glb",
+      "bytes": 40208,
+      "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a"
+    },
+    {
+      "path": "cafe.glb",
+      "bytes": 3798732,
+      "sha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3207,
+      "sha256": "bc4df9844d0e4332385802d92eb12ed23d3da672f3247ccb0169b9ee59dc36c3"
+    },
+    {
+      "path": "model.js",
+      "bytes": 20048,
+      "sha256": "68376e706a9e5425e8649df7c295c4dd01a0383c17c0a589ef25505c6139d260"
+    },
+    {
+      "path": "previews/interior.jpg",
+      "bytes": 89768,
+      "sha256": "732482b9c3c47ef573ff3b63bdb744a1e82a4e991785fa6a93446f2e3ee2e02c"
+    },
+    {
+      "path": "previews/overview.jpg",
+      "bytes": 62171,
+      "sha256": "39580878ea2cc52590a51837d4c2262b42a73f55c75524c8404ff8b84e2dc2fc"
+    },
+    {
+      "path": "previews/top.jpg",
+      "bytes": 59981,
+      "sha256": "8d169f27c1692c976453d3cc4e7fa40b12ee9fe3ca9308f6a90f1a93d81a9c1e"
+    },
+    {
+      "path": "scene-kit.js",
+      "bytes": 12632,
+      "sha256": "79372feaba9e7d39a3d2fbaf22cda14179b740f2c417fd7225cfe6f0ae4afc94"
+    },
+    {
+      "path": "serve.py",
+      "bytes": 2113,
+      "sha256": "9471f93d7e207788c912696fb224da3e0efdb763f9e1e486038efbea68848bb9"
+    },
+    {
+      "path": "style.css",
+      "bytes": 6030,
+      "sha256": "f507d99622d3c045e958064fe60c70f26b8792f87ddc0ba9862727238a5287fe"
+    },
+    {
+      "path": "template.json",
+      "bytes": 7423,
+      "sha256": "a3ed9d836381936b8967f0ede2cf3e9545a8369e147174f82c33a02e3e8e5c00"
+    },
+    {
+      "path": "validation/browser-validation.json",
+      "bytes": 7272,
+      "sha256": "f0fff88fc1783906148dcc133980b086de908467ac4f9da773af2b14caf00e86"
+    },
+    {
+      "path": "validation/check-layout.mjs",
+      "bytes": 16938,
+      "sha256": "0c88b51cdd0d1d380e2d3331254cb4d82bc8f4876ce8309b1a574708840afa3a"
+    },
+    {
+      "path": "validation/gltf-validation.json",
+      "bytes": 49351,
+      "sha256": "308836d1c56569fdaedd9ca00f296d06722308b90eb9959436dc8a93a8968028"
+    },
+    {
+      "path": "validation/layout-check.json",
+      "bytes": 76275,
+      "sha256": "50035eaf4befc9a214e110c8e58cbcf67abc5b59c88666465c5b39180994a7a9"
+    },
+    {
+      "path": "validation/model-validation.json",
+      "bytes": 93169,
+      "sha256": "fbfa516f325d444e260968f02202a32b0a5a91fefeb2bdc97d0fc1025dd01918"
+    },
+    {
+      "path": "validation/roof.jpg",
+      "bytes": 49284,
+      "sha256": "92d9cb45666d3e56c93351b0f21ee5989d1919ad528b77d88efbe15876479990"
+    },
+    {
+      "path": "validation/rotation.jpg",
+      "bytes": 50929,
+      "sha256": "b1fc03a44873a1c04933c0632a1f632e3c1989c75ddaf414e75a24c55829eaf7"
+    },
+    {
+      "path": "validation/validate-glb.mjs",
+      "bytes": 7499,
+      "sha256": "810d7425d1a1c946ffeadfcaaa3c5d5ff1154165e0f1b3125c3d7b4d9024f0b5"
+    },
+    {
+      "path": "validation/zoom.jpg",
+      "bytes": 57091,
+      "sha256": "0b2154a965f8fb70e91dd9e8f107f0f8e6a0dba44e5271eeac876ba0ecc3a3d2"
+    },
+    {
+      "path": "vendor/three/LICENSE",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "vendor/three/addons/controls/OrbitControls.js",
+      "bytes": 40755,
+      "sha256": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b"
+    },
+    {
+      "path": "vendor/three/addons/environments/RoomEnvironment.js",
+      "bytes": 4960,
+      "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4"
+    },
+    {
+      "path": "vendor/three/addons/exporters/GLTFExporter.js",
+      "bytes": 93570,
+      "sha256": "d766b04f233fa8bc72bfaebacaac5ecb832c30ca3695ce8d84bbb7dccccdc842"
+    },
+    {
+      "path": "vendor/three/addons/loaders/GLTFLoader.js",
+      "bytes": 117570,
+      "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16"
+    },
+    {
+      "path": "vendor/three/addons/utils/BufferGeometryUtils.js",
+      "bytes": 37712,
+      "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797"
+    },
+    {
+      "path": "vendor/three/addons/utils/SkeletonUtils.js",
+      "bytes": 11535,
+      "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f"
+    },
+    {
+      "path": "vendor/three/package.json",
+      "bytes": 3672,
+      "sha256": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de"
+    },
+    {
+      "path": "vendor/three/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "vendor/three/three.module.js",
+      "bytes": 662772,
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    }
+  ],
+  "checks": {
+    "requiredFilesPresent": true,
+    "modelAndReportsSameHash": true,
+    "localRuntimeDependencyReview": true,
+    "previewCamerasStable": true,
+    "previewFilesVisuallyReviewed": true,
+    "zipCrcVerified": true,
+    "zipEntriesMatchLocal": true
+  },
+  "notes": [
+    "Runtime imports stay within cafe/, including all 11 required modules.",
+    "ZIP contains this inventory report. Its own hash and ZIP hash are omitted to avoid recursive checksum definitions.",
+    "gltf-validator is an optional external validation tool; portable viewer requires only Python 3 and a WebGL browser."
+  ]
+}

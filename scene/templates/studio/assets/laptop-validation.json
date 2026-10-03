@@ -1,0 +1,44 @@
+{
+  "uri": "laptop.glb",
+  "mimeType": "model/gltf-binary",
+  "validatorVersion": "2.0.0-dev.3.10",
+  "validatedAt": "2026-10-03T03:08:36.430Z",
+  "issues": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  "info": {
+    "version": "2.0",
+    "generator": "3dassets.dev ingest",
+    "extensionsUsed": [
+      "KHR_mesh_quantization"
+    ],
+    "extensionsRequired": [
+      "KHR_mesh_quantization"
+    ],
+    "resources": [
+      {
+        "pointer": "/buffers/0",
+        "mimeType": "application/gltf-buffer",
+        "storage": "glb",
+        "byteLength": 70664
+      }
+    ],
+    "animationCount": 0,
+    "materialCount": 5,
+    "hasMorphTargets": false,
+    "hasSkins": false,
+    "hasTextures": false,
+    "hasDefaultScene": false,
+    "drawCallCount": 5,
+    "totalVertexCount": 3782,
+    "totalTriangleCount": 1692,
+    "maxUVs": 0,
+    "maxInfluences": 0,
+    "maxAttributes": 2
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f5ee">
+<title>慢调咖啡 · 完整三维场景｜Scendance</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body>
+<header><a class="brand" href="./"><b>▥</b> 幕景 <small>SCENDANCE</small></a><span class="breadcrumb">场景库 <i>/</i> 咖啡店</span><a class="download" id="download" href="./cafe.glb" download>下载完整 GLB <span>↗</span></a></header>
+<main>
+<aside>
+<div class="eyebrow">SLOW NOTES / COFFEE & EVERYDAY</div>
+<h1>把时间，<br><span>留给一杯咖啡。</span></h1><p class="subtitle">慢调咖啡 · 概念空间</p>
+<p class="intro">浅木、暖白和窗边绿意。咖啡操作、等候取餐与坐下来喝一杯，都各有位置。</p>
+<div class="area"><strong>108<small> m²</small></strong><span>12 × 9 米 · 概念尺寸</span></div>
+<section class="zones" aria-label="空间分区"><div class="section-label">一间店的日常</div>
+<div><em>01</em><p>点单与取餐<small>入口指引、点单台与糕点展示</small></p></div>
+<div><em>02</em><p>咖啡操作区<small>咖啡机、磨豆机与后侧备餐</small></p></div>
+<div><em>03</em><p>小桌与卡座<small>浅木餐椅、圆桌与柔软靠背</small></p></div>
+<div><em>04</em><p>靠窗停留<small>窗边吧台、自然光与绿植</small></p></div>
+</section>
+<p class="note"><b>原创概念场景</b>尺寸用于示例设计，未依据现场照片或实测。家具与设备独立分组，方便后续编辑。</p>
+</aside>
+<section class="workspace" aria-label="咖啡店三维预览">
+<div class="stage" id="stage"><canvas id="scene" tabindex="0" aria-label="咖啡店三维模型，可拖动旋转和滚轮缩放"></canvas>
+<div class="stage-title"><span class="tag">空间预览</span><span id="view-label">整体视角</span></div><label class="enclosure"><input type="checkbox" id="roof">屋顶与外墙</label>
+<div id="loading"><i></i><strong>慢一点，空间正在展开。</strong><span id="loading-message">读取完整三维模型</span></div>
+<div class="views" aria-label="观察视角"><button data-view="overview" aria-pressed="true">◈ 整体</button><button data-view="top" aria-pressed="false">▦ 俯视</button><button data-view="inside" aria-pressed="false">⌂ 场内</button><span></span><button id="reset" aria-label="复位视角">↺</button></div>
+<div class="stage-footer"><span>拖动旋转 · 滚轮缩放</span><span id="load-status" role="status">正在读取…</span></div>
+</div>
+<div class="details"><span>浅木饰面 <i>·</i> 暖白墙面 <i>·</i> 窗边绿意</span><small>完整独立场景 / 静态布置</small></div>
+</section>
+</main>
+<div id="build-bar" hidden><span>构建模式 · 原创程序模型与本地素材</span><button id="save-model" disabled>保存咖啡店 GLB</button><output id="build-status" role="status"></output></div>
+<script type="module" src="./app.js"></script>
+</body></html>

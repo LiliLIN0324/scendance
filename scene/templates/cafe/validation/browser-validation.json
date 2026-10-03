@@ -1,0 +1,260 @@
+{
+  "checkedAt": "2026-10-03T03:25:06.473Z",
+  "browser": "Codex in-app Browser",
+  "url": "http://127.0.0.1:8780/",
+  "model": "cafe.glb",
+  "modelSha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+  "modelBytes": 3798732,
+  "passed": true,
+  "checks": [
+    {
+      "test": "independent archived GLB load",
+      "state": {
+        "camera": "13.500,12.500,16.500",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "63688",
+        "view": "overview",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "drag rotates camera",
+      "state": {
+        "camera": "-13.906,4.136,19.627",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "63688",
+        "view": "overview",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "wheel changes camera distance",
+      "state": {
+        "camera": "-11.212,3.508,15.822",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "63688",
+        "view": "overview",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "reset restores overview",
+      "state": {
+        "camera": "13.500,12.500,16.500",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "63688",
+        "view": "overview",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "enclosure on",
+      "state": {
+        "camera": "13.500,12.500,16.500",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "true",
+        "triangles": "63688",
+        "view": "overview",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "top view",
+      "state": {
+        "camera": "0.000,24.000,0.001",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "63688",
+        "view": "top",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "interior view with enclosure",
+      "state": {
+        "camera": "3.350,1.600,3.550",
+        "editableObjects": "47",
+        "meshInstances": "750",
+        "modelSource": "cafe.glb",
+        "ready": "true",
+        "roof": "true",
+        "triangles": "63688",
+        "view": "inside",
+        "zoom": "1"
+      },
+      "passed": true
+    },
+    {
+      "test": "GLB download matches archive",
+      "bytes": 3798732,
+      "sha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+      "passed": true
+    },
+    {
+      "test": "fresh final GLB console",
+      "since": "2026-10-03T03:23:48.262Z",
+      "logs": [],
+      "passed": true
+    },
+    {
+      "test": "static default preview UI",
+      "observed": {
+        "buildBarHidden": true,
+        "horizontalOverflow": false,
+        "modelSource": "cafe.glb",
+        "sliders": 0,
+        "viewport": {
+          "height": 707,
+          "width": 986
+        }
+      },
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "previews/overview.jpg",
+    "previews/top.jpg",
+    "previews/interior.jpg"
+  ],
+  "interactionEvidence": [
+    "validation/rotation.jpg",
+    "validation/zoom.jpg",
+    "validation/roof.jpg"
+  ],
+  "visualReview": {
+    "viewsReviewed": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "findings": "Cafe fixtures, light wood / warm white / sage palette, clear furniture layout and internal view rendered. No people or attendance control; no horizontal page overflow at observed desktop size."
+  },
+  "limitations": [
+    "Desktop in-app browser only; no mobile device or cross-browser compatibility claim",
+    "Rotation and zoom are viewer controls; object editing is not implemented",
+    "Historical build-mode warnings are excluded from fresh default-load logs; the GLTFExporter normalized three imported mesh normals during export"
+  ],
+  "previewRefresh": {
+    "checkedAt": "2026-10-03T03:29:45.062Z",
+    "method": "Each preset selected through the UI; screenshots captured in a dedicated tab after matching camera state was observed across separate calls. Camera state checked again before and after each saved screenshot. All three saved files visually inspected.",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "passed": true,
+    "images": [
+      {
+        "image": "previews/overview.jpg",
+        "before": {
+          "camera": "13.500,12.500,16.500",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "false",
+          "triangles": "63688",
+          "view": "overview",
+          "zoom": "1"
+        },
+        "after": {
+          "camera": "13.500,12.500,16.500",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "false",
+          "triangles": "63688",
+          "view": "overview",
+          "zoom": "1"
+        },
+        "stable": true,
+        "bytes": 62171,
+        "sha256": "39580878ea2cc52590a51837d4c2262b42a73f55c75524c8404ff8b84e2dc2fc"
+      },
+      {
+        "image": "previews/top.jpg",
+        "before": {
+          "camera": "0.000,24.000,0.001",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "false",
+          "triangles": "63688",
+          "view": "top",
+          "zoom": "1"
+        },
+        "after": {
+          "camera": "0.000,24.000,0.001",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "false",
+          "triangles": "63688",
+          "view": "top",
+          "zoom": "1"
+        },
+        "stable": true,
+        "bytes": 59981,
+        "sha256": "8d169f27c1692c976453d3cc4e7fa40b12ee9fe3ca9308f6a90f1a93d81a9c1e"
+      },
+      {
+        "image": "previews/interior.jpg",
+        "before": {
+          "camera": "3.350,1.600,3.550",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "true",
+          "triangles": "63688",
+          "view": "inside",
+          "zoom": "1"
+        },
+        "after": {
+          "camera": "3.350,1.600,3.550",
+          "editableObjects": "47",
+          "meshInstances": "750",
+          "modelSource": "cafe.glb",
+          "ready": "true",
+          "roof": "true",
+          "triangles": "63688",
+          "view": "inside",
+          "zoom": "1"
+        },
+        "stable": true,
+        "bytes": 89768,
+        "sha256": "732482b9c3c47ef573ff3b63bdb744a1e82a4e991785fa6a93446f2e3ee2e02c"
+      }
+    ]
+  }
+}

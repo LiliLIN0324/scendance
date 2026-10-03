@@ -1,0 +1,747 @@
+{
+  "date": "2026-10-03",
+  "sha256": "92968f66f1affb3b343a1f61fd0ab8ec1a9a7116e5e8a29e8f381a15224ca78a",
+  "conceptDimensions": {
+    "width": 12,
+    "depth": 9,
+    "area": 108,
+    "units": "meters",
+    "upAxis": "+Y",
+    "source": "Authored concept; no measured site or certified capacity"
+  },
+  "method": "Declared floor fixture axis-aligned rectangles, floor boundary screen, exact union of 2D rectangles; intended overlaps must be declared",
+  "declaredFootprints": 39,
+  "floorFixtures": 20,
+  "excludedFootprints": [
+    {
+      "id": "Bar_BackbarDisplay_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_BackWorktop_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_Sink_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_TableSetting_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_TableSetting_002",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_TableSetting_003",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_IceWell_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_TapTower_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_POS_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_Blender_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_CocktailTools_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_StemwareRack_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_CounterGlassware_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_Pendant_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_Pendant_002",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_Pendant_003",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_WallSconce_001",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_WallSconce_002",
+      "reason": "not declared as a floor-solid fixture"
+    },
+    {
+      "id": "Bar_BackbarLight_001",
+      "reason": "not declared as a floor-solid fixture"
+    }
+  ],
+  "invalidFootprints": [],
+  "duplicateFootprintIds": [],
+  "footprintNodeChecks": [
+    {
+      "id": "Bar_BackbarDisplay_001",
+      "nodeName": "Bar_BackbarDisplay_001",
+      "present": true
+    },
+    {
+      "id": "Bar_BackCabinet_001",
+      "nodeName": "Bar_BackCabinet_001",
+      "present": true
+    },
+    {
+      "id": "Bar_BackCabinet_002",
+      "nodeName": "Bar_BackCabinet_002",
+      "present": true
+    },
+    {
+      "id": "Bar_BackCabinet_003",
+      "nodeName": "Bar_BackCabinet_003",
+      "present": true
+    },
+    {
+      "id": "Bar_BackCabinet_004",
+      "nodeName": "Bar_BackCabinet_004",
+      "present": true
+    },
+    {
+      "id": "Bar_BackWorktop_001",
+      "nodeName": "Bar_BackWorktop_001",
+      "present": true
+    },
+    {
+      "id": "Bar_Sink_001",
+      "nodeName": "Bar_Sink_001",
+      "present": true
+    },
+    {
+      "id": "Bar_BeverageFridge_001",
+      "nodeName": "Bar_BeverageFridge_001",
+      "present": true
+    },
+    {
+      "id": "Bar_IceMaker_001",
+      "nodeName": "Bar_IceMaker_001",
+      "present": true
+    },
+    {
+      "id": "Bar_ServiceCounter_001/front",
+      "nodeName": "Bar_ServiceCounter_001",
+      "present": true
+    },
+    {
+      "id": "Bar_ServiceCounter_001/return",
+      "nodeName": "Bar_ServiceCounter_001",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_001",
+      "nodeName": "Bar_BarStool_001",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_002",
+      "nodeName": "Bar_BarStool_002",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_003",
+      "nodeName": "Bar_BarStool_003",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_004",
+      "nodeName": "Bar_BarStool_004",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_005",
+      "nodeName": "Bar_BarStool_005",
+      "present": true
+    },
+    {
+      "id": "Bar_BarStool_006",
+      "nodeName": "Bar_BarStool_006",
+      "present": true
+    },
+    {
+      "id": "Bar_Banquette_001",
+      "nodeName": "Bar_Banquette_001",
+      "present": true
+    },
+    {
+      "id": "Bar_LoungeTable_001",
+      "nodeName": "Bar_LoungeTable_001",
+      "present": true
+    },
+    {
+      "id": "Bar_TableSetting_001",
+      "nodeName": "Bar_TableSetting_001",
+      "present": true
+    },
+    {
+      "id": "Bar_Banquette_002",
+      "nodeName": "Bar_Banquette_002",
+      "present": true
+    },
+    {
+      "id": "Bar_LoungeTable_002",
+      "nodeName": "Bar_LoungeTable_002",
+      "present": true
+    },
+    {
+      "id": "Bar_TableSetting_002",
+      "nodeName": "Bar_TableSetting_002",
+      "present": true
+    },
+    {
+      "id": "Bar_Banquette_003",
+      "nodeName": "Bar_Banquette_003",
+      "present": true
+    },
+    {
+      "id": "Bar_LoungeTable_003",
+      "nodeName": "Bar_LoungeTable_003",
+      "present": true
+    },
+    {
+      "id": "Bar_TableSetting_003",
+      "nodeName": "Bar_TableSetting_003",
+      "present": true
+    },
+    {
+      "id": "Bar_IceWell_001",
+      "nodeName": "Bar_IceWell_001",
+      "present": true
+    },
+    {
+      "id": "Bar_TapTower_001",
+      "nodeName": "Bar_TapTower_001",
+      "present": true
+    },
+    {
+      "id": "Bar_POS_001",
+      "nodeName": "Bar_POS_001",
+      "present": true
+    },
+    {
+      "id": "Bar_Blender_001",
+      "nodeName": "Bar_Blender_001",
+      "present": true
+    },
+    {
+      "id": "Bar_CocktailTools_001",
+      "nodeName": "Bar_CocktailTools_001",
+      "present": true
+    },
+    {
+      "id": "Bar_StemwareRack_001",
+      "nodeName": "Bar_StemwareRack_001",
+      "present": true
+    },
+    {
+      "id": "Bar_CounterGlassware_001",
+      "nodeName": "Bar_CounterGlassware_001",
+      "present": true
+    },
+    {
+      "id": "Bar_Pendant_001",
+      "nodeName": "Bar_Pendant_001",
+      "present": true
+    },
+    {
+      "id": "Bar_Pendant_002",
+      "nodeName": "Bar_Pendant_002",
+      "present": true
+    },
+    {
+      "id": "Bar_Pendant_003",
+      "nodeName": "Bar_Pendant_003",
+      "present": true
+    },
+    {
+      "id": "Bar_WallSconce_001",
+      "nodeName": "Bar_WallSconce_001",
+      "present": true
+    },
+    {
+      "id": "Bar_WallSconce_002",
+      "nodeName": "Bar_WallSconce_002",
+      "present": true
+    },
+    {
+      "id": "Bar_BackbarLight_001",
+      "nodeName": "Bar_BackbarLight_001",
+      "present": true
+    }
+  ],
+  "outsideFloor": [],
+  "overlaps": [],
+  "allowedOverlaps": [
+    {
+      "a": "Bar_ServiceCounter_001/front",
+      "b": "Bar_ServiceCounter_001/return",
+      "overlapWidth": 0.625,
+      "overlapDepth": 0.555,
+      "overlapArea": 0.346875,
+      "reason": "Intentional continuous L-counter corner junction within the same editable object."
+    }
+  ],
+  "occupiedFloorArea": 27.231125,
+  "remainingFloorArea": 80.768875,
+  "occupiedPercent": 25.214005,
+  "footprints": [
+    {
+      "id": "Bar_BackbarDisplay_001",
+      "nodeName": "Bar_BackbarDisplay_001",
+      "role": "BackbarDisplay",
+      "x": -1.75,
+      "z": -4.05,
+      "width": 7.8,
+      "depth": 0.51,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_BackCabinet_001",
+      "nodeName": "Bar_BackCabinet_001",
+      "role": "BackCabinet",
+      "x": -4.55,
+      "z": -3.88,
+      "width": 2.1,
+      "depth": 0.71,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BackCabinet_002",
+      "nodeName": "Bar_BackCabinet_002",
+      "role": "BackCabinet",
+      "x": -0.81,
+      "z": -3.88,
+      "width": 1.06,
+      "depth": 0.71,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BackCabinet_003",
+      "nodeName": "Bar_BackCabinet_003",
+      "role": "BackCabinet",
+      "x": 0.35,
+      "z": -3.88,
+      "width": 1.1,
+      "depth": 0.71,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BackCabinet_004",
+      "nodeName": "Bar_BackCabinet_004",
+      "role": "BackCabinet",
+      "x": 1.53,
+      "z": -3.88,
+      "width": 1.12,
+      "depth": 0.71,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BackWorktop_001",
+      "nodeName": "Bar_BackWorktop_001",
+      "role": "BackWorktop",
+      "x": -1.75,
+      "z": -3.875,
+      "width": 7.7,
+      "depth": 0.73,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Sink_001",
+      "nodeName": "Bar_Sink_001",
+      "role": "Sink",
+      "x": -4.35,
+      "z": -3.875,
+      "width": 1.14,
+      "depth": 0.68,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_BeverageFridge_001",
+      "nodeName": "Bar_BeverageFridge_001",
+      "role": "BeverageFridge",
+      "x": -2.96,
+      "z": -3.875,
+      "width": 0.92,
+      "depth": 0.72,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_IceMaker_001",
+      "nodeName": "Bar_IceMaker_001",
+      "role": "IceMaker",
+      "x": -1.9,
+      "z": -3.875,
+      "width": 0.95,
+      "depth": 0.75,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_ServiceCounter_001/front",
+      "nodeName": "Bar_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "x": -1.9,
+      "z": -0.8,
+      "width": 6.63,
+      "depth": 1.27,
+      "floorSolid": true,
+      "allowOverlap": false,
+      "allowOverlapWith": [
+        "Bar_ServiceCounter_001/return"
+      ],
+      "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+    },
+    {
+      "id": "Bar_ServiceCounter_001/return",
+      "nodeName": "Bar_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "x": 1.26,
+      "z": -2.2,
+      "width": 0.94,
+      "depth": 2.64,
+      "floorSolid": true,
+      "allowOverlap": false,
+      "allowOverlapWith": [
+        "Bar_ServiceCounter_001/front"
+      ],
+      "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+    },
+    {
+      "id": "Bar_BarStool_001",
+      "nodeName": "Bar_BarStool_001",
+      "role": "BarStool",
+      "x": -4.65,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BarStool_002",
+      "nodeName": "Bar_BarStool_002",
+      "role": "BarStool",
+      "x": -3.55,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BarStool_003",
+      "nodeName": "Bar_BarStool_003",
+      "role": "BarStool",
+      "x": -2.45,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BarStool_004",
+      "nodeName": "Bar_BarStool_004",
+      "role": "BarStool",
+      "x": -1.35,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BarStool_005",
+      "nodeName": "Bar_BarStool_005",
+      "role": "BarStool",
+      "x": -0.25,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_BarStool_006",
+      "nodeName": "Bar_BarStool_006",
+      "role": "BarStool",
+      "x": 0.85,
+      "z": 0.35,
+      "width": 0.62,
+      "depth": 0.64,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_Banquette_001",
+      "nodeName": "Bar_Banquette_001",
+      "role": "Banquette",
+      "x": 5.32,
+      "z": -2.9,
+      "width": 0.96,
+      "depth": 2.2,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_LoungeTable_001",
+      "nodeName": "Bar_LoungeTable_001",
+      "role": "LoungeTable",
+      "x": 4.13,
+      "z": -2.9,
+      "width": 0.96,
+      "depth": 0.96,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_TableSetting_001",
+      "nodeName": "Bar_TableSetting_001",
+      "role": "TableSetting",
+      "x": 4.13,
+      "z": -2.9,
+      "width": 0.62,
+      "depth": 0.49,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Banquette_002",
+      "nodeName": "Bar_Banquette_002",
+      "role": "Banquette",
+      "x": 5.32,
+      "z": 0.15,
+      "width": 0.96,
+      "depth": 2.2,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_LoungeTable_002",
+      "nodeName": "Bar_LoungeTable_002",
+      "role": "LoungeTable",
+      "x": 4.13,
+      "z": 0.15,
+      "width": 0.96,
+      "depth": 0.96,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_TableSetting_002",
+      "nodeName": "Bar_TableSetting_002",
+      "role": "TableSetting",
+      "x": 4.13,
+      "z": 0.15,
+      "width": 0.62,
+      "depth": 0.49,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Banquette_003",
+      "nodeName": "Bar_Banquette_003",
+      "role": "Banquette",
+      "x": 5.32,
+      "z": 3.1,
+      "width": 0.96,
+      "depth": 2.2,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_LoungeTable_003",
+      "nodeName": "Bar_LoungeTable_003",
+      "role": "LoungeTable",
+      "x": 4.13,
+      "z": 3.1,
+      "width": 0.96,
+      "depth": 0.96,
+      "floorSolid": true,
+      "allowOverlap": false
+    },
+    {
+      "id": "Bar_TableSetting_003",
+      "nodeName": "Bar_TableSetting_003",
+      "role": "TableSetting",
+      "x": 4.13,
+      "z": 3.1,
+      "width": 0.62,
+      "depth": 0.49,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_IceWell_001",
+      "nodeName": "Bar_IceWell_001",
+      "role": "IceWell",
+      "x": -4.35,
+      "z": -0.94,
+      "width": 0.59,
+      "depth": 0.42,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_TapTower_001",
+      "nodeName": "Bar_TapTower_001",
+      "role": "TapTower",
+      "x": -1.88,
+      "z": -1.02,
+      "width": 0.65,
+      "depth": 0.4,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_POS_001",
+      "nodeName": "Bar_POS_001",
+      "role": "POS",
+      "x": 0.67,
+      "z": -1.04,
+      "width": 0.4,
+      "depth": 0.28,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Blender_001",
+      "nodeName": "Bar_Blender_001",
+      "role": "Blender",
+      "x": 0.27,
+      "z": -3.87,
+      "width": 0.32,
+      "depth": 0.28,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_CocktailTools_001",
+      "nodeName": "Bar_CocktailTools_001",
+      "role": "CocktailTools",
+      "x": -0.43,
+      "z": -1.01,
+      "width": 0.34,
+      "depth": 0.34,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_StemwareRack_001",
+      "nodeName": "Bar_StemwareRack_001",
+      "role": "StemwareRack",
+      "x": -5.18,
+      "z": -2.93,
+      "width": 0.57,
+      "depth": 0.65,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_CounterGlassware_001",
+      "nodeName": "Bar_CounterGlassware_001",
+      "role": "CounterGlassware",
+      "x": -0.08,
+      "z": -3.78,
+      "width": 0.64,
+      "depth": 0.15,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Pendant_001",
+      "nodeName": "Bar_Pendant_001",
+      "role": "Pendant",
+      "x": -4.2,
+      "z": -0.84,
+      "width": 0.54,
+      "depth": 0.54,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Pendant_002",
+      "nodeName": "Bar_Pendant_002",
+      "role": "Pendant",
+      "x": -1.9,
+      "z": -0.84,
+      "width": 0.54,
+      "depth": 0.54,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_Pendant_003",
+      "nodeName": "Bar_Pendant_003",
+      "role": "Pendant",
+      "x": 0.4,
+      "z": -0.84,
+      "width": 0.54,
+      "depth": 0.54,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_WallSconce_001",
+      "nodeName": "Bar_WallSconce_001",
+      "role": "WallSconce",
+      "x": -5.56,
+      "z": 0.45,
+      "width": 0.39,
+      "depth": 0.28,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_WallSconce_002",
+      "nodeName": "Bar_WallSconce_002",
+      "role": "WallSconce",
+      "x": -5.56,
+      "z": 3.15,
+      "width": 0.39,
+      "depth": 0.28,
+      "floorSolid": false,
+      "allowOverlap": true
+    },
+    {
+      "id": "Bar_BackbarLight_001",
+      "nodeName": "Bar_BackbarLight_001",
+      "role": "BackbarLight",
+      "x": -1.75,
+      "z": -3.93,
+      "width": 7.3,
+      "depth": 0.09,
+      "floorSolid": false,
+      "allowOverlap": true
+    }
+  ],
+  "limitations": "Remaining floor area is a geometric area estimate, not verified walkable circulation. No dynamic flow, furniture swept path, fire, accessibility, load, electrical, photometric or legal compliance verification."
+}

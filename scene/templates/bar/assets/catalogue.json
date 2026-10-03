@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "bar",
+  "sceneName": "琥珀间 · 酒吧",
+  "rootNode": "Bar_AmberRoom_12x9",
+  "provider": "Project-authored procedural scene",
+  "reuseBasis": "Original procedural modelling and textures; scene construction helpers adapted from the same workspace office template. No third-party prop models are included.",
+  "units": "meters",
+  "upAxis": "+Y",
+  "designFootprintMeters": {
+    "width": 12,
+    "depth": 9,
+    "areaSquareMeters": 108,
+    "basis": "Concept design dimensions, not a measured site plan or safety certification"
+  },
+  "assets": [],
+  "authored": [
+    {
+      "id": "bar-scene-model",
+      "title": "Original bar layout, structure, furniture, equipment and details",
+      "sourceFiles": ["model.js"],
+      "outputPath": "bar.glb",
+      "method": "Procedural geometry and materials authored for this template",
+      "externalPropModels": false,
+      "externalGenerationService": false
+    },
+    {
+      "id": "bar-scene-kit",
+      "title": "Local scene construction and procedural texture helpers",
+      "sourceFiles": ["scene-kit.js"],
+      "sourceKit": "scene-template-library/office/scene-kit.js",
+      "reuseBasis": "Read-only copy from the same workspace, adapted locally for the bar scene; no office GLB assets are imported",
+      "method": "Procedural construction and textures",
+      "texturesEmbeddedInGLB": true
+    }
+  ],
+  "libraries": [
+    {
+      "name": "Three.js",
+      "localPath": "vendor/three/",
+      "versionSource": "vendor/three/package.json",
+      "license": "MIT",
+      "licensePath": "vendor/three/LICENSE",
+      "role": "Local scene construction, GLB loading and export, and orbit controls"
+    }
+  ],
+  "rightsNotes": "No additional public asset license is asserted for project-authored scene content. Three.js retains its own MIT license."
+}

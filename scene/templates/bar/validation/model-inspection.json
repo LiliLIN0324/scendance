@@ -1,0 +1,3638 @@
+{
+  "date": "2026-10-03",
+  "file": "bar.glb",
+  "bytes": 4134000,
+  "sha256": "92968f66f1affb3b343a1f61fd0ab8ec1a9a7116e5e8a29e8f381a15224ca78a",
+  "format": {
+    "magic": "glTF",
+    "version": 2,
+    "declaredLength": 4134000,
+    "gltfVersion": "2.0",
+    "generator": "THREE.GLTFExporter r186",
+    "chunks": [
+      {
+        "type": "JSON",
+        "bytes": 580620
+      },
+      {
+        "type": "BIN",
+        "bytes": 3553352
+      }
+    ]
+  },
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 480,
+    "hints": 0
+  },
+  "validatorIssueCodes": {
+    "UNUSED_OBJECT": 478,
+    "NODE_EMPTY": 1,
+    "IMAGE_NPOT_DIMENSIONS": 1
+  },
+  "sceneCount": 1,
+  "defaultScene": 0,
+  "nodeCount": 937,
+  "reachableNodes": 937,
+  "uniqueMeshes": 497,
+  "meshInstances": 872,
+  "primitiveInstances": 872,
+  "uniqueMeshTriangles": 49042,
+  "triangleInstances": 55242,
+  "materials": 30,
+  "textures": 8,
+  "images": 8,
+  "embeddedImages": 8,
+  "imageChecks": [
+    {
+      "index": 0,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1881,
+      "embedded": true
+    },
+    {
+      "index": 1,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1882,
+      "embedded": true
+    },
+    {
+      "index": 2,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1883,
+      "embedded": true
+    },
+    {
+      "index": 3,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1884,
+      "embedded": true
+    },
+    {
+      "index": 4,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1885,
+      "embedded": true
+    },
+    {
+      "index": 5,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1886,
+      "embedded": true
+    },
+    {
+      "index": 6,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1887,
+      "embedded": true
+    },
+    {
+      "index": 7,
+      "name": "",
+      "mimeType": "image/png",
+      "bufferView": 1888,
+      "embedded": true
+    }
+  ],
+  "externalResources": [],
+  "extensionsUsed": [
+    "KHR_materials_emissive_strength",
+    "KHR_lights_punctual"
+  ],
+  "extensionsRequired": [],
+  "lighting": {
+    "punctualLights": 6,
+    "spotlights": 1,
+    "lightNodes": [
+      {
+        "name": "Bar_Pendant_001_Point",
+        "light": 0,
+        "worldPosition": [
+          -4.2,
+          2.43,
+          -0.84
+        ]
+      },
+      {
+        "name": "Bar_Pendant_002_Point",
+        "light": 1,
+        "worldPosition": [
+          -1.9,
+          2.43,
+          -0.84
+        ]
+      },
+      {
+        "name": "Bar_Pendant_003_Point",
+        "light": 2,
+        "worldPosition": [
+          0.4,
+          2.43,
+          -0.84
+        ]
+      },
+      {
+        "name": "Bar_WallSconce_001_Point",
+        "light": 3,
+        "worldPosition": [
+          -5.51,
+          2.27,
+          0.45
+        ]
+      },
+      {
+        "name": "Bar_WallSconce_002_Point",
+        "light": 4,
+        "worldPosition": [
+          -5.51,
+          2.27,
+          3.15
+        ]
+      },
+      {
+        "name": "Bar_BackbarLight_001_Spot",
+        "light": 5,
+        "worldPosition": [
+          -1.75,
+          3.05,
+          -3.76
+        ]
+      }
+    ],
+    "definitions": [
+      {
+        "name": "Bar_Pendant_001_Point",
+        "color": [
+          1,
+          0.623960391667596,
+          0.28314874041918053
+        ],
+        "intensity": 15,
+        "type": "point",
+        "range": 6
+      },
+      {
+        "name": "Bar_Pendant_002_Point",
+        "color": [
+          1,
+          0.623960391667596,
+          0.28314874041918053
+        ],
+        "intensity": 15,
+        "type": "point",
+        "range": 6
+      },
+      {
+        "name": "Bar_Pendant_003_Point",
+        "color": [
+          1,
+          0.623960391667596,
+          0.28314874041918053
+        ],
+        "intensity": 15,
+        "type": "point",
+        "range": 6
+      },
+      {
+        "name": "Bar_WallSconce_001_Point",
+        "color": [
+          1,
+          0.623960391667596,
+          0.28314874041918053
+        ],
+        "intensity": 10,
+        "type": "point",
+        "range": 5
+      },
+      {
+        "name": "Bar_WallSconce_002_Point",
+        "color": [
+          1,
+          0.623960391667596,
+          0.28314874041918053
+        ],
+        "intensity": 10,
+        "type": "point",
+        "range": 5
+      },
+      {
+        "name": "Bar_BackbarLight_001_Spot",
+        "color": [
+          1,
+          0.7454042095350284,
+          0.4232676699760063
+        ],
+        "intensity": 24,
+        "type": "spot",
+        "range": 7,
+        "spot": {
+          "innerConeAngle": 0.16200000000000003,
+          "outerConeAngle": 1.08
+        }
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "Bar_Structure",
+      "present": true,
+      "bounds": {
+        "min": [
+          -6,
+          -0.16,
+          -4.5
+        ],
+        "max": [
+          6,
+          3.4,
+          4.5
+        ],
+        "size": [
+          12,
+          3.56,
+          9
+        ]
+      }
+    },
+    {
+      "name": "Bar_Furniture",
+      "present": true,
+      "bounds": {
+        "min": [
+          -5.65,
+          0,
+          -4.32
+        ],
+        "max": [
+          5.75,
+          3.275,
+          4.217
+        ],
+        "size": [
+          11.4,
+          3.275,
+          8.537
+        ]
+      }
+    },
+    {
+      "name": "Bar_Equipment",
+      "present": true,
+      "bounds": {
+        "min": [
+          -5.435,
+          0,
+          -4.237904
+        ],
+        "max": [
+          4.411,
+          3.275,
+          3.311
+        ],
+        "size": [
+          9.846,
+          3.275,
+          7.548904
+        ]
+      }
+    },
+    {
+      "name": "Bar_Lighting",
+      "present": true,
+      "bounds": {
+        "min": [
+          -5.845,
+          2.02,
+          -3.955
+        ],
+        "max": [
+          1.9,
+          3.2675,
+          3.263
+        ],
+        "size": [
+          7.745,
+          1.2475,
+          7.218
+        ]
+      }
+    },
+    {
+      "name": "Bar_Roof",
+      "present": true,
+      "bounds": {
+        "min": [
+          -6,
+          3.13,
+          -4.5
+        ],
+        "max": [
+          6,
+          3.4,
+          4.5
+        ],
+        "size": [
+          12,
+          0.27,
+          9
+        ]
+      }
+    }
+  ],
+  "duplicateNames": [],
+  "unnamedNodes": [],
+  "inventoryObjects": 42,
+  "editableObjects": 42,
+  "inventory": [
+    {
+      "name": "Bar_Floor_001",
+      "role": "Floor",
+      "layer": "Structure"
+    },
+    {
+      "name": "Bar_Ceiling_001",
+      "role": "Ceiling",
+      "layer": "Roof"
+    },
+    {
+      "name": "Bar_BackbarDisplay_001",
+      "role": "BackbarDisplay",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_001",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_002",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_003",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_004",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackWorktop_001",
+      "role": "BackWorktop",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_Sink_001",
+      "role": "Sink",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_BeverageFridge_001",
+      "role": "BeverageFridge",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_IceMaker_001",
+      "role": "IceMaker",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_001",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_002",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_003",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_004",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_005",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_006",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_Banquette_001",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_001",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_001",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Banquette_002",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_002",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_002",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Banquette_003",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_003",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_003",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_IceWell_001",
+      "role": "IceWell",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_TapTower_001",
+      "role": "TapTower",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_POS_001",
+      "role": "POS",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Blender_001",
+      "role": "Blender",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_CocktailTools_001",
+      "role": "CocktailTools",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_StemwareRack_001",
+      "role": "StemwareRack",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_CounterGlassware_001",
+      "role": "CounterGlassware",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Pendant_001",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_Pendant_002",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_Pendant_003",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallSconce_001",
+      "role": "WallSconce",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallSconce_002",
+      "role": "WallSconce",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_BackbarLight_001",
+      "role": "BackbarLight",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallGraphic_001",
+      "role": "WallGraphic",
+      "layer": "Structure"
+    },
+    {
+      "name": "Bar_EntrancePlaque_001",
+      "role": "EntrancePlaque",
+      "layer": "Structure"
+    }
+  ],
+  "counts": {
+    "Floor": 1,
+    "Ceiling": 1,
+    "BackbarDisplay": 1,
+    "BackCabinet": 4,
+    "BackWorktop": 1,
+    "Sink": 1,
+    "BeverageFridge": 1,
+    "IceMaker": 1,
+    "ServiceCounter": 1,
+    "BarStool": 6,
+    "Banquette": 3,
+    "LoungeTable": 3,
+    "TableSetting": 3,
+    "IceWell": 1,
+    "TapTower": 1,
+    "POS": 1,
+    "Blender": 1,
+    "CocktailTools": 1,
+    "StemwareRack": 1,
+    "CounterGlassware": 1,
+    "Pendant": 3,
+    "WallSconce": 2,
+    "BackbarLight": 1,
+    "WallGraphic": 1,
+    "EntrancePlaque": 1
+  },
+  "inventoryRoleCounts": {
+    "Floor": 1,
+    "Ceiling": 1,
+    "BackbarDisplay": 1,
+    "BackCabinet": 4,
+    "BackWorktop": 1,
+    "Sink": 1,
+    "BeverageFridge": 1,
+    "IceMaker": 1,
+    "ServiceCounter": 1,
+    "BarStool": 6,
+    "Banquette": 3,
+    "LoungeTable": 3,
+    "TableSetting": 3,
+    "IceWell": 1,
+    "TapTower": 1,
+    "POS": 1,
+    "Blender": 1,
+    "CocktailTools": 1,
+    "StemwareRack": 1,
+    "CounterGlassware": 1,
+    "Pendant": 3,
+    "WallSconce": 2,
+    "BackbarLight": 1,
+    "WallGraphic": 1,
+    "EntrancePlaque": 1
+  },
+  "inventoryChecks": [
+    {
+      "name": "Bar_Floor_001",
+      "role": "Floor",
+      "layer": "Structure",
+      "nodeIndex": 2,
+      "parent": "Bar_Structure",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 5,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0,
+        0,
+        0
+      ],
+      "bounds": {
+        "min": [
+          -6,
+          -0.16,
+          -4.5
+        ],
+        "max": [
+          6,
+          0.006,
+          4.5
+        ],
+        "size": [
+          12,
+          0.166,
+          9
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Ceiling_001",
+      "role": "Ceiling",
+      "layer": "Roof",
+      "nodeIndex": 929,
+      "parent": "Bar_Roof",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 7,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0,
+        0,
+        0
+      ],
+      "bounds": {
+        "min": [
+          -6,
+          3.13,
+          -4.5
+        ],
+        "max": [
+          6,
+          3.4,
+          4.5
+        ],
+        "size": [
+          12,
+          0.27,
+          9
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackbarDisplay_001",
+      "role": "BackbarDisplay",
+      "layer": "Furniture",
+      "nodeIndex": 41,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 309,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.75,
+        0,
+        -4.27
+      ],
+      "bounds": {
+        "min": [
+          -5.65,
+          0.86,
+          -4.32
+        ],
+        "max": [
+          2.15,
+          3.275,
+          -3.78
+        ],
+        "size": [
+          7.8,
+          2.415,
+          0.54
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackCabinet_001",
+      "role": "BackCabinet",
+      "layer": "Furniture",
+      "nodeIndex": 351,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 8,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -4.55,
+        0,
+        -3.88
+      ],
+      "bounds": {
+        "min": [
+          -5.6,
+          0.002,
+          -4.205
+        ],
+        "max": [
+          -3.5,
+          0.83,
+          -3.495
+        ],
+        "size": [
+          2.1,
+          0.828,
+          0.71
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackCabinet_002",
+      "role": "BackCabinet",
+      "layer": "Furniture",
+      "nodeIndex": 360,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 8,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -0.81,
+        0,
+        -3.88
+      ],
+      "bounds": {
+        "min": [
+          -1.34,
+          0.002,
+          -4.205
+        ],
+        "max": [
+          -0.28,
+          0.83,
+          -3.495
+        ],
+        "size": [
+          1.06,
+          0.828,
+          0.71
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackCabinet_003",
+      "role": "BackCabinet",
+      "layer": "Furniture",
+      "nodeIndex": 369,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 8,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0.35,
+        0,
+        -3.88
+      ],
+      "bounds": {
+        "min": [
+          -0.2,
+          0.002,
+          -4.205
+        ],
+        "max": [
+          0.9,
+          0.83,
+          -3.495
+        ],
+        "size": [
+          1.1,
+          0.828,
+          0.71
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackCabinet_004",
+      "role": "BackCabinet",
+      "layer": "Furniture",
+      "nodeIndex": 378,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 8,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        1.53,
+        0,
+        -3.88
+      ],
+      "bounds": {
+        "min": [
+          0.97,
+          0.002,
+          -4.205
+        ],
+        "max": [
+          2.09,
+          0.83,
+          -3.495
+        ],
+        "size": [
+          1.12,
+          0.828,
+          0.71
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackWorktop_001",
+      "role": "BackWorktop",
+      "layer": "Furniture",
+      "nodeIndex": 387,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0,
+        0,
+        0
+      ],
+      "bounds": {
+        "min": [
+          -5.6,
+          0.831,
+          -4.24
+        ],
+        "max": [
+          2.1,
+          0.893,
+          -3.51
+        ],
+        "size": [
+          7.7,
+          0.062,
+          0.73
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Sink_001",
+      "role": "Sink",
+      "layer": "Equipment",
+      "nodeIndex": 643,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 13,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -4.35,
+        0,
+        -3.875
+      ],
+      "bounds": {
+        "min": [
+          -4.919,
+          0.682,
+          -4.237904
+        ],
+        "max": [
+          -3.781,
+          1.326089,
+          -3.615
+        ],
+        "size": [
+          1.138,
+          0.644089,
+          0.622904
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BeverageFridge_001",
+      "role": "BeverageFridge",
+      "layer": "Equipment",
+      "nodeIndex": 657,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 69,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -2.96,
+        0,
+        -3.875
+      ],
+      "bounds": {
+        "min": [
+          -3.42,
+          0,
+          -4.205
+        ],
+        "max": [
+          -2.5,
+          0.8265,
+          -3.465
+        ],
+        "size": [
+          0.92,
+          0.8265,
+          0.74
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_IceMaker_001",
+      "role": "IceMaker",
+      "layer": "Equipment",
+      "nodeIndex": 727,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 14,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.9,
+        0,
+        -3.875
+      ],
+      "bounds": {
+        "min": [
+          -2.375,
+          0,
+          -4.205
+        ],
+        "max": [
+          -1.425,
+          0.81,
+          -3.4695
+        ],
+        "size": [
+          0.95,
+          0.81,
+          0.7355
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "layer": "Furniture",
+      "nodeIndex": 392,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 102,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0,
+        0,
+        0
+      ],
+      "bounds": {
+        "min": [
+          -5.232,
+          0,
+          -3.52
+        ],
+        "max": [
+          1.747,
+          1.1065,
+          -0.215
+        ],
+        "size": [
+          6.979,
+          1.1065,
+          3.305
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_001",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 495,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -4.65,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          -4.932,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          -4.368,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_002",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 506,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -3.55,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          -3.832,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          -3.268,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_003",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 517,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -2.45,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          -2.732,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          -2.168,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_004",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 528,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.35,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          -1.632,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          -1.068,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_005",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 539,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -0.25,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          -0.532,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          0.032,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BarStool_006",
+      "role": "BarStool",
+      "layer": "Furniture",
+      "nodeIndex": 550,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 10,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0.85,
+        0,
+        0.35
+      ],
+      "bounds": {
+        "min": [
+          0.568,
+          0.036815,
+          0.076
+        ],
+        "max": [
+          1.132,
+          1.0975,
+          0.632
+        ],
+        "size": [
+          0.564,
+          1.060685,
+          0.556
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Banquette_001",
+      "role": "Banquette",
+      "layer": "Furniture",
+      "nodeIndex": 561,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 22,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        5.32,
+        0,
+        -2.9
+      ],
+      "bounds": {
+        "min": [
+          4.91,
+          0,
+          -4.017
+        ],
+        "max": [
+          5.75,
+          1.218,
+          -1.783
+        ],
+        "size": [
+          0.84,
+          1.218,
+          2.234
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_LoungeTable_001",
+      "role": "LoungeTable",
+      "layer": "Furniture",
+      "nodeIndex": 584,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 3,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        -2.9
+      ],
+      "bounds": {
+        "min": [
+          3.66,
+          0.0115,
+          -3.37
+        ],
+        "max": [
+          4.6,
+          0.725,
+          -2.43
+        ],
+        "size": [
+          0.94,
+          0.7135,
+          0.94
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_TableSetting_001",
+      "role": "TableSetting",
+      "layer": "Equipment",
+      "nodeIndex": 742,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 15,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        -2.9
+      ],
+      "bounds": {
+        "min": [
+          3.869,
+          0.727,
+          -3.111
+        ],
+        "max": [
+          4.411,
+          0.887,
+          -2.689
+        ],
+        "size": [
+          0.542,
+          0.16,
+          0.422
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Banquette_002",
+      "role": "Banquette",
+      "layer": "Furniture",
+      "nodeIndex": 588,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 22,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        5.32,
+        0,
+        0.15
+      ],
+      "bounds": {
+        "min": [
+          4.91,
+          0,
+          -0.967
+        ],
+        "max": [
+          5.75,
+          1.218,
+          1.267
+        ],
+        "size": [
+          0.84,
+          1.218,
+          2.234
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_LoungeTable_002",
+      "role": "LoungeTable",
+      "layer": "Furniture",
+      "nodeIndex": 611,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 3,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        0.15
+      ],
+      "bounds": {
+        "min": [
+          3.66,
+          0.0115,
+          -0.32
+        ],
+        "max": [
+          4.6,
+          0.725,
+          0.62
+        ],
+        "size": [
+          0.94,
+          0.7135,
+          0.94
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_TableSetting_002",
+      "role": "TableSetting",
+      "layer": "Equipment",
+      "nodeIndex": 758,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 15,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        0.15
+      ],
+      "bounds": {
+        "min": [
+          3.869,
+          0.727,
+          -0.061
+        ],
+        "max": [
+          4.411,
+          0.887,
+          0.361
+        ],
+        "size": [
+          0.542,
+          0.16,
+          0.422
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Banquette_003",
+      "role": "Banquette",
+      "layer": "Furniture",
+      "nodeIndex": 615,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 22,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        5.32,
+        0,
+        3.1
+      ],
+      "bounds": {
+        "min": [
+          4.91,
+          0,
+          1.983
+        ],
+        "max": [
+          5.75,
+          1.218,
+          4.217
+        ],
+        "size": [
+          0.84,
+          1.218,
+          2.234
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_LoungeTable_003",
+      "role": "LoungeTable",
+      "layer": "Furniture",
+      "nodeIndex": 638,
+      "parent": "Bar_Furniture",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 3,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        3.1
+      ],
+      "bounds": {
+        "min": [
+          3.66,
+          0.0115,
+          2.63
+        ],
+        "max": [
+          4.6,
+          0.725,
+          3.57
+        ],
+        "size": [
+          0.94,
+          0.7135,
+          0.94
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_TableSetting_003",
+      "role": "TableSetting",
+      "layer": "Equipment",
+      "nodeIndex": 774,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 15,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        4.13,
+        0,
+        3.1
+      ],
+      "bounds": {
+        "min": [
+          3.869,
+          0.727,
+          2.889
+        ],
+        "max": [
+          4.411,
+          0.887,
+          3.311
+        ],
+        "size": [
+          0.542,
+          0.16,
+          0.422
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_IceWell_001",
+      "role": "IceWell",
+      "layer": "Equipment",
+      "nodeIndex": 790,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 17,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -4.35,
+        0,
+        -0.94
+      ],
+      "bounds": {
+        "min": [
+          -4.6385,
+          1.0925,
+          -1.1465
+        ],
+        "max": [
+          -4.0615,
+          1.2275,
+          -0.7335
+        ],
+        "size": [
+          0.577,
+          0.135,
+          0.413
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_TapTower_001",
+      "role": "TapTower",
+      "layer": "Equipment",
+      "nodeIndex": 808,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 15,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.88,
+        0,
+        -1.06
+      ],
+      "bounds": {
+        "min": [
+          -2.205,
+          1.082,
+          -1.135
+        ],
+        "max": [
+          -1.555,
+          1.591935,
+          -0.785
+        ],
+        "size": [
+          0.65,
+          0.509935,
+          0.35
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_POS_001",
+      "role": "POS",
+      "layer": "Equipment",
+      "nodeIndex": 824,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0.67,
+        0,
+        -1.04
+      ],
+      "bounds": {
+        "min": [
+          0.49,
+          1.0895,
+          -1.135
+        ],
+        "max": [
+          0.85,
+          1.479299,
+          -0.945
+        ],
+        "size": [
+          0.36,
+          0.389799,
+          0.19
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Blender_001",
+      "role": "Blender",
+      "layer": "Equipment",
+      "nodeIndex": 829,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        0.27,
+        0,
+        -3.87
+      ],
+      "bounds": {
+        "min": [
+          0.114,
+          0.856,
+          -3.99
+        ],
+        "max": [
+          0.426,
+          1.32,
+          -3.75
+        ],
+        "size": [
+          0.312,
+          0.464,
+          0.24
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_CocktailTools_001",
+      "role": "CocktailTools",
+      "layer": "Equipment",
+      "nodeIndex": 834,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 6,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -0.43,
+        0,
+        -1.01
+      ],
+      "bounds": {
+        "min": [
+          -0.59,
+          1.09,
+          -1.17
+        ],
+        "max": [
+          -0.27,
+          1.365351,
+          -0.85
+        ],
+        "size": [
+          0.32,
+          0.275351,
+          0.32
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_StemwareRack_001",
+      "role": "StemwareRack",
+      "layer": "Equipment",
+      "nodeIndex": 841,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 31,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -5.18,
+        0,
+        -2.93
+      ],
+      "bounds": {
+        "min": [
+          -5.435,
+          2.187,
+          -3.245
+        ],
+        "max": [
+          -4.925,
+          3.275,
+          -2.615
+        ],
+        "size": [
+          0.51,
+          1.088,
+          0.63
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_CounterGlassware_001",
+      "role": "CounterGlassware",
+      "layer": "Equipment",
+      "nodeIndex": 882,
+      "parent": "Bar_Equipment",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -0.08,
+        0,
+        -3.88
+      ],
+      "bounds": {
+        "min": [
+          -0.366369,
+          0.895,
+          -3.842
+        ],
+        "max": [
+          0.206369,
+          1.04,
+          -3.718
+        ],
+        "size": [
+          0.572738,
+          0.145,
+          0.124
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Pendant_001",
+      "role": "Pendant",
+      "layer": "Lighting",
+      "nodeIndex": 888,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 6,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        -4.2,
+        0,
+        -0.84
+      ],
+      "bounds": {
+        "min": [
+          -4.454803,
+          2.375,
+          -1.094803
+        ],
+        "max": [
+          -3.945197,
+          3.2675,
+          -0.585197
+        ],
+        "size": [
+          0.509607,
+          0.8925,
+          0.509607
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Pendant_002",
+      "role": "Pendant",
+      "layer": "Lighting",
+      "nodeIndex": 896,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 6,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.9,
+        0,
+        -0.84
+      ],
+      "bounds": {
+        "min": [
+          -2.154803,
+          2.375,
+          -1.094803
+        ],
+        "max": [
+          -1.645197,
+          3.2675,
+          -0.585197
+        ],
+        "size": [
+          0.509607,
+          0.8925,
+          0.509607
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_Pendant_003",
+      "role": "Pendant",
+      "layer": "Lighting",
+      "nodeIndex": 904,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 6,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        0.4,
+        0,
+        -0.84
+      ],
+      "bounds": {
+        "min": [
+          0.145197,
+          2.375,
+          -1.094803
+        ],
+        "max": [
+          0.654803,
+          3.2675,
+          -0.585197
+        ],
+        "size": [
+          0.509607,
+          0.8925,
+          0.509607
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_WallSconce_001",
+      "role": "WallSconce",
+      "layer": "Lighting",
+      "nodeIndex": 912,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        -5.81,
+        0,
+        0.45
+      ],
+      "bounds": {
+        "min": [
+          -5.845,
+          2.02,
+          0.337
+        ],
+        "max": [
+          -5.447,
+          2.405,
+          0.563
+        ],
+        "size": [
+          0.398,
+          0.385,
+          0.226
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_WallSconce_002",
+      "role": "WallSconce",
+      "layer": "Lighting",
+      "nodeIndex": 918,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 4,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        -5.81,
+        0,
+        3.15
+      ],
+      "bounds": {
+        "min": [
+          -5.845,
+          2.02,
+          3.037
+        ],
+        "max": [
+          -5.447,
+          2.405,
+          3.263
+        ],
+        "size": [
+          0.398,
+          0.385,
+          0.226
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_BackbarLight_001",
+      "role": "BackbarLight",
+      "layer": "Lighting",
+      "nodeIndex": 924,
+      "parent": "Bar_Lighting",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 1,
+      "descendantLightCount": 1,
+      "nestedInventory": [],
+      "worldPosition": [
+        -1.75,
+        0,
+        -3.93
+      ],
+      "bounds": {
+        "min": [
+          -5.4,
+          3.109,
+          -3.955
+        ],
+        "max": [
+          1.9,
+          3.141,
+          -3.905
+        ],
+        "size": [
+          7.3,
+          0.032,
+          0.05
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_WallGraphic_001",
+      "role": "WallGraphic",
+      "layer": "Structure",
+      "nodeIndex": 35,
+      "parent": "Bar_Structure",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 2,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -5.849,
+        0,
+        1.81
+      ],
+      "bounds": {
+        "min": [
+          -5.8715,
+          1.47,
+          1.285
+        ],
+        "max": [
+          -5.823,
+          2.69,
+          2.335
+        ],
+        "size": [
+          0.0485,
+          1.22,
+          1.05
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "Bar_EntrancePlaque_001",
+      "role": "EntrancePlaque",
+      "layer": "Structure",
+      "nodeIndex": 38,
+      "parent": "Bar_Structure",
+      "occurrences": 1,
+      "namingValid": true,
+      "editableObject": true,
+      "descendantMeshCount": 1,
+      "descendantLightCount": 0,
+      "nestedInventory": [],
+      "worldPosition": [
+        -2.25,
+        0,
+        4.19
+      ],
+      "bounds": {
+        "min": [
+          -3.14,
+          0.016,
+          3.88
+        ],
+        "max": [
+          -1.36,
+          0.016,
+          4.5
+        ],
+        "size": [
+          1.78,
+          0,
+          0.62
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "inventoryDuplicates": [],
+  "unlistedEditable": [],
+  "visitors": 0,
+  "staff": 0,
+  "forbiddenPeople": [],
+  "animationCount": 0,
+  "worldBounds": {
+    "min": [
+      -6,
+      -0.16,
+      -4.5
+    ],
+    "max": [
+      6,
+      3.4,
+      4.5
+    ],
+    "size": [
+      12,
+      3.56,
+      9
+    ]
+  },
+  "missingPositionBounds": [],
+  "unsupportedBounds": [],
+  "conceptDimensions": {
+    "width": 12,
+    "depth": 9,
+    "area": 108,
+    "units": "meters",
+    "upAxis": "+Y",
+    "source": "Authored concept; no measured site or certified capacity"
+  },
+  "rootMetadata": {
+    "templateId": "bar-amber-room-12x9-v1",
+    "kind": "complete-scene-template",
+    "units": "meters",
+    "upAxis": "+Y",
+    "floorWidth": 12,
+    "floorDepth": 9,
+    "designHeight": 3.4,
+    "dimensionsBasis": "Original concept; not measured from user photos",
+    "inventory": [
+      {
+        "name": "Bar_Floor_001",
+        "role": "Floor",
+        "layer": "Structure"
+      },
+      {
+        "name": "Bar_Ceiling_001",
+        "role": "Ceiling",
+        "layer": "Roof"
+      },
+      {
+        "name": "Bar_BackbarDisplay_001",
+        "role": "BackbarDisplay",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BackCabinet_001",
+        "role": "BackCabinet",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BackCabinet_002",
+        "role": "BackCabinet",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BackCabinet_003",
+        "role": "BackCabinet",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BackCabinet_004",
+        "role": "BackCabinet",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BackWorktop_001",
+        "role": "BackWorktop",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_Sink_001",
+        "role": "Sink",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_BeverageFridge_001",
+        "role": "BeverageFridge",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_IceMaker_001",
+        "role": "IceMaker",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_001",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_002",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_003",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_004",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_005",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_BarStool_006",
+        "role": "BarStool",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_Banquette_001",
+        "role": "Banquette",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_LoungeTable_001",
+        "role": "LoungeTable",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_TableSetting_001",
+        "role": "TableSetting",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_Banquette_002",
+        "role": "Banquette",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_LoungeTable_002",
+        "role": "LoungeTable",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_TableSetting_002",
+        "role": "TableSetting",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_Banquette_003",
+        "role": "Banquette",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_LoungeTable_003",
+        "role": "LoungeTable",
+        "layer": "Furniture"
+      },
+      {
+        "name": "Bar_TableSetting_003",
+        "role": "TableSetting",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_IceWell_001",
+        "role": "IceWell",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_TapTower_001",
+        "role": "TapTower",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_POS_001",
+        "role": "POS",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_Blender_001",
+        "role": "Blender",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_CocktailTools_001",
+        "role": "CocktailTools",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_StemwareRack_001",
+        "role": "StemwareRack",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_CounterGlassware_001",
+        "role": "CounterGlassware",
+        "layer": "Equipment"
+      },
+      {
+        "name": "Bar_Pendant_001",
+        "role": "Pendant",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_Pendant_002",
+        "role": "Pendant",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_Pendant_003",
+        "role": "Pendant",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_WallSconce_001",
+        "role": "WallSconce",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_WallSconce_002",
+        "role": "WallSconce",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_BackbarLight_001",
+        "role": "BackbarLight",
+        "layer": "Lighting"
+      },
+      {
+        "name": "Bar_WallGraphic_001",
+        "role": "WallGraphic",
+        "layer": "Structure"
+      },
+      {
+        "name": "Bar_EntrancePlaque_001",
+        "role": "EntrancePlaque",
+        "layer": "Structure"
+      }
+    ],
+    "counts": {
+      "Floor": 1,
+      "Ceiling": 1,
+      "BackbarDisplay": 1,
+      "BackCabinet": 4,
+      "BackWorktop": 1,
+      "Sink": 1,
+      "BeverageFridge": 1,
+      "IceMaker": 1,
+      "ServiceCounter": 1,
+      "BarStool": 6,
+      "Banquette": 3,
+      "LoungeTable": 3,
+      "TableSetting": 3,
+      "IceWell": 1,
+      "TapTower": 1,
+      "POS": 1,
+      "Blender": 1,
+      "CocktailTools": 1,
+      "StemwareRack": 1,
+      "CounterGlassware": 1,
+      "Pendant": 3,
+      "WallSconce": 2,
+      "BackbarLight": 1,
+      "WallGraphic": 1,
+      "EntrancePlaque": 1
+    },
+    "footprints": [
+      {
+        "id": "Bar_BackbarDisplay_001",
+        "nodeName": "Bar_BackbarDisplay_001",
+        "role": "BackbarDisplay",
+        "x": -1.75,
+        "z": -4.05,
+        "width": 7.8,
+        "depth": 0.51,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BackCabinet_001",
+        "nodeName": "Bar_BackCabinet_001",
+        "role": "BackCabinet",
+        "x": -4.55,
+        "z": -3.88,
+        "width": 2.1,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_002",
+        "nodeName": "Bar_BackCabinet_002",
+        "role": "BackCabinet",
+        "x": -0.81,
+        "z": -3.88,
+        "width": 1.06,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_003",
+        "nodeName": "Bar_BackCabinet_003",
+        "role": "BackCabinet",
+        "x": 0.35,
+        "z": -3.88,
+        "width": 1.1,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_004",
+        "nodeName": "Bar_BackCabinet_004",
+        "role": "BackCabinet",
+        "x": 1.53,
+        "z": -3.88,
+        "width": 1.12,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackWorktop_001",
+        "nodeName": "Bar_BackWorktop_001",
+        "role": "BackWorktop",
+        "x": -1.75,
+        "z": -3.875,
+        "width": 7.7,
+        "depth": 0.73,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Sink_001",
+        "nodeName": "Bar_Sink_001",
+        "role": "Sink",
+        "x": -4.35,
+        "z": -3.875,
+        "width": 1.14,
+        "depth": 0.68,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BeverageFridge_001",
+        "nodeName": "Bar_BeverageFridge_001",
+        "role": "BeverageFridge",
+        "x": -2.96,
+        "z": -3.875,
+        "width": 0.92,
+        "depth": 0.72,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_IceMaker_001",
+        "nodeName": "Bar_IceMaker_001",
+        "role": "IceMaker",
+        "x": -1.9,
+        "z": -3.875,
+        "width": 0.95,
+        "depth": 0.75,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_ServiceCounter_001/front",
+        "nodeName": "Bar_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "x": -1.9,
+        "z": -0.8,
+        "width": 6.63,
+        "depth": 1.27,
+        "floorSolid": true,
+        "allowOverlap": false,
+        "allowOverlapWith": [
+          "Bar_ServiceCounter_001/return"
+        ],
+        "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+      },
+      {
+        "id": "Bar_ServiceCounter_001/return",
+        "nodeName": "Bar_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "x": 1.26,
+        "z": -2.2,
+        "width": 0.94,
+        "depth": 2.64,
+        "floorSolid": true,
+        "allowOverlap": false,
+        "allowOverlapWith": [
+          "Bar_ServiceCounter_001/front"
+        ],
+        "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+      },
+      {
+        "id": "Bar_BarStool_001",
+        "nodeName": "Bar_BarStool_001",
+        "role": "BarStool",
+        "x": -4.65,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_002",
+        "nodeName": "Bar_BarStool_002",
+        "role": "BarStool",
+        "x": -3.55,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_003",
+        "nodeName": "Bar_BarStool_003",
+        "role": "BarStool",
+        "x": -2.45,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_004",
+        "nodeName": "Bar_BarStool_004",
+        "role": "BarStool",
+        "x": -1.35,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_005",
+        "nodeName": "Bar_BarStool_005",
+        "role": "BarStool",
+        "x": -0.25,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_006",
+        "nodeName": "Bar_BarStool_006",
+        "role": "BarStool",
+        "x": 0.85,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_Banquette_001",
+        "nodeName": "Bar_Banquette_001",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": -2.9,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_001",
+        "nodeName": "Bar_LoungeTable_001",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": -2.9,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_001",
+        "nodeName": "Bar_TableSetting_001",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": -2.9,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Banquette_002",
+        "nodeName": "Bar_Banquette_002",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": 0.15,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_002",
+        "nodeName": "Bar_LoungeTable_002",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": 0.15,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_002",
+        "nodeName": "Bar_TableSetting_002",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": 0.15,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Banquette_003",
+        "nodeName": "Bar_Banquette_003",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": 3.1,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_003",
+        "nodeName": "Bar_LoungeTable_003",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": 3.1,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_003",
+        "nodeName": "Bar_TableSetting_003",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": 3.1,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_IceWell_001",
+        "nodeName": "Bar_IceWell_001",
+        "role": "IceWell",
+        "x": -4.35,
+        "z": -0.94,
+        "width": 0.59,
+        "depth": 0.42,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_TapTower_001",
+        "nodeName": "Bar_TapTower_001",
+        "role": "TapTower",
+        "x": -1.88,
+        "z": -1.02,
+        "width": 0.65,
+        "depth": 0.4,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_POS_001",
+        "nodeName": "Bar_POS_001",
+        "role": "POS",
+        "x": 0.67,
+        "z": -1.04,
+        "width": 0.4,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Blender_001",
+        "nodeName": "Bar_Blender_001",
+        "role": "Blender",
+        "x": 0.27,
+        "z": -3.87,
+        "width": 0.32,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_CocktailTools_001",
+        "nodeName": "Bar_CocktailTools_001",
+        "role": "CocktailTools",
+        "x": -0.43,
+        "z": -1.01,
+        "width": 0.34,
+        "depth": 0.34,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_StemwareRack_001",
+        "nodeName": "Bar_StemwareRack_001",
+        "role": "StemwareRack",
+        "x": -5.18,
+        "z": -2.93,
+        "width": 0.57,
+        "depth": 0.65,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_CounterGlassware_001",
+        "nodeName": "Bar_CounterGlassware_001",
+        "role": "CounterGlassware",
+        "x": -0.08,
+        "z": -3.78,
+        "width": 0.64,
+        "depth": 0.15,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_001",
+        "nodeName": "Bar_Pendant_001",
+        "role": "Pendant",
+        "x": -4.2,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_002",
+        "nodeName": "Bar_Pendant_002",
+        "role": "Pendant",
+        "x": -1.9,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_003",
+        "nodeName": "Bar_Pendant_003",
+        "role": "Pendant",
+        "x": 0.4,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_WallSconce_001",
+        "nodeName": "Bar_WallSconce_001",
+        "role": "WallSconce",
+        "x": -5.56,
+        "z": 0.45,
+        "width": 0.39,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_WallSconce_002",
+        "nodeName": "Bar_WallSconce_002",
+        "role": "WallSconce",
+        "x": -5.56,
+        "z": 3.15,
+        "width": 0.39,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BackbarLight_001",
+        "nodeName": "Bar_BackbarLight_001",
+        "role": "BackbarLight",
+        "x": -1.75,
+        "z": -3.93,
+        "width": 7.3,
+        "depth": 0.09,
+        "floorSolid": false,
+        "allowOverlap": true
+      }
+    ],
+    "description": "Original static contemporary bar interior with L service counter, six stools and three banquettes. No people, schedules or event simulation.",
+    "roofIncluded": true,
+    "roofDefaultPreviewVisible": false,
+    "externalAssets": [],
+    "layoutNotes": "12 × 9 metre concept, 3.4 metre wall/roof height. Left/back walls full height; front/right cut away for inspection. Furniture is editable by Bar_Role_001 group. Countertop equipment intentionally sits within parent furniture footprints.",
+    "lightCount": 6
+  },
+  "staticOccupancy": {
+    "method": "Declared floor fixture axis-aligned rectangles, floor boundary screen, exact union of 2D rectangles; intended overlaps must be declared",
+    "declaredFootprints": 39,
+    "floorFixtures": 20,
+    "excludedFootprints": [
+      {
+        "id": "Bar_BackbarDisplay_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_BackWorktop_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_Sink_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_TableSetting_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_TableSetting_002",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_TableSetting_003",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_IceWell_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_TapTower_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_POS_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_Blender_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_CocktailTools_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_StemwareRack_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_CounterGlassware_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_Pendant_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_Pendant_002",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_Pendant_003",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_WallSconce_001",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_WallSconce_002",
+        "reason": "not declared as a floor-solid fixture"
+      },
+      {
+        "id": "Bar_BackbarLight_001",
+        "reason": "not declared as a floor-solid fixture"
+      }
+    ],
+    "invalidFootprints": [],
+    "duplicateFootprintIds": [],
+    "footprintNodeChecks": [
+      {
+        "id": "Bar_BackbarDisplay_001",
+        "nodeName": "Bar_BackbarDisplay_001",
+        "present": true
+      },
+      {
+        "id": "Bar_BackCabinet_001",
+        "nodeName": "Bar_BackCabinet_001",
+        "present": true
+      },
+      {
+        "id": "Bar_BackCabinet_002",
+        "nodeName": "Bar_BackCabinet_002",
+        "present": true
+      },
+      {
+        "id": "Bar_BackCabinet_003",
+        "nodeName": "Bar_BackCabinet_003",
+        "present": true
+      },
+      {
+        "id": "Bar_BackCabinet_004",
+        "nodeName": "Bar_BackCabinet_004",
+        "present": true
+      },
+      {
+        "id": "Bar_BackWorktop_001",
+        "nodeName": "Bar_BackWorktop_001",
+        "present": true
+      },
+      {
+        "id": "Bar_Sink_001",
+        "nodeName": "Bar_Sink_001",
+        "present": true
+      },
+      {
+        "id": "Bar_BeverageFridge_001",
+        "nodeName": "Bar_BeverageFridge_001",
+        "present": true
+      },
+      {
+        "id": "Bar_IceMaker_001",
+        "nodeName": "Bar_IceMaker_001",
+        "present": true
+      },
+      {
+        "id": "Bar_ServiceCounter_001/front",
+        "nodeName": "Bar_ServiceCounter_001",
+        "present": true
+      },
+      {
+        "id": "Bar_ServiceCounter_001/return",
+        "nodeName": "Bar_ServiceCounter_001",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_001",
+        "nodeName": "Bar_BarStool_001",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_002",
+        "nodeName": "Bar_BarStool_002",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_003",
+        "nodeName": "Bar_BarStool_003",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_004",
+        "nodeName": "Bar_BarStool_004",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_005",
+        "nodeName": "Bar_BarStool_005",
+        "present": true
+      },
+      {
+        "id": "Bar_BarStool_006",
+        "nodeName": "Bar_BarStool_006",
+        "present": true
+      },
+      {
+        "id": "Bar_Banquette_001",
+        "nodeName": "Bar_Banquette_001",
+        "present": true
+      },
+      {
+        "id": "Bar_LoungeTable_001",
+        "nodeName": "Bar_LoungeTable_001",
+        "present": true
+      },
+      {
+        "id": "Bar_TableSetting_001",
+        "nodeName": "Bar_TableSetting_001",
+        "present": true
+      },
+      {
+        "id": "Bar_Banquette_002",
+        "nodeName": "Bar_Banquette_002",
+        "present": true
+      },
+      {
+        "id": "Bar_LoungeTable_002",
+        "nodeName": "Bar_LoungeTable_002",
+        "present": true
+      },
+      {
+        "id": "Bar_TableSetting_002",
+        "nodeName": "Bar_TableSetting_002",
+        "present": true
+      },
+      {
+        "id": "Bar_Banquette_003",
+        "nodeName": "Bar_Banquette_003",
+        "present": true
+      },
+      {
+        "id": "Bar_LoungeTable_003",
+        "nodeName": "Bar_LoungeTable_003",
+        "present": true
+      },
+      {
+        "id": "Bar_TableSetting_003",
+        "nodeName": "Bar_TableSetting_003",
+        "present": true
+      },
+      {
+        "id": "Bar_IceWell_001",
+        "nodeName": "Bar_IceWell_001",
+        "present": true
+      },
+      {
+        "id": "Bar_TapTower_001",
+        "nodeName": "Bar_TapTower_001",
+        "present": true
+      },
+      {
+        "id": "Bar_POS_001",
+        "nodeName": "Bar_POS_001",
+        "present": true
+      },
+      {
+        "id": "Bar_Blender_001",
+        "nodeName": "Bar_Blender_001",
+        "present": true
+      },
+      {
+        "id": "Bar_CocktailTools_001",
+        "nodeName": "Bar_CocktailTools_001",
+        "present": true
+      },
+      {
+        "id": "Bar_StemwareRack_001",
+        "nodeName": "Bar_StemwareRack_001",
+        "present": true
+      },
+      {
+        "id": "Bar_CounterGlassware_001",
+        "nodeName": "Bar_CounterGlassware_001",
+        "present": true
+      },
+      {
+        "id": "Bar_Pendant_001",
+        "nodeName": "Bar_Pendant_001",
+        "present": true
+      },
+      {
+        "id": "Bar_Pendant_002",
+        "nodeName": "Bar_Pendant_002",
+        "present": true
+      },
+      {
+        "id": "Bar_Pendant_003",
+        "nodeName": "Bar_Pendant_003",
+        "present": true
+      },
+      {
+        "id": "Bar_WallSconce_001",
+        "nodeName": "Bar_WallSconce_001",
+        "present": true
+      },
+      {
+        "id": "Bar_WallSconce_002",
+        "nodeName": "Bar_WallSconce_002",
+        "present": true
+      },
+      {
+        "id": "Bar_BackbarLight_001",
+        "nodeName": "Bar_BackbarLight_001",
+        "present": true
+      }
+    ],
+    "outsideFloor": [],
+    "overlaps": [],
+    "allowedOverlaps": [
+      {
+        "a": "Bar_ServiceCounter_001/front",
+        "b": "Bar_ServiceCounter_001/return",
+        "overlapWidth": 0.625,
+        "overlapDepth": 0.555,
+        "overlapArea": 0.346875,
+        "reason": "Intentional continuous L-counter corner junction within the same editable object."
+      }
+    ],
+    "occupiedFloorArea": 27.231125,
+    "remainingFloorArea": 80.768875,
+    "occupiedPercent": 25.214005,
+    "footprints": [
+      {
+        "id": "Bar_BackbarDisplay_001",
+        "nodeName": "Bar_BackbarDisplay_001",
+        "role": "BackbarDisplay",
+        "x": -1.75,
+        "z": -4.05,
+        "width": 7.8,
+        "depth": 0.51,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BackCabinet_001",
+        "nodeName": "Bar_BackCabinet_001",
+        "role": "BackCabinet",
+        "x": -4.55,
+        "z": -3.88,
+        "width": 2.1,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_002",
+        "nodeName": "Bar_BackCabinet_002",
+        "role": "BackCabinet",
+        "x": -0.81,
+        "z": -3.88,
+        "width": 1.06,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_003",
+        "nodeName": "Bar_BackCabinet_003",
+        "role": "BackCabinet",
+        "x": 0.35,
+        "z": -3.88,
+        "width": 1.1,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackCabinet_004",
+        "nodeName": "Bar_BackCabinet_004",
+        "role": "BackCabinet",
+        "x": 1.53,
+        "z": -3.88,
+        "width": 1.12,
+        "depth": 0.71,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BackWorktop_001",
+        "nodeName": "Bar_BackWorktop_001",
+        "role": "BackWorktop",
+        "x": -1.75,
+        "z": -3.875,
+        "width": 7.7,
+        "depth": 0.73,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Sink_001",
+        "nodeName": "Bar_Sink_001",
+        "role": "Sink",
+        "x": -4.35,
+        "z": -3.875,
+        "width": 1.14,
+        "depth": 0.68,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BeverageFridge_001",
+        "nodeName": "Bar_BeverageFridge_001",
+        "role": "BeverageFridge",
+        "x": -2.96,
+        "z": -3.875,
+        "width": 0.92,
+        "depth": 0.72,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_IceMaker_001",
+        "nodeName": "Bar_IceMaker_001",
+        "role": "IceMaker",
+        "x": -1.9,
+        "z": -3.875,
+        "width": 0.95,
+        "depth": 0.75,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_ServiceCounter_001/front",
+        "nodeName": "Bar_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "x": -1.9,
+        "z": -0.8,
+        "width": 6.63,
+        "depth": 1.27,
+        "floorSolid": true,
+        "allowOverlap": false,
+        "allowOverlapWith": [
+          "Bar_ServiceCounter_001/return"
+        ],
+        "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+      },
+      {
+        "id": "Bar_ServiceCounter_001/return",
+        "nodeName": "Bar_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "x": 1.26,
+        "z": -2.2,
+        "width": 0.94,
+        "depth": 2.64,
+        "floorSolid": true,
+        "allowOverlap": false,
+        "allowOverlapWith": [
+          "Bar_ServiceCounter_001/front"
+        ],
+        "overlapReason": "Intentional continuous L-counter corner junction within the same editable object."
+      },
+      {
+        "id": "Bar_BarStool_001",
+        "nodeName": "Bar_BarStool_001",
+        "role": "BarStool",
+        "x": -4.65,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_002",
+        "nodeName": "Bar_BarStool_002",
+        "role": "BarStool",
+        "x": -3.55,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_003",
+        "nodeName": "Bar_BarStool_003",
+        "role": "BarStool",
+        "x": -2.45,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_004",
+        "nodeName": "Bar_BarStool_004",
+        "role": "BarStool",
+        "x": -1.35,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_005",
+        "nodeName": "Bar_BarStool_005",
+        "role": "BarStool",
+        "x": -0.25,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_BarStool_006",
+        "nodeName": "Bar_BarStool_006",
+        "role": "BarStool",
+        "x": 0.85,
+        "z": 0.35,
+        "width": 0.62,
+        "depth": 0.64,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_Banquette_001",
+        "nodeName": "Bar_Banquette_001",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": -2.9,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_001",
+        "nodeName": "Bar_LoungeTable_001",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": -2.9,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_001",
+        "nodeName": "Bar_TableSetting_001",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": -2.9,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Banquette_002",
+        "nodeName": "Bar_Banquette_002",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": 0.15,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_002",
+        "nodeName": "Bar_LoungeTable_002",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": 0.15,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_002",
+        "nodeName": "Bar_TableSetting_002",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": 0.15,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Banquette_003",
+        "nodeName": "Bar_Banquette_003",
+        "role": "Banquette",
+        "x": 5.32,
+        "z": 3.1,
+        "width": 0.96,
+        "depth": 2.2,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_LoungeTable_003",
+        "nodeName": "Bar_LoungeTable_003",
+        "role": "LoungeTable",
+        "x": 4.13,
+        "z": 3.1,
+        "width": 0.96,
+        "depth": 0.96,
+        "floorSolid": true,
+        "allowOverlap": false
+      },
+      {
+        "id": "Bar_TableSetting_003",
+        "nodeName": "Bar_TableSetting_003",
+        "role": "TableSetting",
+        "x": 4.13,
+        "z": 3.1,
+        "width": 0.62,
+        "depth": 0.49,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_IceWell_001",
+        "nodeName": "Bar_IceWell_001",
+        "role": "IceWell",
+        "x": -4.35,
+        "z": -0.94,
+        "width": 0.59,
+        "depth": 0.42,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_TapTower_001",
+        "nodeName": "Bar_TapTower_001",
+        "role": "TapTower",
+        "x": -1.88,
+        "z": -1.02,
+        "width": 0.65,
+        "depth": 0.4,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_POS_001",
+        "nodeName": "Bar_POS_001",
+        "role": "POS",
+        "x": 0.67,
+        "z": -1.04,
+        "width": 0.4,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Blender_001",
+        "nodeName": "Bar_Blender_001",
+        "role": "Blender",
+        "x": 0.27,
+        "z": -3.87,
+        "width": 0.32,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_CocktailTools_001",
+        "nodeName": "Bar_CocktailTools_001",
+        "role": "CocktailTools",
+        "x": -0.43,
+        "z": -1.01,
+        "width": 0.34,
+        "depth": 0.34,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_StemwareRack_001",
+        "nodeName": "Bar_StemwareRack_001",
+        "role": "StemwareRack",
+        "x": -5.18,
+        "z": -2.93,
+        "width": 0.57,
+        "depth": 0.65,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_CounterGlassware_001",
+        "nodeName": "Bar_CounterGlassware_001",
+        "role": "CounterGlassware",
+        "x": -0.08,
+        "z": -3.78,
+        "width": 0.64,
+        "depth": 0.15,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_001",
+        "nodeName": "Bar_Pendant_001",
+        "role": "Pendant",
+        "x": -4.2,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_002",
+        "nodeName": "Bar_Pendant_002",
+        "role": "Pendant",
+        "x": -1.9,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_Pendant_003",
+        "nodeName": "Bar_Pendant_003",
+        "role": "Pendant",
+        "x": 0.4,
+        "z": -0.84,
+        "width": 0.54,
+        "depth": 0.54,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_WallSconce_001",
+        "nodeName": "Bar_WallSconce_001",
+        "role": "WallSconce",
+        "x": -5.56,
+        "z": 0.45,
+        "width": 0.39,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_WallSconce_002",
+        "nodeName": "Bar_WallSconce_002",
+        "role": "WallSconce",
+        "x": -5.56,
+        "z": 3.15,
+        "width": 0.39,
+        "depth": 0.28,
+        "floorSolid": false,
+        "allowOverlap": true
+      },
+      {
+        "id": "Bar_BackbarLight_001",
+        "nodeName": "Bar_BackbarLight_001",
+        "role": "BackbarLight",
+        "x": -1.75,
+        "z": -3.93,
+        "width": 7.3,
+        "depth": 0.09,
+        "floorSolid": false,
+        "allowOverlap": true
+      }
+    ],
+    "limitations": "Remaining floor area is a geometric area estimate, not verified walkable circulation. No dynamic flow, furniture swept path, fire, accessibility, load, electrical, photometric or legal compliance verification."
+  },
+  "checks": {
+    "glbVersion2": true,
+    "headerLengthMatches": true,
+    "validatorNoErrors": true,
+    "validatorNoWarnings": true,
+    "expectedRoot": true,
+    "expectedTemplate": true,
+    "requiredGroups": true,
+    "uniqueNodeNames": true,
+    "noUnnamedNodes": true,
+    "inventoryPresent": true,
+    "uniqueInventoryNames": true,
+    "allInventoryObjectsIndependent": true,
+    "allEditableObjectsListed": true,
+    "declaredCountsMatch": true,
+    "staticUnoccupiedScene": true,
+    "noAnimations": true,
+    "conceptDimensions12x9": true,
+    "metricYUp": true,
+    "noExternalResources": true,
+    "hasEmbeddedTextures": true,
+    "allImagesEmbedded": true,
+    "declaredLightCountMatches": true,
+    "completePositionBounds": true,
+    "finiteSceneBounds": true,
+    "declaredFloorFixtures": true,
+    "validFootprints": true,
+    "uniqueFootprintIds": true,
+    "footprintsReferenceInventory": true,
+    "declaredFixturesInsideConceptFloor": true,
+    "noUndeclaredFloorFixtureOverlaps": true
+  },
+  "allChecksPass": true,
+  "limitations": [
+    "World bounds use transformed accessor bounds and may be conservative for rotated geometry.",
+    "Independent inventory groups may share mesh geometry and materials; edit clones when changing one instance only.",
+    "The GLB is a static scene; camera and visibility adjustments in the preview are not saved to it.",
+    "Format and limited geometric checks do not establish site safety, capacity or legal compliance."
+  ]
+}

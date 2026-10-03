@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "templateId": "photography-studio-12x10-v1",
+  "kind": "complete-scene-template",
+  "displayName": "留白 · 摄影工作室",
+  "status": "archived",
+  "model": {
+    "path": "studio.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 1837612,
+    "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+    "embeddedImages": 7,
+    "externalResources": 0,
+    "extensionsRequired": []
+  },
+  "dimensions": {
+    "width": 12,
+    "depth": 10,
+    "height": 4.3,
+    "floorArea": 120,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Original concept dimensions; no surveyed site",
+    "surveyedSize": null,
+    "fullModelWorldBounds": {
+      "min": [
+        -6.18,
+        -0.18,
+        -5.18
+      ],
+      "max": [
+        6.14,
+        4.42,
+        5.075
+      ],
+      "size": [
+        12.32,
+        4.6,
+        10.255
+      ]
+    }
+  },
+  "assumptions": {
+    "activity": "photography studio",
+    "staticScene": true,
+    "peopleIncluded": false,
+    "palette": "warm taupe cyclorama, charcoal walls, warm grey floor, terracotta details",
+    "shell": "Front and right elevations cut away; complete roof is separately grouped"
+  },
+  "layers": [
+    "Studio_Structure",
+    "Studio_Furniture",
+    "Studio_Equipment",
+    "Studio_Lighting",
+    "Studio_Roof"
+  ],
+  "components": [
+    {
+      "id": "Studio_CeilingFixture_001",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_001",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_CeilingFixture_002",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_002",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_CeilingFixture_003",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_003",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_CeilingFixture_004",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_004",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_CeilingFixture_005",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_005",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_CeilingFixture_006",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_006",
+      "layer": "Lighting"
+    },
+    {
+      "id": "Studio_Cyclorama_001",
+      "category": "Cyclorama",
+      "nodeName": "Studio_Cyclorama_001",
+      "layer": "Structure"
+    },
+    {
+      "id": "Studio_StylingPlinth_001",
+      "category": "StylingPlinth",
+      "nodeName": "Studio_StylingPlinth_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_RoundStylingPlinth_001",
+      "category": "RoundStylingPlinth",
+      "nodeName": "Studio_RoundStylingPlinth_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_StylingStool_001",
+      "category": "StylingStool",
+      "nodeName": "Studio_StylingStool_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_OctagonalSoftbox_001",
+      "category": "OctagonalSoftbox",
+      "nodeName": "Studio_OctagonalSoftbox_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_StripSoftbox_001",
+      "category": "StripSoftbox",
+      "nodeName": "Studio_StripSoftbox_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_Reflector_001",
+      "category": "Reflector",
+      "nodeName": "Studio_Reflector_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_CameraTripod_001",
+      "category": "CameraTripod",
+      "nodeName": "Studio_CameraTripod_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_TetherCart_001",
+      "category": "TetherCart",
+      "nodeName": "Studio_TetherCart_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_TetherLaptop_001",
+      "category": "TetherLaptop",
+      "nodeName": "Studio_TetherLaptop_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_PaperRollRack_001",
+      "category": "PaperRollRack",
+      "nodeName": "Studio_PaperRollRack_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_RetouchDesk_001",
+      "category": "RetouchDesk",
+      "nodeName": "Studio_RetouchDesk_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_TaskChair_001",
+      "category": "TaskChair",
+      "nodeName": "Studio_TaskChair_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_MakeupVanity_001",
+      "category": "MakeupVanity",
+      "nodeName": "Studio_MakeupVanity_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_MakeupStool_001",
+      "category": "MakeupStool",
+      "nodeName": "Studio_MakeupStool_001",
+      "layer": "Furniture"
+    },
+    {
+      "id": "Studio_EquipmentShelving_001",
+      "category": "EquipmentShelving",
+      "nodeName": "Studio_EquipmentShelving_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_GripStorage_001",
+      "category": "GripStorage",
+      "nodeName": "Studio_GripStorage_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_RollingFlightCase_001",
+      "category": "RollingFlightCase",
+      "nodeName": "Studio_RollingFlightCase_001",
+      "layer": "Equipment"
+    },
+    {
+      "id": "Studio_EntryBench_001",
+      "category": "EntryBench",
+      "nodeName": "Studio_EntryBench_001",
+      "layer": "Furniture"
+    }
+  ],
+  "counts": {
+    "CeilingFixture": 6,
+    "Cyclorama": 1,
+    "StylingPlinth": 1,
+    "RoundStylingPlinth": 1,
+    "StylingStool": 1,
+    "OctagonalSoftbox": 1,
+    "StripSoftbox": 1,
+    "Reflector": 1,
+    "CameraTripod": 1,
+    "TetherCart": 1,
+    "TetherLaptop": 1,
+    "PaperRollRack": 1,
+    "RetouchDesk": 1,
+    "TaskChair": 1,
+    "MakeupVanity": 1,
+    "MakeupStool": 1,
+    "EquipmentShelving": 1,
+    "GripStorage": 1,
+    "RollingFlightCase": 1,
+    "EntryBench": 1
+  },
+  "capabilities": {
+    "independentGlbLoad": true,
+    "views": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "rotateAndZoom": true,
+    "roofToggle": true,
+    "zoneLabels": true,
+    "downloadGlbIsFixedDefaultSnapshot": true,
+    "screenshotExportInDefaultViewer": false,
+    "localArchiveMode": true,
+    "individuallyNamedObjectGroups": true,
+    "automaticFurnitureRelayout": false,
+    "websiteMaterialLibraryConnected": false,
+    "generationApiConnected": false
+  },
+  "provenance": {
+    "authored": "Architecture, continuous cyclorama, camera and photography equipment, furniture, storage, graphics and procedural textures",
+    "thirdPartyAssets": [
+      {
+        "role": "TetherLaptop",
+        "path": "assets/models/laptop.glb",
+        "sourceUrl": "https://3dassets.dev/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+        "verification": "Hash matched to pre-existing archived catalogue; no fresh online license audit"
+      }
+    ],
+    "notes": "ASSET-SOURCES.md"
+  },
+  "preview": {
+    "page": "index.html",
+    "url": "http://127.0.0.1:8778/",
+    "images": [
+      "previews/studio-overview.png",
+      "previews/studio-top.png",
+      "previews/studio-interior.png"
+    ]
+  },
+  "validation": {
+    "summary": "validation/model-validation-summary.json",
+    "gltf": "validation/gltf-validator.json",
+    "geometry": "validation/geometry-report.json",
+    "inventory": "validation/inventory-validation.json",
+    "layout": "validation/layout-validation.json",
+    "browser": "validation/browser-validation.json",
+    "modelCounts": {
+      "checkedAt": "2026-10-03T03:24:49.493Z",
+      "bytes": 1837612,
+      "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+      "validatorVersion": "2.0.0-dev.3.10",
+      "errors": 0,
+      "warnings": 0,
+      "infos": 183,
+      "hints": 0,
+      "truncated": false,
+      "issueCodes": {
+        "UNUSED_OBJECT": 182,
+        "IMAGE_NPOT_DIMENSIONS": 1
+      },
+      "nodes": 505,
+      "meshInstances": 467,
+      "triangleInstances": 35404,
+      "materials": 32,
+      "textures": 7,
+      "inventoryObjects": 25,
+      "externalResources": 0,
+      "embeddedImages": 7
+    },
+    "layoutScope": "Declared ground occupancy rectangles and actual binary vertex bounds; no engineering or operating certification"
+  },
+  "integration": {
+    "frontend": "Standalone scene preview, not integrated with production editor",
+    "backend": "Not registered; store complete scene file and template reference, map metadata to the actual backend schema",
+    "assetUpload": "A complete scene is not a single furniture asset; do not directly use a single-asset upload endpoint",
+    "github": "Not pushed"
+  },
+  "package": {
+    "file": "studio-scene-template.zip",
+    "entrypoint": "studio/serve.py",
+    "previewPort": 8778,
+    "requires": "Python 3.9+ and WebGL 2 browser; Node.js only for offline validation",
+    "includesModelSource": true,
+    "vendorIncluded": true
+  }
+}

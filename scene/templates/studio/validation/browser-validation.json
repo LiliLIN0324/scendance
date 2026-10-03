@@ -1,0 +1,69 @@
+{
+  "url": "http://127.0.0.1:8778/",
+  "model": "studio.glb",
+  "modelSha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+  "checks": [
+    {
+      "name": "default GLB load",
+      "passed": true,
+      "data": {
+        "labels": "true",
+        "meshes": "467",
+        "modelSource": "studio.glb",
+        "ready": "true",
+        "roof": "false",
+        "triangles": "35404",
+        "view": "overview"
+      }
+    },
+    {
+      "name": "roof visible",
+      "passed": true
+    },
+    {
+      "name": "zone description opens",
+      "passed": true
+    },
+    {
+      "name": "labels toggle",
+      "passed": true
+    },
+    {
+      "name": "orbit and wheel zoom",
+      "passed": true,
+      "evidence": [
+        "browser-overview.jpg",
+        "browser-rotated.jpg",
+        "browser-zoomed.jpg"
+      ],
+      "method": "Pointer drag and wheel scroll visibly changed the rendered view"
+    },
+    {
+      "name": "390px responsive layout",
+      "passed": true,
+      "evidence": "browser-mobile.jpg",
+      "dom": {
+        "documentWidth": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "name": "three view presets and image archive",
+      "passed": true,
+      "images": [
+        "previews/studio-overview.png",
+        "previews/studio-top.png",
+        "previews/studio-interior.png"
+      ]
+    }
+  ],
+  "logs": [],
+  "checkedAt": "2026-10-03T03:28:26.066Z",
+  "passed": true,
+  "notes": [
+    "Default page loads studio.glb; build and archive controls absent",
+    "No person or capacity controls",
+    "Screenshots captured from final warm-grey model",
+    "Orbit, wheel, roof, labels, zone description and responsive layout exercised"
+  ]
+}

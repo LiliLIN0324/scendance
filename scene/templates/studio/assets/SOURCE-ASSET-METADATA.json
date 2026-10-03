@@ -1,0 +1,58 @@
+{
+  "archivedSourcePath": "scendance-github-preview/assets/catalogue.json",
+  "asset": {
+    "id": "laptop",
+    "title": "Convertible flip laptop (Computers and Desk Gadgets)",
+    "displayName": "开放式银色笔记本",
+    "role": "laptop",
+    "providerAssetId": "38825",
+    "slug": "computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+    "localPath": "assets/models/laptop.glb",
+    "sourceUrl": "https://3dassets.dev/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+    "metadataUrl": "https://3dassets.dev/api/v1/assets/computers-and-desk-gadgets-laptop-convertible-flip-068fe56f",
+    "cdnUrl": "https://cdn.3dassets.dev/assets/38825/v1/model.glb",
+    "license": {
+      "slug": "cc0-1.0",
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attributionRequired": false
+    },
+    "bytes": 75356,
+    "triangles": 1692,
+    "sizeMeters": [
+      0.329,
+      0.212854,
+      0.254842
+    ],
+    "boundingBox": {
+      "min": [
+        -0.16,
+        1e-05,
+        -0.142336
+      ],
+      "max": [
+        0.169,
+        0.212864,
+        0.112506
+      ]
+    },
+    "upAxis": "+Y",
+    "units": "meters",
+    "aiGenerated": true,
+    "notes": "银色机身、深色键盘与发光屏幕；屏幕位于 -Z，使用者侧在 +Z。放在桌面上方约 0.002 m。",
+    "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+    "validation": {
+      "validGLB": true,
+      "gltfVersion": "2.0",
+      "sceneCount": 1,
+      "nodeCount": 6,
+      "meshes": 5,
+      "materials": 5,
+      "externalResources": false,
+      "extensionsUsed": [
+        "KHR_mesh_quantization"
+      ],
+      "animationNames": []
+    }
+  }
+}

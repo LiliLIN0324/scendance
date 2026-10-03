@@ -1,0 +1,519 @@
+{
+  "checkedAt": "2026-10-03T03:32:56.224835+00:00",
+  "modelSha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+  "modelBytes": 1837612,
+  "zip": {
+    "file": "studio-scene-template.zip",
+    "bytes": 3043942,
+    "sha256": "728b2c4cea2552e82dd0b20ba4382dbcef2bd2c52e7994ea887777b923f8e894",
+    "entryCount": 50,
+    "entries": [
+      {
+        "path": "ASSET-SOURCES.md",
+        "bytes": 2915,
+        "sha256": "16b2e00d75249b992c41f2a6d672faa803c63306d039ff6f7735276ed3f4b98b",
+        "matchesSource": true
+      },
+      {
+        "path": "README.md",
+        "bytes": 8374,
+        "sha256": "77917b69472b6c2d28ad39a755f2fa8553ad6c7e4fc4086a7f65a15bfba8335f",
+        "matchesSource": true
+      },
+      {
+        "path": "app.js",
+        "bytes": 10871,
+        "sha256": "c7555b888153695421afcbecbacd2e88b22ccdf2843ee87d699beb66cd8d37eb",
+        "matchesSource": true
+      },
+      {
+        "path": "assets/LICENSE-CC0.md",
+        "bytes": 804,
+        "sha256": "6410fd426f8757b9ed831c12540fe366a6dcda95c97322691b9949a315127e8d",
+        "matchesSource": true
+      },
+      {
+        "path": "assets/SOURCE-ASSET-METADATA.json",
+        "bytes": 1746,
+        "sha256": "2d216669c640e71ec3cfec9a569b595ffdbba24a2ed9d2527de02f951b8246b3",
+        "matchesSource": true
+      },
+      {
+        "path": "assets/catalogue.json",
+        "bytes": 2372,
+        "sha256": "8e035a9ee56be8bcfd726301dd1ba01322d4fc671097e0961be7d4fabe9a51a1",
+        "matchesSource": true
+      },
+      {
+        "path": "assets/laptop-validation.json",
+        "bytes": 977,
+        "sha256": "574ee5ff082ae3361fdf858eee501f2322905fb413a1a3ea5880d356812bac6a",
+        "matchesSource": true
+      },
+      {
+        "path": "assets/models/laptop.glb",
+        "bytes": 75356,
+        "sha256": "653437c34a05208daa868e46165843455099e01656d4da67c54183e67c78978a",
+        "matchesSource": true
+      },
+      {
+        "path": "index.html",
+        "bytes": 4065,
+        "sha256": "e1054c108b89b67425a72af1d3b400b1764ccaae98f0c439ecd6829d04e0279c",
+        "matchesSource": true
+      },
+      {
+        "path": "model.js",
+        "bytes": 18932,
+        "sha256": "ca6135a0d7b40b8415601185c48b7d07981411736c085cf25556c8efe7231b8e",
+        "matchesSource": true
+      },
+      {
+        "path": "previews/studio-interior.png",
+        "bytes": 584829,
+        "sha256": "03c5803476999bfc8086f2ee2297fffab86d976915d6f4b413aba6c641050d75",
+        "matchesSource": true
+      },
+      {
+        "path": "previews/studio-overview.png",
+        "bytes": 462383,
+        "sha256": "c2d3962d1cdb98ad79d4b3b948dc7dd01de6300ca6e8b8696ae9f011d75c934f",
+        "matchesSource": true
+      },
+      {
+        "path": "previews/studio-top.png",
+        "bytes": 530040,
+        "sha256": "98beedba7191591d168068d7a80b44870eeb6a5e5d77100028703d95a700847f",
+        "matchesSource": true
+      },
+      {
+        "path": "scene-kit.js",
+        "bytes": 11565,
+        "sha256": "c759f1c41ead890e1b14859a85ac84246b95a30d465126e637b9462409b75b05",
+        "matchesSource": true
+      },
+      {
+        "path": "serve.py",
+        "bytes": 4590,
+        "sha256": "9248a03232b3bec97935d0b21ecd9541ccbb603cc59f19955c8f6d9ddea01970",
+        "matchesSource": true
+      },
+      {
+        "path": "studio.glb",
+        "bytes": 1837612,
+        "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+        "matchesSource": true
+      },
+      {
+        "path": "style.css",
+        "bytes": 9571,
+        "sha256": "9d4c631306ba3ac3e81888c0e8e3f92102166abf2904f972f1aefb8fbebb10d5",
+        "matchesSource": true
+      },
+      {
+        "path": "template.json",
+        "bytes": 9145,
+        "sha256": "5023efff2626a7b7a6fe540f547c091fb358c0df4388968770c1feb4f60cdba0",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-interior.jpg",
+        "bytes": 29554,
+        "sha256": "f6a920652bb686a5ed129d5f62bc0fe1b3342568cefadb140494617f4be7db00",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-mobile.jpg",
+        "bytes": 30293,
+        "sha256": "bfb4f8252234ebcddc7cbff674834e79e5143f15e843c6bae60dd6d9ef0fb95f",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-overview.jpg",
+        "bytes": 61425,
+        "sha256": "5efd64d537db43c2da724e33916f0e913cdf2b1215e9704f450f6a7185751a94",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-rotated.jpg",
+        "bytes": 54782,
+        "sha256": "a0d0ed5ef5c3dedb062bff2d0e4bc96d8595e3da76c5d60009c756a74b5d0e05",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-validation.json",
+        "bytes": 1696,
+        "sha256": "42120ccc07d6f1eeb10ee108a51662e7f3e97e9192ae2f968890ae958d95a67f",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/browser-zoomed.jpg",
+        "bytes": 57561,
+        "sha256": "db8b97b75e11fc8afbfd2e2629b590fe37469fcf8251fe0d81c0cfcb5c022e56",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/geometry-report.json",
+        "bytes": 229614,
+        "sha256": "e0e66c505081729cdfd22ce2e48e7191a81c001ec41a9d0741e26eb975453840",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/gltf-validator.json",
+        "bytes": 37740,
+        "sha256": "6baa41bfd54704829870cc94d7d4b5d76ef3947c2f2cef5ad6c27fadaafae05a",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/inventory-validation.json",
+        "bytes": 15022,
+        "sha256": "7ef6bbcc158c0cfbe8ff66b1cea842369ead8028e22be112adfba43d932359bc",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/layout-validation.json",
+        "bytes": 21003,
+        "sha256": "2450ae016566a5651302da2a1817d6449c4f257e6bc02b60b2632ca9ed570235",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/model-validation-summary.json",
+        "bytes": 1912,
+        "sha256": "c0cfa7bfe024f3687872fc8721c6ba3f1d58dc73f17cff30e609810d7c4940ba",
+        "matchesSource": true
+      },
+      {
+        "path": "validation/validate-model.cjs",
+        "bytes": 19419,
+        "sha256": "90c3df145dcf5c2a2f55aa2fb570a2bb19b6d677db28d0ee9b598d16613ba329",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/ISSUES.md",
+        "bytes": 17519,
+        "sha256": "72981a105335964111253e7e5db4e956b8ab3a17fd74c2d02180bffc7f533c20",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/LICENSE",
+        "bytes": 11560,
+        "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/NOTICES",
+        "bytes": 22286,
+        "sha256": "933f161ca1e7b3ead5a6cf93ebb3bf6cb67f0e79b38e08d2046f8cdc41cb78a3",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/README.md",
+        "bytes": 6814,
+        "sha256": "f5f26dc624a62817b356cec631b33af7358d046a4b2c0499a5f55189d986afa5",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/gltf_validator.dart.js",
+        "bytes": 307792,
+        "sha256": "b73a7b2d455ac217567725138b46d826a13d7d1bb0c88c15f7c571bfb349298c",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/index.js",
+        "bytes": 2829,
+        "sha256": "78deff9ea85743e86461c2d14fae76e7fc3ca0432e652f62948066b55fa16f0d",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/module.mjs",
+        "bytes": 2822,
+        "sha256": "d2a88775a8b22f61be8e00644760f0f04b615fad0fc5175fefd40e0da4df2c8f",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/package.json",
+        "bytes": 618,
+        "sha256": "3578d16153fa237c72784588da2e8fcccc9cd3c1c58ef34c7912f0732d2f5fa6",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/gltf-validator/validation.schema.json",
+        "bytes": 11107,
+        "sha256": "e33db4da1e907481a5fc056d2daab40be1a603620d8f4a1c81919120f3340365",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/LICENSE",
+        "bytes": 1081,
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/controls/OrbitControls.js",
+        "bytes": 40755,
+        "sha256": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/environments/RoomEnvironment.js",
+        "bytes": 4960,
+        "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/exporters/GLTFExporter.js",
+        "bytes": 93570,
+        "sha256": "d766b04f233fa8bc72bfaebacaac5ecb832c30ca3695ce8d84bbb7dccccdc842",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/loaders/GLTFLoader.js",
+        "bytes": 117570,
+        "sha256": "131c0f78c01d19368ae495caa65b3adaa10487810a36a05bb5901b769a35ac16",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/utils/BufferGeometryUtils.js",
+        "bytes": 37712,
+        "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/addons/utils/SkeletonUtils.js",
+        "bytes": 11535,
+        "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/package.json",
+        "bytes": 3672,
+        "sha256": "f9c474a27c920b9435353a6235968f4453436bee0444fac7e5fd289c8fa463de",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/three.core.js",
+        "bytes": 1458113,
+        "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+        "matchesSource": true
+      },
+      {
+        "path": "vendor/three/three.module.js",
+        "bytes": 662772,
+        "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+        "matchesSource": true
+      },
+      {
+        "path": "SHA256SUMS",
+        "bytes": 4649,
+        "sha256": "516c0987bdaa993361123586218c4a7a4658a9c581918f73a6cc6bee54892fbc",
+        "matchesSource": true
+      }
+    ]
+  },
+  "actualStats": {
+    "bytes": 1837612,
+    "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+    "nodes": 505,
+    "meshInstances": 467,
+    "triangleInstances": 35404,
+    "materials": 32,
+    "textures": 7,
+    "inventoryObjects": 25,
+    "externalResources": 0,
+    "embeddedImages": 7
+  },
+  "checks": [
+    {
+      "name": "template statistics equal actual GLB JSON and scene-instance counts",
+      "passed": true,
+      "detail": {
+        "bytes": 1837612,
+        "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+        "nodes": 505,
+        "meshInstances": 467,
+        "triangleInstances": 35404,
+        "materials": 32,
+        "textures": 7,
+        "inventoryObjects": 25,
+        "externalResources": 0,
+        "embeddedImages": 7
+      }
+    },
+    {
+      "name": "template model hash and bytes match final GLB",
+      "passed": true
+    },
+    {
+      "name": "template image resources and extensions match GLB",
+      "passed": true
+    },
+    {
+      "name": "template inventory and counts equal GLB extras",
+      "passed": true
+    },
+    {
+      "name": "template dimensions and no-people metadata match GLB",
+      "passed": true
+    },
+    {
+      "name": "template full bounds match prior independently computed vertex report for same hash",
+      "passed": true
+    },
+    {
+      "name": "model-validation-summary.json matches final model hash",
+      "passed": true
+    },
+    {
+      "name": "geometry-report.json matches final model hash",
+      "passed": true
+    },
+    {
+      "name": "inventory-validation.json matches final model hash",
+      "passed": true
+    },
+    {
+      "name": "layout-validation.json matches final model hash",
+      "passed": true
+    },
+    {
+      "name": "existing full-model validation passed",
+      "passed": true
+    },
+    {
+      "name": "ZIP sidecar SHA-256 matches ZIP",
+      "passed": true
+    },
+    {
+      "name": "ZIP contains exactly 50 unique regular file entries",
+      "passed": true
+    },
+    {
+      "name": "ZIP CRC verification",
+      "passed": true
+    },
+    {
+      "name": "ZIP contains no self-archive, temporary, hidden, or path-traversal entries",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "all 50 ZIP entries byte-identical to current source files",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ZIP file set covers current delivery source exactly",
+      "passed": true,
+      "detail": {
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "SHA256SUMS contains 49 unique verified source hashes",
+      "passed": true
+    },
+    {
+      "name": "SHA256SUMS covers ZIP payload excluding its own file",
+      "passed": true
+    },
+    {
+      "name": "three preview PNGs have valid complete image data",
+      "passed": true
+    },
+    {
+      "name": "three preview PNGs are distinct",
+      "passed": true
+    },
+    {
+      "name": "browser report references final GLB hash",
+      "passed": true
+    },
+    {
+      "name": "browser report records successful checks and no console entries",
+      "passed": true
+    },
+    {
+      "name": "browser default-load evidence agrees with actual GLB stats",
+      "passed": true
+    },
+    {
+      "name": "mobile viewport evidence is internally consistent",
+      "passed": true
+    },
+    {
+      "name": "browser evidence files exist and orbit/zoom screenshots differ",
+      "passed": true
+    }
+  ],
+  "previewImages": [
+    {
+      "file": "previews/studio-overview.png",
+      "width": 1492,
+      "height": 1172,
+      "bitDepth": 8,
+      "colorType": 6,
+      "bytes": 462383,
+      "sha256": "c2d3962d1cdb98ad79d4b3b948dc7dd01de6300ca6e8b8696ae9f011d75c934f",
+      "fullChunkCRCAndDeflateVerified": true,
+      "visuallyInspected": true
+    },
+    {
+      "file": "previews/studio-top.png",
+      "width": 1492,
+      "height": 1172,
+      "bitDepth": 8,
+      "colorType": 6,
+      "bytes": 530040,
+      "sha256": "98beedba7191591d168068d7a80b44870eeb6a5e5d77100028703d95a700847f",
+      "fullChunkCRCAndDeflateVerified": true,
+      "visuallyInspected": true
+    },
+    {
+      "file": "previews/studio-interior.png",
+      "width": 1492,
+      "height": 1172,
+      "bitDepth": 8,
+      "colorType": 6,
+      "bytes": 584829,
+      "sha256": "03c5803476999bfc8086f2ee2297fffab86d976915d6f4b413aba6c641050d75",
+      "fullChunkCRCAndDeflateVerified": true,
+      "visuallyInspected": true
+    }
+  ],
+  "browserEvidenceReview": {
+    "type": "Offline review of saved test report and screenshots; no browser accessed",
+    "modelHashMatches": true,
+    "evidence": [
+      {
+        "check": "orbit and wheel zoom",
+        "path": "validation/browser-overview.jpg",
+        "exists": true,
+        "sha256": "5efd64d537db43c2da724e33916f0e913cdf2b1215e9704f450f6a7185751a94"
+      },
+      {
+        "check": "orbit and wheel zoom",
+        "path": "validation/browser-rotated.jpg",
+        "exists": true,
+        "sha256": "a0d0ed5ef5c3dedb062bff2d0e4bc96d8595e3da76c5d60009c756a74b5d0e05"
+      },
+      {
+        "check": "orbit and wheel zoom",
+        "path": "validation/browser-zoomed.jpg",
+        "exists": true,
+        "sha256": "db8b97b75e11fc8afbfd2e2629b590fe37469fcf8251fe0d81c0cfcb5c022e56"
+      },
+      {
+        "check": "390px responsive layout",
+        "path": "validation/browser-mobile.jpg",
+        "exists": true,
+        "sha256": "bfb4f8252234ebcddc7cbff674834e79e5143f15e843c6bae60dd6d9ef0fb95f"
+      }
+    ],
+    "visualAssessment": "Three PNGs show distinct overview/top/interior views of the warm-grey photography studio without people. Saved desktop screenshots show changed orbit angle and zoom framing. Mobile screenshot is readable and fits the reported 390 px viewport.",
+    "limits": "Roof, label and zone controls are supported by the prior browser-test attestation; they were not independently clicked again. Empty logs are the saved test observation, not a new console inspection."
+  },
+  "scope": "Read-only delivery audit. Existing successful GLB format validation was not rerun. This report is intentionally outside the ZIP and SHA256SUMS to avoid recursive package changes.",
+  "failures": [],
+  "passed": true
+}

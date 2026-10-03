@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#eeede7"><title>留白摄影工作室 · 幕景</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body>
+  <header class="header"><a href="./" class="brand"><span class="brand-icon">▥</span> 幕景 <small>SCENDANCE</small></a><span class="breadcrumb">场景库 <i>/</i> 摄影工作室</span><div class="downloads"><a class="export zip" href="./studio-scene-template.zip" download>完整资料包 ↓</a><a class="export" id="download" href="./studio.glb" download>三维模型 ↓</a></div></header>
+  <main>
+    <aside class="sidebar">
+      <div class="eyebrow"><span></span> A SPACE FOR THE FRAME</div>
+      <h1>留白<br>摄影工作室。</h1><p class="subtitle">拍摄 · 准备 · 后期</p>
+      <p class="intro">弧形无影墙留出干净画面，灯具围绕拍摄区展开。化妆、修图与器材各有位置。</p>
+      <div class="stats"><div><strong>120<small> m²</small></strong><span>12 × 10 米</span></div><div><strong>4.3<small> m</small></strong><span>概念层高</span></div></div>
+      <section class="zones"><div class="section-title"><h2>空间分区</h2><span>点击查看</span></div><div id="zone-list"></div></section>
+      <div class="assumption"><span>静态场景</span><p>设备、家具与布景均为固定布置。尺寸为概念设计假设，屋顶可切换显示以查看内部空间。</p></div>
+      <a class="package-link" href="./studio-scene-template.zip" download>下载完整资料包 <span>↓</span></a>
+    </aside>
+    <section class="workspace" aria-label="摄影工作室三维场景">
+      <div class="stage" id="stage" data-ready="false" data-view="overview" data-roof="false">
+        <canvas id="scene" tabindex="0" aria-label="摄影工作室三维场景，可拖动旋转、滚轮缩放"></canvas>
+        <div class="stage-heading"><span class="tag">留白 / PHOTOGRAPHY</span><span id="view-label">整体视角</span><span id="load-status" class="model-status" role="status">正在准备场景…</span></div>
+        <div class="switches"><label><input type="checkbox" id="labels" checked> 分区</label><label><input type="checkbox" id="roof"> 屋顶</label></div>
+        <div id="labels-layer" aria-hidden="true"></div>
+        <div id="loading"><div class="spinner"></div><strong>准备好一束光</strong><span id="loading-message">正在读取完整三维场景</span></div>
+        <div class="selection" id="selection" hidden><button id="close-selection" aria-label="关闭分区说明">×</button><small id="selection-number"></small><h3 id="selection-title"></h3><p id="selection-copy"></p></div>
+        <div class="stage-tools">
+          <div class="views" aria-label="观察视角"><button data-view="overview" aria-pressed="true">◈ <span>整体</span></button><button data-view="top" aria-pressed="false">▦ <span>俯视</span></button><button data-view="inside" aria-pressed="false">⌂ <span>场内</span></button><i></i><button id="reset" aria-label="复位视角">↺</button></div>
+          <div class="build-bar" id="build-bar" hidden><button id="save-model" hidden disabled>保存完整模型</button><button id="save-capture" disabled>归档效果图</button><output id="build-status" role="status"></output></div>
+        </div>
+        <div class="stage-footer"><span>拖动旋转 · 滚轮缩放 · 双指移动</span><span id="roof-note">屋顶已隐藏，便于查看内部</span></div>
+      </div>
+      <div class="scene-note"><span><b>12 × 10 × 4.3 m</b> <i>米制建模</i></span><span>无影墙 / 灯光设备 / 化妆修图 / 器材收纳</span></div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script type="module" src="./app.js"></script>
+</body></html>

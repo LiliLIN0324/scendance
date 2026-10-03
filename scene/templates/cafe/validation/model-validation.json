@@ -1,0 +1,4085 @@
+{
+  "checkedAt": "2026-10-03T03:19:49.515Z",
+  "file": "cafe.glb",
+  "bytes": 3798732,
+  "sha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+  "gltfVersion": "2.0",
+  "generator": "THREE.GLTFExporter r186",
+  "chunks": [
+    {
+      "type": "JSON",
+      "bytes": 508756
+    },
+    {
+      "type": "BIN",
+      "bytes": 3289948
+    }
+  ],
+  "nodeCount": 813,
+  "reachableNodes": 813,
+  "uniqueMeshes": 404,
+  "meshInstances": 750,
+  "primitiveInstances": 750,
+  "triangleInstances": 63688,
+  "vertexInstances": 106064,
+  "materials": 32,
+  "textures": 8,
+  "images": 8,
+  "embeddedImages": 8,
+  "imageChecks": [
+    {
+      "index": 0,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 9116
+    },
+    {
+      "index": 1,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 41076
+    },
+    {
+      "index": 2,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 9056
+    },
+    {
+      "index": 3,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 21040
+    },
+    {
+      "index": 4,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 33804
+    },
+    {
+      "index": 5,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 41560
+    },
+    {
+      "index": 6,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 88992
+    },
+    {
+      "index": 7,
+      "name": "",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bytes": 14112
+    }
+  ],
+  "externalResources": [],
+  "extensionsUsed": [
+    "KHR_materials_unlit",
+    "KHR_materials_emissive_strength",
+    "KHR_lights_punctual"
+  ],
+  "extensionsRequired": [],
+  "worldBounds": {
+    "min": [
+      -6.16,
+      -0.15,
+      -4.66
+    ],
+    "max": [
+      6.1,
+      3.37,
+      4.6
+    ],
+    "size": [
+      12.26,
+      3.52,
+      9.26
+    ]
+  },
+  "groups": [
+    {
+      "name": "Cafe_12x9",
+      "present": true,
+      "matches": 1,
+      "children": 5,
+      "worldBounds": {
+        "min": [
+          -6.16,
+          -0.15,
+          -4.66
+        ],
+        "max": [
+          6.1,
+          3.37,
+          4.6
+        ],
+        "size": [
+          12.26,
+          3.52,
+          9.26
+        ]
+      }
+    },
+    {
+      "name": "Cafe_Structure",
+      "present": true,
+      "matches": 1,
+      "children": 48,
+      "worldBounds": {
+        "min": [
+          -6.16,
+          -0.15,
+          -4.66
+        ],
+        "max": [
+          6,
+          3.25,
+          4.5
+        ],
+        "size": [
+          12.16,
+          3.4,
+          9.16
+        ]
+      }
+    },
+    {
+      "name": "Cafe_Furniture",
+      "present": true,
+      "matches": 1,
+      "children": 25,
+      "worldBounds": {
+        "min": [
+          -5.725,
+          0,
+          -4.39
+        ],
+        "max": [
+          5.653,
+          1.42,
+          4.211306
+        ],
+        "size": [
+          11.378,
+          1.42,
+          8.601306
+        ]
+      }
+    },
+    {
+      "name": "Cafe_Equipment",
+      "present": true,
+      "matches": 1,
+      "children": 17,
+      "worldBounds": {
+        "min": [
+          -5.9525,
+          0.01,
+          -4.46
+        ],
+        "max": [
+          5.36,
+          2.882,
+          2.92
+        ],
+        "size": [
+          11.3125,
+          2.872,
+          7.38
+        ]
+      }
+    },
+    {
+      "name": "Cafe_Lighting",
+      "present": true,
+      "matches": 1,
+      "children": 8,
+      "worldBounds": {
+        "min": [
+          -4.49,
+          2.432,
+          -2.46
+        ],
+        "max": [
+          1.24,
+          3.25,
+          3.07
+        ],
+        "size": [
+          5.73,
+          0.818,
+          5.53
+        ]
+      }
+    },
+    {
+      "name": "Cafe_Roof",
+      "present": true,
+      "matches": 1,
+      "children": 23,
+      "worldBounds": {
+        "min": [
+          -6.1,
+          0,
+          -4.6
+        ],
+        "max": [
+          6.1,
+          3.37,
+          4.6
+        ],
+        "size": [
+          12.2,
+          3.37,
+          9.2
+        ]
+      }
+    }
+  ],
+  "rootMetadata": {
+    "templateId": "cafe-slow-notes-v1",
+    "kind": "complete-scene-template",
+    "units": "meters",
+    "upAxis": "+Y",
+    "width": 12,
+    "depth": 9,
+    "floorWidth": 12,
+    "floorDepth": 9,
+    "designHeight": 3.25,
+    "dimensionsBasis": "Original concept; not measured from user photos or certified capacity",
+    "inventory": [
+      {
+        "name": "Cafe_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_PrepCounter_001",
+        "role": "PrepCounter",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_EspressoMachine_001",
+        "role": "EspressoMachine",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395
+      },
+      {
+        "name": "Cafe_CoffeeGrinder_001",
+        "role": "CoffeeGrinder",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395
+      },
+      {
+        "name": "Cafe_PastryDisplay_001",
+        "role": "PastryDisplay",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395
+      },
+      {
+        "name": "Cafe_OrderPOS_001",
+        "role": "OrderPOS",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395
+      },
+      {
+        "name": "Cafe_PickupStation_001",
+        "role": "PickupStation",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395
+      },
+      {
+        "name": "Cafe_PrepSink_001",
+        "role": "PrepSink",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395
+      },
+      {
+        "name": "Cafe_BaristaTools_001",
+        "role": "BaristaTools",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395
+      },
+      {
+        "name": "Cafe_ChilledCabinet_001",
+        "role": "ChilledCabinet",
+        "layer": "Equipment",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_BrandSign_001",
+        "role": "BrandSign",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_MenuBoard_001",
+        "role": "MenuBoard",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_WallShelf_001",
+        "role": "WallShelf",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Banquette_001",
+        "role": "Banquette",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_RoundTable_001",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_001",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_RoundTable_002",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_002",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_RoundTable_003",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_003",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_004",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_005",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_006",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_RoundTable_004",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_007",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_008",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_009",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_DiningChair_010",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_TabletopSet_001",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_001",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418
+      },
+      {
+        "name": "Cafe_TabletopSet_002",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_002",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418
+      },
+      {
+        "name": "Cafe_TabletopSet_003",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_003",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418
+      },
+      {
+        "name": "Cafe_TabletopSet_004",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_004",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418
+      },
+      {
+        "name": "Cafe_WindowBar_001",
+        "role": "WindowBar",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_BarStool_001",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_BarStool_002",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_BarStool_003",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_BarStool_004",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_WallArtwork_001",
+        "role": "WallArtwork",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_MagazineShelf_001",
+        "role": "MagazineShelf",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Planter_001",
+        "role": "Planter",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Planter_002",
+        "role": "Planter",
+        "layer": "Furniture",
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_CounterPlant_001",
+        "role": "CounterPlant",
+        "layer": "Equipment",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395
+      },
+      {
+        "name": "Cafe_Pendant_001",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Pendant_002",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Pendant_003",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Pendant_004",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      },
+      {
+        "name": "Cafe_Pendant_005",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null
+      }
+    ],
+    "counts": {
+      "ServiceCounter": 1,
+      "PrepCounter": 1,
+      "EspressoMachine": 1,
+      "CoffeeGrinder": 1,
+      "PastryDisplay": 1,
+      "OrderPOS": 1,
+      "PickupStation": 1,
+      "PrepSink": 1,
+      "BaristaTools": 1,
+      "ChilledCabinet": 1,
+      "BrandSign": 1,
+      "MenuBoard": 1,
+      "WallShelf": 1,
+      "Banquette": 1,
+      "RoundTable": 4,
+      "DiningChair": 10,
+      "TabletopSet": 4,
+      "WindowBar": 1,
+      "BarStool": 4,
+      "WallArtwork": 1,
+      "MagazineShelf": 1,
+      "Planter": 2,
+      "CounterPlant": 1,
+      "Pendant": 5
+    },
+    "furnitureFootprints": [
+      {
+        "id": "Cafe_ServiceCounter_001",
+        "name": "Cafe_ServiceCounter_001",
+        "role": "ServiceCounter",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -1.75,
+        "z": -2.2414999970197678,
+        "width": 7.618000030517578,
+        "depth": 0.9669999940395355,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.559000015258789,
+          0.0049999999999999975,
+          -2.7249999940395355
+        ],
+        "max": [
+          2.059000015258789,
+          0.9765000005066395,
+          -1.758
+        ]
+      },
+      {
+        "id": "Cafe_PrepCounter_001",
+        "name": "Cafe_PrepCounter_001",
+        "role": "PrepCounter",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -1.0999999999999999,
+        "z": -4.06,
+        "width": 9.017999649047852,
+        "depth": 0.6600000262260437,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.608999824523925,
+          0.0049999999999999975,
+          -4.3900000131130215
+        ],
+        "max": [
+          3.4089998245239257,
+          0.9665000005066395,
+          -3.7299999868869778
+        ]
+      },
+      {
+        "id": "Cafe_EspressoMachine_001",
+        "name": "Cafe_EspressoMachine_001",
+        "role": "EspressoMachine",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -4.35,
+        "z": -2.1789411835068044,
+        "width": 1.2100000381469727,
+        "depth": 0.5921176329863913,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395,
+        "allowAisle": false,
+        "min": [
+          -4.955000019073486,
+          0.9775000005066395,
+          -2.475
+        ],
+        "max": [
+          -3.7449999809265133,
+          1.6140000006016342,
+          -1.8828823670136088
+        ]
+      },
+      {
+        "id": "Cafe_CoffeeGrinder_001",
+        "name": "Cafe_CoffeeGrinder_001",
+        "role": "CoffeeGrinder",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -3.25,
+        "z": -2.160499996393919,
+        "width": 0.4000000059604645,
+        "depth": 0.4209999933838846,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395,
+        "allowAisle": false,
+        "min": [
+          -3.4500000029802322,
+          0.9775000005066394,
+          -2.3709999930858614
+        ],
+        "max": [
+          -3.0499999970197678,
+          1.7080000042691825,
+          -1.9499999997019768
+        ]
+      },
+      {
+        "id": "Cafe_PastryDisplay_001",
+        "name": "Cafe_PastryDisplay_001",
+        "role": "PastryDisplay",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -1.85,
+        "z": -2.21925,
+        "width": 1.659999966621399,
+        "depth": 0.6315,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395,
+        "allowAisle": false,
+        "min": [
+          -2.6799999833106996,
+          0.9775000005066394,
+          -2.535
+        ],
+        "max": [
+          -1.0200000166893006,
+          1.6635000008046628,
+          -1.9035000000000002
+        ]
+      },
+      {
+        "id": "Cafe_OrderPOS_001",
+        "name": "Cafe_OrderPOS_001",
+        "role": "OrderPOS",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 0.0488999965786934,
+        "z": -2.2300000000000004,
+        "width": 0.6722000068426133,
+        "depth": 0.30000000000000027,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395,
+        "allowAisle": false,
+        "min": [
+          -0.2872000068426132,
+          0.9775000005066395,
+          -2.3800000000000003
+        ],
+        "max": [
+          0.385,
+          1.5082000043690205,
+          -2.08
+        ]
+      },
+      {
+        "id": "Cafe_PickupStation_001",
+        "name": "Cafe_PickupStation_001",
+        "role": "PickupStation",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 1.1,
+        "z": -2.1999999925494196,
+        "width": 0.6700000166893005,
+        "depth": 0.49000002443790436,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9765000005066395,
+        "allowAisle": false,
+        "min": [
+          0.7649999916553498,
+          0.9775000005066395,
+          -2.4450000047683718
+        ],
+        "max": [
+          1.4350000083446504,
+          1.3810000020712614,
+          -1.9549999803304674
+        ]
+      },
+      {
+        "id": "Cafe_PrepSink_001",
+        "name": "Cafe_PrepSink_001",
+        "role": "PrepSink",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 1.85,
+        "z": -4.06,
+        "width": 0.6399999999999999,
+        "depth": 0.44999999999999973,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395,
+        "allowAisle": false,
+        "min": [
+          1.53,
+          0.9675000005066395,
+          -4.284999999999999
+        ],
+        "max": [
+          2.17,
+          1.3660700743049383,
+          -3.8349999999999995
+        ]
+      },
+      {
+        "id": "Cafe_BaristaTools_001",
+        "name": "Cafe_BaristaTools_001",
+        "role": "BaristaTools",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -3.85,
+        "z": -4.04,
+        "width": 0.6100000000000003,
+        "depth": 0.33999999999999986,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395,
+        "allowAisle": false,
+        "min": [
+          -4.155,
+          0.9675000005066395,
+          -4.21
+        ],
+        "max": [
+          -3.545,
+          1.1250000034868717,
+          -3.87
+        ]
+      },
+      {
+        "id": "Cafe_ChilledCabinet_001",
+        "name": "Cafe_ChilledCabinet_001",
+        "role": "ChilledCabinet",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 4.58,
+        "z": -3.9819999996200206,
+        "width": 1.5600000000000005,
+        "depth": 0.7660000007599597,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          3.8,
+          0.010000000000000009,
+          -4.365
+        ],
+        "max": [
+          5.36,
+          0.9425,
+          -3.5989999992400405
+        ]
+      },
+      {
+        "id": "Cafe_BrandSign_001",
+        "name": "Cafe_BrandSign_001",
+        "role": "BrandSign",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -3.8,
+        "z": -4.431,
+        "width": 3.3499999046325684,
+        "depth": 0,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.474999952316284,
+          1.8449999964237214,
+          -4.431
+        ],
+        "max": [
+          -2.1250000476837156,
+          2.7750000035762787,
+          -4.431
+        ]
+      },
+      {
+        "id": "Cafe_MenuBoard_001",
+        "name": "Cafe_MenuBoard_001",
+        "role": "MenuBoard",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 0.7999999999999999,
+        "z": -4.4259999996647235,
+        "width": 4.823999881744385,
+        "depth": 0.067999999329448,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -1.6119999408721923,
+          1.6780000019073484,
+          -4.4599999993294475
+        ],
+        "max": [
+          3.211999940872192,
+          2.881999998092651,
+          -4.3919999999999995
+        ]
+      },
+      {
+        "id": "Cafe_WallShelf_001",
+        "name": "Cafe_WallShelf_001",
+        "role": "WallShelf",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -2.5999999999999996,
+        "z": -4.23,
+        "width": 5.5,
+        "depth": 0.3800000000000008,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.35,
+          1.1299868222233156,
+          -4.420000000000001
+        ],
+        "max": [
+          0.1499999999999999,
+          1.7789999997615815,
+          -4.04
+        ]
+      },
+      {
+        "id": "Cafe_Banquette_001",
+        "name": "Cafe_Banquette_001",
+        "role": "Banquette",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -5.332500000447036,
+        "z": 1.1,
+        "width": 0.7850000008940716,
+        "depth": 4.2179999351501465,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.725000000894071,
+          0.0049999999999999906,
+          -1.0089999675750732
+        ],
+        "max": [
+          -4.9399999999999995,
+          0.9839999997615814,
+          3.2089999675750733
+        ]
+      },
+      {
+        "id": "Cafe_RoundTable_001",
+        "name": "Cafe_RoundTable_001",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -4.05,
+        "z": -0.15000000000000002,
+        "width": 0.9800000190734863,
+        "depth": 0.9800000190734863,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -4.540000009536743,
+          0.005499999105930329,
+          -0.6400000095367432
+        ],
+        "max": [
+          -3.5599999904632567,
+          0.7810000005364418,
+          0.34000000953674314
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_001",
+        "name": "Cafe_DiningChair_001",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -3.03,
+        "z": -0.15000000000000002,
+        "width": 0.4879690123399012,
+        "depth": 0.4976804595485689,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -3.2739845061699504,
+          0.021426410624505815,
+          -0.39884022977428446
+        ],
+        "max": [
+          -2.786015493830049,
+          0.9190000040531159,
+          0.09884022977428443
+        ]
+      },
+      {
+        "id": "Cafe_RoundTable_002",
+        "name": "Cafe_RoundTable_002",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -4.05,
+        "z": 1.9,
+        "width": 0.9800000190734863,
+        "depth": 0.9800000190734863,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -4.540000009536743,
+          0.005499999105930329,
+          1.4099999904632567
+        ],
+        "max": [
+          -3.5599999904632567,
+          0.7810000005364418,
+          2.390000009536743
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_002",
+        "name": "Cafe_DiningChair_002",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -3.03,
+        "z": 1.9,
+        "width": 0.4879690123399012,
+        "depth": 0.49768045954856865,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -3.2739845061699504,
+          0.021426410624505815,
+          1.6511597702257157
+        ],
+        "max": [
+          -2.786015493830049,
+          0.9190000040531159,
+          2.1488402297742843
+        ]
+      },
+      {
+        "id": "Cafe_RoundTable_003",
+        "name": "Cafe_RoundTable_003",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.19999999999999998,
+        "z": 0.050000000000000044,
+        "width": 1.100000023841858,
+        "depth": 1.100000023841858,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.7500000119209289,
+          0.005499999105930329,
+          -0.5000000119209289
+        ],
+        "max": [
+          0.35000001192092894,
+          0.7810000005364418,
+          0.600000011920929
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_003",
+        "name": "Cafe_DiningChair_003",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.2,
+        "z": -0.95,
+        "width": 0.49768045954856877,
+        "depth": 0.48796901233990153,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.4488402297742844,
+          0.021426410624505815,
+          -1.1939845061699508
+        ],
+        "max": [
+          0.04884022977428435,
+          0.9190000040531159,
+          -0.7060154938300492
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_004",
+        "name": "Cafe_DiningChair_004",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.2,
+        "z": 1.05,
+        "width": 0.49768045954856877,
+        "depth": 0.48796901233990153,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.4488402297742844,
+          0.021426410624505815,
+          0.8060154938300493
+        ],
+        "max": [
+          0.048840229774284385,
+          0.9190000040531159,
+          1.2939845061699509
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_005",
+        "name": "Cafe_DiningChair_005",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -1.2,
+        "z": 0.04999999999999999,
+        "width": 0.48796901233990153,
+        "depth": 0.4976804595485689,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -1.4439845061699508,
+          0.021426410624505815,
+          -0.19884022977428445
+        ],
+        "max": [
+          -0.9560154938300492,
+          0.9190000040531159,
+          0.2988402297742844
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_006",
+        "name": "Cafe_DiningChair_006",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 0.8,
+        "z": 0.04999999999999999,
+        "width": 0.48796901233990153,
+        "depth": 0.4976804595485689,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          0.5560154938300493,
+          0.021426410624505815,
+          -0.19884022977428445
+        ],
+        "max": [
+          1.0439845061699509,
+          0.9190000040531159,
+          0.2988402297742844
+        ]
+      },
+      {
+        "id": "Cafe_RoundTable_004",
+        "name": "Cafe_RoundTable_004",
+        "role": "RoundTable",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.19999999999999998,
+        "z": 2.75,
+        "width": 1.100000023841858,
+        "depth": 1.100000023841858,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.7500000119209289,
+          0.005499999105930329,
+          2.199999988079071
+        ],
+        "max": [
+          0.35000001192092894,
+          0.7810000005364418,
+          3.300000011920929
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_007",
+        "name": "Cafe_DiningChair_007",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.2,
+        "z": 1.75,
+        "width": 0.49768045954856877,
+        "depth": 0.48796901233990164,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.4488402297742844,
+          0.021426410624505815,
+          1.5060154938300492
+        ],
+        "max": [
+          0.04884022977428435,
+          0.9190000040531159,
+          1.9939845061699508
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_008",
+        "name": "Cafe_DiningChair_008",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -0.2,
+        "z": 3.75,
+        "width": 0.49768045954856877,
+        "depth": 0.4879690123399012,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.4488402297742844,
+          0.021426410624505815,
+          3.5060154938300494
+        ],
+        "max": [
+          0.048840229774284385,
+          0.9190000040531159,
+          3.9939845061699506
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_009",
+        "name": "Cafe_DiningChair_009",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -1.2,
+        "z": 2.75,
+        "width": 0.48796901233990153,
+        "depth": 0.4976804595485689,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -1.4439845061699508,
+          0.021426410624505815,
+          2.5011597702257156
+        ],
+        "max": [
+          -0.9560154938300492,
+          0.9190000040531159,
+          2.9988402297742844
+        ]
+      },
+      {
+        "id": "Cafe_DiningChair_010",
+        "name": "Cafe_DiningChair_010",
+        "role": "DiningChair",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 0.8,
+        "z": 2.75,
+        "width": 0.48796901233990153,
+        "depth": 0.4976804595485689,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          0.5560154938300493,
+          0.021426410624505815,
+          2.5011597702257156
+        ],
+        "max": [
+          1.0439845061699509,
+          0.9190000040531159,
+          2.9988402297742844
+        ]
+      },
+      {
+        "id": "Cafe_TabletopSet_001",
+        "name": "Cafe_TabletopSet_001",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -3.9999999988079065,
+        "z": -0.18999999895691871,
+        "width": 0.4600000005960463,
+        "depth": 0.42000000089406975,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_001",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418,
+        "allowAisle": false,
+        "min": [
+          -4.22999999910593,
+          0.7820000005364418,
+          -0.3999999994039536
+        ],
+        "max": [
+          -3.7699999985098835,
+          1.038015527600996,
+          0.02000000149011613
+        ]
+      },
+      {
+        "id": "Cafe_TabletopSet_002",
+        "name": "Cafe_TabletopSet_002",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -3.9999999988079065,
+        "z": 1.860000001043081,
+        "width": 0.4600000005960463,
+        "depth": 0.42000000089406964,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_002",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418,
+        "allowAisle": false,
+        "min": [
+          -4.22999999910593,
+          0.7820000005364418,
+          1.6500000005960462
+        ],
+        "max": [
+          -3.7699999985098835,
+          1.038015527600996,
+          2.070000001490116
+        ]
+      },
+      {
+        "id": "Cafe_TabletopSet_003",
+        "name": "Cafe_TabletopSet_003",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -0.14999999880790713,
+        "z": 0.01000000104308127,
+        "width": 0.46000000059604645,
+        "depth": 0.4200000008940697,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_003",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418,
+        "allowAisle": false,
+        "min": [
+          -0.37999999910593035,
+          0.7820000005364418,
+          -0.19999999940395358
+        ],
+        "max": [
+          0.0800000014901161,
+          1.038015527600996,
+          0.22000000149011611
+        ]
+      },
+      {
+        "id": "Cafe_TabletopSet_004",
+        "name": "Cafe_TabletopSet_004",
+        "role": "TabletopSet",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -0.14999999880790713,
+        "z": 2.710000001043081,
+        "width": 0.46000000059604645,
+        "depth": 0.42000000089406964,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_004",
+        "mountType": null,
+        "supportSurfaceY": 0.7810000005364418,
+        "allowAisle": false,
+        "min": [
+          -0.37999999910593035,
+          0.7820000005364418,
+          2.5000000005960463
+        ],
+        "max": [
+          0.0800000014901161,
+          1.038015527600996,
+          2.920000001490116
+        ]
+      },
+      {
+        "id": "Cafe_WindowBar_001",
+        "name": "Cafe_WindowBar_001",
+        "role": "WindowBar",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 5.4,
+        "z": 1.2999999999999998,
+        "width": 0.5059999823570251,
+        "depth": 5,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          5.147000008821488,
+          0,
+          -1.2
+        ],
+        "max": [
+          5.652999991178513,
+          1.100499999076128,
+          3.8
+        ]
+      },
+      {
+        "id": "Cafe_BarStool_001",
+        "name": "Cafe_BarStool_001",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 4.48,
+        "z": -0.48,
+        "width": 0.43399671475981805,
+        "depth": 0.45184984017739,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          4.263001642620091,
+          0.018941767051824487,
+          -0.705924920088695
+        ],
+        "max": [
+          4.6969983573799095,
+          1.0730000008940697,
+          -0.254075079911305
+        ]
+      },
+      {
+        "id": "Cafe_BarStool_002",
+        "name": "Cafe_BarStool_002",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 4.48,
+        "z": 0.68,
+        "width": 0.43399671475981805,
+        "depth": 0.45184984017739,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          4.263001642620091,
+          0.018941767051824487,
+          0.4540750799113051
+        ],
+        "max": [
+          4.6969983573799095,
+          1.0730000008940697,
+          0.9059249200886951
+        ]
+      },
+      {
+        "id": "Cafe_BarStool_003",
+        "name": "Cafe_BarStool_003",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 4.48,
+        "z": 1.8400000000000003,
+        "width": 0.43399671475981805,
+        "depth": 0.45184984017739027,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          4.263001642620091,
+          0.018941767051824487,
+          1.614075079911305
+        ],
+        "max": [
+          4.6969983573799095,
+          1.0730000008940697,
+          2.0659249200886953
+        ]
+      },
+      {
+        "id": "Cafe_BarStool_004",
+        "name": "Cafe_BarStool_004",
+        "role": "BarStool",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 4.48,
+        "z": 3,
+        "width": 0.43399671475981805,
+        "depth": 0.45184984017739005,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          4.263001642620091,
+          0.018941767051824487,
+          2.774075079911305
+        ],
+        "max": [
+          4.6969983573799095,
+          1.0730000008940697,
+          3.225924920088695
+        ]
+      },
+      {
+        "id": "Cafe_WallArtwork_001",
+        "name": "Cafe_WallArtwork_001",
+        "role": "WallArtwork",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": -5.917249999999999,
+        "z": 0.6499999999999999,
+        "width": 0.07050000000000001,
+        "depth": 1.08,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall",
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.9525,
+          1.42,
+          0.10999999999999999
+        ],
+        "max": [
+          -5.882,
+          2.66,
+          1.19
+        ]
+      },
+      {
+        "id": "Cafe_MagazineShelf_001",
+        "name": "Cafe_MagazineShelf_001",
+        "role": "MagazineShelf",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -3.98,
+        "z": 4.036499999999999,
+        "width": 1.2999999999999998,
+        "depth": 0.33299999999999974,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -4.63,
+          0,
+          3.8699999999999997
+        ],
+        "max": [
+          -3.33,
+          0.7433999985456466,
+          4.202999999999999
+        ]
+      },
+      {
+        "id": "Cafe_Planter_001",
+        "name": "Cafe_Planter_001",
+        "role": "Planter",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": -5.35,
+        "z": 3.91,
+        "width": 0.5714719253311369,
+        "depth": 0.6026110068503066,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -5.635735962665568,
+          0,
+          3.608694496574847
+        ],
+        "max": [
+          -5.064264037334431,
+          1.18,
+          4.211305503425153
+        ]
+      },
+      {
+        "id": "Cafe_Planter_002",
+        "name": "Cafe_Planter_002",
+        "role": "Planter",
+        "layer": "Furniture",
+        "kind": "furniture",
+        "x": 4.94,
+        "z": -2.45,
+        "width": 0.6877035033645882,
+        "depth": 0.7251759573961314,
+        "groundFurniture": true,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          4.596148248317706,
+          0,
+          -2.812587978698066
+        ],
+        "max": [
+          5.2838517516822945,
+          1.42,
+          -2.0874120213019345
+        ]
+      },
+      {
+        "id": "Cafe_CounterPlant_001",
+        "name": "Cafe_CounterPlant_001",
+        "role": "CounterPlant",
+        "layer": "Equipment",
+        "kind": "equipment",
+        "x": 2.8007656072102938,
+        "z": -4.0615253416143275,
+        "width": 0.32833159169981263,
+        "depth": 0.2481822385385115,
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "mountType": null,
+        "supportSurfaceY": 0.9665000005066395,
+        "allowAisle": false,
+        "min": [
+          2.6365998113603872,
+          0.9675000005066396,
+          -4.185616460883583
+        ],
+        "max": [
+          2.9649314030602,
+          1.499785986572809,
+          -3.937434222345072
+        ]
+      },
+      {
+        "id": "Cafe_Pendant_001",
+        "name": "Cafe_Pendant_001",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "kind": "furniture",
+        "x": -4.25,
+        "z": -2.22,
+        "width": 0.47999998927116394,
+        "depth": 0.47999998927116394,
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -4.489999994635582,
+          2.4319999996200203,
+          -2.459999994635582
+        ],
+        "max": [
+          -4.010000005364418,
+          3.2500000011920926,
+          -1.9800000053644182
+        ]
+      },
+      {
+        "id": "Cafe_Pendant_002",
+        "name": "Cafe_Pendant_002",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "kind": "furniture",
+        "x": -1.65,
+        "z": -2.22,
+        "width": 0.47999998927116394,
+        "depth": 0.47999998927116394,
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -1.8899999946355819,
+          2.4319999996200203,
+          -2.459999994635582
+        ],
+        "max": [
+          -1.410000005364418,
+          3.2500000011920926,
+          -1.9800000053644182
+        ]
+      },
+      {
+        "id": "Cafe_Pendant_003",
+        "name": "Cafe_Pendant_003",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "kind": "furniture",
+        "x": 1,
+        "z": -2.22,
+        "width": 0.47999998927116394,
+        "depth": 0.47999998927116394,
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          0.760000005364418,
+          2.4319999996200203,
+          -2.459999994635582
+        ],
+        "max": [
+          1.239999994635582,
+          3.2500000011920926,
+          -1.9800000053644182
+        ]
+      },
+      {
+        "id": "Cafe_Pendant_004",
+        "name": "Cafe_Pendant_004",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "kind": "furniture",
+        "x": -0.19999999999999998,
+        "z": 0.04999999999999999,
+        "width": 0.6399999856948853,
+        "depth": 0.6399999856948853,
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.5199999928474426,
+          2.4919999996200204,
+          -0.26999999284744264
+        ],
+        "max": [
+          0.11999999284744262,
+          3.25,
+          0.3699999928474426
+        ]
+      },
+      {
+        "id": "Cafe_Pendant_005",
+        "name": "Cafe_Pendant_005",
+        "role": "Pendant",
+        "layer": "Lighting",
+        "kind": "furniture",
+        "x": -0.19999999999999998,
+        "z": 2.75,
+        "width": 0.6399999856948853,
+        "depth": 0.6399999856948853,
+        "groundFurniture": false,
+        "supportedBy": null,
+        "mountType": null,
+        "supportSurfaceY": null,
+        "allowAisle": false,
+        "min": [
+          -0.5199999928474426,
+          2.4919999996200204,
+          2.4300000071525574
+        ],
+        "max": [
+          0.11999999284744262,
+          3.25,
+          3.0699999928474426
+        ]
+      }
+    ],
+    "brand": "慢调 / SLOW NOTES",
+    "area": 108,
+    "noPeople": true,
+    "aisles": [
+      {
+        "id": "entry-service-route",
+        "minX": 1.5,
+        "maxX": 3.9,
+        "minZ": -1.3,
+        "maxZ": 4.5,
+        "width": 2.4
+      },
+      {
+        "id": "staff-working-passage",
+        "minX": -5.6,
+        "maxX": 3.2,
+        "minZ": -3.72,
+        "maxZ": -2.76,
+        "width": 0.96
+      }
+    ],
+    "editing": "Furniture and equipment are independently named editable object groups; props retain explicit supportedBy links.",
+    "roofBehavior": "Roof group includes complete ceiling plus front and right enclosing layers; archive retains this group visible."
+  },
+  "editableObjectCount": 47,
+  "editableRoleCounts": {
+    "ServiceCounter": 1,
+    "PrepCounter": 1,
+    "Banquette": 1,
+    "RoundTable": 4,
+    "DiningChair": 10,
+    "WindowBar": 1,
+    "BarStool": 4,
+    "MagazineShelf": 1,
+    "Planter": 2,
+    "EspressoMachine": 1,
+    "CoffeeGrinder": 1,
+    "PastryDisplay": 1,
+    "OrderPOS": 1,
+    "PickupStation": 1,
+    "PrepSink": 1,
+    "BaristaTools": 1,
+    "ChilledCabinet": 1,
+    "BrandSign": 1,
+    "MenuBoard": 1,
+    "WallShelf": 1,
+    "TabletopSet": 4,
+    "WallArtwork": 1,
+    "CounterPlant": 1,
+    "Pendant": 5
+  },
+  "editableInventory": [
+    {
+      "name": "Cafe_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -1.75,
+        0,
+        -2.25
+      ],
+      "worldBounds": {
+        "min": [
+          -5.559,
+          0.005,
+          -2.725
+        ],
+        "max": [
+          2.059,
+          0.9765,
+          -1.758
+        ],
+        "size": [
+          7.618,
+          0.9715,
+          0.967
+        ]
+      },
+      "meshInstances": 75,
+      "metadata": {
+        "editableObject": true,
+        "role": "ServiceCounter",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_PrepCounter_001",
+      "role": "PrepCounter",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -1.1,
+        0,
+        -4.06
+      ],
+      "worldBounds": {
+        "min": [
+          -5.609,
+          0.005,
+          -4.39
+        ],
+        "max": [
+          3.409,
+          0.9665,
+          -3.73
+        ],
+        "size": [
+          9.018,
+          0.9615,
+          0.66
+        ]
+      },
+      "meshInstances": 88,
+      "metadata": {
+        "editableObject": true,
+        "role": "PrepCounter",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_Banquette_001",
+      "role": "Banquette",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -5.32,
+        0,
+        1.1
+      ],
+      "worldBounds": {
+        "min": [
+          -5.725,
+          0.005,
+          -1.009
+        ],
+        "max": [
+          -4.94,
+          0.984,
+          3.209
+        ],
+        "size": [
+          0.785,
+          0.979,
+          4.218
+        ]
+      },
+      "meshInstances": 12,
+      "metadata": {
+        "editableObject": true,
+        "role": "Banquette",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_RoundTable_001",
+      "role": "RoundTable",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -4.05,
+        0,
+        -0.15
+      ],
+      "worldBounds": {
+        "min": [
+          -4.54,
+          0.0055,
+          -0.64
+        ],
+        "max": [
+          -3.56,
+          0.781,
+          0.34
+        ],
+        "size": [
+          0.98,
+          0.7755,
+          0.98
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "RoundTable",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_001",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -3.03,
+        0,
+        -0.15
+      ],
+      "worldBounds": {
+        "min": [
+          -3.273822,
+          0.022999,
+          -0.398722
+        ],
+        "max": [
+          -2.786178,
+          0.919,
+          0.098722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_RoundTable_002",
+      "role": "RoundTable",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -4.05,
+        0,
+        1.9
+      ],
+      "worldBounds": {
+        "min": [
+          -4.54,
+          0.0055,
+          1.41
+        ],
+        "max": [
+          -3.56,
+          0.781,
+          2.39
+        ],
+        "size": [
+          0.98,
+          0.7755,
+          0.98
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "RoundTable",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_002",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -3.03,
+        0,
+        1.9
+      ],
+      "worldBounds": {
+        "min": [
+          -3.273822,
+          0.022999,
+          1.651278
+        ],
+        "max": [
+          -2.786178,
+          0.919,
+          2.148722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_RoundTable_003",
+      "role": "RoundTable",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        0.05
+      ],
+      "worldBounds": {
+        "min": [
+          -0.75,
+          0.0055,
+          -0.5
+        ],
+        "max": [
+          0.35,
+          0.781,
+          0.6
+        ],
+        "size": [
+          1.1,
+          0.7755,
+          1.1
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "RoundTable",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_003",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        -0.95
+      ],
+      "worldBounds": {
+        "min": [
+          -0.448722,
+          0.022999,
+          -1.193822
+        ],
+        "max": [
+          0.048722,
+          0.919,
+          -0.706178
+        ],
+        "size": [
+          0.497444,
+          0.896001,
+          0.487644
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_004",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        1.05
+      ],
+      "worldBounds": {
+        "min": [
+          -0.448722,
+          0.022999,
+          0.806178
+        ],
+        "max": [
+          0.048722,
+          0.919,
+          1.293822
+        ],
+        "size": [
+          0.497444,
+          0.896001,
+          0.487644
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_005",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -1.2,
+        0,
+        0.05
+      ],
+      "worldBounds": {
+        "min": [
+          -1.443822,
+          0.022999,
+          -0.198722
+        ],
+        "max": [
+          -0.956178,
+          0.919,
+          0.298722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_006",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        0.8,
+        0,
+        0.05
+      ],
+      "worldBounds": {
+        "min": [
+          0.556178,
+          0.022999,
+          -0.198722
+        ],
+        "max": [
+          1.043822,
+          0.919,
+          0.298722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_RoundTable_004",
+      "role": "RoundTable",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        2.75
+      ],
+      "worldBounds": {
+        "min": [
+          -0.75,
+          0.0055,
+          2.2
+        ],
+        "max": [
+          0.35,
+          0.781,
+          3.3
+        ],
+        "size": [
+          1.1,
+          0.7755,
+          1.1
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "RoundTable",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_007",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        1.75
+      ],
+      "worldBounds": {
+        "min": [
+          -0.448722,
+          0.022999,
+          1.506178
+        ],
+        "max": [
+          0.048722,
+          0.919,
+          1.993822
+        ],
+        "size": [
+          0.497444,
+          0.896001,
+          0.487644
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_008",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -0.2,
+        0,
+        3.75
+      ],
+      "worldBounds": {
+        "min": [
+          -0.448722,
+          0.022999,
+          3.506178
+        ],
+        "max": [
+          0.048722,
+          0.919,
+          3.993822
+        ],
+        "size": [
+          0.497444,
+          0.896001,
+          0.487644
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_009",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -1.2,
+        0,
+        2.75
+      ],
+      "worldBounds": {
+        "min": [
+          -1.443822,
+          0.022999,
+          2.501278
+        ],
+        "max": [
+          -0.956178,
+          0.919,
+          2.998722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_DiningChair_010",
+      "role": "DiningChair",
+      "parent": "Cafe_Furniture",
+      "position": [
+        0.8,
+        0,
+        2.75
+      ],
+      "worldBounds": {
+        "min": [
+          0.556178,
+          0.022999,
+          2.501278
+        ],
+        "max": [
+          1.043822,
+          0.919,
+          2.998722
+        ],
+        "size": [
+          0.487644,
+          0.896001,
+          0.497444
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "DiningChair",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_WindowBar_001",
+      "role": "WindowBar",
+      "parent": "Cafe_Furniture",
+      "position": [
+        5.4,
+        0,
+        1.3
+      ],
+      "worldBounds": {
+        "min": [
+          5.147,
+          0,
+          -1.2
+        ],
+        "max": [
+          5.653,
+          1.1005,
+          3.8
+        ],
+        "size": [
+          0.506,
+          1.1005,
+          5
+        ]
+      },
+      "meshInstances": 7,
+      "metadata": {
+        "editableObject": true,
+        "role": "WindowBar",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_BarStool_001",
+      "role": "BarStool",
+      "parent": "Cafe_Furniture",
+      "position": [
+        4.48,
+        0,
+        -0.48
+      ],
+      "worldBounds": {
+        "min": [
+          4.263055,
+          0.019813,
+          -0.705886
+        ],
+        "max": [
+          4.696945,
+          1.073,
+          -0.254114
+        ],
+        "size": [
+          0.43389,
+          1.053187,
+          0.451772
+        ]
+      },
+      "meshInstances": 12,
+      "metadata": {
+        "editableObject": true,
+        "role": "BarStool",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_BarStool_002",
+      "role": "BarStool",
+      "parent": "Cafe_Furniture",
+      "position": [
+        4.48,
+        0,
+        0.68
+      ],
+      "worldBounds": {
+        "min": [
+          4.263055,
+          0.019813,
+          0.454114
+        ],
+        "max": [
+          4.696945,
+          1.073,
+          0.905886
+        ],
+        "size": [
+          0.43389,
+          1.053187,
+          0.451772
+        ]
+      },
+      "meshInstances": 12,
+      "metadata": {
+        "editableObject": true,
+        "role": "BarStool",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_BarStool_003",
+      "role": "BarStool",
+      "parent": "Cafe_Furniture",
+      "position": [
+        4.48,
+        0,
+        1.84
+      ],
+      "worldBounds": {
+        "min": [
+          4.263055,
+          0.019813,
+          1.614114
+        ],
+        "max": [
+          4.696945,
+          1.073,
+          2.065886
+        ],
+        "size": [
+          0.43389,
+          1.053187,
+          0.451772
+        ]
+      },
+      "meshInstances": 12,
+      "metadata": {
+        "editableObject": true,
+        "role": "BarStool",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_BarStool_004",
+      "role": "BarStool",
+      "parent": "Cafe_Furniture",
+      "position": [
+        4.48,
+        0,
+        3
+      ],
+      "worldBounds": {
+        "min": [
+          4.263055,
+          0.019813,
+          2.774114
+        ],
+        "max": [
+          4.696945,
+          1.073,
+          3.225886
+        ],
+        "size": [
+          0.43389,
+          1.053187,
+          0.451772
+        ]
+      },
+      "meshInstances": 12,
+      "metadata": {
+        "editableObject": true,
+        "role": "BarStool",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_MagazineShelf_001",
+      "role": "MagazineShelf",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -3.98,
+        0,
+        4.01
+      ],
+      "worldBounds": {
+        "min": [
+          -4.63,
+          0,
+          3.87
+        ],
+        "max": [
+          -3.33,
+          0.7434,
+          4.203
+        ],
+        "size": [
+          1.3,
+          0.7434,
+          0.333
+        ]
+      },
+      "meshInstances": 11,
+      "metadata": {
+        "editableObject": true,
+        "role": "MagazineShelf",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_Planter_001",
+      "role": "Planter",
+      "parent": "Cafe_Furniture",
+      "position": [
+        -5.35,
+        0,
+        3.91
+      ],
+      "worldBounds": {
+        "min": [
+          -5.635736,
+          0,
+          3.608694
+        ],
+        "max": [
+          -5.064264,
+          1.18,
+          4.211306
+        ],
+        "size": [
+          0.571472,
+          1.18,
+          0.602611
+        ]
+      },
+      "meshInstances": 4,
+      "metadata": {
+        "editableObject": true,
+        "role": "Planter",
+        "source": "assets/models/plant.glb",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_Planter_002",
+      "role": "Planter",
+      "parent": "Cafe_Furniture",
+      "position": [
+        4.94,
+        0,
+        -2.45
+      ],
+      "worldBounds": {
+        "min": [
+          4.596148,
+          0,
+          -2.812588
+        ],
+        "max": [
+          5.283852,
+          1.42,
+          -2.087412
+        ],
+        "size": [
+          0.687703,
+          1.42,
+          0.725176
+        ]
+      },
+      "meshInstances": 4,
+      "metadata": {
+        "editableObject": true,
+        "role": "Planter",
+        "source": "assets/models/plant.glb",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_EspressoMachine_001",
+      "role": "EspressoMachine",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -4.35,
+        0.955,
+        -2.23
+      ],
+      "worldBounds": {
+        "min": [
+          -4.955,
+          0.9775,
+          -2.475
+        ],
+        "max": [
+          -3.745,
+          1.614,
+          -1.887934
+        ],
+        "size": [
+          1.21,
+          0.6365,
+          0.587066
+        ]
+      },
+      "meshInstances": 64,
+      "metadata": {
+        "editableObject": true,
+        "role": "EspressoMachine",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "supportSurfaceY": 0.9765000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_CoffeeGrinder_001",
+      "role": "CoffeeGrinder",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -3.25,
+        1.0025,
+        -2.22
+      ],
+      "worldBounds": {
+        "min": [
+          -3.45,
+          0.9775,
+          -2.371
+        ],
+        "max": [
+          -3.05,
+          1.708,
+          -1.95
+        ],
+        "size": [
+          0.4,
+          0.7305,
+          0.421
+        ]
+      },
+      "meshInstances": 34,
+      "metadata": {
+        "editableObject": true,
+        "role": "CoffeeGrinder",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "supportSurfaceY": 0.9765000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_PastryDisplay_001",
+      "role": "PastryDisplay",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -1.85,
+        0.9925,
+        -2.22
+      ],
+      "worldBounds": {
+        "min": [
+          -2.68,
+          0.9775,
+          -2.535
+        ],
+        "max": [
+          -1.02,
+          1.6635,
+          -1.9035
+        ],
+        "size": [
+          1.66,
+          0.686,
+          0.6315
+        ]
+      },
+      "meshInstances": 48,
+      "metadata": {
+        "editableObject": true,
+        "role": "PastryDisplay",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "supportSurfaceY": 0.9765000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_OrderPOS_001",
+      "role": "OrderPOS",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -0.05,
+        0.976,
+        -2.24
+      ],
+      "worldBounds": {
+        "min": [
+          -0.2872,
+          0.9775,
+          -2.38
+        ],
+        "max": [
+          0.385,
+          1.5082,
+          -2.08
+        ],
+        "size": [
+          0.6722,
+          0.5307,
+          0.3
+        ]
+      },
+      "meshInstances": 5,
+      "metadata": {
+        "editableObject": true,
+        "role": "OrderPOS",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "supportSurfaceY": 0.9765000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_PickupStation_001",
+      "role": "PickupStation",
+      "parent": "Cafe_Equipment",
+      "position": [
+        1.1,
+        0.981,
+        -2.2
+      ],
+      "worldBounds": {
+        "min": [
+          0.765,
+          0.9775,
+          -2.445
+        ],
+        "max": [
+          1.435,
+          1.381,
+          -1.955
+        ],
+        "size": [
+          0.67,
+          0.4035,
+          0.49
+        ]
+      },
+      "meshInstances": 9,
+      "metadata": {
+        "editableObject": true,
+        "role": "PickupStation",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_ServiceCounter_001",
+        "supportSurfaceY": 0.9765000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_PrepSink_001",
+      "role": "PrepSink",
+      "parent": "Cafe_Equipment",
+      "position": [
+        1.85,
+        0.968,
+        -4.06
+      ],
+      "worldBounds": {
+        "min": [
+          1.53,
+          0.9675,
+          -4.285
+        ],
+        "max": [
+          2.17,
+          1.36607,
+          -3.835
+        ],
+        "size": [
+          0.64,
+          0.39857,
+          0.45
+        ]
+      },
+      "meshInstances": 6,
+      "metadata": {
+        "editableObject": true,
+        "role": "PrepSink",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "supportSurfaceY": 0.9665000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_BaristaTools_001",
+      "role": "BaristaTools",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -3.85,
+        0.96,
+        -4.04
+      ],
+      "worldBounds": {
+        "min": [
+          -4.155,
+          0.9675,
+          -4.21
+        ],
+        "max": [
+          -3.545,
+          1.125,
+          -3.87
+        ],
+        "size": [
+          0.61,
+          0.1575,
+          0.34
+        ]
+      },
+      "meshInstances": 7,
+      "metadata": {
+        "editableObject": true,
+        "role": "BaristaTools",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "supportSurfaceY": 0.9665000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_ChilledCabinet_001",
+      "role": "ChilledCabinet",
+      "parent": "Cafe_Equipment",
+      "position": [
+        4.58,
+        0,
+        -4.01
+      ],
+      "worldBounds": {
+        "min": [
+          3.8,
+          0.01,
+          -4.365
+        ],
+        "max": [
+          5.36,
+          0.9425,
+          -3.599
+        ],
+        "size": [
+          1.56,
+          0.9325,
+          0.766
+        ]
+      },
+      "meshInstances": 32,
+      "metadata": {
+        "editableObject": true,
+        "role": "ChilledCabinet",
+        "source": "authored-procedural",
+        "groundFurniture": true
+      }
+    },
+    {
+      "name": "Cafe_BrandSign_001",
+      "role": "BrandSign",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -3.8,
+        0,
+        -4.445
+      ],
+      "worldBounds": {
+        "min": [
+          -5.475,
+          1.845,
+          -4.431
+        ],
+        "max": [
+          -2.125,
+          2.775,
+          -4.431
+        ],
+        "size": [
+          3.35,
+          0.93,
+          0
+        ]
+      },
+      "meshInstances": 1,
+      "metadata": {
+        "editableObject": true,
+        "role": "BrandSign",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall"
+      }
+    },
+    {
+      "name": "Cafe_MenuBoard_001",
+      "role": "MenuBoard",
+      "parent": "Cafe_Equipment",
+      "position": [
+        0.8,
+        0,
+        -4.43
+      ],
+      "worldBounds": {
+        "min": [
+          -1.612,
+          1.678,
+          -4.46
+        ],
+        "max": [
+          3.212,
+          2.882,
+          -4.392
+        ],
+        "size": [
+          4.824,
+          1.204,
+          0.068
+        ]
+      },
+      "meshInstances": 2,
+      "metadata": {
+        "editableObject": true,
+        "role": "MenuBoard",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall"
+      }
+    },
+    {
+      "name": "Cafe_WallShelf_001",
+      "role": "WallShelf",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -2.6,
+        0,
+        -4.23
+      ],
+      "worldBounds": {
+        "min": [
+          -5.35,
+          1.129987,
+          -4.42
+        ],
+        "max": [
+          0.15,
+          1.779,
+          -4.04
+        ],
+        "size": [
+          5.5,
+          0.649013,
+          0.38
+        ]
+      },
+      "meshInstances": 28,
+      "metadata": {
+        "editableObject": true,
+        "role": "WallShelf",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall"
+      }
+    },
+    {
+      "name": "Cafe_TabletopSet_001",
+      "role": "TabletopSet",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -4.05,
+        0.777,
+        -0.15
+      ],
+      "worldBounds": {
+        "min": [
+          -4.23,
+          0.782,
+          -0.4
+        ],
+        "max": [
+          -3.77,
+          1.037774,
+          0.02
+        ],
+        "size": [
+          0.46,
+          0.255774,
+          0.42
+        ]
+      },
+      "meshInstances": 8,
+      "metadata": {
+        "editableObject": true,
+        "role": "TabletopSet",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_001",
+        "supportSurfaceY": 0.7810000005364418,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_TabletopSet_002",
+      "role": "TabletopSet",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -4.05,
+        0.777,
+        1.9
+      ],
+      "worldBounds": {
+        "min": [
+          -4.23,
+          0.782,
+          1.65
+        ],
+        "max": [
+          -3.77,
+          1.037774,
+          2.07
+        ],
+        "size": [
+          0.46,
+          0.255774,
+          0.42
+        ]
+      },
+      "meshInstances": 8,
+      "metadata": {
+        "editableObject": true,
+        "role": "TabletopSet",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_002",
+        "supportSurfaceY": 0.7810000005364418,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_TabletopSet_003",
+      "role": "TabletopSet",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -0.2,
+        0.777,
+        0.05
+      ],
+      "worldBounds": {
+        "min": [
+          -0.38,
+          0.782,
+          -0.2
+        ],
+        "max": [
+          0.08,
+          1.037774,
+          0.22
+        ],
+        "size": [
+          0.46,
+          0.255774,
+          0.42
+        ]
+      },
+      "meshInstances": 8,
+      "metadata": {
+        "editableObject": true,
+        "role": "TabletopSet",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_003",
+        "supportSurfaceY": 0.7810000005364418,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_TabletopSet_004",
+      "role": "TabletopSet",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -0.2,
+        0.777,
+        2.75
+      ],
+      "worldBounds": {
+        "min": [
+          -0.38,
+          0.782,
+          2.5
+        ],
+        "max": [
+          0.08,
+          1.037774,
+          2.92
+        ],
+        "size": [
+          0.46,
+          0.255774,
+          0.42
+        ]
+      },
+      "meshInstances": 8,
+      "metadata": {
+        "editableObject": true,
+        "role": "TabletopSet",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_RoundTable_004",
+        "supportSurfaceY": 0.7810000005364418,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_WallArtwork_001",
+      "role": "WallArtwork",
+      "parent": "Cafe_Equipment",
+      "position": [
+        -5.92,
+        0,
+        0.65
+      ],
+      "worldBounds": {
+        "min": [
+          -5.9525,
+          1.42,
+          0.11
+        ],
+        "max": [
+          -5.882,
+          2.66,
+          1.19
+        ],
+        "size": [
+          0.0705,
+          1.24,
+          1.08
+        ]
+      },
+      "meshInstances": 2,
+      "metadata": {
+        "editableObject": true,
+        "role": "WallArtwork",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_Structure",
+        "mountType": "wall"
+      }
+    },
+    {
+      "name": "Cafe_CounterPlant_001",
+      "role": "CounterPlant",
+      "parent": "Cafe_Equipment",
+      "position": [
+        2.8,
+        0.9625,
+        -4.06
+      ],
+      "worldBounds": {
+        "min": [
+          2.641662,
+          0.9675,
+          -4.185616
+        ],
+        "max": [
+          2.959869,
+          1.490408,
+          -3.937434
+        ],
+        "size": [
+          0.318207,
+          0.522908,
+          0.248182
+        ]
+      },
+      "meshInstances": 16,
+      "metadata": {
+        "editableObject": true,
+        "role": "CounterPlant",
+        "source": "authored-procedural",
+        "groundFurniture": false,
+        "supportedBy": "Cafe_PrepCounter_001",
+        "supportSurfaceY": 0.9665000005066395,
+        "supportGapMeters": 0.001
+      }
+    },
+    {
+      "name": "Cafe_Pendant_001",
+      "role": "Pendant",
+      "parent": "Cafe_Lighting",
+      "position": [
+        -4.25,
+        0,
+        -2.22
+      ],
+      "worldBounds": {
+        "min": [
+          -4.49,
+          2.432,
+          -2.46
+        ],
+        "max": [
+          -4.01,
+          3.25,
+          -1.98
+        ],
+        "size": [
+          0.48,
+          0.818,
+          0.48
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "Pendant",
+        "source": "authored-procedural",
+        "groundFurniture": false
+      }
+    },
+    {
+      "name": "Cafe_Pendant_002",
+      "role": "Pendant",
+      "parent": "Cafe_Lighting",
+      "position": [
+        -1.65,
+        0,
+        -2.22
+      ],
+      "worldBounds": {
+        "min": [
+          -1.89,
+          2.432,
+          -2.46
+        ],
+        "max": [
+          -1.41,
+          3.25,
+          -1.98
+        ],
+        "size": [
+          0.48,
+          0.818,
+          0.48
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "Pendant",
+        "source": "authored-procedural",
+        "groundFurniture": false
+      }
+    },
+    {
+      "name": "Cafe_Pendant_003",
+      "role": "Pendant",
+      "parent": "Cafe_Lighting",
+      "position": [
+        1,
+        0,
+        -2.22
+      ],
+      "worldBounds": {
+        "min": [
+          0.76,
+          2.432,
+          -2.46
+        ],
+        "max": [
+          1.24,
+          3.25,
+          -1.98
+        ],
+        "size": [
+          0.48,
+          0.818,
+          0.48
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "Pendant",
+        "source": "authored-procedural",
+        "groundFurniture": false
+      }
+    },
+    {
+      "name": "Cafe_Pendant_004",
+      "role": "Pendant",
+      "parent": "Cafe_Lighting",
+      "position": [
+        -0.2,
+        0,
+        0.05
+      ],
+      "worldBounds": {
+        "min": [
+          -0.52,
+          2.492,
+          -0.27
+        ],
+        "max": [
+          0.12,
+          3.25,
+          0.37
+        ],
+        "size": [
+          0.64,
+          0.758,
+          0.64
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "Pendant",
+        "source": "authored-procedural",
+        "groundFurniture": false
+      }
+    },
+    {
+      "name": "Cafe_Pendant_005",
+      "role": "Pendant",
+      "parent": "Cafe_Lighting",
+      "position": [
+        -0.2,
+        0,
+        2.75
+      ],
+      "worldBounds": {
+        "min": [
+          -0.52,
+          2.492,
+          2.43
+        ],
+        "max": [
+          0.12,
+          3.25,
+          3.07
+        ],
+        "size": [
+          0.64,
+          0.758,
+          0.64
+        ]
+      },
+      "meshInstances": 3,
+      "metadata": {
+        "editableObject": true,
+        "role": "Pendant",
+        "source": "authored-procedural",
+        "groundFurniture": false
+      }
+    }
+  ],
+  "duplicateEditableNames": [],
+  "duplicateInventoryNames": [],
+  "countChecks": {
+    "ServiceCounter": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "PrepCounter": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "EspressoMachine": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "CoffeeGrinder": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "PastryDisplay": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "OrderPOS": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "PickupStation": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "PrepSink": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "BaristaTools": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "ChilledCabinet": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "BrandSign": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "MenuBoard": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "WallShelf": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "Banquette": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "RoundTable": {
+      "declared": 4,
+      "actual": 4,
+      "matches": true
+    },
+    "DiningChair": {
+      "declared": 10,
+      "actual": 10,
+      "matches": true
+    },
+    "TabletopSet": {
+      "declared": 4,
+      "actual": 4,
+      "matches": true
+    },
+    "WindowBar": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "BarStool": {
+      "declared": 4,
+      "actual": 4,
+      "matches": true
+    },
+    "WallArtwork": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "MagazineShelf": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "Planter": {
+      "declared": 2,
+      "actual": 2,
+      "matches": true
+    },
+    "CounterPlant": {
+      "declared": 1,
+      "actual": 1,
+      "matches": true
+    },
+    "Pendant": {
+      "declared": 5,
+      "actual": 5,
+      "matches": true
+    }
+  },
+  "inventoryChecks": [
+    {
+      "name": "Cafe_ServiceCounter_001",
+      "matched": true,
+      "actualRole": "ServiceCounter",
+      "declaredRole": "ServiceCounter"
+    },
+    {
+      "name": "Cafe_PrepCounter_001",
+      "matched": true,
+      "actualRole": "PrepCounter",
+      "declaredRole": "PrepCounter"
+    },
+    {
+      "name": "Cafe_EspressoMachine_001",
+      "matched": true,
+      "actualRole": "EspressoMachine",
+      "declaredRole": "EspressoMachine"
+    },
+    {
+      "name": "Cafe_CoffeeGrinder_001",
+      "matched": true,
+      "actualRole": "CoffeeGrinder",
+      "declaredRole": "CoffeeGrinder"
+    },
+    {
+      "name": "Cafe_PastryDisplay_001",
+      "matched": true,
+      "actualRole": "PastryDisplay",
+      "declaredRole": "PastryDisplay"
+    },
+    {
+      "name": "Cafe_OrderPOS_001",
+      "matched": true,
+      "actualRole": "OrderPOS",
+      "declaredRole": "OrderPOS"
+    },
+    {
+      "name": "Cafe_PickupStation_001",
+      "matched": true,
+      "actualRole": "PickupStation",
+      "declaredRole": "PickupStation"
+    },
+    {
+      "name": "Cafe_PrepSink_001",
+      "matched": true,
+      "actualRole": "PrepSink",
+      "declaredRole": "PrepSink"
+    },
+    {
+      "name": "Cafe_BaristaTools_001",
+      "matched": true,
+      "actualRole": "BaristaTools",
+      "declaredRole": "BaristaTools"
+    },
+    {
+      "name": "Cafe_ChilledCabinet_001",
+      "matched": true,
+      "actualRole": "ChilledCabinet",
+      "declaredRole": "ChilledCabinet"
+    },
+    {
+      "name": "Cafe_BrandSign_001",
+      "matched": true,
+      "actualRole": "BrandSign",
+      "declaredRole": "BrandSign"
+    },
+    {
+      "name": "Cafe_MenuBoard_001",
+      "matched": true,
+      "actualRole": "MenuBoard",
+      "declaredRole": "MenuBoard"
+    },
+    {
+      "name": "Cafe_WallShelf_001",
+      "matched": true,
+      "actualRole": "WallShelf",
+      "declaredRole": "WallShelf"
+    },
+    {
+      "name": "Cafe_Banquette_001",
+      "matched": true,
+      "actualRole": "Banquette",
+      "declaredRole": "Banquette"
+    },
+    {
+      "name": "Cafe_RoundTable_001",
+      "matched": true,
+      "actualRole": "RoundTable",
+      "declaredRole": "RoundTable"
+    },
+    {
+      "name": "Cafe_DiningChair_001",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_RoundTable_002",
+      "matched": true,
+      "actualRole": "RoundTable",
+      "declaredRole": "RoundTable"
+    },
+    {
+      "name": "Cafe_DiningChair_002",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_RoundTable_003",
+      "matched": true,
+      "actualRole": "RoundTable",
+      "declaredRole": "RoundTable"
+    },
+    {
+      "name": "Cafe_DiningChair_003",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_004",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_005",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_006",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_RoundTable_004",
+      "matched": true,
+      "actualRole": "RoundTable",
+      "declaredRole": "RoundTable"
+    },
+    {
+      "name": "Cafe_DiningChair_007",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_008",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_009",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_DiningChair_010",
+      "matched": true,
+      "actualRole": "DiningChair",
+      "declaredRole": "DiningChair"
+    },
+    {
+      "name": "Cafe_TabletopSet_001",
+      "matched": true,
+      "actualRole": "TabletopSet",
+      "declaredRole": "TabletopSet"
+    },
+    {
+      "name": "Cafe_TabletopSet_002",
+      "matched": true,
+      "actualRole": "TabletopSet",
+      "declaredRole": "TabletopSet"
+    },
+    {
+      "name": "Cafe_TabletopSet_003",
+      "matched": true,
+      "actualRole": "TabletopSet",
+      "declaredRole": "TabletopSet"
+    },
+    {
+      "name": "Cafe_TabletopSet_004",
+      "matched": true,
+      "actualRole": "TabletopSet",
+      "declaredRole": "TabletopSet"
+    },
+    {
+      "name": "Cafe_WindowBar_001",
+      "matched": true,
+      "actualRole": "WindowBar",
+      "declaredRole": "WindowBar"
+    },
+    {
+      "name": "Cafe_BarStool_001",
+      "matched": true,
+      "actualRole": "BarStool",
+      "declaredRole": "BarStool"
+    },
+    {
+      "name": "Cafe_BarStool_002",
+      "matched": true,
+      "actualRole": "BarStool",
+      "declaredRole": "BarStool"
+    },
+    {
+      "name": "Cafe_BarStool_003",
+      "matched": true,
+      "actualRole": "BarStool",
+      "declaredRole": "BarStool"
+    },
+    {
+      "name": "Cafe_BarStool_004",
+      "matched": true,
+      "actualRole": "BarStool",
+      "declaredRole": "BarStool"
+    },
+    {
+      "name": "Cafe_WallArtwork_001",
+      "matched": true,
+      "actualRole": "WallArtwork",
+      "declaredRole": "WallArtwork"
+    },
+    {
+      "name": "Cafe_MagazineShelf_001",
+      "matched": true,
+      "actualRole": "MagazineShelf",
+      "declaredRole": "MagazineShelf"
+    },
+    {
+      "name": "Cafe_Planter_001",
+      "matched": true,
+      "actualRole": "Planter",
+      "declaredRole": "Planter"
+    },
+    {
+      "name": "Cafe_Planter_002",
+      "matched": true,
+      "actualRole": "Planter",
+      "declaredRole": "Planter"
+    },
+    {
+      "name": "Cafe_CounterPlant_001",
+      "matched": true,
+      "actualRole": "CounterPlant",
+      "declaredRole": "CounterPlant"
+    },
+    {
+      "name": "Cafe_Pendant_001",
+      "matched": true,
+      "actualRole": "Pendant",
+      "declaredRole": "Pendant"
+    },
+    {
+      "name": "Cafe_Pendant_002",
+      "matched": true,
+      "actualRole": "Pendant",
+      "declaredRole": "Pendant"
+    },
+    {
+      "name": "Cafe_Pendant_003",
+      "matched": true,
+      "actualRole": "Pendant",
+      "declaredRole": "Pendant"
+    },
+    {
+      "name": "Cafe_Pendant_004",
+      "matched": true,
+      "actualRole": "Pendant",
+      "declaredRole": "Pendant"
+    },
+    {
+      "name": "Cafe_Pendant_005",
+      "matched": true,
+      "actualRole": "Pendant",
+      "declaredRole": "Pendant"
+    }
+  ],
+  "missingInventory": [],
+  "unsupported": [],
+  "geometryIssues": [],
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 242,
+    "hints": 0,
+    "truncated": false,
+    "issueCodes": {
+      "UNUSED_OBJECT": 239,
+      "IMAGE_NPOT_DIMENSIONS": 3
+    }
+  },
+  "checks": {
+    "gltfVersion2": true,
+    "oneDefaultScene": true,
+    "requiredGroups": true,
+    "noValidatorErrors": true,
+    "noValidatorWarnings": true,
+    "validatorNotTruncated": true,
+    "noExternalResources": true,
+    "allImagesEmbedded": true,
+    "hasEmbeddedArtwork": true,
+    "conceptDimensions": true,
+    "staticGeometrySupported": true,
+    "finiteWorldGeometry": true,
+    "uniqueEditableNames": true,
+    "uniqueInventoryNames": true,
+    "declaredCountsMatch": true,
+    "inventoryRolesMatch": true,
+    "editableObjectsHaveRole": true,
+    "editableObjectsHaveGeometry": true,
+    "inventoryPresent": true,
+    "inventoryMatchesExport": true,
+    "hasEditableFurniture": true,
+    "noAnimations": true
+  },
+  "passed": true,
+  "limitations": [
+    "Reports the actual exported static default scene; viewer interactions are checked separately in the browser.",
+    "Editable object names must be unique; shared nested asset mesh names are permitted.",
+    "Concept dimensions and static geometry checks do not establish measured building dimensions or any regulatory approval."
+  ]
+}

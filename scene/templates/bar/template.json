@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "templateId": "bar-amber-room-12x9-v1",
+  "kind": "complete-scene-template",
+  "displayName": "琥珀间 · 酒吧",
+  "status": "local-ready",
+  "model": {
+    "path": "bar.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 4134000,
+    "sha256": "92968f66f1affb3b343a1f61fd0ab8ec1a9a7116e5e8a29e8f381a15224ca78a",
+    "embeddedImages": 8,
+    "externalResources": 0
+  },
+  "dimensions": {
+    "width": 12,
+    "depth": 9,
+    "height": 3.4,
+    "floorArea": 108,
+    "units": "meters",
+    "upAxis": "+Y",
+    "basis": "Authored concept space; not a surveyed venue",
+    "surveyedSizeMeters": null,
+    "sceneBounds": {
+      "min": [
+        -6,
+        -0.16,
+        -4.5
+      ],
+      "max": [
+        6,
+        3.4,
+        4.5
+      ],
+      "size": [
+        12,
+        3.56,
+        9
+      ]
+    },
+    "boundsMeaning": "Whole model bounds including roof/wall thickness, not net usable floor area"
+  },
+  "components": {
+    "structure": "Bar_Structure",
+    "walls": "Bar_Walls",
+    "furniture": "Bar_Furniture",
+    "equipment": "Bar_Equipment",
+    "lighting": "Bar_Lighting",
+    "roof": "Bar_Roof",
+    "objectNaming": "Bar_Role_001; each inventory item is an independent named group"
+  },
+  "layers": [
+    "Bar_Structure",
+    "Bar_Furniture",
+    "Bar_Equipment",
+    "Bar_Lighting",
+    "Bar_Roof"
+  ],
+  "counts": {
+    "nodes": 937,
+    "meshInstances": 872,
+    "triangles": 55242,
+    "materials": 30,
+    "textures": 8,
+    "editableObjects": 42,
+    "objectsByRole": {
+      "Floor": 1,
+      "Ceiling": 1,
+      "BackbarDisplay": 1,
+      "BackCabinet": 4,
+      "BackWorktop": 1,
+      "Sink": 1,
+      "BeverageFridge": 1,
+      "IceMaker": 1,
+      "ServiceCounter": 1,
+      "BarStool": 6,
+      "Banquette": 3,
+      "LoungeTable": 3,
+      "TableSetting": 3,
+      "IceWell": 1,
+      "TapTower": 1,
+      "POS": 1,
+      "Blender": 1,
+      "CocktailTools": 1,
+      "StemwareRack": 1,
+      "CounterGlassware": 1,
+      "Pendant": 3,
+      "WallSconce": 2,
+      "BackbarLight": 1,
+      "WallGraphic": 1,
+      "EntrancePlaque": 1
+    },
+    "people": 0,
+    "animations": 0,
+    "punctualLights": 6
+  },
+  "inventory": [
+    {
+      "name": "Bar_Floor_001",
+      "role": "Floor",
+      "layer": "Structure"
+    },
+    {
+      "name": "Bar_Ceiling_001",
+      "role": "Ceiling",
+      "layer": "Roof"
+    },
+    {
+      "name": "Bar_BackbarDisplay_001",
+      "role": "BackbarDisplay",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_001",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_002",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_003",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackCabinet_004",
+      "role": "BackCabinet",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BackWorktop_001",
+      "role": "BackWorktop",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_Sink_001",
+      "role": "Sink",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_BeverageFridge_001",
+      "role": "BeverageFridge",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_IceMaker_001",
+      "role": "IceMaker",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_ServiceCounter_001",
+      "role": "ServiceCounter",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_001",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_002",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_003",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_004",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_005",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_BarStool_006",
+      "role": "BarStool",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_Banquette_001",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_001",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_001",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Banquette_002",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_002",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_002",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Banquette_003",
+      "role": "Banquette",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_LoungeTable_003",
+      "role": "LoungeTable",
+      "layer": "Furniture"
+    },
+    {
+      "name": "Bar_TableSetting_003",
+      "role": "TableSetting",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_IceWell_001",
+      "role": "IceWell",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_TapTower_001",
+      "role": "TapTower",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_POS_001",
+      "role": "POS",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Blender_001",
+      "role": "Blender",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_CocktailTools_001",
+      "role": "CocktailTools",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_StemwareRack_001",
+      "role": "StemwareRack",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_CounterGlassware_001",
+      "role": "CounterGlassware",
+      "layer": "Equipment"
+    },
+    {
+      "name": "Bar_Pendant_001",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_Pendant_002",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_Pendant_003",
+      "role": "Pendant",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallSconce_001",
+      "role": "WallSconce",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallSconce_002",
+      "role": "WallSconce",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_BackbarLight_001",
+      "role": "BackbarLight",
+      "layer": "Lighting"
+    },
+    {
+      "name": "Bar_WallGraphic_001",
+      "role": "WallGraphic",
+      "layer": "Structure"
+    },
+    {
+      "name": "Bar_EntrancePlaque_001",
+      "role": "EntrancePlaque",
+      "layer": "Structure"
+    }
+  ],
+  "capabilities": {
+    "independentGlbLoad": true,
+    "rotateAndZoom": true,
+    "presetViews": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "wallToggle": true,
+    "roofToggle": true,
+    "reconstructionSourceIncluded": true,
+    "individuallyNamedFurnitureAndEquipment": true,
+    "downloadGlbIsFixedCompleteScene": true,
+    "people": false,
+    "attendanceControl": false,
+    "eventStages": false,
+    "crowdSimulation": false,
+    "automaticFurnitureRelayout": false,
+    "generationApiConnected": false
+  },
+  "integration": {
+    "frontend": "Standalone GLTFLoader preview at ./bar.glb; formal viewer not changed",
+    "backend": "Not registered or uploaded; serve.py exposes local static files only",
+    "suggestedFrontendPath": "scene/templates/bar/bar.glb",
+    "suggestedManifestPath": "scene/templates/bar/template.json",
+    "suggestedBackendStaticRoutes": [
+      "/scene/templates/bar/bar.glb",
+      "/scene/templates/bar/template.json"
+    ],
+    "sceneWireSchema": "Archive metadata; not a replacement for the production backend Scene schema",
+    "singleMaterialAssetImportCompatible": false,
+    "reason": "Complete multi-object scene; split and validate individual objects before single-material upload",
+    "github": "Not pushed",
+    "deployed": false
+  },
+  "provenance": {
+    "authored": "All architecture, furniture, equipment, bottles, glassware, graphics and procedural textures",
+    "externalModelAssets": [],
+    "referencePhotos": null,
+    "generatedByExternalModelApi": false,
+    "sourceNotes": "ASSET-SOURCES.md",
+    "assetCatalogue": "assets/catalogue.json",
+    "sources": [
+      {
+        "path": "model.js",
+        "sha256": "b515729c15b2f7856c2283835ad364d6c65d85500beda3af0c2bbcccc0c6beeb"
+      },
+      {
+        "path": "scene-kit.js",
+        "sha256": "df52976f71bfef0ef8a143f03e5747760b40a03ccd5a96b543869adb293b5832"
+      }
+    ],
+    "runtime": "Locally vendored Three.js with MIT license retained"
+  },
+  "preview": {
+    "page": "index.html",
+    "localUrl": "http://127.0.0.1:8779/",
+    "images": [
+      "previews/bar-overview.jpg",
+      "previews/bar-top.jpg",
+      "previews/bar-interior.jpg"
+    ]
+  },
+  "validation": {
+    "gltfReport": "validation/gltf-validation.json",
+    "inspection": "validation/model-inspection.json",
+    "layoutReport": "validation/layout-check.json",
+    "browserReport": "validation/browser-validation.json",
+    "validator": {
+      "version": "2.0.0-dev.3.10",
+      "errors": 0,
+      "warnings": 0,
+      "infos": 480,
+      "hints": 0
+    },
+    "allChecksPass": true,
+    "scope": "GLB format, named hierarchy, embedded textures, declared static footprints and browser interactions; not site building/fire/capacity certification"
+  }
+}

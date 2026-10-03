@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "templateId": "cafe-slow-notes-v1",
+  "kind": "complete-scene-template",
+  "displayName": "慢调咖啡 · SLOW NOTES",
+  "status": "archived",
+  "scope": "Static standalone furnished cafe concept; local archive only",
+  "model": {
+    "path": "cafe.glb",
+    "format": "glTF 2.0 binary",
+    "bytes": 3798732,
+    "sha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+    "embeddedImages": 8,
+    "externalResources": 0,
+    "rootNode": "Cafe_12x9",
+    "extensionsUsed": [
+      "KHR_materials_unlit",
+      "KHR_materials_emissive_strength",
+      "KHR_lights_punctual"
+    ],
+    "extensionsRequired": []
+  },
+  "preview": {
+    "page": "index.html",
+    "localUrl": "http://127.0.0.1:8780/",
+    "server": "serve.py",
+    "images": [
+      "previews/overview.jpg",
+      "previews/top.jpg",
+      "previews/interior.jpg"
+    ],
+    "defaultView": "overview",
+    "defaultRoofVisible": false,
+    "archivedGlbHasRoof": true
+  },
+  "assumptions": {
+    "type": "original-concept",
+    "photoReconstruction": false,
+    "surveyed": false,
+    "staticFurnitureLayout": true,
+    "furnitureCountsMeaning": "Modeled objects, not certified occupancy or staffing capacity"
+  },
+  "dimensions": {
+    "units": "meters",
+    "upAxis": "+Y",
+    "width": 12,
+    "depth": 9,
+    "interiorHeight": 3.25,
+    "floorAreaSquareMeters": 108,
+    "calibration": "Original concept dimensions, not measured from a venue or photo",
+    "floorOrigin": [
+      0,
+      0,
+      0
+    ],
+    "floorXZ": [
+      -6,
+      6,
+      -4.5,
+      4.5
+    ],
+    "sceneBounds": {
+      "min": [
+        -6.16,
+        -0.15,
+        -4.66
+      ],
+      "max": [
+        6.1,
+        3.37,
+        4.6
+      ],
+      "size": [
+        12.26,
+        3.52,
+        9.26
+      ]
+    },
+    "boundsMeaning": "Whole exported geometry includes wall thickness, slab and roof; not net floor area"
+  },
+  "components": {
+    "root": "Cafe_12x9",
+    "structure": "Cafe_Structure",
+    "furniture": "Cafe_Furniture",
+    "equipment": "Cafe_Equipment",
+    "lighting": "Cafe_Lighting",
+    "roof": "Cafe_Roof",
+    "objectNaming": "Cafe_<Role>_<001-based sequence>",
+    "editableMetadata": [
+      "editableObject",
+      "role"
+    ],
+    "supportMetadata": [
+      "supportedBy",
+      "supportSurfaceY",
+      "mountType"
+    ],
+    "inventorySource": "GLB root extras.inventory; validation/model-validation.json"
+  },
+  "layers": [
+    {
+      "node": "Cafe_Structure",
+      "defaultVisible": true,
+      "exported": true
+    },
+    {
+      "node": "Cafe_Furniture",
+      "defaultVisible": true,
+      "exported": true
+    },
+    {
+      "node": "Cafe_Equipment",
+      "defaultVisible": true,
+      "exported": true
+    },
+    {
+      "node": "Cafe_Lighting",
+      "defaultVisible": true,
+      "exported": true
+    },
+    {
+      "node": "Cafe_Roof",
+      "defaultVisible": false,
+      "exported": true
+    }
+  ],
+  "counts": {
+    "nodes": 813,
+    "uniqueMeshes": 404,
+    "meshInstances": 750,
+    "primitiveInstances": 750,
+    "triangles": 63688,
+    "materials": 32,
+    "embeddedImages": 8,
+    "editableObjects": 47,
+    "groundFurniture": 26,
+    "objectsByRole": {
+      "ServiceCounter": 1,
+      "PrepCounter": 1,
+      "Banquette": 1,
+      "RoundTable": 4,
+      "DiningChair": 10,
+      "WindowBar": 1,
+      "BarStool": 4,
+      "MagazineShelf": 1,
+      "Planter": 2,
+      "EspressoMachine": 1,
+      "CoffeeGrinder": 1,
+      "PastryDisplay": 1,
+      "OrderPOS": 1,
+      "PickupStation": 1,
+      "PrepSink": 1,
+      "BaristaTools": 1,
+      "ChilledCabinet": 1,
+      "BrandSign": 1,
+      "MenuBoard": 1,
+      "WallShelf": 1,
+      "TabletopSet": 4,
+      "WallArtwork": 1,
+      "CounterPlant": 1,
+      "Pendant": 5
+    }
+  },
+  "capabilities": {
+    "independentGlbLoad": true,
+    "embeddedTextures": true,
+    "rotateAndZoom": true,
+    "roofToggle": true,
+    "presetViews": [
+      "overview",
+      "top",
+      "inside"
+    ],
+    "namedIndependentObjectGroups": true,
+    "inPageObjectEditing": false,
+    "people": false,
+    "attendanceControls": false,
+    "activityStages": false,
+    "crowdSimulation": false,
+    "automaticFurnitureRelayout": false,
+    "reconstructionSourceIncluded": true
+  },
+  "integration": {
+    "frontend": "Standalone viewer; not wired into product",
+    "currentModelUrl": "./cafe.glb",
+    "currentManifestUrl": "./template.json",
+    "suggestedArchivePath": "scene/templates/cafe/",
+    "suggestedModelUrl": "/scene/templates/cafe/cafe.glb",
+    "suggestedManifestUrl": "/scene/templates/cafe/template.json",
+    "backend": "Not registered or uploaded; complete scene needs a separate template flow",
+    "existingSingleAssetStoragePattern": "<owner>/<asset-id>/<sha256>.glb",
+    "generationApiConnected": false,
+    "singleMaterialAssetImportCompatible": false,
+    "reason": "Complete scene: 813 nodes and 750 primitive instances exceed the inspected single-material route limits of 500 and 200 respectively",
+    "sceneWireSchema": "Archive manifest only; not a backend Scene record",
+    "details": "README.md"
+  },
+  "provenance": {
+    "originalConcept": [
+      "architecture",
+      "layout",
+      "wood furniture",
+      "cafe equipment",
+      "menu and brand artwork",
+      "procedural textures"
+    ],
+    "referencePhoto": null,
+    "reusedAssets": [
+      {
+        "id": "plant",
+        "path": "assets/models/plant.glb",
+        "title": "Studio Plant Pot (Tattoo and Piercing Studio)",
+        "sourceUrl": "https://3dassets.dev/assets/tattoo-and-piercing-studio-studio-plant-pot-7ee5b536",
+        "license": {
+          "slug": "cc0-1.0",
+          "name": "CC0 1.0 Universal",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionRequired": false
+        },
+        "sha256": "a4ecf82c56717032ca0cb588d1664c3de7867971f2dce6a364a794a341b6df9a",
+        "evidence": "Local previously archived per-asset metadata; no new live license check"
+      }
+    ],
+    "sourceNotes": "ASSET-SOURCES.md",
+    "assetManifest": "assets/manifest.json",
+    "assetCatalogue": "assets/catalogue.json",
+    "sourceFiles": [
+      "model.js",
+      "scene-kit.js"
+    ],
+    "generatedByExternalModelApi": false,
+    "localLibrary": "Three.js r186, bundled local files and MIT license"
+  },
+  "validation": {
+    "modelReport": "validation/model-validation.json",
+    "gltfReport": "validation/gltf-validation.json",
+    "layoutReport": "validation/layout-check.json",
+    "browserReport": "validation/browser-validation.json",
+    "packageReport": "validation/package-check.json",
+    "validatedModelSha256": "b739d1e18375ee9705a8d0dc56d7d84d832f5684e71a7f1c31a1af42099df4f8",
+    "formatPassed": true,
+    "layoutPassed": true,
+    "validatorErrors": 0,
+    "validatorWarnings": 0,
+    "validatorInfos": 242,
+    "infoCodes": {
+      "UNUSED_OBJECT": 239,
+      "IMAGE_NPOT_DIMENSIONS": 3
+    },
+    "tabletopContactToleranceMeters": [
+      0,
+      0.002
+    ],
+    "checkedTabletopObjects": 12,
+    "observedTabletopGapMeters": 0.001,
+    "limits": [
+      "Static object bounds and declared aisle checks only; not a circulation simulation",
+      "Wall-mounted items have a limited proximity check; mounting hardware is not engineered",
+      "Concept dimensions are not a site survey or construction document"
+    ],
+    "browserPassed": true,
+    "browserChecks": 10
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "file": "studio.glb",
+  "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+  "bytes": 1837612,
+  "checkedAt": "2026-10-03T03:24:49.493Z",
+  "coordinateSystem": "glTF Y-up, metres",
+  "scope": "Static photography studio concept, no people. Dimensions and equipment placement are design assumptions. No site measurement, electrical, fire, structural, photometric, or professional studio operating verification is performed.",
+  "validatorVersion": "2.0.0-dev.3.10",
+  "gltfValidator": {
+    "errors": 0,
+    "warnings": 0,
+    "infos": 183,
+    "hints": 0,
+    "truncated": false,
+    "issueCodes": {
+      "UNUSED_OBJECT": 182,
+      "IMAGE_NPOT_DIMENSIONS": 1
+    }
+  },
+  "geometry": {
+    "nodes": 505,
+    "meshInstances": 467,
+    "triangles": 35404,
+    "embeddedImages": 7,
+    "externalResources": 0,
+    "worldBounds": {
+      "min": [
+        -6.18,
+        -0.18,
+        -5.18
+      ],
+      "max": [
+        6.14,
+        4.42,
+        5.075
+      ],
+      "size": [
+        12.32,
+        4.6,
+        10.255
+      ]
+    }
+  },
+  "inventory": {
+    "itemCount": 25,
+    "actualCounts": {
+      "CeilingFixture": 6,
+      "Cyclorama": 1,
+      "StylingPlinth": 1,
+      "RoundStylingPlinth": 1,
+      "StylingStool": 1,
+      "OctagonalSoftbox": 1,
+      "StripSoftbox": 1,
+      "Reflector": 1,
+      "CameraTripod": 1,
+      "TetherCart": 1,
+      "TetherLaptop": 1,
+      "PaperRollRack": 1,
+      "RetouchDesk": 1,
+      "TaskChair": 1,
+      "MakeupVanity": 1,
+      "MakeupStool": 1,
+      "EquipmentShelving": 1,
+      "GripStorage": 1,
+      "RollingFlightCase": 1,
+      "EntryBench": 1
+    },
+    "personNodes": 0
+  },
+  "layout": {
+    "footprints": 18,
+    "floorFootprints": 17,
+    "footprintsOutside": 0,
+    "corridorOccupancy": 0,
+    "overlaps": 0,
+    "unexplainedOverlaps": 0,
+    "geometryOutside": 16
+  },
+  "hardFailures": [],
+  "passed": true
+}

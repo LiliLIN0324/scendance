@@ -1,0 +1,790 @@
+{
+  "file": "studio.glb",
+  "sha256": "932fddb45c2bc510cbe17c033d9b0deb509fb6ab140d857e0dbe9108cf3b6ebc",
+  "bytes": 1837612,
+  "checkedAt": "2026-10-03T03:24:49.493Z",
+  "coordinateSystem": "glTF Y-up, metres",
+  "scope": "Static photography studio concept, no people. Dimensions and equipment placement are design assumptions. No site measurement, electrical, fire, structural, photometric, or professional studio operating verification is performed.",
+  "inventoryCount": 25,
+  "inventoryChecks": [
+    {
+      "id": "Studio_CeilingFixture_001",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -4.1,
+          3.6005,
+          -2.86
+        ],
+        "max": [
+          -2.9,
+          4.3,
+          -2.74
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_CeilingFixture_002",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_002",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -4.1,
+          3.6005,
+          2.64
+        ],
+        "max": [
+          -2.9,
+          4.3,
+          2.76
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_CeilingFixture_003",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_003",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          0.8,
+          3.6005,
+          -2.86
+        ],
+        "max": [
+          2,
+          4.3,
+          -2.74
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_CeilingFixture_004",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_004",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          0.8,
+          3.6005,
+          2.64
+        ],
+        "max": [
+          2,
+          4.3,
+          2.76
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_CeilingFixture_005",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_005",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.6,
+          3.6005,
+          -2.86
+        ],
+        "max": [
+          4.8,
+          4.3,
+          -2.74
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_CeilingFixture_006",
+      "category": "CeilingFixture",
+      "nodeName": "Studio_CeilingFixture_006",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.6,
+          3.6005,
+          2.64
+        ],
+        "max": [
+          4.8,
+          4.3,
+          2.76
+        ],
+        "size": [
+          1.2,
+          0.6995,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "Studio_Cyclorama_001",
+      "category": "Cyclorama",
+      "nodeName": "Studio_Cyclorama_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -4.8,
+          0.026,
+          -4.62
+        ],
+        "max": [
+          2.1,
+          4.06,
+          1.35
+        ],
+        "size": [
+          6.9,
+          4.034,
+          5.97
+        ]
+      }
+    },
+    {
+      "id": "Studio_StylingPlinth_001",
+      "category": "StylingPlinth",
+      "nodeName": "Studio_StylingPlinth_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -2.34,
+          0.026,
+          -2.89
+        ],
+        "max": [
+          -1.56,
+          1.581148,
+          -2.11
+        ],
+        "size": [
+          0.78,
+          1.555148,
+          0.78
+        ]
+      }
+    },
+    {
+      "id": "Studio_RoundStylingPlinth_001",
+      "category": "RoundStylingPlinth",
+      "nodeName": "Studio_RoundStylingPlinth_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -1.11,
+          0.026,
+          -3.29
+        ],
+        "max": [
+          -0.33,
+          0.807,
+          -2.51
+        ],
+        "size": [
+          0.78,
+          0.781,
+          0.78
+        ]
+      }
+    },
+    {
+      "id": "Studio_StylingStool_001",
+      "category": "StylingStool",
+      "nodeName": "Studio_StylingStool_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -0.49,
+          0.026392,
+          -1.86
+        ],
+        "max": [
+          -0.01,
+          0.5855,
+          -1.38
+        ],
+        "size": [
+          0.48,
+          0.559108,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "Studio_OctagonalSoftbox_001",
+      "category": "OctagonalSoftbox",
+      "nodeName": "Studio_OctagonalSoftbox_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -4.149634,
+          0,
+          -0.720164
+        ],
+        "max": [
+          -3.003675,
+          2.839172,
+          0.52
+        ],
+        "size": [
+          1.145959,
+          2.839172,
+          1.240164
+        ]
+      }
+    },
+    {
+      "id": "Studio_StripSoftbox_001",
+      "category": "StripSoftbox",
+      "nodeName": "Studio_StripSoftbox_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          0.184291,
+          0,
+          -0.81898
+        ],
+        "max": [
+          1.479634,
+          2.800193,
+          0.42
+        ],
+        "size": [
+          1.295343,
+          2.800193,
+          1.23898
+        ]
+      }
+    },
+    {
+      "id": "Studio_Reflector_001",
+      "category": "Reflector",
+      "nodeName": "Studio_Reflector_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -5.078391,
+          0,
+          -2.739303
+        ],
+        "max": [
+          -4.261609,
+          2.366963,
+          -1.79
+        ],
+        "size": [
+          0.816782,
+          2.366963,
+          0.949303
+        ]
+      }
+    },
+    {
+      "id": "Studio_CameraTripod_001",
+      "category": "CameraTripod",
+      "nodeName": "Studio_CameraTripod_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -1.971314,
+          -0.020214,
+          2.279
+        ],
+        "max": [
+          0.028649,
+          1.766,
+          3.196
+        ],
+        "size": [
+          1.999963,
+          1.786214,
+          0.917
+        ]
+      }
+    },
+    {
+      "id": "Studio_TetherCart_001",
+      "category": "TetherCart",
+      "nodeName": "Studio_TetherCart_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -0.14,
+          0.013,
+          2.35
+        ],
+        "max": [
+          0.58,
+          1.077119,
+          2.85
+        ],
+        "size": [
+          0.72,
+          1.064119,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "Studio_TetherLaptop_001",
+      "category": "TetherLaptop",
+      "nodeName": "Studio_TetherLaptop_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          0.014521,
+          0.915,
+          2.476329
+        ],
+        "max": [
+          0.385479,
+          1.155,
+          2.763671
+        ],
+        "size": [
+          0.370958,
+          0.24,
+          0.287342
+        ]
+      }
+    },
+    {
+      "id": "Studio_PaperRollRack_001",
+      "category": "PaperRollRack",
+      "nodeName": "Studio_PaperRollRack_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.45,
+          0,
+          -4.54
+        ],
+        "max": [
+          5.81,
+          2.8,
+          -4.02
+        ],
+        "size": [
+          2.36,
+          2.8,
+          0.52
+        ]
+      }
+    },
+    {
+      "id": "Studio_RetouchDesk_001",
+      "category": "RetouchDesk",
+      "nodeName": "Studio_RetouchDesk_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          4.56,
+          0,
+          -2.736
+        ],
+        "max": [
+          5.34,
+          1.39,
+          -0.664
+        ],
+        "size": [
+          0.78,
+          1.39,
+          2.072
+        ]
+      }
+    },
+    {
+      "id": "Studio_TaskChair_001",
+      "category": "TaskChair",
+      "nodeName": "Studio_TaskChair_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.519683,
+          -0.001,
+          -2.046
+        ],
+        "max": [
+          4.160317,
+          0.941,
+          -1.405
+        ],
+        "size": [
+          0.640634,
+          0.942,
+          0.641
+        ]
+      }
+    },
+    {
+      "id": "Studio_MakeupVanity_001",
+      "category": "MakeupVanity",
+      "nodeName": "Studio_MakeupVanity_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          4.6,
+          0,
+          0.069
+        ],
+        "max": [
+          5.3,
+          1.958,
+          1.991
+        ],
+        "size": [
+          0.7,
+          1.958,
+          1.922
+        ]
+      }
+    },
+    {
+      "id": "Studio_MakeupStool_001",
+      "category": "MakeupStool",
+      "nodeName": "Studio_MakeupStool_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.635,
+          0.0095,
+          0.775
+        ],
+        "max": [
+          4.165,
+          0.575,
+          1.305
+        ],
+        "size": [
+          0.53,
+          0.5655,
+          0.53
+        ]
+      }
+    },
+    {
+      "id": "Studio_EquipmentShelving_001",
+      "category": "EquipmentShelving",
+      "nodeName": "Studio_EquipmentShelving_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          3.57,
+          0,
+          3.505
+        ],
+        "max": [
+          5.73,
+          2.2225,
+          4.255
+        ],
+        "size": [
+          2.16,
+          2.2225,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "Studio_GripStorage_001",
+      "category": "GripStorage",
+      "nodeName": "Studio_GripStorage_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -5.275,
+          0.007,
+          1.875
+        ],
+        "max": [
+          -4.525,
+          1.940169,
+          3.225
+        ],
+        "size": [
+          0.75,
+          1.933169,
+          1.35
+        ]
+      }
+    },
+    {
+      "id": "Studio_RollingFlightCase_001",
+      "category": "RollingFlightCase",
+      "nodeName": "Studio_RollingFlightCase_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          -4.285,
+          0.008,
+          3.745
+        ],
+        "max": [
+          -3.215,
+          0.655,
+          4.383
+        ],
+        "size": [
+          1.07,
+          0.647,
+          0.638
+        ]
+      }
+    },
+    {
+      "id": "Studio_EntryBench_001",
+      "category": "EntryBench",
+      "nodeName": "Studio_EntryBench_001",
+      "nodeFound": true,
+      "worldBounds": {
+        "min": [
+          0.43,
+          0,
+          3.9
+        ],
+        "max": [
+          2.17,
+          0.56,
+          4.4
+        ],
+        "size": [
+          1.74,
+          0.56,
+          0.5
+        ]
+      }
+    }
+  ],
+  "inventoryIssues": [],
+  "actualCounts": {
+    "CeilingFixture": 6,
+    "Cyclorama": 1,
+    "StylingPlinth": 1,
+    "RoundStylingPlinth": 1,
+    "StylingStool": 1,
+    "OctagonalSoftbox": 1,
+    "StripSoftbox": 1,
+    "Reflector": 1,
+    "CameraTripod": 1,
+    "TetherCart": 1,
+    "TetherLaptop": 1,
+    "PaperRollRack": 1,
+    "RetouchDesk": 1,
+    "TaskChair": 1,
+    "MakeupVanity": 1,
+    "MakeupStool": 1,
+    "EquipmentShelving": 1,
+    "GripStorage": 1,
+    "RollingFlightCase": 1,
+    "EntryBench": 1
+  },
+  "declaredCounts": {
+    "CeilingFixture": 6,
+    "Cyclorama": 1,
+    "StylingPlinth": 1,
+    "RoundStylingPlinth": 1,
+    "StylingStool": 1,
+    "OctagonalSoftbox": 1,
+    "StripSoftbox": 1,
+    "Reflector": 1,
+    "CameraTripod": 1,
+    "TetherCart": 1,
+    "TetherLaptop": 1,
+    "PaperRollRack": 1,
+    "RetouchDesk": 1,
+    "TaskChair": 1,
+    "MakeupVanity": 1,
+    "MakeupStool": 1,
+    "EquipmentShelving": 1,
+    "GripStorage": 1,
+    "RollingFlightCase": 1,
+    "EntryBench": 1
+  },
+  "countChecks": [
+    {
+      "category": "CeilingFixture",
+      "declared": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "category": "Cyclorama",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "StylingPlinth",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "RoundStylingPlinth",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "StylingStool",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "OctagonalSoftbox",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "StripSoftbox",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "Reflector",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "CameraTripod",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "TetherCart",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "TetherLaptop",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "PaperRollRack",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "RetouchDesk",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "TaskChair",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "MakeupVanity",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "MakeupStool",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "EquipmentShelving",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "GripStorage",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "RollingFlightCase",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "category": "EntryBench",
+      "declared": 1,
+      "actual": 1,
+      "passed": true
+    }
+  ],
+  "groupChecks": [
+    {
+      "name": "Studio_Structure",
+      "nodeCount": 1,
+      "directChildOfRoot": true
+    },
+    {
+      "name": "Studio_Furniture",
+      "nodeCount": 1,
+      "directChildOfRoot": true
+    },
+    {
+      "name": "Studio_Equipment",
+      "nodeCount": 1,
+      "directChildOfRoot": true
+    },
+    {
+      "name": "Studio_Lighting",
+      "nodeCount": 1,
+      "directChildOfRoot": true
+    },
+    {
+      "name": "Studio_Roof",
+      "nodeCount": 1,
+      "directChildOfRoot": true
+    }
+  ],
+  "unitChecks": {
+    "unitsMeters": true,
+    "upAxisY": true,
+    "peopleExcluded": true,
+    "noPersonNodes": true,
+    "width12": true,
+    "depth10": true
+  },
+  "personNodes": [],
+  "passed": true
+}
