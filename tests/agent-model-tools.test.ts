@@ -36,7 +36,7 @@ describe('Agent model tools preserve instance boundaries and meaningful alternat
   it('applies a material variant without changing selected scaled dimensions, color, placement or other instances',async()=>{
     const draft=scaledInstances(),target=draft.objects[1],i=await input(draft,{selectedIds:[target.id]});
     const fetcher=vi.fn(async(_url:RequestInfo|URL,init?:RequestInit)=>{
-      if(fetcher.mock.calls.length===1)return completion([tool('customize_material',{resourceId:source.resource.resourceId,objectIds:[target.id],materialIndices:[0],changes:{baseColor:'#808080'}})]);
+      if(fetcher.mock.calls.length===1)return completion([tool('customize_material',{resourceId:source.asset.id,objectIds:[target.id],materialIndices:[0],changes:{baseColor:'#808080'}})]);
       return completion([tool('submit_candidates',{candidates:[candidate([{op:'replace_resource',id:target.id,resourceId:toolResources(init)[0],size:{width:4,depth:4,height:2}}])]})]);
     });
     const run=await send(i,fetcher);expect(run.state).toBe('complete');expect(run.candidates).toHaveLength(1);
